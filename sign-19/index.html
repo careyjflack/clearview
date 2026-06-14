@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>№ 019 — Lots 46 – 49 · Clearview Historical Mapping Project</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #faf5e6;
+    --paper-deep: #f0e8cf;
+    --paper-soft: #fdfaee;
+    --butter: #fce98e;
+    --butter-deep: #f5dc5c;
+    --ink: #0a0a0a;
+    --ink-soft: #2a2a2a;
+    --ink-faded: #757575;
+    --dirt: #c44018;
+    --rule: #d4c89e;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    font-weight: 400;
+    line-height: 1.6;
+  }
+
+  .topbar {
+    padding: 14px 28px;
+    border-bottom: 1px solid var(--rule);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--paper);
+  }
+
+  .back-link {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  .back-link:hover { color: var(--dirt); }
+
+  .breadcrumb {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-faded);
+  }
+
+  .hero {
+    padding: 56px 40px 44px;
+    border-bottom: 1px solid var(--rule);
+    max-width: 1100px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .hero-tag {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-faded);
+    margin-bottom: 18px;
+  }
+
+  .hero-title {
+    font-family: 'Instrument Serif', serif;
+    font-size: clamp(44px, 6.5vw, 88px);
+    font-weight: 400;
+    line-height: 0.98;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+
+  .hero-subtitle {
+    font-family: 'Instrument Serif', serif;
+    font-weight: 400;
+    font-size: 22px;
+    color: var(--ink-soft);
+    margin-top: 20px;
+    max-width: 640px;
+    line-height: 1.35;
+  }
+
+  .layout {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 56px 40px 80px;
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 56px;
+  }
+
+  .catalog {
+    background: var(--paper-soft);
+    border-radius: 4px;
+    padding: 28px;
+    position: sticky;
+    top: 24px;
+    align-self: start;
+  }
+
+  .catalog-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin-bottom: 20px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .catalog-row {
+    padding: 11px 0;
+    border-bottom: 1px solid rgba(212, 200, 158, 0.5);
+  }
+  .catalog-row:last-child { border-bottom: none; }
+
+  .catalog-key {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-faded);
+    margin-bottom: 5px;
+  }
+
+  .catalog-value {
+    font-family: 'Instrument Serif', serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--ink);
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+  }
+
+  .catalog-value.small {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+  }
+
+  .content section + section { margin-top: 64px; }
+
+  .section-head {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink);
+    padding-bottom: 14px;
+    margin-bottom: 28px;
+    border-bottom: 1px solid var(--rule);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  .section-head .pill {
+    background: var(--butter);
+    color: var(--ink);
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+  }
+
+  /* sub-section (timeline, sources) inside a business block */
+  .sub-section {
+    margin-top: 36px;
+  }
+
+  .sub-head {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--dirt);
+    margin-bottom: 18px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  /* Business blocks */
+  .business-block + .business-block {
+    margin-top: 56px;
+    padding-top: 56px;
+    border-top: 1px solid var(--rule);
+  }
+
+  .business-name {
+    font-family: 'Instrument Serif', serif;
+    font-size: 34px;
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: -0.015em;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+
+  .business-type {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-faded);
+    margin-bottom: 24px;
+  }
+
+  .business-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-bottom: 28px;
+    padding: 20px 22px;
+    background: var(--paper-soft);
+    border-radius: 4px;
+  }
+
+  .biz-row .biz-key {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-faded);
+    margin-bottom: 4px;
+  }
+
+  .biz-row .biz-value {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ink);
+    line-height: 1.45;
+  }
+
+  .prose {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.7;
+    color: var(--ink);
+    max-width: 72ch;
+  }
+  .prose p + p { margin-top: 16px; text-indent: 2em; }
+  .prose em { font-style: italic; }
+
+  .prose .lead {
+    font-family: 'Instrument Serif', serif;
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 1.22;
+    color: var(--ink);
+    letter-spacing: -0.015em;
+    margin-bottom: 24px;
+    text-indent: 0;
+  }
+
+  .prose .lead::first-letter {
+    font-family: 'Instrument Serif', serif;
+    font-size: 70px;
+    float: left;
+    line-height: 0.85;
+    padding: 8px 14px 0 0;
+    color: var(--ink);
+    font-weight: 400;
+  }
+
+  .empty-narrative {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    font-size: 17px;
+    color: var(--ink-faded);
+    padding: 20px 0;
+  }
+
+  .business-notes {
+    margin-top: 24px;
+    padding: 16px 18px;
+    background: var(--butter);
+    border-radius: 4px;
+  }
+
+  .notes-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+
+  .notes-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--ink-soft);
+    line-height: 1.6;
+  }
+
+  /* Timeline */
+  .timeline {
+    border-left: 2px solid var(--rule);
+    padding-left: 24px;
+    margin-left: 6px;
+  }
+
+  .timeline-entry {
+    position: relative;
+    padding-bottom: 22px;
+  }
+  .timeline-entry:last-child { padding-bottom: 0; }
+
+  .timeline-entry::before {
+    content: '';
+    position: absolute;
+    left: -32px;
+    top: 6px;
+    width: 12px;
+    height: 12px;
+    background: var(--ink);
+    border: 3px solid var(--paper);
+    border-radius: 50%;
+  }
+
+  .timeline-year {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    color: var(--ink);
+    text-transform: uppercase;
+  }
+
+  .timeline-year .inferred {
+    color: var(--ink-faded);
+    font-weight: 400;
+    letter-spacing: 0.05em;
+  }
+
+  .timeline-text {
+    font-family: 'Instrument Serif', serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.35;
+    color: var(--ink);
+    margin-top: 4px;
+    letter-spacing: -0.01em;
+  }
+
+  .timeline-text em { font-style: italic; }
+
+  /* Sources */
+  .source-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .source-entry {
+    padding: 14px 16px;
+    background: var(--paper-soft);
+    border-radius: 3px;
+    border-left: 3px solid var(--rule);
+  }
+
+  .source-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--dirt);
+    margin-bottom: 4px;
+  }
+
+  .source-detail {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--ink);
+    line-height: 1.5;
+  }
+
+  .source-detail em { font-style: italic; }
+
+  /* Contain gallery within its grid column using min-width:0.
+     This is the correct CSS Grid fix — grid items default to min-width:auto
+     which allows them to overflow. Setting min-width:0 constrains them. */
+
+  .layout {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 56px 40px 80px;
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 56px;
+  }
+
+  .content {
+    min-width: 0;    /* Critical — prevents content column overflowing grid */
+    overflow: hidden; /* Secondary containment */
+  }
+
+  /* GALLERY — contained carousel */
+  .gallery-wrap {
+    position: relative;
+    margin-top: 4px;
+    /* Arrows bleed ±14px outside the clip box so they're visible */
+    padding: 0 14px;
+    margin-left: -14px;
+    margin-right: -14px;
+  }
+
+  .gallery-clip {
+    overflow: hidden;      /* Clips the scrolling track — no page bleed */
+    border-radius: 4px;
+    width: 100%;
+  }
+
+  .gallery-row {
+    display: flex;
+    gap: 8px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    padding-bottom: 4px;
+    cursor: grab;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .gallery-row::-webkit-scrollbar { display: none; }
+  .gallery-row:active { cursor: grabbing; }
+
+  .gallery-item {
+    flex: 0 0 auto;
+    height: 360px;
+    min-width: 260px;   /* Even very tall portraits show at readable width */
+    max-width: 600px;   /* Landscape images don't go too wide */
+    overflow: hidden;
+    border-radius: 4px;
+    cursor: pointer;
+    scroll-snap-align: start;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .gallery-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(10, 10, 10, 0.18);
+  }
+  .gallery-item img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center top; /* Show top of portrait images preferentially */
+    display: block;
+    filter: sepia(0.3) contrast(1.04) brightness(0.96);
+    transition: transform 0.4s ease;
+    pointer-events: none;
+  }
+  .gallery-item:hover img { transform: scale(1.04); }
+  .gallery-item.archival img { filter: none; }
+
+  /* Arrows — sit outside the clip, visible over it */
+  .gallery-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    color: var(--ink);
+    font-size: 22px;
+    font-family: serif;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 4px 12px rgba(10, 10, 10, 0.14);
+    transition: background 0.2s ease, transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 3px;
+  }
+  .gallery-arrow:hover {
+    background: var(--butter);
+    transform: translateY(-50%) scale(1.1);
+  }
+  .gallery-arrow-left  { left: 0; }
+  .gallery-arrow-right { right: 0; }
+    padding-bottom: 4px;
+  }
+
+  .gallery-hint {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-faded);
+    margin-top: 8px;
+  }
+
+  /* LIGHTBOX with caption */
+  .lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(10, 10, 10, 0.96);
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    padding: 60px 40px 40px;
+  }
+  .lightbox.open { display: flex; }
+
+  .lightbox-img-wrap {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 0;
+  }
+
+  .lightbox img {
+    max-width: 90vw;
+    max-height: 70vh;
+    object-fit: contain;
+    border-radius: 3px;
+  }
+
+  .lightbox-caption {
+    color: var(--paper);
+    max-width: 720px;
+    text-align: center;
+    margin-top: 28px;
+    padding: 0 20px;
+  }
+
+  .lightbox-date {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--butter);
+    margin-bottom: 6px;
+  }
+
+  .lightbox-title {
+    font-family: 'Instrument Serif', serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.2;
+    color: var(--paper);
+    margin-bottom: 10px;
+    letter-spacing: -0.01em;
+  }
+
+  .lightbox-description {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: rgba(250, 245, 230, 0.85);
+    line-height: 1.55;
+    margin-bottom: 8px;
+  }
+
+  .lightbox-source {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    color: rgba(250, 245, 230, 0.6);
+    letter-spacing: 0.04em;
+    font-style: italic;
+  }
+
+  .lightbox-close {
+    position: absolute;
+    top: 24px; right: 24px;
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: var(--paper);
+    border: none;
+    color: var(--ink);
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 2;
+  }
+
+  .lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: rgba(250, 245, 230, 0.95);
+    border: none;
+    color: var(--ink);
+    font-size: 24px;
+    font-family: serif;
+    cursor: pointer;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 4px;
+    transition: background 0.2s ease;
+  }
+
+  .lightbox-nav:hover { background: var(--butter); }
+  .lightbox-prev { left: 24px; }
+  .lightbox-next { right: 24px; }
+
+  footer {
+    padding: 40px;
+    border-top: 1px solid var(--rule);
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-faded);
+    font-weight: 400;
+  }
+
+  /* ── TABLET (≤ 900px) ── */
+  @media (max-width: 900px) {
+    .layout {
+      grid-template-columns: 1fr;
+      gap: 40px;
+      padding: 32px 24px 60px;
+    }
+    .catalog {
+      position: static;
+      order: -1;          /* Move catalog ABOVE content on mobile */
+    }
+    .hero { padding: 32px 24px 24px; }
+    .topbar { padding: 12px 24px; }
+    .business-name { font-size: 26px; }
+    .gallery-item { height: 260px; }
+    .gallery-arrow { width: 36px; height: 36px; font-size: 18px; }
+    .lightbox-nav { width: 40px; height: 40px; font-size: 20px; }
+    .lightbox-title { font-size: 18px; }
+    .lightbox { padding: 52px 16px 24px; }
+    .lightbox img { max-height: 55vh; }
+  }
+
+  /* ── MOBILE (≤ 480px) ── */
+  @media (max-width: 480px) {
+    .topbar { padding: 10px 16px; }
+    .breadcrumb { display: none; }   /* Too narrow for breadcrumb */
+    .hero { padding: 24px 16px 20px; }
+    .hero-title { font-size: clamp(36px, 11vw, 72px); }
+    .hero-subtitle { font-size: 16px; margin-top: 12px; }
+    .layout { padding: 24px 16px 48px; gap: 32px; }
+    .business-name { font-size: 22px; }
+    .business-details { padding: 14px 16px; }
+    .gallery-item { height: 220px; }
+    .gallery-hint { font-size: 10px; }
+    .sub-head { font-size: 10px; }
+    .source-entry { padding: 12px 14px; }
+    .catalog { padding: 20px 16px; }
+    .catalog-value { font-size: 17px; }
+    .lightbox { padding: 48px 8px 16px; }
+    .lightbox img { max-height: 50vh; max-width: 98vw; }
+    .lightbox-close { top: 10px; right: 10px; width: 36px; height: 36px; font-size: 16px; }
+    .lightbox-caption { margin-top: 16px; }
+    .lightbox-title { font-size: 16px; }
+    .lightbox-description { font-size: 12px; }
+    .lightbox-prev { left: 4px; }
+    .lightbox-next { right: 4px; }
+    .prose { font-size: 14px; }
+    .prose .lead { font-size: 22px; }
+    .prose .lead::first-letter { font-size: 54px; padding: 6px 10px 0 0; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a href="index.html" class="back-link">← Back to Map</a>
+  <div class="breadcrumb">Clearview Historical Mapping Project / № 019</div>
+</div>
+
+<section class="hero">
+  <div class="hero-tag">Sign № 019 · Lots 46 – 49</div>
+  <h1 class="hero-title">Lots 46 – 49</h1>
+  <p class="hero-subtitle">Six businesses occupied this stretch of lots: a church, blacksmith shop, garage, funeral home, grocery, and another church.</p>
+</section>
+
+<main class="layout">
+
+  <div class="content">
+
+    <section>
+      <h2 class="section-head">Businesses on this Sign <span class="pill">6 businesses</span></h2>
+      
+    <div class="business-block">
+      <h3 class="business-name">Church of the Living God</h3>
+<div class="business-type">Church</div>
+      <div class="business-details">
+<div class="biz-row"><div class="biz-key">Dates</div><div class="biz-value">Dates unknown</div></div>
+<div class="biz-row"><div class="biz-key">Affiliated</div><div class="biz-value">Shirley Nero, Normores, Thomesene Withers Cudjoe</div></div>
+</div>
+      <p class="empty-narrative">Narrative not yet recorded. Research in progress.</p>
+      <div class="business-notes"><div class="notes-label">Notes</div><div class="notes-text">Need to take a picture of the cornerstone.</div></div>
+      
+      <section class="sub-section">
+        <h3 class="sub-head">Gallery</h3>
+        <div class="gallery-wrap">
+          <button class="gallery-arrow gallery-arrow-left" aria-label="Scroll left">‹</button>
+          <div class="gallery-clip">
+            <div class="gallery-row">
+          <div class="gallery-item" data-src="https://picsum.photos/seed/sign019b0img1/900/650" data-title="Placeholder photo 1" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of Church of the Living God.">
+            <img src="https://picsum.photos/seed/sign019b0img1/900/650" alt="Placeholder photo 1" loading="lazy">
+          </div>
+          <div class="gallery-item" data-src="https://picsum.photos/seed/sign019b0img2/750/650" data-title="Placeholder photo 2" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of Church of the Living God.">
+            <img src="https://picsum.photos/seed/sign019b0img2/750/650" alt="Placeholder photo 2" loading="lazy">
+          </div>
+          <div class="gallery-item" data-src="https://picsum.photos/seed/sign019b0img3/850/650" data-title="Placeholder photo 3" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of Church of the Living God.">
+            <img src="https://picsum.photos/seed/sign019b0img3/850/650" alt="Placeholder photo 3" loading="lazy">
+          </div>
+          <div class="gallery-item" data-src="https://picsum.photos/seed/sign019b0img4/1000/650" data-title="Placeholder photo 4" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of Church of the Living God.">
+            <img src="https://picsum.photos/seed/sign019b0img4/1000/650" alt="Placeholder photo 4" loading="lazy">
+          </div>
+            </div>
+          </div>
+          <button class="gallery-arrow gallery-arrow-right" aria-label="Scroll right">›</button>
+        </div>
+        <div class="gallery-hint">Click photos to enlarge · Use arrows or drag to browse</div>
+      </section>
+      
+      
+      <section class="sub-section">
+        <h3 class="sub-head">Sources</h3>
+        <div class="source-list">
+        <div class="source-entry">
+          <div class="source-label">Oral history</div>
+          <div class="source-detail">Recollections from Shirley Nero, Normores, and Thomesene Withers Cudjoe.</div>
+        </div></div>
+      </section>
+    </div>
+    
+
+    <div class="business-block">
+      <h3 class="business-name">Blacksmith Shop</h3>
+<div class="business-type">Blacksmith</div>
+      <div class="business-details">
+<div class="biz-row"><div class="biz-key">Owners</div><div class="biz-value">Possibly A.L. Gammill</div></div>
+<div class="biz-row"><div class="biz-key">Dates</div><div class="biz-value">Dates unknown</div></div>
+<div class="biz-row"><div class="biz-key">Affiliated</div><div class="biz-value">JP Owens, Herbert Johnson</div></div>
+</div>
+      <p class="empty-narrative">Narrative not yet recorded. Research in progress.</p>
+      
+      
+      <section class="sub-section">
+        <h3 class="sub-head">Gallery</h3>
+        <div class="gallery-wrap">
+          <button class="gallery-arrow gallery-arrow-left" aria-label="Scroll left">‹</button>
+          <div class="gallery-clip">
+            <div class="gallery-row">
+          <div class="gallery-item" data-src="https://picsum.photos/seed/sign019b1img1/900/650" data-title="Placeholder photo 1" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of Blacksmith Shop.">
+            <img src="https://picsum.photos/seed/sign019b1img1/900/650" alt="Placeholder photo 1" loading="lazy">
+          </div>
+          <div class="gallery-item" data-src="https://picsum.photos/seed/sign019b1img2/750/650" data-title="Placeholder photo 2" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of Blacksmith Shop.">
+            <img src="https://picsum.photos/seed/sign019b1img2/750/650" alt="Placeholder photo 2" loading="lazy">
+          </div>
+          <div class="gallery-item" data-src="https://picsum.photos/seed/sign019b1img3/850/650" data-title="Placeholder photo 3" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of Blacksmith Shop.">
+            <img src="https://picsum.photos/seed/sign019b1img3/850/650" alt="Placeholder photo 3" loading="lazy">
+          </div>
+          <div class="gallery-item" data-src="https://picsum.photos/seed/sign019b1img4/1000/650" data-title="Placeholder photo 4" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of Blacksmith Shop.">
+            <img src="https://picsum.photos/seed/sign019b1img4/1000/650" alt="Placeholder photo 4" loading="lazy">
+          </div>
+            </div>
+          </div>
+          <button class="gallery-arrow gallery-arrow-right" aria-label="Scroll right">›</button>
+        </div>
+        <div class="gallery-hint">Click photos to enlarge · Use arrows or drag to browse</div>
+      </section>
+      
+      
+      <section class="sub-section">
+        <h3 class="sub-head">Sources</h3>
+        <div class="source-list">
+        <div class="source-entry">
+          <div class="source-label">Newspaper advertisement</div>
+          <div class="source-detail">Advertisement located by Larry (researcher).</div>
+        </div></div>
+      </section>
+    </div>
+    
+
+    <div class="business-block">
+      <h3 class="business-name">L.V. Swain Garage</h3>
+<div class="business-type">Garage</div>
+      <div class="business-details">
+<div class="biz-row"><div class="biz-key">Owners</div><div class="biz-value">L.V. Swain</div></div>
+<div class="biz-row"><div class="biz-key">Dates</div><div class="biz-value">Dates unknown</div></div>
+<div class="biz-row"><div class="biz-key">Affiliated</div><div class="biz-value">Normores, JP Owens</div></div>
+</div>
+      <p class="empty-narrative">Narrative not yet recorded. Research in progress.</p>
+      <div class="business-notes"><div class="notes-label">Notes</div><div class="notes-text">Family migrated from Mexico to Indian Territory in 1898; mother's name was Nanita.</div></div>
+      
+      <section class="sub-section">
+        <h3 class="sub-head">Gallery</h3>
+        <div class="gallery-wrap">
+          <button class="gallery-arrow gallery-arrow-left" aria-label="Scroll left">‹</button>
+          <div class="gallery-clip">
+            <div class="gallery-row">
+          <div class="gallery-item" data-src="https://picsum.photos/seed/sign019b2img1/900/650" data-title="Placeholder photo 1" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of L.V. Swain Garage.">
+            <img src="https://picsum.photos/seed/sign019b2img1/900/650" alt="Placeholder photo 1" loading="lazy">
+          </div>
+          <div class="gallery-item" data-src="https://picsum.photos/seed/sign019b2img2/750/650" data-title="Placeholder photo 2" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of L.V. Swain Garage.">
+            <img src="https://picsum.photos/seed/sign019b2img2/750/650" alt="Placeholder photo 2" loading="lazy">
+          </div>
+          <div class="gallery-item" data-src="https://picsum.photos/seed/sign019b2img3/850/650" data-title="Placeholder photo 3" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of L.V. Swain Garage.">
+            <img src="https://picsum.photos/seed/sign019b2img3/850/650" alt="Placeholder photo 3" loading="lazy">
+          </div>
+          <div class="gallery-item" data-src="https://picsum.photos/seed/sign019b2img4/1000/650" data-title="Placeholder photo 4" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of L.V. Swain Garage.">
+            <img src="https://picsum.photos/seed/sign019b2img4/1000/650" alt="Placeholder photo 4" loading="lazy">
+          </div>
+            </div>
+          </div>
+          <button class="gallery-arrow gallery-arrow-right" aria-label="Scroll right">›</button>
+        </div>
+        <div class="gallery-hint">Click photos to enlarge · Use arrows or drag to browse</div>
+      </section>
+      
+      
+      <section class="sub-section">
+        <h3 class="sub-head">Sources</h3>
+        <div class="source-list">
+        <div class="source-entry">
+          <div class="source-label">Family history</div>
+          <div class="source-detail">Genealogical research on the Swain family's migration from Mexico.</div>
+        </div></div>
+      </section>
+    </div>
+    
+
+    <div class="business-block">
+      <h3 class="business-name">Alford Funeral Home Garage</h3>
+<div class="business-type">Funeral home garage</div>
+      <div class="business-details">
+<div class="biz-row"><div class="biz-key">Dates</div><div class="biz-value">? – 1950s</div></div>
+<div class="biz-row"><div class="biz-key">Affiliated</div><div class="biz-value">Shirley Nero, Normores, Joe Golden, Hattie Lou Oliver, Patton/Anderson</div></div>
+</div>
+      <p class="empty-narrative">Narrative not yet recorded. Research in progress.</p>
+      
+      
+      <section class="sub-section">
+        <h3 class="sub-head">Gallery</h3>
+        <div class="gallery-wrap">
+          <button class="gallery-arrow gallery-arrow-left" aria-label="Scroll left">‹</button>
+          <div class="gallery-clip">
+            <div class="gallery-row">
+          <div class="gallery-item" data-src="https://picsum.photos/seed/sign019b3img1/900/650" data-title="Placeholder photo 1" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of Alford Funeral Home Garage.">
+            <img src="https://picsum.photos/seed/sign019b3img1/900/650" alt="Placeholder photo 1" loading="lazy">
+          </div>
+          <div class="gallery-item" data-src="https://picsum.photos/seed/sign019b3img2/750/650" data-title="Placeholder photo 2" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of Alford Funeral Home Garage.">
+            <img src="https://picsum.photos/seed/sign019b3img2/750/650" alt="Placeholder photo 2" loading="lazy">
+          </div>
+          <div class="gallery-item" data-src="https://picsum.photos/seed/sign019b3img3/850/650" data-title="Placeholder photo 3" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of Alford Funeral Home Garage.">
+            <img src="https://picsum.photos/seed/sign019b3img3/850/650" alt="Placeholder photo 3" loading="lazy">
+          </div>
+          <div class="gallery-item" data-src="https://picsum.photos/seed/sign019b3img4/1000/650" data-title="Placeholder photo 4" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of Alford Funeral Home Garage.">
+            <img src="https://picsum.photos/seed/sign019b3img4/1000/650" alt="Placeholder photo 4" loading="lazy">
+          </div>
+            </div>
+          </div>
+          <button class="gallery-arrow gallery-arrow-right" aria-label="Scroll right">›</button>
+        </div>
+        <div class="gallery-hint">Click photos to enlarge · Use arrows or drag to browse</div>
+      </section>
+      
+      
+      <section class="sub-section">
+        <h3 class="sub-head">Sources</h3>
+        <div class="source-list">
+        <div class="source-entry">
+          <div class="source-label">Oral history</div>
+          <div class="source-detail">Recollections from Joe Golden, Hattie Lou Oliver, and others.</div>
+        </div></div>
+      </section>
+    </div>
+    
+
+    <div class="business-block">
+      <h3 class="business-name">A.L. Gammil Grocery Store</h3>
+<div class="business-type">Grocery</div>
+      <div class="business-details">
+<div class="biz-row"><div class="biz-key">Owners</div><div class="biz-value">A.L. Gammil</div></div>
+<div class="biz-row"><div class="biz-key">Dates</div><div class="biz-value">1910s – 1950s</div></div>
+<div class="biz-row"><div class="biz-key">Affiliated</div><div class="biz-value">Possibly Hattie Lou Oliver</div></div>
+</div>
+      <p class="empty-narrative">Narrative not yet recorded. Research in progress.</p>
+      <div class="business-notes"><div class="notes-label">Notes</div><div class="notes-text">Mrs. Shirley has a photo of the Gammils in front of the house.</div></div>
+      
+      <section class="sub-section">
+        <h3 class="sub-head">Gallery</h3>
+        <div class="gallery-wrap">
+          <button class="gallery-arrow gallery-arrow-left" aria-label="Scroll left">‹</button>
+          <div class="gallery-clip">
+            <div class="gallery-row">
+          <div class="gallery-item" data-src="https://picsum.photos/seed/sign019b4img1/900/650" data-title="Placeholder photo 1" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of A.L. Gammil Grocery Store.">
+            <img src="https://picsum.photos/seed/sign019b4img1/900/650" alt="Placeholder photo 1" loading="lazy">
+          </div>
+          <div class="gallery-item" data-src="https://picsum.photos/seed/sign019b4img2/750/650" data-title="Placeholder photo 2" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of A.L. Gammil Grocery Store.">
+            <img src="https://picsum.photos/seed/sign019b4img2/750/650" alt="Placeholder photo 2" loading="lazy">
+          </div>
+          <div class="gallery-item" data-src="https://picsum.photos/seed/sign019b4img3/850/650" data-title="Placeholder photo 3" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of A.L. Gammil Grocery Store.">
+            <img src="https://picsum.photos/seed/sign019b4img3/850/650" alt="Placeholder photo 3" loading="lazy">
+          </div>
+          <div class="gallery-item" data-src="https://picsum.photos/seed/sign019b4img4/1000/650" data-title="Placeholder photo 4" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of A.L. Gammil Grocery Store.">
+            <img src="https://picsum.photos/seed/sign019b4img4/1000/650" alt="Placeholder photo 4" loading="lazy">
+          </div>
+            </div>
+          </div>
+          <button class="gallery-arrow gallery-arrow-right" aria-label="Scroll right">›</button>
+        </div>
+        <div class="gallery-hint">Click photos to enlarge · Use arrows or drag to browse</div>
+      </section>
+      
+      
+      <section class="sub-section">
+        <h3 class="sub-head">Sources</h3>
+        <div class="source-list">
+        <div class="source-entry">
+          <div class="source-label">Photograph</div>
+          <div class="source-detail">Photo of Gammil family in front of house, held by Mrs. Shirley Nero.</div>
+        </div></div>
+      </section>
+    </div>
+    
+
+    <div class="business-block">
+      <h3 class="business-name">Church of Christ</h3>
+<div class="business-type">Church</div>
+      <div class="business-details">
+<div class="biz-row"><div class="biz-key">Dates</div><div class="biz-value">Dates unknown</div></div>
+<div class="biz-row"><div class="biz-key">Affiliated</div><div class="biz-value">Shirley Nero, Otis Davis, Joe Golden</div></div>
+</div>
+      <p class="empty-narrative">Narrative not yet recorded. Research in progress.</p>
+      
+      
+      <section class="sub-section">
+        <h3 class="sub-head">Gallery</h3>
+        <div class="gallery-wrap">
+          <button class="gallery-arrow gallery-arrow-left" aria-label="Scroll left">‹</button>
+          <div class="gallery-clip">
+            <div class="gallery-row">
+          <div class="gallery-item" data-src="https://picsum.photos/seed/sign019b5img1/900/650" data-title="Placeholder photo 1" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of Church of Christ.">
+            <img src="https://picsum.photos/seed/sign019b5img1/900/650" alt="Placeholder photo 1" loading="lazy">
+          </div>
+          <div class="gallery-item" data-src="https://picsum.photos/seed/sign019b5img2/750/650" data-title="Placeholder photo 2" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of Church of Christ.">
+            <img src="https://picsum.photos/seed/sign019b5img2/750/650" alt="Placeholder photo 2" loading="lazy">
+          </div>
+          <div class="gallery-item" data-src="https://picsum.photos/seed/sign019b5img3/850/650" data-title="Placeholder photo 3" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of Church of Christ.">
+            <img src="https://picsum.photos/seed/sign019b5img3/850/650" alt="Placeholder photo 3" loading="lazy">
+          </div>
+          <div class="gallery-item" data-src="https://picsum.photos/seed/sign019b5img4/1000/650" data-title="Placeholder photo 4" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of Church of Christ.">
+            <img src="https://picsum.photos/seed/sign019b5img4/1000/650" alt="Placeholder photo 4" loading="lazy">
+          </div>
+            </div>
+          </div>
+          <button class="gallery-arrow gallery-arrow-right" aria-label="Scroll right">›</button>
+        </div>
+        <div class="gallery-hint">Click photos to enlarge · Use arrows or drag to browse</div>
+      </section>
+      
+      
+      <section class="sub-section">
+        <h3 class="sub-head">Sources</h3>
+        <div class="source-list">
+        <div class="source-entry">
+          <div class="source-label">Photograph</div>
+          <div class="source-detail">Photo of people in front of the church building.</div>
+        </div>
+        <div class="source-entry">
+          <div class="source-label">Photograph</div>
+          <div class="source-detail">Photos of old Church of Christ.</div>
+        </div></div>
+      </section>
+    </div>
+    
+    </section>
+
+  </div>
+
+  <aside class="catalog">
+    <div class="catalog-label">Catalog Record</div>
+
+    <div class="catalog-row">
+      <div class="catalog-key">Sign № · Lot</div>
+      <div class="catalog-value">019 · Lots 46 – 49</div>
+    </div>
+    <div class="catalog-row">
+      <div class="catalog-key">Type</div>
+      <div class="catalog-value small">6 businesses on this sign</div>
+    </div>
+    <div class="catalog-row">
+      <div class="catalog-key">Owners</div>
+      <div class="catalog-value small">See sections below</div>
+    </div>
+    <div class="catalog-row">
+      <div class="catalog-key">Operated</div>
+      <div class="catalog-value small">See sections below</div>
+    </div>
+    <div class="catalog-row">
+      <div class="catalog-key">Status</div>
+      <div class="catalog-value small">Research in progress</div>
+    </div>
+    <div class="catalog-row">
+      <div class="catalog-key">Surveyed</div>
+      <div class="catalog-value small">May 2026</div>
+    </div>
+  </aside>
+
+</main>
+
+<footer>
+  Clearview Historical Mapping Project · 2026
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose">✕</button>
+  <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous photo">‹</button>
+  <div class="lightbox-img-wrap">
+    <img id="lightboxImg" src="" alt="">
+  </div>
+  <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next photo">›</button>
+  <div class="lightbox-caption">
+    <div class="lightbox-date" id="lightboxDate"></div>
+    <div class="lightbox-title" id="lightboxTitle"></div>
+    <div class="lightbox-description" id="lightboxDescription"></div>
+    <div class="lightbox-source" id="lightboxSource"></div>
+  </div>
+</div>
+
+<script>
+  // === Gallery arrows: scroll the row ===
+  document.querySelectorAll('.gallery-wrap').forEach(wrap => {
+    const row = wrap.querySelector('.gallery-row');
+    const left = wrap.querySelector('.gallery-arrow-left');
+    const right = wrap.querySelector('.gallery-arrow-right');
+    if (!row) return;
+    const scrollBy = () => Math.max(280, row.clientWidth * 0.7);
+    if (left) left.addEventListener('click', () => row.scrollBy({ left: -scrollBy(), behavior: 'smooth' }));
+    if (right) right.addEventListener('click', () => row.scrollBy({ left: scrollBy(), behavior: 'smooth' }));
+
+    // Drag-to-scroll (desktop)
+    let isDown = false, startX = 0, startScroll = 0, dragged = false;
+    row.addEventListener('mousedown', e => {
+      isDown = true; dragged = false;
+      startX = e.pageX; startScroll = row.scrollLeft;
+    });
+    row.addEventListener('mouseleave', () => { isDown = false; });
+    row.addEventListener('mouseup', () => { isDown = false; });
+    row.addEventListener('mousemove', e => {
+      if (!isDown) return;
+      const dx = e.pageX - startX;
+      if (Math.abs(dx) > 4) dragged = true;
+      row.scrollLeft = startScroll - dx;
+    });
+    // Suppress click on items when dragging
+    row.querySelectorAll('.gallery-item').forEach(it => {
+      it.addEventListener('click', e => { if (dragged) { e.stopPropagation(); e.preventDefault(); dragged = false; } }, true);
+    });
+  });
+
+  // === Lightbox with captions ===
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lightboxImg');
+  const lbDate = document.getElementById('lightboxDate');
+  const lbTitle = document.getElementById('lightboxTitle');
+  const lbDesc = document.getElementById('lightboxDescription');
+  const lbSource = document.getElementById('lightboxSource');
+  const lbPrev = document.getElementById('lightboxPrev');
+  const lbNext = document.getElementById('lightboxNext');
+
+  // Collect all gallery items in document order across the whole page
+  const allItems = Array.from(document.querySelectorAll('.gallery-item'));
+  let currentIdx = 0;
+
+  function openAt(idx) {
+    if (idx < 0 || idx >= allItems.length) return;
+    currentIdx = idx;
+    const item = allItems[idx];
+    lbImg.src = item.dataset.src;
+    lbDate.textContent = item.dataset.date || '';
+    lbTitle.textContent = item.dataset.title || '';
+    // Allow basic HTML in description (for italicized newspaper names)
+    lbDesc.innerHTML = item.dataset.caption || '';
+    lbSource.textContent = item.dataset.source || '';
+    lbDate.style.display = item.dataset.date ? '' : 'none';
+    lbTitle.style.display = item.dataset.title ? '' : 'none';
+    lbDesc.style.display = item.dataset.caption ? '' : 'none';
+    lbSource.style.display = item.dataset.source ? '' : 'none';
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    lbPrev.style.display = idx === 0 ? 'none' : '';
+    lbNext.style.display = idx === allItems.length - 1 ? 'none' : '';
+  }
+
+  allItems.forEach((item, i) => {
+    item.addEventListener('click', () => openAt(i));
+  });
+
+  function closeLb() {
+    lb.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  document.getElementById('lightboxClose').addEventListener('click', closeLb);
+  lbPrev.addEventListener('click', () => openAt(currentIdx - 1));
+  lbNext.addEventListener('click', () => openAt(currentIdx + 1));
+  lb.addEventListener('click', e => { if (e.target === lb || e.target === lbImg.parentElement) closeLb(); });
+  document.addEventListener('keydown', e => {
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape') closeLb();
+    if (e.key === 'ArrowLeft') openAt(currentIdx - 1);
+    if (e.key === 'ArrowRight') openAt(currentIdx + 1);
+  });
+</script>
+
+</body>
+</html>

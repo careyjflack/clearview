@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Clearview Historical Mapping Project</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<style>
+  :root {
+    --paper: #faf5e6;
+    --paper-deep: #f0e8cf;
+    --paper-soft: #fdfaee;
+    --butter: #fce98e;
+    --butter-deep: #f5dc5c;
+    --ink: #0a0a0a;
+    --ink-soft: #2a2a2a;
+    --ink-faded: #757575;
+    --dirt: #c44018;
+    --dirt-deep: #8a2c0e;
+    --clay: #e87248;
+    --peach: #f4a575;
+    --rule: #d4c89e;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body { height: 100%; overflow: hidden; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    font-weight: 400;
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1000;
+    opacity: 0.18;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.35 0 0 0 0 0.25 0 0 0 0 0.15 0 0 0 0.15 0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  header {
+    padding: 14px 28px;
+    border-bottom: 1px solid var(--rule);
+    background: var(--paper);
+    position: relative;
+    z-index: 10;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .masthead {
+    font-family: 'Instrument Serif', serif;
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    white-space: nowrap;
+  }
+
+  .masthead em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--ink);
+  }
+
+  .meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    text-align: right;
+    line-height: 1.4;
+  }
+
+  .meta strong { color: var(--ink); font-weight: 500; }
+
+  main {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 360px 1fr;
+    min-height: 0;
+  }
+
+  .sidebar {
+    padding: 32px 30px;
+    border-right: 1px solid var(--rule);
+    overflow-y: auto;
+    background: var(--paper);
+  }
+
+  .sidebar-section + .sidebar-section {
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 1px solid var(--rule);
+  }
+
+  .section-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin-bottom: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .section-label .count {
+    background: transparent;
+    color: var(--ink-faded);
+    padding: 0;
+    font-size: 11px;
+    font-weight: 400;
+  }
+
+  .intro {
+    font-family: 'Instrument Serif', serif;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    margin-bottom: 20px;
+  }
+
+  .intro em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--ink);
+  }
+
+  .body-copy {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--ink-soft);
+    line-height: 1.65;
+    letter-spacing: 0;
+  }
+
+  .body-copy + .body-copy { margin-top: 12px; }
+
+  .hint {
+    margin-top: 18px;
+    padding: 14px 16px;
+    background: var(--butter);
+    border-radius: 2px;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ink);
+    line-height: 1.5;
+  }
+
+  .sign-list { list-style: none; }
+
+  .sign-list li {
+    padding: 12px 0 12px 14px;
+    margin-bottom: 2px;
+    background: transparent;
+    border-left: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.18s ease;
+    display: grid;
+    grid-template-columns: 44px 1fr;
+    gap: 14px;
+    align-items: center;
+  }
+
+  .sign-list li:hover {
+    border-left-color: var(--ink);
+    background: var(--paper-soft);
+  }
+
+  .sign-list li.active {
+    border-left-color: var(--ink);
+    background: var(--butter);
+  }
+
+  .sign-list li.active .sign-num { color: var(--ink); font-weight: 600; }
+  .sign-list li.active .sign-dates { color: var(--ink-soft); }
+
+  .sign-thumb {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--paper-deep);
+    border: 2px solid var(--ink);
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  .sign-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .sign-text { min-width: 0; }
+
+  .sign-num {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    color: var(--ink-faded);
+    letter-spacing: 0.1em;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+
+  .sign-name {
+    font-family: 'Instrument Serif', serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--ink);
+    margin-top: 2px;
+    line-height: 1.2;
+    letter-spacing: -0.005em;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .sign-dates {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    color: var(--ink-faded);
+    margin-top: 3px;
+    letter-spacing: 0;
+  }
+
+  /* See more button */
+  .see-more {
+    display: block;
+    width: 100%;
+    margin-top: 18px;
+    padding: 14px 16px;
+    background: var(--ink);
+    border: none;
+    color: var(--paper);
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    text-align: center;
+    border-radius: 2px;
+  }
+
+  .see-more:hover {
+    background: var(--dirt);
+  }
+
+  .sign-list li.hidden-extra { display: none; }
+  .sign-list.expanded li.hidden-extra { display: grid; }
+
+  #map {
+    height: 100%;
+    width: 100%;
+    min-height: 400px;
+    background: var(--paper-deep);
+    position: relative;
+  }
+
+  main > #map { height: 100%; }
+
+  /* Photo thumbnail markers */
+  .clearview-marker {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--paper);
+    border: 3px solid var(--ink);
+    box-shadow: 0 3px 10px rgba(26, 14, 8, 0.3);
+    cursor: pointer;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .clearview-marker img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .clearview-marker:hover {
+    transform: scale(1.18);
+    border-color: var(--dirt);
+    box-shadow: 0 6px 16px rgba(26, 14, 8, 0.35);
+    z-index: 1000;
+  }
+
+  /* Leaflet popup */
+  .leaflet-popup-content-wrapper {
+    background: var(--paper);
+    border-radius: 4px;
+    border: none;
+    box-shadow: 0 10px 32px rgba(26, 14, 8, 0.16), 0 2px 6px rgba(26, 14, 8, 0.08);
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .leaflet-popup-content {
+    margin: 0;
+    width: 270px !important;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .popup-image {
+    width: 100%;
+    height: 150px;
+    background: var(--paper-deep);
+    overflow: hidden;
+    position: relative;
+  }
+
+  .popup-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .popup-body {
+    padding: 16px 18px 18px;
+  }
+
+  .leaflet-popup-tip {
+    background: var(--paper);
+    border: none;
+    box-shadow: 0 2px 6px rgba(45, 24, 16, 0.08);
+  }
+
+  .popup-num {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    color: var(--ink-faded);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 500;
+    line-height: 1.4;
+  }
+
+  .popup-name {
+    font-family: 'Instrument Serif', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--ink);
+    margin: 4px 0 8px;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+  }
+
+  .popup-meta {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: var(--ink-soft);
+    margin-bottom: 14px;
+    line-height: 1.5;
+  }
+
+  .popup-link {
+    display: inline-block;
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--paper);
+    background: var(--ink);
+    text-decoration: none;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 2px;
+    transition: background 0.2s ease;
+    font-weight: 600;
+  }
+
+  .popup-link:hover {
+    background: var(--dirt);
+  }
+
+  /* Zoom controls (hidden since map is locked) */
+  .leaflet-control-zoom a {
+    background: var(--paper) !important;
+    color: var(--ink) !important;
+    border: 2px solid var(--ink) !important;
+    font-family: 'Fraunces', serif;
+    box-shadow: 2px 2px 0 var(--ink);
+  }
+
+  .leaflet-control-zoom a:hover {
+    background: var(--clay) !important;
+  }
+
+  .leaflet-control-attribution {
+    background: rgba(250, 243, 224, 0.9) !important;
+    font-size: 10px !important;
+    font-family: 'JetBrains Mono', monospace !important;
+  }
+
+  /* Mobile: map at top, scrollable content below */
+  @media (max-width: 820px) {
+    html, body { overflow: auto; height: auto; }
+    body { display: block; }
+
+    header {
+      padding: 10px 16px;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 4px;
+    }
+
+    .masthead { font-size: 18px; white-space: normal; }
+    .meta { text-align: left; font-size: 9px; }
+
+    main {
+      display: flex;
+      flex-direction: column;
+      height: auto;
+    }
+
+    #map {
+      height: 55vh;
+      min-height: 380px;
+      order: 1;
+      border-bottom: 2px solid var(--ink);
+      flex-shrink: 0;
+    }
+
+    .sidebar {
+      order: 2;
+      border-right: none;
+      overflow-y: auto;         /* Allow scroll if list is long */
+      max-height: none;
+      padding: 24px 20px;
+    }
+
+    .sign-item {
+      padding: 10px 12px;
+    }
+
+    .sign-num { font-size: 9px; }
+    .sign-name { font-size: 16px; }
+    .sign-dates { font-size: 11px; }
+
+    /* Popup narrower on small screens */
+    .leaflet-popup-content {
+      width: 240px !important;
+    }
+
+    .popup-name { font-size: 18px; }
+    .popup-meta { font-size: 11px; }
+  }
+
+  @media (max-width: 480px) {
+    header { padding: 8px 12px; }
+    .masthead { font-size: 15px; }
+
+    .sidebar { padding: 16px; }
+
+    .sign-thumb {
+      width: 36px;
+      height: 36px;
+    }
+
+    .see-more {
+      font-size: 11px;
+      padding: 10px 16px;
+    }
+
+    .leaflet-popup-content {
+      width: 200px !important;
+    }
+
+    .popup-name { font-size: 16px; }
+    .open-btn { font-size: 10px; padding: 10px 14px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="masthead">
+    clearview <em>historical</em> mapping project
+  </div>
+  <div class="meta">
+    <span><strong>Est. 1903</strong> · Okfuskee County, OK</span>
+  </div>
+</header>
+
+<main>
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="section-label">Introduction</div>
+      <p class="intro">A record of the businesses and storefronts of one of Oklahoma's <em>All-Black towns</em>.</p>
+      <p class="body-copy">Founded in 1903, Clearview was among more than fifty All-Black towns established in Indian and Oklahoma Territory. This project catalogs its main street establishments — the merchants, churches, schools, and halls that made the town.</p>
+      <div class="hint">↓ Click a pin on the map, or pick a business from the index below.</div>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="section-label">
+        Index of Businesses
+        <span class="count" id="signCount">0</span>
+      </div>
+      <ul class="sign-list" id="signList"></ul>
+      <button class="see-more" id="seeMoreBtn">Show all businesses</button>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="section-label">About the Survey</div>
+      <p class="body-copy">Compiled from oral histories, county records, the Oklahoma Historical Society, and on-the-ground photography. Contributions welcome.</p>
+    </div>
+  </aside>
+
+  <div id="map"></div>
+</main>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        onerror="this.onerror=null; var s=document.createElement('script'); s.src='https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js'; document.head.appendChild(s);"></script>
+<script>
+  // Wait for Leaflet to be available, then init map. If it never loads, skip map but keep sidebar.
+  function whenLeafletReady(callback, attempts) {
+    attempts = attempts || 0;
+    if (typeof L !== 'undefined') { callback(); return; }
+    if (attempts > 50) { // ~5 seconds, then give up
+      console.warn('Leaflet failed to load. Sidebar list still works.');
+      var mapEl = document.getElementById('map');
+      if (mapEl) {
+        mapEl.innerHTML = '<div style="padding:40px;text-align:center;color:var(--ink-faded);font-family:Inter,sans-serif;font-size:13px;">Map could not load.<br>Use the index of businesses to navigate.</div>';
+        mapEl.style.display = 'flex';
+        mapEl.style.alignItems = 'center';
+        mapEl.style.justifyContent = 'center';
+      }
+      return;
+    }
+    setTimeout(function(){ whenLeafletReady(callback, attempts + 1); }, 100);
+  }
+</script>
+<script>
+  // Placeholder images via picsum.photos (seeded so each business gets a stable, unique image).
+  // REPLACE the `image` field on each entry with a real photo URL when you have them.
+  // For local images: put files in an /images folder and set image: "images/clearview-hotel.jpg"
+  const signs = [
+    { id: "001", name: "Zenia Talton's Café", business: "Café & Restaurant", lot: "Lot 14", dates: "Dates unknown", lat: 35.399895, lng: -96.18599, slug: "sign-001-zenia-taltons-cafe", image: "sources/patriarch.png" },
+    { id: "002", name: "L.M. Atkins Hotel / Charlotte Jackson Home", business: "Hotel & residence", lot: "Lot 45", dates: "c. 1911 – 1914", lat: 35.399203, lng: -96.186905, slug: "sign-002-atkins-hotel", image: "https://picsum.photos/seed/clearview002/400/300" },
+    { id: "003", name: "Miniature Golf Course & Tent Revival Site", business: "Recreation & assembly", lot: "Lot 53a", dates: "1931 – ", lat: 35.398871, lng: -96.185615, slug: "sign-003-miniature-golf", image: "https://picsum.photos/seed/clearview003/400/300" },
+    { id: "004", name: "High Pocket Wilson's", business: "School Supplies & Confectionary", lot: "Lot 38", dates: "Dates unknown", lat: 35.399077, lng: -96.188294, slug: "sign-004-high-pocket-wilson", image: "https://picsum.photos/seed/clearview004/400/300" },
+    { id: "005", name: "Jeff Horn Dry Goods · Earl French Pool Hall", business: "Dry goods & pool hall", lot: "Lot 41", dates: "Dates unknown", lat: 35.399284, lng: -96.188106, slug: "sign-005-horn-french", image: "https://picsum.photos/seed/clearview005/400/300" },
+    { id: "006", name: "Colored Methodist Episcopal Church", business: "Church (third location)", lot: "Lot 75", dates: "Dates unknown", lat: 35.398053, lng: -96.189021, slug: "sign-006-cme-church", image: "https://picsum.photos/seed/clearview006/400/300" },
+    { id: "007", name: "Dessie Forshee's Barber Shop", business: "Barbershop", lot: "Lot 68", dates: "1952 – ", lat: 35.39826, lng: -96.191038, slug: "sign-007-dessie-forshee", image: "sources/sign07_chair.jpg" },
+    { id: "008", name: "James P. Owens", business: "Rural Mail Carrier", lot: "Lot 72", dates: "1927 – 1970", lat: 35.397927, lng: -96.19041, slug: "sign-008-james-p-owens", image: "https://picsum.photos/seed/clearview008/400/300" },
+    { id: "009", name: "Ada (Harris) Davis Alford", business: "House, café, store, garment factory & boarding house", lot: "Lot 32", dates: "Dates unknown", lat: 35.399032, lng: -96.191325, slug: "sign-009-ada-alford", image: "sources/sign09_sewing_1939.jpg" },
+    { id: "010", name: "Clearview Public School District I-37", business: "Public school", lot: "Block 9", dates: "1900s – 1969", lat: 35.397442, lng: -96.191138, slug: "sign-010-clearview-school", image: "sources/sign10_cornerstone.jpg" },
+    { id: "011", name: "Ed Castlow's Tavern", business: "Tavern", lot: "Lot 12", dates: "c. 1936 – 1957", lat: 35.399805, lng: -96.1861, slug: "sign-011-ed-castlows-tavern", image: "https://picsum.photos/seed/clearview011/400/300" },
+    { id: "012", name: "Ft. Smith & Western Section Foreman's Shop", business: "Railroad maintenance shop", lot: "Lot 15", dates: "1903 – 1939", lat: 35.400011, lng: -96.185913, slug: "sign-012-section-foreman-shop", image: "https://picsum.photos/seed/clearview012/400/300" },
+    { id: "013", name: "J.C. Cossey", business: "Justice of the Peace", lot: "Lot 78", dates: "1910s – 1920s", lat: 35.398421, lng: -96.18793, slug: "sign-013-jc-cossey", image: "https://picsum.photos/seed/clearview013/400/300" },
+    { id: "014", name: "Hicks Shoe Shop / Hattie Holmes Rooming House", business: "Shoe shop & rooming house", lot: "Lot 79", dates: "c. 1910s", lat: 35.398089, lng: -96.187743, slug: "sign-014-hicks-holmes", image: "https://picsum.photos/seed/clearview014/400/300" },
+    { id: "015", name: "Clearview Movie Theater", business: "Movie theater", lot: "Lot 98", dates: "c. 1930", lat: 35.398296, lng: -96.18491, slug: "sign-015-clearview-theater", image: "https://picsum.photos/seed/clearview015/400/300" },
+    { id: "016", name: "\u201cDiddy\u201d Oliver Grocery Store", business: "Grocery", lot: "Lot 99", dates: "1910s – 1920s", lat: 35.397963, lng: -96.184722, slug: "sign-016-diddy-oliver", image: "https://picsum.photos/seed/clearview016/400/300" },
+    { id: "017", name: "First Baptist Church", business: "Church", lot: "Lot 100", dates: "Dates unknown", lat: 35.39817, lng: -96.184535, slug: "sign-017-first-baptist", image: "https://picsum.photos/seed/clearview017/400/300" },
+    { id: "018", name: "M.J. Blanks Dry Goods & Notions", business: "Dry goods", lot: "Lot 97", dates: "c. 1910s", lat: 35.398376, lng: -96.185009, slug: "sign-018-mj-blanks", image: "https://picsum.photos/seed/clearview018/400/300" },
+    { id: "019", name: "Church of the Living God · Blacksmith Shop · L.V. Swain Garage · Alford Funeral Home · A.L. Gammil Grocery · Church of Christ", business: "6 businesses · church · garage · grocery · funeral home", lot: "Lots 46 – 49", dates: "1910s – 1950s", lat: 35.398942, lng: -96.187026, slug: "sign-019-lots-46-49", image: "https://picsum.photos/seed/clearview019/400/300" },
+    { id: "020", name: "Holland Bakery · Mayfield Pop Bottling · Hackney Café · Owens Confectionaries", business: "4 businesses · bakery · bottling · café · confectionery", lot: "Lot 55", dates: "1914 – ", lat: 35.399149, lng: -96.184634, slug: "sign-020-lot-55", image: "https://picsum.photos/seed/clearview020/400/300" },
+    { id: "021", name: "Brook's Cigar Factory · Ed & Lexie Brewer · Last Post Office", business: "3 businesses · cigar factory · Brewers · post office", lot: "Lots 56 – 57", dates: "1921 – 1970s", lat: 35.398817, lng: -96.184447, slug: "sign-021-lots-56-57", image: "https://picsum.photos/seed/clearview021/400/300" },
+    { id: "022", name: "Alonzo Talton's Grocery · Sam Clark & Charlie Bush Grocery · J.W. Thompson's Law Office · Masonic Lodge · H. Haynes Telephone · Recreation Center · Pool Hall & Bar · Dry Cleaning · Public Water Well", business: "9 businesses · groceries · law office · lodge · telephone", lot: "Lots 50 – 53", dates: "1910s – 1940s", lat: 35.399023, lng: -96.186023, slug: "sign-022-lots-50-53", image: "https://picsum.photos/seed/clearview022/400/300" },
+    { id: "023", name: "Ft. Smith & Western Railroad Depot · E.J. Conn Grocery", business: "Railroad depot & grocery", lot: "Lots 94 – 96a", dates: "1903 – 1939", lat: 35.398332, lng: -96.184733, slug: "sign-023-railroad-depot", image: "https://picsum.photos/seed/clearview023/400/300" },
+    { id: "024", name: "Tyree Chapel AME · Monroe Morris · AME Parsonage", business: "Church, photographer & parsonage", lot: "Lots 113 – 117", dates: "c. 1911 – 1970", lat: 35.397101, lng: -96.185648, slug: "sign-024-tyree-chapel", image: "https://picsum.photos/seed/clearview024/400/300" },
+    { id: "025", name: "J.C. Bush Grocery · W.L. Bush Grocery · Dr. M.C. Alford Drug Store · L.H. Haynes Telephone Office · Jeff Horn Grocery · Foster Liggon's Grocery · W.M. Irving Dry Goods · Second Post Office · Doster Restaurant · Trotter's Cleaning & Barbershop · M.M. Alford Home", business: "11 businesses · 3 groceries · drug store · post office · telephone · barbershop", lot: "Lots 80 – 83", dates: "1910s – 1984", lat: 35.398206, lng: -96.187224, slug: "sign-025-lots-80-83", image: "sources/julius_bush_store_1940.jpg" },
+    { id: "026", name: "Restaurant/Pool Hall · Third Post Office · Top Carpenters' Confectionary · Clearview Patriot", business: "4 businesses · restaurant · post office · newspaper", lot: "Lots 88 – 90", dates: "1913 – ", lat: 35.398412, lng: -96.185935, slug: "sign-026-lots-88-90", image: "https://picsum.photos/seed/clearview026/400/300" }
+  ];
+
+  // Wait for Leaflet to load (handles slow CDN or fallback). Then build map + sidebar.
+  whenLeafletReady(function() {
+
+  // FIXED map — locked bounds around the townsite
+  const center = [35.398556, -96.187886];
+  const bounds = L.latLngBounds(
+    [35.3966, -96.1918],
+    [35.4005, -96.1839]
+  );
+
+  const map = L.map('map', {
+    center: center,
+    zoom: 17,
+    minZoom: 17,
+    maxZoom: 17,
+    maxBounds: bounds,
+    maxBoundsViscosity: 1.0,
+    zoomControl: false,
+    scrollWheelZoom: false,
+    doubleClickZoom: false,
+    boxZoom: false,
+    touchZoom: false,
+    dragging: false,
+    keyboard: false
+  });
+
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    maxZoom: 19
+  }).addTo(map);
+
+  const signList = document.getElementById('signList');
+  const VISIBLE_COUNT = 8;
+
+  signs.forEach((sign, idx) => {
+    const customIcon = L.divIcon({
+      className: 'clearview-marker-wrap',
+      html: `<div class="clearview-marker"><img src="${sign.image}" alt="" loading="lazy" /></div>`,
+      iconSize: [42, 42],
+      iconAnchor: [21, 21],
+      popupAnchor: [0, -22]
+    });
+
+    const marker = L.marker([sign.lat, sign.lng], { icon: customIcon }).addTo(map);
+
+    const popupHtml = `
+      <div class="popup-image"><img src="${sign.image}" alt="${sign.name}" /></div>
+      <div class="popup-body">
+        <div class="popup-num">№ ${sign.id} · ${sign.lot}</div>
+        <div class="popup-name">${sign.name}</div>
+        <div class="popup-meta">${sign.business} · ${sign.dates}</div>
+        <a class="popup-link" href="${sign.slug}.html">Open the record →</a>
+      </div>
+    `;
+    marker.bindPopup(popupHtml);
+
+    marker.on('click', () => {
+      document.querySelectorAll('.sign-list li').forEach(li => li.classList.remove('active'));
+      const activeLi = document.querySelector(`[data-sign="${sign.id}"]`);
+      if (activeLi) activeLi.classList.add('active');
+    });
+
+    const li = document.createElement('li');
+    li.dataset.sign = sign.id;
+    if (idx >= VISIBLE_COUNT) li.classList.add('hidden-extra');
+    li.innerHTML = `
+      <div class="sign-thumb"><img src="${sign.image}" alt="" loading="lazy" /></div>
+      <div class="sign-text">
+        <div class="sign-num">№ ${sign.id}</div>
+        <div class="sign-name">${sign.name}</div>
+        <div class="sign-dates">${sign.dates}</div>
+      </div>
+    `;
+    li.addEventListener('click', () => {
+      document.querySelectorAll('.sign-list li').forEach(el => el.classList.remove('active'));
+      li.classList.add('active');
+      marker.openPopup();
+
+      if (window.innerWidth <= 820) {
+        document.getElementById('map').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+    signList.appendChild(li);
+  });
+
+  document.getElementById('signCount').textContent = signs.length;
+
+  // See more / see less toggle
+  const seeMoreBtn = document.getElementById('seeMoreBtn');
+  const hiddenCount = signs.length - VISIBLE_COUNT;
+  if (hiddenCount > 0) {
+    seeMoreBtn.textContent = `Show all ${signs.length} businesses (+${hiddenCount})`;
+    seeMoreBtn.addEventListener('click', () => {
+      const expanded = signList.classList.toggle('expanded');
+      seeMoreBtn.textContent = expanded
+        ? 'Show fewer'
+        : `Show all ${signs.length} businesses (+${hiddenCount})`;
+    });
+  } else {
+    seeMoreBtn.style.display = 'none';
+  }
+
+  // Force Leaflet to recalculate map size after the DOM has fully painted.
+  // Fixes the common "blank gray box" issue inside flex/grid containers.
+  setTimeout(() => map.invalidateSize(), 0);
+  window.addEventListener('load', () => map.invalidateSize());
+  window.addEventListener('resize', () => map.invalidateSize());
+
+  }); // end whenLeafletReady
+</script>
+
+</body>
+</html>
