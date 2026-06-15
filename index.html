@@ -644,7 +644,7 @@
         <div class="popup-num">№ ${sign.id} · ${sign.lot}</div>
         <div class="popup-name">${sign.name}</div>
         <div class="popup-meta">${sign.business} · ${sign.dates}</div>
-        <a class="popup-link" href="${sign.slug}.html">Open the record →</a>
+        <a class="popup-link" href="/sign-${sign.id.replace(/^0+/, '').padStart(2, '0')}/">Open the record →</a>
       </div>
     `;
     marker.bindPopup(popupHtml);
