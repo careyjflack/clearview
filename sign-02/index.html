@@ -62,8 +62,7 @@
   }
 
   .hero {
-    padding: 56px 40px 44px;
-    border-bottom: 1px solid var(--rule);
+    padding: 56px 40px 48px;
     max-width: 1100px;
     margin: 0 auto;
     width: 100%;
@@ -89,24 +88,49 @@
   }
 
   .hero-subtitle {
-    font-family: 'Instrument Serif', serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 400;
-    font-size: 22px;
+    font-size: 16px;
     color: var(--ink-soft);
-    margin-top: 20px;
+    margin-top: 14px;
     max-width: 640px;
-    line-height: 1.35;
+    line-height: 1.6;
   }
 
   .layout {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 56px 40px 80px;
+    padding: 0 40px 0;
     display: grid;
     grid-template-columns: 1fr 300px;
     gap: 56px;
   }
 
+  .gallery-full-width {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 48px 40px 20px;
+  }
+  .gallery-full-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--rust);
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 20px;
+  }
+  .sources-outer {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 40px 80px;
+  }
+  .sources-constrained {
+    max-width: 664px;
+    margin-left: 0;
+  }
   .catalog {
     background: var(--paper-soft);
     border-radius: 4px;
@@ -416,7 +440,7 @@
   .layout {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 56px 40px 80px;
+    padding: 0 40px 0;
     display: grid;
     grid-template-columns: 1fr 300px;
     gap: 56px;
@@ -707,14 +731,14 @@
 <body>
 
 <div class="topbar">
-  <a href="index.html" class="back-link">← Back to Map</a>
+  <a href="../index.html" class="back-link">← Back to Map</a>
   <div class="breadcrumb">Clearview Historical Mapping Project / № 002</div>
 </div>
 
 <section class="hero">
   <div class="hero-tag">Sign № 002 · Lot 45</div>
   <h1 class="hero-title">L.M. Atkins Hotel / Charlotte Jackson Home</h1>
-  <p class="hero-subtitle">Hotel and residence on Lot 45. Mrs. Charlotte Jackson taught school in Clearview.</p>
+  <p class="hero-subtitle">One of Clearview's first businesses, opened in 1904 — a boarding house run by Maggie Atkins that captured the early hope of the all-Black town.</p>
 </section>
 
 <main class="layout">
@@ -722,56 +746,15 @@
   <div class="content">
 
     <section>
-      <h2 class="section-head">History <span class="pill">Single business</span></h2>
+      <h2 class="section-head">History</h2>
       
     <div class="business-block">
-      
-      <div class="business-details">
-<div class="biz-row"><div class="biz-key">Owners</div><div class="biz-value">L.M. Atkins; Charlotte Jackson</div></div>
-<div class="biz-row"><div class="biz-key">Dates</div><div class="biz-value">c. 1911 – 1914</div></div>
-<div class="biz-row"><div class="biz-key">Affiliated</div><div class="biz-value">Shirley Nero, Withers Cudjoe, Joe Golden, possibly Herbert Johnson</div></div>
-</div>
-      <p class="empty-narrative">Narrative not yet recorded. Research in progress.</p>
-      <div class="business-notes"><div class="notes-label">Notes</div><div class="notes-text">Photos available at Okemah Historical Society (contact lodell101@msn.com). She was Billy Ray Walker's stepmother and Mrs. Shirley's teacher.</div></div>
-      
-      <section class="sub-section">
-        <h3 class="sub-head">Gallery</h3>
-        <div class="gallery-wrap">
-          <button class="gallery-arrow gallery-arrow-left" aria-label="Scroll left">‹</button>
-          <div class="gallery-clip">
-            <div class="gallery-row">
-          <div class="gallery-item archival" data-src="/sources/sign02_okfuskee.pdf" data-title="Okfuskee County newspaper — Atkins Hotel / Charlotte Jackson" data-date="Dates unknown" data-source="Okfuskee County newspaper · project archive" data-caption="Newspaper clipping from an Okfuskee County publication referencing the L.M. Atkins Hotel or Charlotte Jackson.">
-            <img src="/sources/sign02_okfuskee.pdf" alt="Okfuskee County newspaper — Atkins Hotel / Charlotte Jackson" loading="lazy">
-          </div>
-          <div class="gallery-item archival" data-src="/sources/sign02_okemah.pdf" data-title="Okemah newspaper — Atkins Hotel / Charlotte Jackson" data-date="Dates unknown" data-source="Okemah newspaper · project archive" data-caption="Newspaper clipping from an Okemah publication referencing the Atkins Hotel or Charlotte Jackson.">
-            <img src="/sources/sign02_okemah.pdf" alt="Okemah newspaper — Atkins Hotel / Charlotte Jackson" loading="lazy">
-          </div>
-            </div>
-          </div>
-          <button class="gallery-arrow gallery-arrow-right" aria-label="Scroll right">›</button>
-        </div>
-        <div class="gallery-hint">Click photos to enlarge · Use arrows or drag to browse</div>
-      </section>
-      
-      
-      <section class="sub-section">
-        <h3 class="sub-head">Sources</h3>
-        <div class="source-list">
-        <div class="source-entry">
-          <div class="source-label">Newspaper record</div>
-          <div class="source-detail">Charlotte Jackson's teacher salary was published in newspaper records.</div>
-        </div>
-        <div class="source-entry">
-          <div class="source-label">Photographic archive</div>
-          <div class="source-detail">Photos held by Okemah Historical Society.</div>
-        </div>
-        <div class="source-entry">
-          <div class="source-label">Oral history</div>
-          <div class="source-detail">Recollections from Mrs. Shirley Nero, Withers Cudjoe, and Joe Golden.</div>
-        </div></div>
-      </section>
-    </div>
-    
+      <div class="prose">
+<p class="lead">The Clearview Hotel was one of the first businesses to open after the town was incorporated in 1903.</p>
+<p>By the following year an editorial in the Lincoln Tribune, Clearview's first newspaper, advertised Maggie Aikins's boarding house. By 1911 Maggie and L.M. Aikins rebranded as the Clearview Hotel. While L.M. Aikins is listed as the proprietor in the newspaper, census records and editorials describe Maggie as the hotel keeper and proprietress. L.M. Aikins kept busy with his own line of work as a blacksmith, wheelwright, and merchant.</p>
+<p>Originally from Texas, the Aikins were early residents and leaders in Clearview. In addition to their businesses Mr. Aikins served as town treasurer, was an elder at the Tyree Chapel AME Church, and was on the committee that organized Juneteenth celebrations prior to statehood. At this time, Juneteenth held a unique significance as many of the attendees including the Aikins were formerly enslaved. Their early success in Clearview captures the hope and possibility many African Americans saw in the all-Black towns of what would become Oklahoma.</p>
+<p>The home was later occupied by Charlotte Jackson, long-time educator in Clearview.</p>
+</div><div class="notes-text">Photos available at Okemah Historical Society (contact lodell101@msn.com). She was Billy Ray Walker's stepmother and Mrs. Shirley's teacher.</div></div>   
     </section>
 
   </div>
@@ -795,17 +778,54 @@
       <div class="catalog-key">Operated</div>
       <div class="catalog-value small">c. 1911 – 1914</div>
     </div>
-    <div class="catalog-row">
-      <div class="catalog-key">Status</div>
-      <div class="catalog-value small">Research in progress</div>
-    </div>
-    <div class="catalog-row">
-      <div class="catalog-key">Surveyed</div>
-      <div class="catalog-value small">May 2026</div>
-    </div>
   </aside>
 
 </main>
+
+<div class="gallery-full-width">
+  <div class="gallery-full-title">Gallery</div>
+      <div class="gallery-wrap">
+          <button class="gallery-arrow gallery-arrow-left" aria-label="Scroll left">‹</button>
+          <div class="gallery-clip">
+            <div class="gallery-row">
+          <div class="gallery-item archival" data-src="../sources/bd_sign02_okemah-1.png" data-title="Okemah newspaper — Atkins Hotel / Charlotte Jackson" data-date="Dates unknown" data-source="Okemah newspaper · project archive" data-caption="Newspaper clipping from an Okemah publication referencing the Atkins Hotel or Charlotte Jackson.">
+            <img src="../sources/bd_sign02_okemah-1.png" alt="Okemah newspaper — Atkins Hotel / Charlotte Jackson" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/bd_sign02_okfuskee-1.png" data-title="Okfuskee County newspaper — Atkins Hotel / Charlotte Jackson" data-date="Dates unknown" data-source="Okfuskee County newspaper · project archive" data-caption="Newspaper clipping from an Okfuskee County publication referencing the L.M. Atkins Hotel or Charlotte Jackson.">
+            <img src="../sources/bd_sign02_okfuskee-1.png" alt="Okfuskee County newspaper — Atkins Hotel / Charlotte Jackson" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
+          </div>
+            </div>
+          </div>
+          <button class="gallery-arrow gallery-arrow-right" aria-label="Scroll right">›</button>
+        </div>
+        <div class="gallery-hint">Click photos to enlarge · Use arrows or drag to browse</div>
+      
+        
+</div>
+<div class="sources-outer">
+  <section class="sub-section sources-constrained">
+    <h3 class="sub-head">Sources</h3>
+    <div class="source-list">
+        <div class="source-entry">
+          <div class="source-label">Newspaper record</div>
+          <div class="source-detail">Okemah newspaper clipping referencing the Atkins Hotel or Charlotte Jackson. <a href="../sources/sign02_okemah.pdf" target="_blank" rel="noopener" style="color: var(--dirt); text-decoration: underline; font-weight: 500;">View PDF →</a></div>
+        </div>
+        <div class="source-entry">
+          <div class="source-label">Newspaper record</div>
+          <div class="source-detail">Okfuskee County newspaper clipping referencing the L.M. Atkins Hotel or Charlotte Jackson. <a href="../sources/sign02_okfuskee.pdf" target="_blank" rel="noopener" style="color: var(--dirt); text-decoration: underline; font-weight: 500;">View PDF →</a></div>
+        </div>
+        <div class="source-entry">
+          <div class="source-label">Photographic archive</div>
+          <div class="source-detail">Photos held by Okemah Historical Society.</div>
+        </div>
+        <div class="source-entry">
+          <div class="source-label">Oral history</div>
+          <div class="source-detail">Recollections from Mrs. Shirley Nero, Withers Cudjoe, and Joe Golden.</div>
+        </div>
+        </div>
+      
+  </section>
+</div>
 
 <footer>
   Clearview Historical Mapping Project · 2026

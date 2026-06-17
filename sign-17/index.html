@@ -62,8 +62,7 @@
   }
 
   .hero {
-    padding: 56px 40px 44px;
-    border-bottom: 1px solid var(--rule);
+    padding: 56px 40px 48px;
     max-width: 1100px;
     margin: 0 auto;
     width: 100%;
@@ -89,9 +88,9 @@
   }
 
   .hero-subtitle {
-    font-family: 'Instrument Serif', serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 400;
-    font-size: 22px;
+    font-size: 16px;
     color: var(--ink-soft);
     margin-top: 20px;
     max-width: 640px;
@@ -101,12 +100,37 @@
   .layout {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 56px 40px 80px;
+    padding: 0 40px 0;
     display: grid;
     grid-template-columns: 1fr 300px;
     gap: 56px;
   }
 
+  .gallery-full-width {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 48px 40px 20px;
+  }
+  .gallery-full-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--rust);
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 20px;
+  }
+  .sources-outer {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 40px 80px;
+  }
+  .sources-constrained {
+    max-width: 664px;
+    margin-left: 0;
+  }
   .catalog {
     background: var(--paper-soft);
     border-radius: 4px;
@@ -416,7 +440,7 @@
   .layout {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 56px 40px 80px;
+    padding: 0 40px 0;
     display: grid;
     grid-template-columns: 1fr 300px;
     gap: 56px;
@@ -707,14 +731,14 @@
 <body>
 
 <div class="topbar">
-  <a href="index.html" class="back-link">← Back to Map</a>
+  <a href="../index.html" class="back-link">← Back to Map</a>
   <div class="breadcrumb">Clearview Historical Mapping Project / № 017</div>
 </div>
 
 <section class="hero">
   <div class="hero-tag">Sign № 017 · Lot 100</div>
   <h1 class="hero-title">First Baptist Church</h1>
-  <p class="hero-subtitle">First Baptist Church of Clearview.</p>
+  <p class="hero-subtitle">The First Baptist Church rang its bell when someone died, so the whole town would know — a congregation that outlasted nearly every other church in Clearview.</p>
 </section>
 
 <main class="layout">
@@ -722,53 +746,15 @@
   <div class="content">
 
     <section>
-      <h2 class="section-head">History <span class="pill">Single business</span></h2>
+      <h2 class="section-head">History</h2>
       
     <div class="business-block">
-      
-      <div class="business-details">
-<div class="biz-row"><div class="biz-key">Dates</div><div class="biz-value">Dates unknown</div></div>
-<div class="biz-row"><div class="biz-key">Affiliated</div><div class="biz-value">Shirley Nero, Withers Cudjoe</div></div>
+      <div class="prose">
+<p class="lead">Among the many Clearview churches in the early twentieth century stood the First Baptist Church.</p>
+<p>Although many dispersed during the Great Depression this congregation lasted much longer than all but two others: the AME Methodist Church and the Church of the Living God. The Baptist had their services on the second and fourth Sunday of the month, while the Methodist used the first and third.</p>
+<p>When someone in Clearview died the First Baptist Church would ring their bell, alerting the community. The church closed in the early twentieth century.</p>
 </div>
-      <p class="empty-narrative">Narrative not yet recorded. Research in progress.</p>
-      
-      
-      <section class="sub-section">
-        <h3 class="sub-head">Gallery</h3>
-        <div class="gallery-wrap">
-          <button class="gallery-arrow gallery-arrow-left" aria-label="Scroll left">‹</button>
-          <div class="gallery-clip">
-            <div class="gallery-row">
-          <div class="gallery-item" data-src="https://picsum.photos/seed/sign017b0img1/900/650" data-title="Placeholder photo 1" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of First Baptist Church.">
-            <img src="https://picsum.photos/seed/sign017b0img1/900/650" alt="Placeholder photo 1" loading="lazy">
-          </div>
-          <div class="gallery-item" data-src="https://picsum.photos/seed/sign017b0img2/750/650" data-title="Placeholder photo 2" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of First Baptist Church.">
-            <img src="https://picsum.photos/seed/sign017b0img2/750/650" alt="Placeholder photo 2" loading="lazy">
-          </div>
-          <div class="gallery-item" data-src="https://picsum.photos/seed/sign017b0img3/850/650" data-title="Placeholder photo 3" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of First Baptist Church.">
-            <img src="https://picsum.photos/seed/sign017b0img3/850/650" alt="Placeholder photo 3" loading="lazy">
-          </div>
-          <div class="gallery-item" data-src="https://picsum.photos/seed/sign017b0img4/1000/650" data-title="Placeholder photo 4" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of First Baptist Church.">
-            <img src="https://picsum.photos/seed/sign017b0img4/1000/650" alt="Placeholder photo 4" loading="lazy">
-          </div>
-            </div>
-          </div>
-          <button class="gallery-arrow gallery-arrow-right" aria-label="Scroll right">›</button>
-        </div>
-        <div class="gallery-hint">Click photos to enlarge · Use arrows or drag to browse</div>
-      </section>
-      
-      
-      <section class="sub-section">
-        <h3 class="sub-head">Sources</h3>
-        <div class="source-list">
-        <div class="source-entry">
-          <div class="source-label">Oral history</div>
-          <div class="source-detail">Recollections from Shirley Nero and Withers Cudjoe.</div>
-        </div></div>
-      </section>
-    </div>
-    
+      </div>
     </section>
 
   </div>
@@ -792,17 +778,63 @@
       <div class="catalog-key">Operated</div>
       <div class="catalog-value small">Dates unknown</div>
     </div>
-    <div class="catalog-row">
-      <div class="catalog-key">Status</div>
-      <div class="catalog-value small">Research in progress</div>
-    </div>
-    <div class="catalog-row">
-      <div class="catalog-key">Surveyed</div>
-      <div class="catalog-value small">May 2026</div>
-    </div>
   </aside>
 
 </main>
+<div class="gallery-full-width">
+  <div class="gallery-full-title">Gallery</div>
+  <div class="gallery-wrap">
+          <button class="gallery-arrow gallery-arrow-left" aria-label="Scroll left">‹</button>
+          <div class="gallery-clip">
+            <div class="gallery-row">
+          <div class="gallery-item archival" data-src="../sources/clearview_009.jpg" data-title="Clearview — archival photograph 009" data-date="Undated" data-source="Project archive" data-caption="Clearview — archival photograph 009">
+            <img src="../sources/clearview_009.jpg" alt="Clearview — archival photograph 009" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/sign17_rodeo_1985.jpg" data-title="Clearview Rodeo program, 1985" data-date="1985" data-source="Rodeo program · project archive" data-caption="Page from the 1985 Clearview Rodeo program.">
+            <img src="../sources/sign17_rodeo_1985.jpg" alt="Clearview Rodeo program, 1985" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/sign17_clearview_booklet-1.png" data-title="Pages from Clearview history booklet" data-date="Undated" data-source="Project archive" data-caption="Pages from the Clearview history booklet referencing the First Baptist Church.">
+            <img src="../sources/sign17_clearview_booklet-1.png" alt="Pages from Clearview history booklet" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/new3_017_baptism_01.jpg" data-title="Clearview baptism" data-date="Undated" data-source="Family &amp; community archive" data-caption="Clearview baptism.">
+            <img src="../sources/new3_017_baptism_01.jpg" alt="Clearview baptism" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/new3_017_baptism_02.jpg" data-title="Clearview baptism" data-date="Undated" data-source="Family &amp; community archive" data-caption="Clearview baptism.">
+            <img src="../sources/new3_017_baptism_02.jpg" alt="Clearview baptism" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/new3_017_baptism_03.jpg" data-title="Clearview baptism" data-date="Undated" data-source="Family &amp; community archive" data-caption="Clearview baptism.">
+            <img src="../sources/new3_017_baptism_03.jpg" alt="Clearview baptism" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/new3_017_baptist_church.jpg" data-title="First Baptist Church, Clearview" data-date="Undated" data-source="Family &amp; community archive" data-caption="First Baptist Church, Clearview.">
+            <img src="../sources/new3_017_baptist_church.jpg" alt="First Baptist Church, Clearview" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/new3_017_first_baptist_church.jpg" data-title="First Baptist Church, Clearview" data-date="Undated" data-source="Family &amp; community archive" data-caption="First Baptist Church, Clearview.">
+            <img src="../sources/new3_017_first_baptist_church.jpg" alt="First Baptist Church, Clearview" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
+          </div>
+
+            </div>
+          </div>
+          <button class="gallery-arrow gallery-arrow-right" aria-label="Scroll right">›</button>
+        </div>
+        <div class="gallery-hint">Click photos to enlarge · Use arrows or drag to browse</div>
+      
+  
+</div>
+<div class="sources-outer">
+  <section class="sub-section sources-constrained">
+    <h3 class="sub-head">Sources</h3>
+    <div class="source-list">
+        <div class="source-entry">
+          <div class="source-label">History booklet</div>
+          <div class="source-detail">Pages from the Clearview history booklet. <a href="../sources/sign17_clearview_booklet.pdf" target="_blank" rel="noopener" style="color: var(--dirt); text-decoration: underline; font-weight: 500;">View PDF →</a></div>
+        </div>
+        <div class="source-entry">
+          <div class="source-label">Oral history</div>
+          <div class="source-detail">Recollections from Shirley Nero and Withers Cudjoe.</div>
+        </div>
+        </div>
+  </section>
+</div>
 
 <footer>
   Clearview Historical Mapping Project · 2026
@@ -820,7 +852,7 @@
     <div class="lightbox-title" id="lightboxTitle"></div>
     <div class="lightbox-description" id="lightboxDescription"></div>
     <div class="lightbox-source" id="lightboxSource"></div>
-  </div>
+</div>
 </div>
 
 <script>

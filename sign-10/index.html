@@ -62,8 +62,7 @@
   }
 
   .hero {
-    padding: 56px 40px 44px;
-    border-bottom: 1px solid var(--rule);
+    padding: 56px 40px 48px;
     max-width: 1100px;
     margin: 0 auto;
     width: 100%;
@@ -89,22 +88,49 @@
   }
 
   .hero-subtitle {
-    font-family: 'Instrument Serif', serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 400;
-    font-size: 22px;
+    font-size: 16px;
     color: var(--ink-soft);
-    margin-top: 20px;
+    margin-top: 14px;
     max-width: 640px;
-    line-height: 1.35;
+    line-height: 1.6;
   }
 
   .layout {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 56px 40px 80px;
+    padding: 0 40px 0;
     display: grid;
     grid-template-columns: 1fr 300px;
     gap: 56px;
+  }
+  .gallery-full-width {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 48px 40px 20px;
+  }
+  .gallery-full-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--rust);
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 20px;
+  }
+  .gallery-full-width .sub-head {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--rust);
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 20px;
   }
 
   .catalog {
@@ -375,6 +401,15 @@
 
   .timeline-text em { font-style: italic; }
 
+  .sources-constrained {
+    max-width: 664px;
+    margin-left: 0;
+  }
+  .sources-outer {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 40px 80px;
+  }
   /* Sources */
   .source-list {
     display: flex;
@@ -416,7 +451,7 @@
   .layout {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 56px 40px 80px;
+    padding: 0 40px 0;
     display: grid;
     grid-template-columns: 1fr 300px;
     gap: 56px;
@@ -462,13 +497,14 @@
   .gallery-item {
     flex: 0 0 auto;
     height: 360px;
-    min-width: 260px;   /* Even very tall portraits show at readable width */
-    max-width: 600px;   /* Landscape images don't go too wide */
+    min-width: 240px;
+    max-width: 640px;
     overflow: hidden;
     border-radius: 4px;
     cursor: pointer;
     scroll-snap-align: start;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
+    background: var(--paper-soft);
   }
   .gallery-item:hover {
     transform: translateY(-3px);
@@ -477,8 +513,8 @@
   .gallery-item img {
     height: 100%;
     width: 100%;
-    object-fit: cover;
-    object-position: center top; /* Show top of portrait images preferentially */
+    object-fit: contain;
+    object-position: center center;
     display: block;
     filter: sepia(0.3) contrast(1.04) brightness(0.96);
     transition: transform 0.4s ease;
@@ -682,6 +718,7 @@
     .hero-title { font-size: clamp(36px, 11vw, 72px); }
     .hero-subtitle { font-size: 16px; margin-top: 12px; }
     .layout { padding: 24px 16px 48px; gap: 32px; }
+    .gallery-full-width { padding: 0 16px 48px; }
     .business-name { font-size: 22px; }
     .business-details { padding: 14px 16px; }
     .gallery-item { height: 220px; }
@@ -707,14 +744,14 @@
 <body>
 
 <div class="topbar">
-  <a href="index.html" class="back-link">← Back to Map</a>
+  <a href="../index.html" class="back-link">← Back to Map</a>
   <div class="breadcrumb">Clearview Historical Mapping Project / № 010</div>
 </div>
 
 <section class="hero">
   <div class="hero-tag">Sign № 010 · Block 9</div>
   <h1 class="hero-title">Clearview Public School District I-37</h1>
-  <p class="hero-subtitle">Clearview's public school, partially still standing.</p>
+  <p class="hero-subtitle">Clearview's public school served the town from the early 1900s through 1969 — the WPA gymnasium it left behind still stands as a community center today.</p>
 </section>
 
 <main class="layout">
@@ -722,132 +759,18 @@
   <div class="content">
 
     <section>
-      <h2 class="section-head">History <span class="pill">Single business</span></h2>
+      <h2 class="section-head">History</h2>
       
     <div class="business-block">
-      
-      <div class="business-details">
-<div class="biz-row"><div class="biz-key">Owners</div><div class="biz-value">Clearview Public School District</div></div>
-<div class="biz-row"><div class="biz-key">Dates</div><div class="biz-value">1900s – 1969</div></div>
-<div class="biz-row"><div class="biz-key">Affiliated</div><div class="biz-value">Ethelene Scott, Shirley Nero, Normores, Marguerite French, Thomesene Withers Cudjoe, Joe Golden, Hattie Lou Oliver, Patton/Anderson, JP Owens</div></div>
+      <div class="prose">
+<p class="lead">Clearview opened its first school in the early 1900s, originally offering grades one through eight. Early town leaders including J. E. Thompson emphasized the importance of all children receiving an education and his wife, Neva, was one of the first principals of Clearview School.</p>
+<p>Like other Black schools during segregation, Clearview had to compete with white schools for adequate funding. However, the investment and emphasis on education in all-Black towns, as well as the absence of explicit racial discrimination, served as an incentive for many African Americans who were leaving the South in search of better opportunities.</p>
+<p>While there were efforts to establish a high school for many years it wouldn't be until the 1920s that Clearview opened a high school. In 1923, the Rosenwald School Fund oversaw the construction of a six-room brick schoolhouse in Clearview and by the following school year the Douglass School was open. Douglass gradually expanded into a high school over the next couple of years. Before then, Clearview students would have to travel to Okmulgee or Boley to attend the nearest high school, each over twenty miles away. Douglass, which would eventually be renamed Clearview High School, served the town and several surrounding communities from Grassy Lake, Galilee, and North Fork. The educational and commercial ties that brought these rural communities together reinforced social and relational ties to Clearview. Later additions were added to the school including the gymnasium which was built by the Works Progress Administration in 1939 and is still standing today.</p>
+<p>Clearview schools offered all the standard courses and a range of extracurriculars including 4-H, New Farmers of America, New Homemakers of America, theater, and more. Teachers were committed to holistically preparing their pupils for the real world, from managing experimental agricultural fields to organizing Black history programs and senior trips to Hot Springs National Park and other places. While some teachers did not live in Clearview full-time, often boarding at Ada Davis' boardinghouse, there was still a sense of shared responsibility between parents, teachers, and the community in ensuring student success.</p>
+<p>A testament to the importance of Clearview schools to the community is the fact that the school stayed open over a decade after the 1954 Brown v. Board of Education ruling overturned segregated schooling. The high school was closed in 1964 and the elementary school followed in 1969. While the segregated system inherently disadvantaged Black schools because of inadequate funding, the ability to oversee their children's education from within the community and provide meaningful employment to residents were strong incentives for wanting to keep the school. Instead, Clearview children were bussed to Weleetka to complete their education.</p>
+<p>The Clearview community desired to maintain the school facilities and incorporated the Clearview Community Improvement Corporation in order to receive a deed to all of the school property and facilities in the Clearview School District, with the provisions that such property and facilities be maintained, insured, and used for community purposes only. In 1988 the CCIC renovated the old gymnasium to become a community center where residents and visitors continue to gather today.</p>
 </div>
-      <p class="empty-narrative">Narrative not yet recorded. Research in progress.</p>
-      <div class="business-notes"><div class="notes-label">Notes</div><div class="notes-text">Partially still standing.</div></div>
-      
-      <section class="sub-section">
-        <h3 class="sub-head">Gallery</h3>
-        <div class="gallery-wrap">
-          <button class="gallery-arrow gallery-arrow-left" aria-label="Scroll left">‹</button>
-          <div class="gallery-clip">
-            <div class="gallery-row">
-          <div class="gallery-item archival" data-src="/sources/sign10_girls_school.jpg" data-title="Girls playing at Clearview School grounds" data-date="Undated" data-source="Collection of Shirley Nero and Tom Lucas" data-caption="Two photographs showing girls on the Clearview school grounds — a basketball game (top) and girls standing near the school fence (bottom). The school buildings are visible in the background.">
-            <img src="/sources/sign10_girls_school.jpg" alt="Girls playing at Clearview School grounds" loading="lazy">
-          </div>
-          <div class="gallery-item archival" data-src="/sources/sign10_high_school.jpg" data-title="Clearview High School building" data-date="Undated" data-source="Collection of Shirley Nero and Tom Lucas" data-caption="Clearview High School building.">
-            <img src="/sources/sign10_high_school.jpg" alt="Clearview High School building" loading="lazy">
-          </div>
-          <div class="gallery-item archival" data-src="/sources/sign10_school_gym.jpg" data-title="Clearview School gym" data-date="Undated" data-source="Collection of Shirley Nero and Tom Lucas" data-caption="Clearview School gym.">
-            <img src="/sources/sign10_school_gym.jpg" alt="Clearview School gym" loading="lazy">
-          </div>
-          <div class="gallery-item archival" data-src="/sources/sign10_cornerstone.jpg" data-title="WPA gymnasium cornerstone" data-date="1936" data-source="Project archive" data-caption="Cornerstone for the Clearview School gymnasium, inscribed with WPA and listing Foster Liggons (president), L.W. Bush (clerk), and others. Ira Hall was superintendent. Dated 1936.">
-            <img src="/sources/sign10_cornerstone.jpg" alt="WPA gymnasium cornerstone" loading="lazy">
-          </div>
-          <div class="gallery-item archival" data-src="/sources/sign10_science_building.jpg" data-title="Clearview School Science Building (WPA)" data-date="1984" data-source="1984 WPA structures photo collection" data-caption="Clearview School Science Building, photographed in 1984 as part of a collection documenting WPA structures.">
-            <img src="/sources/sign10_science_building.jpg" alt="Clearview School Science Building (WPA)" loading="lazy">
-          </div>
-          <div class="gallery-item archival" data-src="/sources/sign10_home_ec.jpg" data-title="Home Economics and Agriculture building" data-date="Undated" data-source="Collection of Shirley Nero and Tom Lucas" data-caption="Home Economics and Agriculture building at Clearview School.">
-            <img src="/sources/sign10_home_ec.jpg" alt="Home Economics and Agriculture building" loading="lazy">
-          </div>
-          <div class="gallery-item archival" data-src="/sources/sign10_nfa_club.jpg" data-title="NFA Club at Clearview" data-date="Undated" data-source="Collection of Shirley Nero and Tom Lucas" data-caption="New Farmers of America (NFA) Club at Clearview School. NFA was the historically Black counterpart to FFA (Future Farmers of America) during segregation.">
-            <img src="/sources/sign10_nfa_club.jpg" alt="NFA Club at Clearview" loading="lazy">
-          </div>
-          <div class="gallery-item archival" data-src="/sources/sign10_north_fork.jpg" data-title="Students at North Fork School (feeder school)" data-date="Undated" data-source="Collection of Shirley Nero and Tom Lucas" data-caption="Students at North Fork School, a grades 1–8 feeder school that served students who then attended Clearview High School.">
-            <img src="/sources/sign10_north_fork.jpg" alt="Students at North Fork School (feeder school)" loading="lazy">
-          </div>
-          <div class="gallery-item archival" data-src="/sources/sign10_rosie_swain.jpg" data-title="Rosie Swain, teacher in Clearview" data-date="Undated" data-source="Project archive" data-caption="Rosie Swain, wife of L.V. Swain, who later taught in Clearview. Rosie Swain also appears in the L.H. Haynes obituary as one of his surviving daughters.">
-            <img src="/sources/sign10_rosie_swain.jpg" alt="Rosie Swain, teacher in Clearview" loading="lazy">
-          </div>
-          <div class="gallery-item archival" data-src="/sources/sign10_group.jpg" data-title="Group photograph — Clearview School" data-date="Undated" data-source="Collection of Shirley Nero and Tom Lucas" data-caption="Group photograph associated with Clearview School.">
-            <img src="/sources/sign10_group.jpg" alt="Group photograph — Clearview School" loading="lazy">
-          </div>
-          <div class="gallery-item archival" data-src="/sources/sign10_joe_golden.jpg" data-title="Joe Golden" data-date="Undated" data-source="Project archive" data-caption="Joe Golden, oral history contributor whose recollections inform multiple entries in this project.">
-            <img src="/sources/sign10_joe_golden.jpg" alt="Joe Golden" loading="lazy">
-          </div>
-          <div class="gallery-item archival" data-src="/sources/sign10_scan_002.jpg" data-title="Clearview School archive scan #002" data-date="Undated" data-source="Project archive scans" data-caption="Scanned archival photograph from the Clearview School collection.">
-            <img src="/sources/sign10_scan_002.jpg" alt="Clearview School archive scan #002" loading="lazy">
-          </div>
-          <div class="gallery-item archival" data-src="/sources/sign10_scan_021.jpg" data-title="Clearview School archive scan #021" data-date="Undated" data-source="Project archive scans" data-caption="Scanned archival photograph from the Clearview School collection.">
-            <img src="/sources/sign10_scan_021.jpg" alt="Clearview School archive scan #021" loading="lazy">
-          </div>
-          <div class="gallery-item archival" data-src="/sources/sign10_dsc_002.jpg" data-title="Clearview School — current view (DSC_0002)" data-date="Undated" data-source="Project archive" data-caption="Current-day photograph of Clearview School site.">
-            <img src="/sources/sign10_dsc_002.jpg" alt="Clearview School — current view (DSC_0002)" loading="lazy">
-          </div>
-          <div class="gallery-item archival" data-src="/sources/sign10_dsc_006.jpg" data-title="Clearview School — current view (DSC_0006)" data-date="Undated" data-source="Project archive" data-caption="Current-day photograph of Clearview School site.">
-            <img src="/sources/sign10_dsc_006.jpg" alt="Clearview School — current view (DSC_0006)" loading="lazy">
-          </div>
-          <div class="gallery-item archival" data-src="/sources/sign10_dsc_007.jpg" data-title="Clearview School — current view (DSC_0007)" data-date="Undated" data-source="Project archive" data-caption="Current-day photograph of Clearview School site.">
-            <img src="/sources/sign10_dsc_007.jpg" alt="Clearview School — current view (DSC_0007)" loading="lazy">
-          </div>
-          <div class="gallery-item archival" data-src="/sources/sign10_rodeo_1983_a.jpg" data-title="Clearview Rodeo program, 1983 (A)" data-date="1983" data-source="Rodeo program · project archive" data-caption="Page from the 1983 Clearview Rodeo program.">
-            <img src="/sources/sign10_rodeo_1983_a.jpg" alt="Clearview Rodeo program, 1983 (A)" loading="lazy">
-          </div>
-          <div class="gallery-item archival" data-src="/sources/sign10_rodeo_1983_b.jpg" data-title="Clearview Rodeo program, 1983 (B)" data-date="1983" data-source="Rodeo program · project archive" data-caption="Page from the 1983 Clearview Rodeo program.">
-            <img src="/sources/sign10_rodeo_1983_b.jpg" alt="Clearview Rodeo program, 1983 (B)" loading="lazy">
-          </div>
-          <div class="gallery-item archival" data-src="/sources/sign10_rodeo_1983_c.jpg" data-title="Clearview Rodeo program, 1983 (C)" data-date="1983" data-source="Rodeo program · project archive" data-caption="Page from the 1983 Clearview Rodeo program.">
-            <img src="/sources/sign10_rodeo_1983_c.jpg" alt="Clearview Rodeo program, 1983 (C)" loading="lazy">
-          </div>
-          <div class="gallery-item archival" data-src="/sources/sign10_rodeo_1983_d.jpg" data-title="Clearview Rodeo program, 1983 (D)" data-date="1983" data-source="Rodeo program · project archive" data-caption="Page from the 1983 Clearview Rodeo program.">
-            <img src="/sources/sign10_rodeo_1983_d.jpg" alt="Clearview Rodeo program, 1983 (D)" loading="lazy">
-          </div>
-          <div class="gallery-item archival" data-src="/sources/sign10_rodeo_1984.jpg" data-title="Clearview Rodeo program, 1984" data-date="1984" data-source="Rodeo program · project archive" data-caption="Page from the 1984 Clearview Rodeo program.">
-            <img src="/sources/sign10_rodeo_1984.jpg" alt="Clearview Rodeo program, 1984" loading="lazy">
-          </div>
-          <div class="gallery-item archival" data-src="/sources/sign10_rodeo_1985.jpg" data-title="Clearview Rodeo program, 1985" data-date="1985" data-source="Rodeo program · project archive" data-caption="Page from the 1985 Clearview Rodeo program.">
-            <img src="/sources/sign10_rodeo_1985.jpg" alt="Clearview Rodeo program, 1985" loading="lazy">
-          </div>
-          <div class="gallery-item archival" data-src="/sources/sign10_rodeo_1985b.jpg" data-title="Clearview Rodeo program, 1985 (B)" data-date="1985" data-source="Rodeo program · project archive" data-caption="Page from the 1985 Clearview Rodeo program.">
-            <img src="/sources/sign10_rodeo_1985b.jpg" alt="Clearview Rodeo program, 1985 (B)" loading="lazy">
-          </div>
-          <div class="gallery-item archival" data-src="/sources/sign10_rodeo_1986.jpg" data-title="Clearview Rodeo program, 1986" data-date="1986" data-source="Rodeo program · project archive" data-caption="Page from the 1986 Clearview Rodeo program.">
-            <img src="/sources/sign10_rodeo_1986.jpg" alt="Clearview Rodeo program, 1986" loading="lazy">
-          </div>
-          <div class="gallery-item archival" data-src="/sources/sign10_rodeo_1989.jpg" data-title="Clearview Rodeo program, 1989" data-date="1989" data-source="Rodeo program · project archive" data-caption="Page from the 1989 Clearview Rodeo program.">
-            <img src="/sources/sign10_rodeo_1989.jpg" alt="Clearview Rodeo program, 1989" loading="lazy">
-          </div>
-          <div class="gallery-item archival" data-src="/sources/sign10_rodeo_2006.jpg" data-title="Clearview Rodeo program, 2006" data-date="2006" data-source="Rodeo program · project archive" data-caption="Page from the 2006 Clearview Rodeo program.">
-            <img src="/sources/sign10_rodeo_2006.jpg" alt="Clearview Rodeo program, 2006" loading="lazy">
-          </div>
-          <div class="gallery-item archival" data-src="/sources/sign10_clearview_p5.pdf" data-title="Pages from Clearview (booklet), p. 5" data-date="Undated" data-source="Project archive" data-caption="Pages from a Clearview history publication.">
-            <img src="/sources/sign10_clearview_p5.pdf" alt="Pages from Clearview (booklet), p. 5" loading="lazy">
-          </div>
-          <div class="gallery-item archival" data-src="/sources/sign10_clearview_p6.pdf" data-title="Pages from Clearview (booklet), p. 6" data-date="Undated" data-source="Project archive" data-caption="Pages from a Clearview history publication.">
-            <img src="/sources/sign10_clearview_p6.pdf" alt="Pages from Clearview (booklet), p. 6" loading="lazy">
-          </div>
-            </div>
-          </div>
-          <button class="gallery-arrow gallery-arrow-right" aria-label="Scroll right">›</button>
-        </div>
-        <div class="gallery-hint">Click photos to enlarge · Use arrows or drag to browse</div>
-      </section>
-      
-      
-      <section class="sub-section">
-        <h3 class="sub-head">Sources</h3>
-        <div class="source-list">
-        <div class="source-entry">
-          <div class="source-label">Photograph collection</div>
-          <div class="source-detail">Photos from collections of Shirley Nero and Tom Lucas, plus 1983–2006 Clearview Rodeo programs.</div>
-        </div>
-        <div class="source-entry">
-          <div class="source-label">WPA records</div>
-          <div class="source-detail">WPA cornerstone on gym lists Foster Liggons (pres.), L.W. Bush (clerk), and others, 1936.</div>
-        </div>
-        <div class="source-entry">
-          <div class="source-label">Oral history</div>
-          <div class="source-detail">Recollections from multiple alumni including Ethelene Scott, Shirley Nero, Marguerite French, Joe Golden, and JP Owens.</div>
-        </div></div>
-      </section>
+
     </div>
     
     </section>
@@ -873,17 +796,217 @@
       <div class="catalog-key">Operated</div>
       <div class="catalog-value small">1900s – 1969</div>
     </div>
-    <div class="catalog-row">
-      <div class="catalog-key">Status</div>
-      <div class="catalog-value small">Research in progress</div>
-    </div>
-    <div class="catalog-row">
-      <div class="catalog-key">Surveyed</div>
-      <div class="catalog-value small">May 2026</div>
-    </div>
+
   </aside>
 
 </main>
+<div class="gallery-full-width">
+  <div class="gallery-full-title">Gallery</div>
+      
+      <div class="gallery-wrap">
+          <button class="gallery-arrow gallery-arrow-left" aria-label="Scroll left">‹</button>
+          <div class="gallery-clip">
+            <div class="gallery-row">
+          <div class="gallery-item archival" data-src="../sources/sign10_girls_school.jpg" data-title="Girls playing at Clearview School grounds" data-date="Undated" data-source="Collection of Shirley Nero and Tom Lucas" data-caption="Two photographs showing girls on the Clearview school grounds — a basketball game (top) and girls standing near the school fence (bottom). The school buildings are visible in the background.">
+            <img src="../sources/sign10_girls_school.jpg" alt="Girls playing at Clearview School grounds" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/sign10_high_school.jpg" data-title="Clearview High School building" data-date="Undated" data-source="Collection of Shirley Nero and Tom Lucas" data-caption="Clearview High School building.">
+            <img src="../sources/sign10_high_school.jpg" alt="Clearview High School building" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/sign10_school_gym.jpg" data-title="Clearview School gym" data-date="Undated" data-source="Collection of Shirley Nero and Tom Lucas" data-caption="Clearview School gym.">
+            <img src="../sources/sign10_school_gym.jpg" alt="Clearview School gym" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/sign10_cornerstone.jpg" data-title="WPA gymnasium cornerstone" data-date="1936" data-source="Project archive" data-caption="Cornerstone for the Clearview School gymnasium, inscribed with WPA and listing Foster Liggons (president), L.W. Bush (clerk), and others. Ira Hall was superintendent. Dated 1936.">
+            <img src="../sources/sign10_cornerstone.jpg" alt="WPA gymnasium cornerstone" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/sign10_science_building.jpg" data-title="Clearview School Science Building (WPA)" data-date="1984" data-source="1984 WPA structures photo collection" data-caption="Clearview School Science Building, photographed in 1984 as part of a collection documenting WPA structures.">
+            <img src="../sources/sign10_science_building.jpg" alt="Clearview School Science Building (WPA)" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/sign10_home_ec.jpg" data-title="Home Economics and Agriculture building" data-date="Undated" data-source="Collection of Shirley Nero and Tom Lucas" data-caption="Home Economics and Agriculture building at Clearview School.">
+            <img src="../sources/sign10_home_ec.jpg" alt="Home Economics and Agriculture building" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/sign10_nfa_club.jpg" data-title="NFA Club at Clearview" data-date="Undated" data-source="Collection of Shirley Nero and Tom Lucas" data-caption="New Farmers of America (NFA) Club at Clearview School. NFA was the historically Black counterpart to FFA (Future Farmers of America) during segregation.">
+            <img src="../sources/sign10_nfa_club.jpg" alt="NFA Club at Clearview" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/sign10_north_fork.jpg" data-title="Students at North Fork School (feeder school)" data-date="Undated" data-source="Collection of Shirley Nero and Tom Lucas" data-caption="Students at North Fork School, a grades 1–8 feeder school that served students who then attended Clearview High School.">
+            <img src="../sources/sign10_north_fork.jpg" alt="Students at North Fork School (feeder school)" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/sign10_rosie_swain.jpg" data-title="Rosie Swain, teacher in Clearview" data-date="Undated" data-source="Project archive" data-caption="Rosie Swain, wife of L.V. Swain, who later taught in Clearview. Rosie Swain also appears in the L.H. Haynes obituary as one of his surviving daughters.">
+            <img src="../sources/sign10_rosie_swain.jpg" alt="Rosie Swain, teacher in Clearview" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/sign10_group.jpg" data-title="Group photograph — Clearview School" data-date="Undated" data-source="Collection of Shirley Nero and Tom Lucas" data-caption="Group photograph associated with Clearview School.">
+            <img src="../sources/sign10_group.jpg" alt="Group photograph — Clearview School" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/sign10_joe_golden.jpg" data-title="Joe Golden" data-date="Undated" data-source="Project archive" data-caption="Joe Golden, oral history contributor whose recollections inform multiple entries in this project.">
+            <img src="../sources/sign10_joe_golden.jpg" alt="Joe Golden" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/sign10_scan_002.jpg" data-title="Clearview School archive scan #002" data-date="Undated" data-source="Project archive scans" data-caption="Scanned archival photograph from the Clearview School collection.">
+            <img src="../sources/sign10_scan_002.jpg" alt="Clearview School archive scan #002" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/sign10_scan_021.jpg" data-title="Clearview School archive scan #021" data-date="Undated" data-source="Project archive scans" data-caption="Scanned archival photograph from the Clearview School collection.">
+            <img src="../sources/sign10_scan_021.jpg" alt="Clearview School archive scan #021" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/sign10_dsc_002.jpg" data-title="Clearview School — current view (DSC_0002)" data-date="Undated" data-source="Project archive" data-caption="Current-day photograph of Clearview School site.">
+            <img src="../sources/sign10_dsc_002.jpg" alt="Clearview School — current view (DSC_0002)" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/sign10_dsc_006.jpg" data-title="Clearview School — current view (DSC_0006)" data-date="Undated" data-source="Project archive" data-caption="Current-day photograph of Clearview School site.">
+            <img src="../sources/sign10_dsc_006.jpg" alt="Clearview School — current view (DSC_0006)" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/sign10_dsc_007.jpg" data-title="Clearview School — current view (DSC_0007)" data-date="Undated" data-source="Project archive" data-caption="Current-day photograph of Clearview School site.">
+            <img src="../sources/sign10_dsc_007.jpg" alt="Clearview School — current view (DSC_0007)" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/sign10_rodeo_1983_a.jpg" data-title="Clearview Rodeo program, 1983 (A)" data-date="1983" data-source="Rodeo program · project archive" data-caption="Page from the 1983 Clearview Rodeo program.">
+            <img src="../sources/sign10_rodeo_1983_a.jpg" alt="Clearview Rodeo program, 1983 (A)" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/sign10_rodeo_1983_b.jpg" data-title="Clearview Rodeo program, 1983 (B)" data-date="1983" data-source="Rodeo program · project archive" data-caption="Page from the 1983 Clearview Rodeo program.">
+            <img src="../sources/sign10_rodeo_1983_b.jpg" alt="Clearview Rodeo program, 1983 (B)" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/sign10_rodeo_1983_c.jpg" data-title="Clearview Rodeo program, 1983 (C)" data-date="1983" data-source="Rodeo program · project archive" data-caption="Page from the 1983 Clearview Rodeo program.">
+            <img src="../sources/sign10_rodeo_1983_c.jpg" alt="Clearview Rodeo program, 1983 (C)" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/sign10_rodeo_1983_d.jpg" data-title="Clearview Rodeo program, 1983 (D)" data-date="1983" data-source="Rodeo program · project archive" data-caption="Page from the 1983 Clearview Rodeo program.">
+            <img src="../sources/sign10_rodeo_1983_d.jpg" alt="Clearview Rodeo program, 1983 (D)" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/sign10_rodeo_1984.jpg" data-title="Clearview Rodeo program, 1984" data-date="1984" data-source="Rodeo program · project archive" data-caption="Page from the 1984 Clearview Rodeo program.">
+            <img src="../sources/sign10_rodeo_1984.jpg" alt="Clearview Rodeo program, 1984" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/sign10_rodeo_1985.jpg" data-title="Clearview Rodeo program, 1985" data-date="1985" data-source="Rodeo program · project archive" data-caption="Page from the 1985 Clearview Rodeo program.">
+            <img src="../sources/sign10_rodeo_1985.jpg" alt="Clearview Rodeo program, 1985" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/sign10_rodeo_1985b.jpg" data-title="Clearview Rodeo program, 1985 (B)" data-date="1985" data-source="Rodeo program · project archive" data-caption="Page from the 1985 Clearview Rodeo program.">
+            <img src="../sources/sign10_rodeo_1985b.jpg" alt="Clearview Rodeo program, 1985 (B)" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/sign10_rodeo_1986.jpg" data-title="Clearview Rodeo program, 1986" data-date="1986" data-source="Rodeo program · project archive" data-caption="Page from the 1986 Clearview Rodeo program.">
+            <img src="../sources/sign10_rodeo_1986.jpg" alt="Clearview Rodeo program, 1986" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/sign10_rodeo_1989.jpg" data-title="Clearview Rodeo program, 1989" data-date="1989" data-source="Rodeo program · project archive" data-caption="Page from the 1989 Clearview Rodeo program.">
+            <img src="../sources/sign10_rodeo_1989.jpg" alt="Clearview Rodeo program, 1989" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/sign10_rodeo_2006.jpg" data-title="Clearview Rodeo program, 2006" data-date="2006" data-source="Rodeo program · project archive" data-caption="Page from the 2006 Clearview Rodeo program.">
+            <img src="../sources/sign10_rodeo_2006.jpg" alt="Clearview Rodeo program, 2006" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/sign10_p5-1.png" data-title="Pages from Clearview (booklet), p. 5" data-date="Undated" data-source="Project archive" data-caption="Pages from a Clearview history publication.">
+            <img src="../sources/sign10_p5-1.png" alt="Pages from Clearview (booklet), p. 5" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/sign10_p6-1.png" data-title="Pages from Clearview (booklet), p. 6" data-date="Undated" data-source="Project archive" data-caption="Pages from a Clearview history publication.">
+            <img src="../sources/sign10_p6-1.png" alt="Pages from Clearview (booklet), p. 6" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/sign10_old_gym.jpg" data-title="Old gymnasium — Clearview School" data-date="Undated" data-source="Collection of Shirley Nero and Tom Lucas" data-caption="The old gymnasium at Clearview School.">
+            <img src="../sources/sign10_old_gym.jpg" alt="Old gymnasium — Clearview School" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/sign10_back_school.jpg" data-title="Back of Clearview High School" data-date="Undated" data-source="Project archive" data-caption="Rear view of the Clearview High School building.">
+            <img src="../sources/sign10_back_school.jpg" alt="Back of Clearview High School" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/clearview_001.jpg" data-title="Clearview — archival photograph 001" data-date="Undated" data-source="Project archive" data-caption="Clearview — archival photograph 001">
+            <img src="../sources/clearview_001.jpg" alt="Clearview — archival photograph 001" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/clearview_002.jpg" data-title="Clearview — archival photograph 002" data-date="Undated" data-source="Project archive" data-caption="Clearview — archival photograph 002">
+            <img src="../sources/clearview_002.jpg" alt="Clearview — archival photograph 002" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/clearview_003.jpg" data-title="Clearview — archival photograph 003" data-date="Undated" data-source="Project archive" data-caption="Clearview — archival photograph 003">
+            <img src="../sources/clearview_003.jpg" alt="Clearview — archival photograph 003" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/clearview_010.jpg" data-title="Clearview — archival photograph 010" data-date="Undated" data-source="Project archive" data-caption="Clearview — archival photograph 010">
+            <img src="../sources/clearview_010.jpg" alt="Clearview — archival photograph 010" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/clearview_014.jpg" data-title="Clearview — archival photograph 014" data-date="Undated" data-source="Project archive" data-caption="Clearview — archival photograph 014">
+            <img src="../sources/clearview_014.jpg" alt="Clearview — archival photograph 014" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/clearview_015.jpg" data-title="Clearview — archival photograph 015" data-date="Undated" data-source="Project archive" data-caption="Clearview — archival photograph 015">
+            <img src="../sources/clearview_015.jpg" alt="Clearview — archival photograph 015" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/clearview_021.jpg" data-title="Clearview — archival photograph 021" data-date="Undated" data-source="Project archive" data-caption="Clearview — archival photograph 021">
+            <img src="../sources/clearview_021.jpg" alt="Clearview — archival photograph 021" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/clearview_023.jpg" data-title="Clearview — archival photograph 023" data-date="Undated" data-source="Project archive" data-caption="Clearview — archival photograph 023">
+            <img src="../sources/clearview_023.jpg" alt="Clearview — archival photograph 023" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/clearview_024.jpg" data-title="Clearview — archival photograph 024" data-date="Undated" data-source="Project archive" data-caption="Clearview — archival photograph 024">
+            <img src="../sources/clearview_024.jpg" alt="Clearview — archival photograph 024" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/clearview_025.jpg" data-title="Clearview — archival photograph 025" data-date="Undated" data-source="Project archive" data-caption="Clearview — archival photograph 025">
+            <img src="../sources/clearview_025.jpg" alt="Clearview — archival photograph 025" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/clearview_027_cropped_01.jpg" data-title="Clearview — archival photograph 027 (cropped)" data-date="Undated" data-source="Project archive" data-caption="Clearview — archival photograph 027 (cropped)">
+            <img src="../sources/clearview_027_cropped_01.jpg" alt="Clearview — archival photograph 027 (cropped)" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/clearview_033.jpg" data-title="Clearview — archival photograph 033" data-date="Undated" data-source="Project archive" data-caption="Clearview — archival photograph 033">
+            <img src="../sources/clearview_033.jpg" alt="Clearview — archival photograph 033" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/clearview_035.jpg" data-title="Clearview — archival photograph 035" data-date="Undated" data-source="Project archive" data-caption="Clearview — archival photograph 035">
+            <img src="../sources/clearview_035.jpg" alt="Clearview — archival photograph 035" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/sign10_gymnasium.jpg" data-title="Clearview Gymnasium" data-date="Undated" data-source="Project archive" data-caption="The Clearview School gymnasium.">
+            <img src="../sources/sign10_gymnasium.jpg" alt="Clearview Gymnasium" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/sign10_rodeo_1983_e.jpg" data-title="Clearview Rodeo, 1983 (image 11)" data-date="1983" data-source="Rodeo archive · project archive" data-caption="Clearview Rodeo, 1983 (image 11)">
+            <img src="../sources/sign10_rodeo_1983_e.jpg" alt="Clearview Rodeo, 1983 (image 11)" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/sign10_rodeo_1983_f.jpg" data-title="Clearview Rodeo, 1983 (image 12)" data-date="1983" data-source="Rodeo archive · project archive" data-caption="Clearview Rodeo, 1983 (image 12)">
+            <img src="../sources/sign10_rodeo_1983_f.jpg" alt="Clearview Rodeo, 1983 (image 12)" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/sign10_rodeo_1983_g.jpg" data-title="Clearview Rodeo, 1983 (image 13)" data-date="1983" data-source="Rodeo archive · project archive" data-caption="Clearview Rodeo, 1983 (image 13)">
+            <img src="../sources/sign10_rodeo_1983_g.jpg" alt="Clearview Rodeo, 1983 (image 13)" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/sign10_rodeo_1983_h.jpg" data-title="Clearview Rodeo, 1983 (image 14)" data-date="1983" data-source="Rodeo archive · project archive" data-caption="Clearview Rodeo, 1983 (image 14)">
+            <img src="../sources/sign10_rodeo_1983_h.jpg" alt="Clearview Rodeo, 1983 (image 14)" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/sign10_rodeo_1983_i.jpg" data-title="Clearview Rodeo, 1983 (image 15)" data-date="1983" data-source="Rodeo archive · project archive" data-caption="Clearview Rodeo, 1983 (image 15)">
+            <img src="../sources/sign10_rodeo_1983_i.jpg" alt="Clearview Rodeo, 1983 (image 15)" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/sign10_rodeo_1983_j.jpg" data-title="Clearview Rodeo, 1983 (image 36)" data-date="1983" data-source="Rodeo archive · project archive" data-caption="Clearview Rodeo, 1983 (image 36)">
+            <img src="../sources/sign10_rodeo_1983_j.jpg" alt="Clearview Rodeo, 1983 (image 36)" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/clearview_001-1.png" data-title="Clearview — archival document 001" data-date="Undated" data-source="Project archive" data-caption="Page from archival Clearview document.">
+            <img src="../sources/clearview_001-1.png" alt="Clearview — archival document 001" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/new2_010_girls-in-front-of-school-cropped_01.jpg" data-title="Girls in front of Clearview school" data-date="Undated" data-source="Family &amp; community archive" data-caption="Girls in front of Clearview school.">
+            <img src="../sources/new2_010_girls-in-front-of-school-cropped_01.jpg" alt="Girls in front of Clearview school" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/new2_010_girls-in-front-of-school-cropped_02.jpg" data-title="Girls in front of Clearview school" data-date="Undated" data-source="Family &amp; community archive" data-caption="Girls in front of Clearview school.">
+            <img src="../sources/new2_010_girls-in-front-of-school-cropped_02.jpg" alt="Girls in front of Clearview school" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/new2_010_gym_-_community_center.jpg" data-title="Clearview school gym & community center" data-date="Undated" data-source="Family &amp; community archive" data-caption="Clearview school gym & community center.">
+            <img src="../sources/new2_010_gym_-_community_center.jpg" alt="Clearview school gym & community center" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/new2_010_gym.jpg" data-title="Clearview school gym" data-date="Undated" data-source="Family &amp; community archive" data-caption="Clearview school gym.">
+            <img src="../sources/new2_010_gym.jpg" alt="Clearview school gym" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/new2_010_open_air_pavilion.jpg" data-title="Clearview school — open air pavilion" data-date="Undated" data-source="Family &amp; community archive" data-caption="Clearview school — open air pavilion.">
+            <img src="../sources/new2_010_open_air_pavilion.jpg" alt="Clearview school — open air pavilion" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/new2_010_schoolbus.jpg" data-title="Clearview school bus" data-date="Undated" data-source="Family &amp; community archive" data-caption="Clearview school bus.">
+            <img src="../sources/new2_010_schoolbus.jpg" alt="Clearview school bus" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
+          </div>
+
+            </div>
+          </div>
+          <button class="gallery-arrow gallery-arrow-right" aria-label="Scroll right">›</button>
+        </div>
+        <div class="gallery-hint">Click photos to enlarge · Use arrows or drag to browse</div>
+      </div>
+      
+      
+      </div>
+
+<div class="sources-outer">
+  <section class="sub-section sources-constrained">
+    <h3 class="sub-head">Sources</h3>
+    <div class="source-list">
+    <div class="source-entry">
+      <div class="source-label">Photograph collection</div>
+      <div class="source-detail">Photos from collections of Shirley Nero and Tom Lucas, plus 1983–2006 Clearview Rodeo programs.</div>
+    </div>
+    <div class="source-entry">
+      <div class="source-label">WPA records</div>
+      <div class="source-detail">WPA cornerstone on gym lists Foster Liggons (pres.), L.W. Bush (clerk), and others, 1936.</div>
+    </div>
+    <div class="source-entry">
+      <div class="source-label">Oral history</div>
+      <div class="source-detail">Recollections from multiple alumni including Ethelene Scott, Shirley Nero, Marguerite French, Joe Golden, and JP Owens.</div>
+    </div></div>
+  </section>
+</div>
 
 <footer>
   Clearview Historical Mapping Project · 2026
@@ -901,7 +1024,7 @@
     <div class="lightbox-title" id="lightboxTitle"></div>
     <div class="lightbox-description" id="lightboxDescription"></div>
     <div class="lightbox-source" id="lightboxSource"></div>
-  </div>
+</div>
 </div>
 
 <script>

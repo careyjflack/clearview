@@ -62,8 +62,7 @@
   }
 
   .hero {
-    padding: 56px 40px 44px;
-    border-bottom: 1px solid var(--rule);
+    padding: 56px 40px 48px;
     max-width: 1100px;
     margin: 0 auto;
     width: 100%;
@@ -89,9 +88,9 @@
   }
 
   .hero-subtitle {
-    font-family: 'Instrument Serif', serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 400;
-    font-size: 22px;
+    font-size: 16px;
     color: var(--ink-soft);
     margin-top: 20px;
     max-width: 640px;
@@ -101,12 +100,37 @@
   .layout {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 56px 40px 80px;
+    padding: 0 40px 0;
     display: grid;
     grid-template-columns: 1fr 300px;
     gap: 56px;
   }
 
+  .gallery-full-width {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 48px 40px 20px;
+  }
+  .gallery-full-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--rust);
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 20px;
+  }
+  .sources-outer {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 40px 80px;
+  }
+  .sources-constrained {
+    max-width: 664px;
+    margin-left: 0;
+  }
   .catalog {
     background: var(--paper-soft);
     border-radius: 4px;
@@ -416,7 +440,7 @@
   .layout {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 56px 40px 80px;
+    padding: 0 40px 0;
     display: grid;
     grid-template-columns: 1fr 300px;
     gap: 56px;
@@ -707,14 +731,14 @@
 <body>
 
 <div class="topbar">
-  <a href="index.html" class="back-link">← Back to Map</a>
+  <a href="../index.html" class="back-link">← Back to Map</a>
   <div class="breadcrumb">Clearview Historical Mapping Project / № 015</div>
 </div>
 
 <section class="hero">
   <div class="hero-tag">Sign № 015 · Lot 98</div>
   <h1 class="hero-title">Clearview Movie Theater</h1>
-  <p class="hero-subtitle">Weekend movie house staged by Willie Chatman in 1930.</p>
+  <p class="hero-subtitle">Every Saturday, Willie Chatman opened the doors and Clearview went to the movies — no segregated balcony, no back entrance, just a seat and a picture show.</p>
 </section>
 
 <main class="layout">
@@ -722,65 +746,14 @@
   <div class="content">
 
     <section>
-      <h2 class="section-head">History <span class="pill">Single business</span></h2>
+      <h2 class="section-head">History</h2>
       
     <div class="business-block">
-      
-      <div class="business-details">
-<div class="biz-row"><div class="biz-key">Owners</div><div class="biz-value">Willie Chatman</div></div>
-<div class="biz-row"><div class="biz-key">Dates</div><div class="biz-value">c. 1930</div></div>
-<div class="biz-row"><div class="biz-key">Affiliated</div><div class="biz-value">Shirley Nero, Marguerite French, JP Owens</div></div>
-</div>
       <div class="prose">
 <p class="lead">From <em>The Black Dispatch</em>, June 12, 1930: "Mr. Willie Chatman has opened a moving picture show for the week-end recreation."</p>
 <p>From <em>The Black Dispatch</em>, July 3, 1930: "The Clearview Theatre, under the management of Mr. Willie Chatman, is staging some good pictures every Saturday night."</p>
 </div>
-      
-      
-      <section class="sub-section">
-        <h3 class="sub-head">Gallery</h3>
-        <div class="gallery-wrap">
-          <button class="gallery-arrow gallery-arrow-left" aria-label="Scroll left">‹</button>
-          <div class="gallery-clip">
-            <div class="gallery-row">
-          <div class="gallery-item" data-src="https://picsum.photos/seed/sign015b0img1/900/650" data-title="Placeholder photo 1" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of Clearview Movie Theater.">
-            <img src="https://picsum.photos/seed/sign015b0img1/900/650" alt="Placeholder photo 1" loading="lazy">
-          </div>
-          <div class="gallery-item" data-src="https://picsum.photos/seed/sign015b0img2/750/650" data-title="Placeholder photo 2" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of Clearview Movie Theater.">
-            <img src="https://picsum.photos/seed/sign015b0img2/750/650" alt="Placeholder photo 2" loading="lazy">
-          </div>
-          <div class="gallery-item" data-src="https://picsum.photos/seed/sign015b0img3/850/650" data-title="Placeholder photo 3" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of Clearview Movie Theater.">
-            <img src="https://picsum.photos/seed/sign015b0img3/850/650" alt="Placeholder photo 3" loading="lazy">
-          </div>
-          <div class="gallery-item" data-src="https://picsum.photos/seed/sign015b0img4/1000/650" data-title="Placeholder photo 4" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of Clearview Movie Theater.">
-            <img src="https://picsum.photos/seed/sign015b0img4/1000/650" alt="Placeholder photo 4" loading="lazy">
-          </div>
-            </div>
-          </div>
-          <button class="gallery-arrow gallery-arrow-right" aria-label="Scroll right">›</button>
-        </div>
-        <div class="gallery-hint">Click photos to enlarge · Use arrows or drag to browse</div>
-      </section>
-      
-      
-      <section class="sub-section">
-        <h3 class="sub-head">Sources</h3>
-        <div class="source-list">
-        <div class="source-entry">
-          <div class="source-label">Newspaper article</div>
-          <div class="source-detail"><em>The Black Dispatch</em>, June 12, 1930. Announcement of theater opening.</div>
-        </div>
-        <div class="source-entry">
-          <div class="source-label">Newspaper article</div>
-          <div class="source-detail"><em>The Black Dispatch</em>, July 3, 1930. Report on weekly programming.</div>
-        </div>
-        <div class="source-entry">
-          <div class="source-label">Oral history</div>
-          <div class="source-detail">Recollections from Shirley Nero, Marguerite French, and JP Owens.</div>
-        </div></div>
-      </section>
-    </div>
-    
+      </div>
     </section>
 
   </div>
@@ -804,17 +777,53 @@
       <div class="catalog-key">Operated</div>
       <div class="catalog-value small">c. 1930</div>
     </div>
-    <div class="catalog-row">
-      <div class="catalog-key">Status</div>
-      <div class="catalog-value small">Research in progress</div>
-    </div>
-    <div class="catalog-row">
-      <div class="catalog-key">Surveyed</div>
-      <div class="catalog-value small">May 2026</div>
-    </div>
   </aside>
 
 </main>
+<div class="gallery-full-width">
+  <div class="gallery-full-title">Gallery</div>
+  <div class="gallery-wrap">
+          <button class="gallery-arrow gallery-arrow-left" aria-label="Scroll left">‹</button>
+          <div class="gallery-clip">
+            <div class="gallery-row">
+          <div class="gallery-item" data-src="https://picsum.photos/seed/sign015b0img1/900/650" data-title="Placeholder photo 1" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of Clearview Movie Theater.">
+            <img src="https://picsum.photos/seed/sign015b0img1/900/650" alt="Placeholder photo 1" loading="lazy">
+          </div>
+          <div class="gallery-item" data-src="https://picsum.photos/seed/sign015b0img2/750/650" data-title="Placeholder photo 2" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of Clearview Movie Theater.">
+            <img src="https://picsum.photos/seed/sign015b0img2/750/650" alt="Placeholder photo 2" loading="lazy">
+          </div>
+          <div class="gallery-item" data-src="https://picsum.photos/seed/sign015b0img3/850/650" data-title="Placeholder photo 3" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of Clearview Movie Theater.">
+            <img src="https://picsum.photos/seed/sign015b0img3/850/650" alt="Placeholder photo 3" loading="lazy">
+          </div>
+          <div class="gallery-item" data-src="https://picsum.photos/seed/sign015b0img4/1000/650" data-title="Placeholder photo 4" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of Clearview Movie Theater.">
+            <img src="https://picsum.photos/seed/sign015b0img4/1000/650" alt="Placeholder photo 4" loading="lazy">
+          </div>
+            </div>
+          </div>
+          <button class="gallery-arrow gallery-arrow-right" aria-label="Scroll right">›</button>
+        </div>
+        <div class="gallery-hint">Click photos to enlarge · Use arrows or drag to browse</div>
+      
+  
+</div>
+<div class="sources-outer">
+  <section class="sub-section sources-constrained">
+    <h3 class="sub-head">Sources</h3>
+    <div class="source-list">
+        <div class="source-entry">
+          <div class="source-label">Newspaper article</div>
+          <div class="source-detail"><em>The Black Dispatch</em>, June 12, 1930. Announcement of theater opening.</div>
+        </div>
+        <div class="source-entry">
+          <div class="source-label">Newspaper article</div>
+          <div class="source-detail"><em>The Black Dispatch</em>, July 3, 1930. Report on weekly programming.</div>
+        </div>
+        <div class="source-entry">
+          <div class="source-label">Oral history</div>
+          <div class="source-detail">Recollections from Shirley Nero, Marguerite French, and JP Owens.</div>
+        </div></div>
+  </section>
+</div>
 
 <footer>
   Clearview Historical Mapping Project · 2026

@@ -62,8 +62,7 @@
   }
 
   .hero {
-    padding: 56px 40px 44px;
-    border-bottom: 1px solid var(--rule);
+    padding: 56px 40px 48px;
     max-width: 1100px;
     margin: 0 auto;
     width: 100%;
@@ -89,9 +88,9 @@
   }
 
   .hero-subtitle {
-    font-family: 'Instrument Serif', serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 400;
-    font-size: 22px;
+    font-size: 16px;
     color: var(--ink-soft);
     margin-top: 20px;
     max-width: 640px;
@@ -101,12 +100,37 @@
   .layout {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 56px 40px 80px;
+    padding: 0 40px 0;
     display: grid;
     grid-template-columns: 1fr 300px;
     gap: 56px;
   }
 
+  .gallery-full-width {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 48px 40px 20px;
+  }
+  .gallery-full-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--rust);
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 20px;
+  }
+  .sources-outer {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 40px 80px;
+  }
+  .sources-constrained {
+    max-width: 664px;
+    margin-left: 0;
+  }
   .catalog {
     background: var(--paper-soft);
     border-radius: 4px;
@@ -416,7 +440,7 @@
   .layout {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 56px 40px 80px;
+    padding: 0 40px 0;
     display: grid;
     grid-template-columns: 1fr 300px;
     gap: 56px;
@@ -707,14 +731,14 @@
 <body>
 
 <div class="topbar">
-  <a href="index.html" class="back-link">← Back to Map</a>
+  <a href="../index.html" class="back-link">← Back to Map</a>
   <div class="breadcrumb">Clearview Historical Mapping Project / № 016</div>
 </div>
 
 <section class="hero">
   <div class="hero-tag">Sign № 016 · Lot 99</div>
   <h1 class="hero-title">“Diddy” Oliver Grocery Store</h1>
-  <p class="hero-subtitle">Grocery store on Lot 99 during the 1910s and 1920s.</p>
+  <p class="hero-subtitle">H.M. "Diddy" Oliver stocked his shelves with flour, ice cream, fireworks, and medicine — one of the earliest grocers in a town built on the idea that Black Americans could own everything they needed.</p>
 </section>
 
 <main class="layout">
@@ -722,53 +746,15 @@
   <div class="content">
 
     <section>
-      <h2 class="section-head">History <span class="pill">Single business</span></h2>
+      <h2 class="section-head">History</h2>
       
     <div class="business-block">
-      
-      <div class="business-details">
-<div class="biz-row"><div class="biz-key">Owners</div><div class="biz-value">H. M. Oliver and/or B. Oliver</div></div>
-<div class="biz-row"><div class="biz-key">Dates</div><div class="biz-value">1910s – 1920s</div></div>
-</div>
-      <p class="empty-narrative">Narrative not yet recorded. Research in progress.</p>
-      <div class="business-notes"><div class="notes-label">Notes</div><div class="notes-text">The Olivers may have relocated to Boley by the 1920s, or the siblings may have split up the business.</div></div>
-      
-      <section class="sub-section">
-        <h3 class="sub-head">Gallery</h3>
-        <div class="gallery-wrap">
-          <button class="gallery-arrow gallery-arrow-left" aria-label="Scroll left">‹</button>
-          <div class="gallery-clip">
-            <div class="gallery-row">
-          <div class="gallery-item" data-src="https://picsum.photos/seed/sign016b0img1/900/650" data-title="Placeholder photo 1" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of “Diddy” Oliver Grocery Store.">
-            <img src="https://picsum.photos/seed/sign016b0img1/900/650" alt="Placeholder photo 1" loading="lazy">
-          </div>
-          <div class="gallery-item" data-src="https://picsum.photos/seed/sign016b0img2/750/650" data-title="Placeholder photo 2" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of “Diddy” Oliver Grocery Store.">
-            <img src="https://picsum.photos/seed/sign016b0img2/750/650" alt="Placeholder photo 2" loading="lazy">
-          </div>
-          <div class="gallery-item" data-src="https://picsum.photos/seed/sign016b0img3/850/650" data-title="Placeholder photo 3" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of “Diddy” Oliver Grocery Store.">
-            <img src="https://picsum.photos/seed/sign016b0img3/850/650" alt="Placeholder photo 3" loading="lazy">
-          </div>
-          <div class="gallery-item" data-src="https://picsum.photos/seed/sign016b0img4/1000/650" data-title="Placeholder photo 4" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of “Diddy” Oliver Grocery Store.">
-            <img src="https://picsum.photos/seed/sign016b0img4/1000/650" alt="Placeholder photo 4" loading="lazy">
-          </div>
-            </div>
-          </div>
-          <button class="gallery-arrow gallery-arrow-right" aria-label="Scroll right">›</button>
-        </div>
-        <div class="gallery-hint">Click photos to enlarge · Use arrows or drag to browse</div>
-      </section>
-      
-      
-      <section class="sub-section">
-        <h3 class="sub-head">Sources</h3>
-        <div class="source-list">
-        <div class="source-entry">
-          <div class="source-label">Newspaper advertisement</div>
-          <div class="source-detail">Advertisement located by Larry (researcher).</div>
-        </div></div>
-      </section>
-    </div>
-    
+      <div class="prose">
+<p class="lead">Born in 1877 in Louisiana, H. M. "Diddy" Oliver opened a grocery store in Clearview.</p>
+<p>The earliest mention of the store in local newspapers was 1911 and it lasted through the 1920s. Newspaper advertisements show that in addition to staples like flour he sold confections, ice cream, toys, fireworks, pesticides, and medicine. One article also mentions a charge of violating prohibition laws, implying that he likely sold moonshine to his customers. He also operated a farm, supporting his income, and was president of a literary society in Clearview.</p>
+<p>It's possible that he ran the store with a B. Oliver who would eventually open a grocery store in Boley in the mid-1910s. As one of the earliest grocers in Clearview, Diddy Oliver's store represents the opportunity and success that African Americans leaving the South could find in all-Black towns.</p>
+</div><div class="notes-text">The Olivers may have relocated to Boley by the 1920s, or the siblings may have split up the business.</div></div>
+      </div>
     </section>
 
   </div>
@@ -792,17 +778,110 @@
       <div class="catalog-key">Operated</div>
       <div class="catalog-value small">1910s – 1920s</div>
     </div>
-    <div class="catalog-row">
-      <div class="catalog-key">Status</div>
-      <div class="catalog-value small">Research in progress</div>
-    </div>
-    <div class="catalog-row">
-      <div class="catalog-key">Surveyed</div>
-      <div class="catalog-value small">May 2026</div>
-    </div>
   </aside>
 
 </main>
+<div class="gallery-full-width">
+  <div class="gallery-full-title">Gallery</div>
+  <div class="gallery-wrap">
+          <button class="gallery-arrow gallery-arrow-left" aria-label="Scroll left">‹</button>
+          <div class="gallery-clip">
+            <div class="gallery-row">
+          <div class="gallery-item archival" data-src="../sources/The_Patriarch_1911_08_17_3.jpg" data-title="The Patriarch, August 17, 1911" data-date="August 17, 1911" data-source="The Patriarch · project archive" data-caption="Page from <em>The Patriarch</em>, August 17, 1911.">
+            <img src="../sources/The_Patriarch_1911_08_17_3.jpg" alt="The Patriarch, August 17, 1911" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/sign16_rodeo_1983.jpg" data-title="Clearview Rodeo, 1983 (image 10)" data-date="1983" data-source="Rodeo archive · project archive" data-caption="Clearview Rodeo, 1983 (image 10)">
+            <img src="../sources/sign16_rodeo_1983.jpg" alt="Clearview Rodeo, 1983 (image 10)" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/The_Patriarch_1911_04_20_1-1.png" data-title="The Patriarch, April 20, 1911" data-date="April 20, 1911" data-source="The Patriarch · project archive" data-caption="Clipping from <em>The Patriarch</em>, April 20, 1911.">
+            <img src="../sources/The_Patriarch_1911_04_20_1-1.png" alt="The Patriarch, April 20, 1911" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/The_Patriarch_1911_04_20_1_v2-1.png" data-title="The Patriarch, April 20, 1911 (variant 2)" data-date="April 20, 1911" data-source="The Patriarch · project archive" data-caption="The Patriarch, April 20, 1911 (variant 2)">
+            <img src="../sources/The_Patriarch_1911_04_20_1_v2-1.png" alt="The Patriarch, April 20, 1911 (variant 2)" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/The_Patriarch_1911_05_18_1-1.png" data-title="The Patriarch, May 18, 1911" data-date="May 18, 1911" data-source="The Patriarch · project archive" data-caption="The Patriarch, May 18, 1911">
+            <img src="../sources/The_Patriarch_1911_05_18_1-1.png" alt="The Patriarch, May 18, 1911" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/The_Patriarch_1911_09_28_2-1.png" data-title="The Patriarch, September 28, 1911" data-date="September 28, 1911" data-source="The Patriarch · project archive" data-caption="The Patriarch, September 28, 1911">
+            <img src="../sources/The_Patriarch_1911_09_28_2-1.png" alt="The Patriarch, September 28, 1911" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/The_Patriarch_1911_12_21_4-1.png" data-title="The Patriarch, December 21, 1911" data-date="December 21, 1911" data-source="The Patriarch · project archive" data-caption="The Patriarch, December 21, 1911">
+            <img src="../sources/The_Patriarch_1911_12_21_4-1.png" alt="The Patriarch, December 21, 1911" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/The_Patriarch_1916_07_07_2-1.png" data-title="The Patriarch, July 7, 1916" data-date="July 7, 1916" data-source="The Patriarch · project archive" data-caption="The Patriarch, July 7, 1916">
+            <img src="../sources/The_Patriarch_1916_07_07_2-1.png" alt="The Patriarch, July 7, 1916" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/The_Patriarch_1916_07_07_2_v2-1.png" data-title="The Patriarch, July 7, 1916 (variant 2)" data-date="July 7, 1916" data-source="The Patriarch · project archive" data-caption="The Patriarch, July 7, 1916 (variant 2)">
+            <img src="../sources/The_Patriarch_1916_07_07_2_v2-1.png" alt="The Patriarch, July 7, 1916 (variant 2)" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/The_Patriarch_1916_08_04_3-1.png" data-title="The Patriarch, August 4, 1916" data-date="August 4, 1916" data-source="The Patriarch · project archive" data-caption="The Patriarch, August 4, 1916">
+            <img src="../sources/The_Patriarch_1916_08_04_3-1.png" alt="The Patriarch, August 4, 1916" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/The_Patriarch_1916_08_04_3_v2-1.png" data-title="The Patriarch, August 4, 1916 (variant 2)" data-date="August 4, 1916" data-source="The Patriarch · project archive" data-caption="The Patriarch, August 4, 1916 (variant 2)">
+            <img src="../sources/The_Patriarch_1916_08_04_3_v2-1.png" alt="The Patriarch, August 4, 1916 (variant 2)" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/The_Patriarch_1916_08_04_3_v3-1.png" data-title="The Patriarch, August 4, 1916 (variant 3)" data-date="August 4, 1916" data-source="The Patriarch · project archive" data-caption="The Patriarch, August 4, 1916 (variant 3)">
+            <img src="../sources/The_Patriarch_1916_08_04_3_v3-1.png" alt="The Patriarch, August 4, 1916 (variant 3)" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/The_Okemah_Ledger_1918_06_27_1-1.png" data-title="The Okemah Ledger, June 27, 1918" data-date="June 27, 1918" data-source="The Okemah Ledger · project archive" data-caption="The Okemah Ledger, June 27, 1918">
+            <img src="../sources/The_Okemah_Ledger_1918_06_27_1-1.png" alt="The Okemah Ledger, June 27, 1918" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/The_Okemah_Ledger_1918_06_27_1_v2-1.png" data-title="The Okemah Ledger, June 27, 1918 (variant 2)" data-date="June 27, 1918" data-source="The Okemah Ledger · project archive" data-caption="The Okemah Ledger, June 27, 1918 (variant 2)">
+            <img src="../sources/The_Okemah_Ledger_1918_06_27_1_v2-1.png" alt="The Okemah Ledger, June 27, 1918 (variant 2)" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/The_Okfuskee_County_News_1915_07_01_8-1.png" data-title="Okfuskee County News, July 1, 1915" data-date="July 1, 1915" data-source="Okfuskee County News · project archive" data-caption="Okfuskee County News, July 1, 1915">
+            <img src="../sources/The_Okfuskee_County_News_1915_07_01_8-1.png" alt="Okfuskee County News, July 1, 1915" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/The_Weekly_Progress_1911_09_07_8-1.png" data-title="The Weekly Progress, September 7, 1911" data-date="September 7, 1911" data-source="The Weekly Progress · project archive" data-caption="The Weekly Progress, September 7, 1911">
+            <img src="../sources/The_Weekly_Progress_1911_09_07_8-1.png" alt="The Weekly Progress, September 7, 1911" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/The_Weekly_Progress_1915_10_16_3-1.png" data-title="The Weekly Progress, October 16, 1915" data-date="October 16, 1915" data-source="The Weekly Progress · project archive" data-caption="The Weekly Progress, October 16, 1915">
+            <img src="../sources/The_Weekly_Progress_1915_10_16_3-1.png" alt="The Weekly Progress, October 16, 1915" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/The_Weekly_Progress_1926_04_22_3-1.png" data-title="The Weekly Progress, April 22, 1926" data-date="April 22, 1926" data-source="The Weekly Progress · project archive" data-caption="The Weekly Progress, April 22, 1926">
+            <img src="../sources/The_Weekly_Progress_1926_04_22_3-1.png" alt="The Weekly Progress, April 22, 1926" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/The_Weekly_Progress_1926_04_29_4-1.png" data-title="The Weekly Progress, April 29, 1926" data-date="April 29, 1926" data-source="The Weekly Progress · project archive" data-caption="The Weekly Progress, April 29, 1926">
+            <img src="../sources/The_Weekly_Progress_1926_04_29_4-1.png" alt="The Weekly Progress, April 29, 1926" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/The_Weekly_Progress_1926_05_20_1-1.png" data-title="The Weekly Progress, May 20, 1926" data-date="May 20, 1926" data-source="The Weekly Progress · project archive" data-caption="The Weekly Progress, May 20, 1926">
+            <img src="../sources/The_Weekly_Progress_1926_05_20_1-1.png" alt="The Weekly Progress, May 20, 1926" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
+          </div>
+            </div>
+          </div>
+          <button class="gallery-arrow gallery-arrow-right" aria-label="Scroll right">›</button>
+        </div>
+        <div class="gallery-hint">Click photos to enlarge · Use arrows or drag to browse</div>
+      
+  
+</div>
+<div class="sources-outer">
+  <section class="sub-section sources-constrained">
+    <h3 class="sub-head">Sources</h3>
+    <div class="source-list">
+        <div class="source-entry">
+          <div class="source-label">Newspaper · 1911–1916</div>
+          <div class="source-detail"><em>The Patriarch</em> — multiple issues, 1911 and 1916, referencing Diddy Oliver's Grocery Store.</div>
+        </div>
+        <div class="source-entry">
+          <div class="source-label">Newspaper · Jun 27, 1918</div>
+          <div class="source-detail"><em>The Okemah Ledger</em>, June 27, 1918. <a href="../sources/The_Okemah_Ledger_1918_06_27_1.pdf" target="_blank" rel="noopener" style="color: var(--dirt); text-decoration: underline; font-weight: 500;">View PDF →</a></div>
+        </div>
+        <div class="source-entry">
+          <div class="source-label">Newspaper · Jul 1, 1915</div>
+          <div class="source-detail"><em>Okfuskee County News</em>, July 1, 1915. <a href="../sources/The_Okfuskee_County_News_1915_07_01_8.pdf" target="_blank" rel="noopener" style="color: var(--dirt); text-decoration: underline; font-weight: 500;">View PDF →</a></div>
+        </div>
+        <div class="source-entry">
+          <div class="source-label">Newspaper · 1911–1926</div>
+          <div class="source-detail"><em>The Weekly Progress</em> — multiple issues, 1911–1926.</div>
+        </div>
+        <div class="source-entry">
+          <div class="source-label">Newspaper advertisement</div>
+          <div class="source-detail">Advertisement located by Larry (researcher).</div>
+        </div>
+        </div>
+  </section>
+</div>
 
 <footer>
   Clearview Historical Mapping Project · 2026

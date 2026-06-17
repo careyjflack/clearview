@@ -62,8 +62,7 @@
   }
 
   .hero {
-    padding: 56px 40px 44px;
-    border-bottom: 1px solid var(--rule);
+    padding: 56px 40px 48px;
     max-width: 1100px;
     margin: 0 auto;
     width: 100%;
@@ -89,9 +88,9 @@
   }
 
   .hero-subtitle {
-    font-family: 'Instrument Serif', serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 400;
-    font-size: 22px;
+    font-size: 16px;
     color: var(--ink-soft);
     margin-top: 20px;
     max-width: 640px;
@@ -101,12 +100,37 @@
   .layout {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 56px 40px 80px;
+    padding: 0 40px 0;
     display: grid;
     grid-template-columns: 1fr 300px;
     gap: 56px;
   }
 
+  .gallery-full-width {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 48px 40px 20px;
+  }
+  .gallery-full-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--rust);
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 20px;
+  }
+  .sources-outer {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 40px 80px;
+  }
+  .sources-constrained {
+    max-width: 664px;
+    margin-left: 0;
+  }
   .catalog {
     background: var(--paper-soft);
     border-radius: 4px;
@@ -416,7 +440,7 @@
   .layout {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 56px 40px 80px;
+    padding: 0 40px 0;
     display: grid;
     grid-template-columns: 1fr 300px;
     gap: 56px;
@@ -707,14 +731,14 @@
 <body>
 
 <div class="topbar">
-  <a href="index.html" class="back-link">← Back to Map</a>
+  <a href="../index.html" class="back-link">← Back to Map</a>
   <div class="breadcrumb">Clearview Historical Mapping Project / № 011</div>
 </div>
 
 <section class="hero">
   <div class="hero-tag">Sign № 011 · Lot 12</div>
   <h1 class="hero-title">Ed Castlow's Tavern</h1>
-  <p class="hero-subtitle">A gathering place that quietly served beer and moonshine through Oklahoma's prohibition years.</p>
+  <p class="hero-subtitle">Ed and Mary Alice Castlow quietly served beer and moonshine through five decades of sheriffs and prohibition laws — their tavern was where Clearview went to rest after a hard day's work.</p>
 </section>
 
 <main class="layout">
@@ -722,60 +746,13 @@
   <div class="content">
 
     <section>
-      <h2 class="section-head">History <span class="pill">Single business</span></h2>
+      <h2 class="section-head">History</h2>
       
     <div class="business-block">
-      
-      <div class="business-details">
-<div class="biz-row"><div class="biz-key">Owners</div><div class="biz-value">Ed Castlow (1888 – 1969) and Mary Alice Castlow (c. 1890 – 1961)</div></div>
-<div class="biz-row"><div class="biz-key">Dates</div><div class="biz-value">c. 1936 – 1957</div></div>
-<div class="biz-row"><div class="biz-key">Affiliated</div><div class="biz-value">Normores, Marguerite French, Joe Golden, Hattie Lou Oliver</div></div>
-</div>
       <div class="prose">
 <p class="lead">Ed (1888-1969) and Mary Alice Castlow (ca. 1890-1961) came to Clearview from Texas in 1908. Ed Castlow worked various jobs on farms, the railroad, and as a driver before eventually opening up their grocery store and tavern in the 1930s. Beer joints were relatively clandestine places during this time as Oklahoma's strict prohibition laws did not allow the sale of beer until 1933 and hard liquor until 1959. Undeterred, Clearview residents recall that the Castlows readily supplied beer, choc beer, and moonshine whiskey to any paying customer. This would get them in trouble with the law more than once as newspaper records report multiple run-ins with the law over possession of moonshine, sales to minors, and squabbles that occurred at the tavern. Despite threats of being closed down by Sheriff E. L. Jeter, the Castlows were able to make a living for themselves in Clearview and provided a gathering place for residents to come together after a hard day's work. Ed and Mary Alice Castlow passed away in 1969 and 1961 respectively. When asked about Ed Castlow, one resident shared, "I can't say too much about him. I know, but I can't tell."</p>
 </div>
-      
-      
-      <section class="sub-section">
-        <h3 class="sub-head">Gallery</h3>
-        <div class="gallery-wrap">
-          <button class="gallery-arrow gallery-arrow-left" aria-label="Scroll left">‹</button>
-          <div class="gallery-clip">
-            <div class="gallery-row">
-          <div class="gallery-item" data-src="https://picsum.photos/seed/sign011b0img1/900/650" data-title="Placeholder photo 1" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of Ed Castlow's Tavern.">
-            <img src="https://picsum.photos/seed/sign011b0img1/900/650" alt="Placeholder photo 1" loading="lazy">
-          </div>
-          <div class="gallery-item" data-src="https://picsum.photos/seed/sign011b0img2/750/650" data-title="Placeholder photo 2" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of Ed Castlow's Tavern.">
-            <img src="https://picsum.photos/seed/sign011b0img2/750/650" alt="Placeholder photo 2" loading="lazy">
-          </div>
-          <div class="gallery-item" data-src="https://picsum.photos/seed/sign011b0img3/850/650" data-title="Placeholder photo 3" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of Ed Castlow's Tavern.">
-            <img src="https://picsum.photos/seed/sign011b0img3/850/650" alt="Placeholder photo 3" loading="lazy">
-          </div>
-          <div class="gallery-item" data-src="https://picsum.photos/seed/sign011b0img4/1000/650" data-title="Placeholder photo 4" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of Ed Castlow's Tavern.">
-            <img src="https://picsum.photos/seed/sign011b0img4/1000/650" alt="Placeholder photo 4" loading="lazy">
-          </div>
-            </div>
-          </div>
-          <button class="gallery-arrow gallery-arrow-right" aria-label="Scroll right">›</button>
-        </div>
-        <div class="gallery-hint">Click photos to enlarge · Use arrows or drag to browse</div>
-      </section>
-      
-      
-      <section class="sub-section">
-        <h3 class="sub-head">Sources</h3>
-        <div class="source-list">
-        <div class="source-entry">
-          <div class="source-label">Newspaper court reports</div>
-          <div class="source-detail">Multiple newspaper reports of arrests for possession of moonshine, sales to minors, and tavern disturbances.</div>
-        </div>
-        <div class="source-entry">
-          <div class="source-label">Oral history</div>
-          <div class="source-detail">Recollections from Marguerite French, Joe Golden, Hattie Lou Oliver, and Normores. Mrs. Shirley plans to consult cousins.</div>
-        </div></div>
-      </section>
-    </div>
-    
+      </div>
     </section>
 
   </div>
@@ -799,17 +776,69 @@
       <div class="catalog-key">Operated</div>
       <div class="catalog-value small">c. 1936 – 1957</div>
     </div>
-    <div class="catalog-row">
-      <div class="catalog-key">Status</div>
-      <div class="catalog-value small">Documented</div>
-    </div>
-    <div class="catalog-row">
-      <div class="catalog-key">Surveyed</div>
-      <div class="catalog-value small">May 2026</div>
-    </div>
   </aside>
 
 </main>
+<div class="gallery-full-width">
+  <div class="gallery-full-title">Gallery</div>
+  <div class="gallery-wrap">
+          <button class="gallery-arrow gallery-arrow-left" aria-label="Scroll left">‹</button>
+          <div class="gallery-clip">
+            <div class="gallery-row">
+          <div class="gallery-item archival" data-src="../sources/Okemah_News_Leader_1951_07_31_1-1.png" data-title="Okemah News Leader, July 31, 1951" data-date="July 31, 1951" data-source="Okemah News Leader · project archive" data-caption="Clipping from the <em>Okemah News Leader</em> referencing Ed Castlow's Tavern.">
+            <img src="../sources/Okemah_News_Leader_1951_07_31_1-1.png" alt="Okemah News Leader, July 31, 1951" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/The_Okfuskee_County_News_1936_10_15_3-1.png" data-title="Okfuskee County News, October 15, 1936" data-date="October 15, 1936" data-source="Okfuskee County News · project archive" data-caption="Clipping from the <em>Okfuskee County News</em> referencing Ed Castlow's Tavern.">
+            <img src="../sources/The_Okfuskee_County_News_1936_10_15_3-1.png" alt="Okfuskee County News, October 15, 1936" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/The_Okfuskee_County_News_1961_09_21_5-1.png" data-title="Okfuskee County News, September 21, 1961" data-date="September 21, 1961" data-source="Okfuskee County News · project archive" data-caption="Clipping from the <em>Okfuskee County News</em> referencing Ed Castlow's Tavern.">
+            <img src="../sources/The_Okfuskee_County_News_1961_09_21_5-1.png" alt="Okfuskee County News, September 21, 1961" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/Weleetka_American_1957_08_22_1-1.png" data-title="Weleetka American, August 22, 1957" data-date="August 22, 1957" data-source="Weleetka American · project archive" data-caption="Clipping from the <em>Weleetka American</em> referencing Ed Castlow's Tavern.">
+            <img src="../sources/Weleetka_American_1957_08_22_1-1.png" alt="Weleetka American, August 22, 1957" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/Weleetka_American_1957_11_07_1-1.png" data-title="Weleetka American, November 7, 1957" data-date="November 7, 1957" data-source="Weleetka American · project archive" data-caption="Clipping from the <em>Weleetka American</em> referencing Ed Castlow's Tavern.">
+            <img src="../sources/Weleetka_American_1957_11_07_1-1.png" alt="Weleetka American, November 7, 1957" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
+          </div>
+            </div>
+          </div>
+          <button class="gallery-arrow gallery-arrow-right" aria-label="Scroll right">›</button>
+        </div>
+        <div class="gallery-hint">Click photos to enlarge · Use arrows or drag to browse</div>
+      
+  
+</div>
+<div class="sources-outer">
+  <section class="sub-section sources-constrained">
+    <h3 class="sub-head">Sources</h3>
+    <div class="source-list">
+        <div class="source-entry">
+          <div class="source-label">Newspaper · Jul 31, 1951</div>
+          <div class="source-detail"><em>Okemah News Leader</em>, July 31, 1951. <a href="../sources/Okemah_News_Leader_1951_07_31_1.pdf" target="_blank" rel="noopener" style="color: var(--dirt); text-decoration: underline; font-weight: 500;">View PDF →</a></div>
+        </div>
+        <div class="source-entry">
+          <div class="source-label">Newspaper · Oct 15, 1936</div>
+          <div class="source-detail"><em>Okfuskee County News</em>, October 15, 1936. <a href="../sources/The_Okfuskee_County_News_1936_10_15_3.pdf" target="_blank" rel="noopener" style="color: var(--dirt); text-decoration: underline; font-weight: 500;">View PDF →</a></div>
+        </div>
+        <div class="source-entry">
+          <div class="source-label">Newspaper · Sep 21, 1961</div>
+          <div class="source-detail"><em>Okfuskee County News</em>, September 21, 1961. <a href="../sources/The_Okfuskee_County_News_1961_09_21_5.pdf" target="_blank" rel="noopener" style="color: var(--dirt); text-decoration: underline; font-weight: 500;">View PDF →</a></div>
+        </div>
+        <div class="source-entry">
+          <div class="source-label">Newspaper · Aug 22, 1957</div>
+          <div class="source-detail"><em>Weleetka American</em>, August 22, 1957. <a href="../sources/Weleetka_American_1957_08_22_1.pdf" target="_blank" rel="noopener" style="color: var(--dirt); text-decoration: underline; font-weight: 500;">View PDF →</a></div>
+        </div>
+        <div class="source-entry">
+          <div class="source-label">Newspaper · Nov 7, 1957</div>
+          <div class="source-detail"><em>Weleetka American</em>, November 7, 1957. <a href="../sources/Weleetka_American_1957_11_07_1.pdf" target="_blank" rel="noopener" style="color: var(--dirt); text-decoration: underline; font-weight: 500;">View PDF →</a></div>
+        </div>
+        <div class="source-entry">
+          <div class="source-label">Oral history</div>
+          <div class="source-detail">Recollections from Marguerite French, Joe Golden, Hattie Lou Oliver, and Normores. Mrs. Shirley plans to consult cousins.</div>
+        </div>
+        </div>
+  </section>
+</div>
 
 <footer>
   Clearview Historical Mapping Project · 2026

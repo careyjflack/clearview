@@ -62,8 +62,7 @@
   }
 
   .hero {
-    padding: 56px 40px 44px;
-    border-bottom: 1px solid var(--rule);
+    padding: 56px 40px 48px;
     max-width: 1100px;
     margin: 0 auto;
     width: 100%;
@@ -89,9 +88,9 @@
   }
 
   .hero-subtitle {
-    font-family: 'Instrument Serif', serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 400;
-    font-size: 22px;
+    font-size: 16px;
     color: var(--ink-soft);
     margin-top: 20px;
     max-width: 640px;
@@ -101,12 +100,37 @@
   .layout {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 56px 40px 80px;
+    padding: 0 40px 0;
     display: grid;
     grid-template-columns: 1fr 300px;
     gap: 56px;
   }
 
+  .gallery-full-width {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 48px 40px 20px;
+  }
+  .gallery-full-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--rust);
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 20px;
+  }
+  .sources-outer {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 40px 80px;
+  }
+  .sources-constrained {
+    max-width: 664px;
+    margin-left: 0;
+  }
   .catalog {
     background: var(--paper-soft);
     border-radius: 4px;
@@ -416,7 +440,7 @@
   .layout {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 56px 40px 80px;
+    padding: 0 40px 0;
     display: grid;
     grid-template-columns: 1fr 300px;
     gap: 56px;
@@ -707,14 +731,14 @@
 <body>
 
 <div class="topbar">
-  <a href="index.html" class="back-link">← Back to Map</a>
+  <a href="../index.html" class="back-link">← Back to Map</a>
   <div class="breadcrumb">Clearview Historical Mapping Project / № 012</div>
 </div>
 
 <section class="hero">
   <div class="hero-tag">Sign № 012 · Lot 15</div>
   <h1 class="hero-title">Ft. Smith & Western Section Foreman's Shop</h1>
-  <p class="hero-subtitle">Railroad maintenance shop for the Fort Smith & Western line through Clearview.</p>
+  <p class="hero-subtitle">An all-Black crew kept the Fort Smith & Western line running through Clearview — called out day and night to repair whatever the weather broke.</p>
 </section>
 
 <main class="layout">
@@ -722,54 +746,15 @@
   <div class="content">
 
     <section>
-      <h2 class="section-head">History <span class="pill">Single business</span></h2>
+      <h2 class="section-head">History</h2>
       
     <div class="business-block">
-      
-      <div class="business-details">
-<div class="biz-row"><div class="biz-key">Owners</div><div class="biz-value">Ollie Walker Sr. (section foreman)</div></div>
-<div class="biz-row"><div class="biz-key">Dates</div><div class="biz-value">1903 – 1939</div></div>
-<div class="biz-row"><div class="biz-key">Affiliated</div><div class="biz-value">Shirley Nero, JP Owens. Crew members: Walter McBrayer, Simon Riley, Ed Castilow, Ed McBrayer</div></div>
+      <div class="prose">
+<p class="lead">The Ft. Smith and Western Railroad employed an all-Black section foreman and crew in Clearview that maintained the railroad bed approximately four miles east and west of town.</p>
+<p>Ollie Walker Sr. was one of the longest serving section foremen and was joined by Walter McBrayer, Simon Riley, Ed Castilow, and Ed McBrayer. They would be frequently called out at night to repair tracks that were damaged by rockslides, washed out bridges, and other hazards.</p>
+<p>The services of the Ft. Smith and Western Railroad were discontinued in 1939.</p>
 </div>
-      <p class="empty-narrative">Narrative not yet recorded. Research in progress.</p>
-      
-      
-      <section class="sub-section">
-        <h3 class="sub-head">Gallery</h3>
-        <div class="gallery-wrap">
-          <button class="gallery-arrow gallery-arrow-left" aria-label="Scroll left">‹</button>
-          <div class="gallery-clip">
-            <div class="gallery-row">
-          <div class="gallery-item" data-src="https://picsum.photos/seed/sign012b0img1/900/650" data-title="Placeholder photo 1" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of Ft. Smith & Western Section Foreman's Shop.">
-            <img src="https://picsum.photos/seed/sign012b0img1/900/650" alt="Placeholder photo 1" loading="lazy">
-          </div>
-          <div class="gallery-item" data-src="https://picsum.photos/seed/sign012b0img2/750/650" data-title="Placeholder photo 2" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of Ft. Smith & Western Section Foreman's Shop.">
-            <img src="https://picsum.photos/seed/sign012b0img2/750/650" alt="Placeholder photo 2" loading="lazy">
-          </div>
-          <div class="gallery-item" data-src="https://picsum.photos/seed/sign012b0img3/850/650" data-title="Placeholder photo 3" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of Ft. Smith & Western Section Foreman's Shop.">
-            <img src="https://picsum.photos/seed/sign012b0img3/850/650" alt="Placeholder photo 3" loading="lazy">
-          </div>
-          <div class="gallery-item" data-src="https://picsum.photos/seed/sign012b0img4/1000/650" data-title="Placeholder photo 4" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of Ft. Smith & Western Section Foreman's Shop.">
-            <img src="https://picsum.photos/seed/sign012b0img4/1000/650" alt="Placeholder photo 4" loading="lazy">
-          </div>
-            </div>
-          </div>
-          <button class="gallery-arrow gallery-arrow-right" aria-label="Scroll right">›</button>
-        </div>
-        <div class="gallery-hint">Click photos to enlarge · Use arrows or drag to browse</div>
-      </section>
-      
-      
-      <section class="sub-section">
-        <h3 class="sub-head">Sources</h3>
-        <div class="source-list">
-        <div class="source-entry">
-          <div class="source-label">Oral history</div>
-          <div class="source-detail">Recollections from Shirley Nero and JP Owens.</div>
-        </div></div>
-      </section>
-    </div>
-    
+      </div>
     </section>
 
   </div>
@@ -793,17 +778,58 @@
       <div class="catalog-key">Operated</div>
       <div class="catalog-value small">1903 – 1939</div>
     </div>
-    <div class="catalog-row">
-      <div class="catalog-key">Status</div>
-      <div class="catalog-value small">Research in progress</div>
-    </div>
-    <div class="catalog-row">
-      <div class="catalog-key">Surveyed</div>
-      <div class="catalog-value small">May 2026</div>
-    </div>
   </aside>
 
 </main>
+<div class="gallery-full-width">
+  <div class="gallery-full-title">Gallery</div>
+  <div class="gallery-wrap">
+          <button class="gallery-arrow gallery-arrow-left" aria-label="Scroll left">‹</button>
+          <div class="gallery-clip">
+            <div class="gallery-row">
+          <div class="gallery-item archival" data-src="../sources/sign12_walker_1921.jpg" data-title="Ollie Lee Walker Sr. and crew, 1921" data-date="1921" data-source="Project archive" data-caption="Picture 1921 — Ollie Lee Walker Sr. (center) with Ft. Smith &amp; Western Railroad crew, holding Ollie Leonard Walker (baby). Workers sit on railroad equipment near the section foreman's shop.">
+            <img src="../sources/sign12_walker_1921.jpg" alt="Ollie Lee Walker Sr. and crew, 1921" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/clearview_012.jpg" data-title="Clearview — archival photograph 012" data-date="Undated" data-source="Project archive" data-caption="Archival photograph from the Clearview project collection.">
+            <img src="../sources/clearview_012.jpg" alt="Clearview — archival photograph 012" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/sign12_ollie_walker.jpg" data-title="Ollie Walker and Ft. Smith & Western Railroad workers" data-date="Undated" data-source="Project archive" data-caption="Ollie Walker with Ft. Smith &amp; Western Railroad workers. The Section Foreman's Shop was a hub for railroad maintenance crews in Clearview.">
+            <img src="../sources/sign12_ollie_walker.jpg" alt="Ollie Walker and Ft. Smith & Western Railroad workers" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/sign12_clearview_p5-1.png" data-title="Pages from Clearview history booklet, p. 5" data-date="Undated" data-source="Project archive" data-caption="Page from the Clearview history booklet referencing the Section Foreman's Shop or railroad history.">
+            <img src="../sources/sign12_clearview_p5-1.png" alt="Pages from Clearview history booklet, p. 5" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
+          </div>
+            </div>
+          </div>
+          <button class="gallery-arrow gallery-arrow-right" aria-label="Scroll right">›</button>
+        </div>
+        <div class="gallery-hint">Click photos to enlarge · Use arrows or drag to browse</div>
+      
+  
+</div>
+<div class="sources-outer">
+  <section class="sub-section sources-constrained">
+    <h3 class="sub-head">Sources</h3>
+    <div class="source-list">
+        <div class="source-entry">
+          <div class="source-label">Photographic archive</div>
+          <div class="source-detail">Archival photograph from the Clearview project collection (clearview_012).</div>
+        </div>
+        <div class="source-entry">
+          <div class="source-label">Photographic archive</div>
+          <div class="source-detail">Ollie Walker and Ft. Smith &amp; Western Railroad workers.</div>
+        </div>
+        <div class="source-entry">
+          <div class="source-label">History booklet</div>
+          <div class="source-detail">Pages from the Clearview history booklet. <a href="../sources/sign12_clearview_p5.pdf" target="_blank" rel="noopener" style="color: var(--dirt); text-decoration: underline; font-weight: 500;">View PDF →</a></div>
+        </div>
+        <div class="source-entry">
+          <div class="source-label">Oral history</div>
+          <div class="source-detail">Recollections from Shirley Nero and JP Owens.</div>
+        </div>
+        </div>
+  </section>
+</div>
 
 <footer>
   Clearview Historical Mapping Project · 2026

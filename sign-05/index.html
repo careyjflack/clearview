@@ -18,6 +18,7 @@
     --ink-soft: #2a2a2a;
     --ink-faded: #757575;
     --dirt: #c44018;
+    --rust: #c44018;
     --rule: #d4c89e;
   }
 
@@ -62,8 +63,7 @@
   }
 
   .hero {
-    padding: 56px 40px 44px;
-    border-bottom: 1px solid var(--rule);
+    padding: 56px 40px 48px;
     max-width: 1100px;
     margin: 0 auto;
     width: 100%;
@@ -89,24 +89,25 @@
   }
 
   .hero-subtitle {
-    font-family: 'Instrument Serif', serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 400;
-    font-size: 22px;
+    font-size: 16px;
     color: var(--ink-soft);
-    margin-top: 20px;
+    margin-top: 14px;
     max-width: 640px;
-    line-height: 1.35;
+    line-height: 1.6;
   }
 
   .layout {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 56px 40px 80px;
+    padding: 0 40px 0;
     display: grid;
     grid-template-columns: 1fr 300px;
     gap: 56px;
   }
 
+  /* Sign-level catalog sidebar */
   .catalog {
     background: var(--paper-soft);
     border-radius: 4px;
@@ -159,6 +160,53 @@
     font-weight: 500;
   }
 
+  /* Business index (anchor nav) */
+  .biz-index {
+    margin-bottom: 48px;
+  }
+
+  .biz-index-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink);
+    padding-bottom: 14px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .biz-index-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .biz-index-list a {
+    font-family: 'Instrument Serif', serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--ink);
+    text-decoration: none;
+    letter-spacing: -0.01em;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    transition: color 0.15s ease;
+  }
+  .biz-index-list a:hover { color: var(--dirt); }
+
+  .biz-index-list .biz-index-type {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-faded);
+  }
+
   .content section + section { margin-top: 64px; }
 
   .section-head {
@@ -176,20 +224,8 @@
     align-items: baseline;
   }
 
-  .section-head .pill {
-    background: var(--butter);
-    color: var(--ink);
-    padding: 4px 12px;
-    border-radius: 999px;
-    font-size: 10px;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-  }
-
-  /* sub-section (timeline, sources) inside a business block */
-  .sub-section {
-    margin-top: 36px;
-  }
+  /* sub-section */
+  .sub-section { margin-top: 36px; }
 
   .sub-head {
     font-family: 'Inter', sans-serif;
@@ -204,10 +240,13 @@
   }
 
   /* Business blocks */
+  .business-block {
+    scroll-margin-top: 32px;
+  }
   .business-block + .business-block {
-    margin-top: 56px;
-    padding-top: 56px;
-    border-top: 1px solid var(--rule);
+    margin-top: 80px;
+    padding-top: 64px;
+    border-top: 2px solid var(--rule);
   }
 
   .business-name {
@@ -230,32 +269,39 @@
     margin-bottom: 24px;
   }
 
-  .business-details {
+  /* Per-business inline catalog card */
+  .biz-catalog {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 16px;
-    margin-bottom: 28px;
-    padding: 20px 22px;
-    background: var(--paper-soft);
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0;
+    margin-bottom: 32px;
+    border: 1px solid var(--rule);
     border-radius: 4px;
+    overflow: hidden;
   }
 
-  .biz-row .biz-key {
+  .biz-catalog-item {
+    padding: 14px 18px;
+    border-right: 1px solid var(--rule);
+  }
+  .biz-catalog-item:last-child { border-right: none; }
+
+  .biz-catalog-key {
     font-family: 'Inter', sans-serif;
     font-size: 10px;
     font-weight: 500;
     letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--ink-faded);
-    margin-bottom: 4px;
+    margin-bottom: 5px;
   }
 
-  .biz-row .biz-value {
+  .biz-catalog-value {
     font-family: 'Inter', sans-serif;
     font-size: 13px;
     font-weight: 500;
     color: var(--ink);
-    line-height: 1.45;
+    line-height: 1.4;
   }
 
   .prose {
@@ -298,83 +344,6 @@
     padding: 20px 0;
   }
 
-  .business-notes {
-    margin-top: 24px;
-    padding: 16px 18px;
-    background: var(--butter);
-    border-radius: 4px;
-  }
-
-  .notes-label {
-    font-family: 'Inter', sans-serif;
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--ink);
-    margin-bottom: 6px;
-  }
-
-  .notes-text {
-    font-family: 'Inter', sans-serif;
-    font-size: 13px;
-    font-weight: 400;
-    color: var(--ink-soft);
-    line-height: 1.6;
-  }
-
-  /* Timeline */
-  .timeline {
-    border-left: 2px solid var(--rule);
-    padding-left: 24px;
-    margin-left: 6px;
-  }
-
-  .timeline-entry {
-    position: relative;
-    padding-bottom: 22px;
-  }
-  .timeline-entry:last-child { padding-bottom: 0; }
-
-  .timeline-entry::before {
-    content: '';
-    position: absolute;
-    left: -32px;
-    top: 6px;
-    width: 12px;
-    height: 12px;
-    background: var(--ink);
-    border: 3px solid var(--paper);
-    border-radius: 50%;
-  }
-
-  .timeline-year {
-    font-family: 'Inter', sans-serif;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.14em;
-    color: var(--ink);
-    text-transform: uppercase;
-  }
-
-  .timeline-year .inferred {
-    color: var(--ink-faded);
-    font-weight: 400;
-    letter-spacing: 0.05em;
-  }
-
-  .timeline-text {
-    font-family: 'Instrument Serif', serif;
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 1.35;
-    color: var(--ink);
-    margin-top: 4px;
-    letter-spacing: -0.01em;
-  }
-
-  .timeline-text em { font-style: italic; }
-
   /* Sources */
   .source-list {
     display: flex;
@@ -409,36 +378,50 @@
 
   .source-detail em { font-style: italic; }
 
-  /* Contain gallery within its grid column using min-width:0.
-     This is the correct CSS Grid fix — grid items default to min-width:auto
-     which allows them to overflow. Setting min-width:0 constrains them. */
+  /* Sources constrained width */
+  .sources-constrained { max-width: 664px; }
 
-  .layout {
+  .layout-second {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 56px 40px 80px;
-    display: grid;
-    grid-template-columns: 1fr 300px;
-    gap: 56px;
+    padding: 0 40px 0;
+  }
+
+  /* Gallery full-width per business */
+  .biz-gallery {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 40px 0;
+  }
+
+  .gallery-full-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--rust);
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 20px;
   }
 
   .content {
-    min-width: 0;    /* Critical — prevents content column overflowing grid */
-    overflow: hidden; /* Secondary containment */
+    min-width: 0;
+    overflow: hidden;
   }
 
-  /* GALLERY — contained carousel */
+  /* GALLERY */
   .gallery-wrap {
     position: relative;
     margin-top: 4px;
-    /* Arrows bleed ±14px outside the clip box so they're visible */
     padding: 0 14px;
     margin-left: -14px;
     margin-right: -14px;
   }
 
   .gallery-clip {
-    overflow: hidden;      /* Clips the scrolling track — no page bleed */
+    overflow: hidden;
     border-radius: 4px;
     width: 100%;
   }
@@ -462,13 +445,14 @@
   .gallery-item {
     flex: 0 0 auto;
     height: 360px;
-    min-width: 260px;   /* Even very tall portraits show at readable width */
-    max-width: 600px;   /* Landscape images don't go too wide */
+    min-width: 260px;
+    max-width: 600px;
     overflow: hidden;
     border-radius: 4px;
     cursor: pointer;
     scroll-snap-align: start;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
+    background: var(--paper-soft);
   }
   .gallery-item:hover {
     transform: translateY(-3px);
@@ -477,8 +461,8 @@
   .gallery-item img {
     height: 100%;
     width: 100%;
-    object-fit: cover;
-    object-position: center top; /* Show top of portrait images preferentially */
+    object-fit: contain;
+    object-position: center center;
     display: block;
     filter: sepia(0.3) contrast(1.04) brightness(0.96);
     transition: transform 0.4s ease;
@@ -487,7 +471,6 @@
   .gallery-item:hover img { transform: scale(1.04); }
   .gallery-item.archival img { filter: none; }
 
-  /* Arrows — sit outside the clip, visible over it */
   .gallery-arrow {
     position: absolute;
     top: 50%;
@@ -515,8 +498,6 @@
   }
   .gallery-arrow-left  { left: 0; }
   .gallery-arrow-right { right: 0; }
-    padding-bottom: 4px;
-  }
 
   .gallery-hint {
     font-family: 'Inter', sans-serif;
@@ -528,7 +509,17 @@
     margin-top: 8px;
   }
 
-  /* LIGHTBOX with caption */
+  /* Sources outer */
+  .sources-outer {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 40px 0;
+  }
+
+  /* Final bottom spacing */
+  .page-end { padding-bottom: 80px; }
+
+  /* LIGHTBOX */
   .lightbox {
     position: fixed;
     inset: 0;
@@ -652,44 +643,44 @@
     font-weight: 400;
   }
 
-  /* ── TABLET (≤ 900px) ── */
+  /* ── TABLET ── */
   @media (max-width: 900px) {
     .layout {
       grid-template-columns: 1fr;
       gap: 40px;
       padding: 32px 24px 60px;
     }
-    .catalog {
-      position: static;
-      order: -1;          /* Move catalog ABOVE content on mobile */
-    }
+    .catalog { position: static; order: -1; }
     .hero { padding: 32px 24px 24px; }
     .topbar { padding: 12px 24px; }
     .business-name { font-size: 26px; }
     .gallery-item { height: 260px; }
     .gallery-arrow { width: 36px; height: 36px; font-size: 18px; }
+    .biz-gallery, .sources-outer { padding-left: 24px; padding-right: 24px; }
     .lightbox-nav { width: 40px; height: 40px; font-size: 20px; }
     .lightbox-title { font-size: 18px; }
     .lightbox { padding: 52px 16px 24px; }
     .lightbox img { max-height: 55vh; }
   }
 
-  /* ── MOBILE (≤ 480px) ── */
+  /* ── MOBILE ── */
   @media (max-width: 480px) {
     .topbar { padding: 10px 16px; }
-    .breadcrumb { display: none; }   /* Too narrow for breadcrumb */
+    .breadcrumb { display: none; }
     .hero { padding: 24px 16px 20px; }
     .hero-title { font-size: clamp(36px, 11vw, 72px); }
     .hero-subtitle { font-size: 16px; margin-top: 12px; }
     .layout { padding: 24px 16px 48px; gap: 32px; }
     .business-name { font-size: 22px; }
-    .business-details { padding: 14px 16px; }
+    .biz-catalog { grid-template-columns: 1fr 1fr; }
+    .biz-catalog-item { border-right: none; border-bottom: 1px solid var(--rule); }
     .gallery-item { height: 220px; }
     .gallery-hint { font-size: 10px; }
     .sub-head { font-size: 10px; }
     .source-entry { padding: 12px 14px; }
     .catalog { padding: 20px 16px; }
     .catalog-value { font-size: 17px; }
+    .biz-gallery, .sources-outer { padding-left: 16px; padding-right: 16px; }
     .lightbox { padding: 48px 8px 16px; }
     .lightbox img { max-height: 50vh; max-width: 98vw; }
     .lightbox-close { top: 10px; right: 10px; width: 36px; height: 36px; font-size: 16px; }
@@ -707,147 +698,190 @@
 <body>
 
 <div class="topbar">
-  <a href="index.html" class="back-link">← Back to Map</a>
+  <a href="../index.html" class="back-link">← Back to Map</a>
   <div class="breadcrumb">Clearview Historical Mapping Project / № 005</div>
 </div>
 
 <section class="hero">
   <div class="hero-tag">Sign № 005 · Lot 41</div>
   <h1 class="hero-title">Jeff Horn Dry Goods · Earl French Pool Hall</h1>
-  <p class="hero-subtitle">Two businesses operated on Lot 41: a dry goods store and a pool hall.</p>
+  <p class="hero-subtitle">A corner of Lot 41 that fed the community and gave it somewhere to exhale — first a dry goods store, then a pool hall where children and adults alike found their own kind of shelter.</p>
 </section>
 
 <main class="layout">
 
   <div class="content">
 
-    <section>
-      <h2 class="section-head">Businesses on this Sign <span class="pill">2 businesses</span></h2>
-      
-    <div class="business-block">
-      <h3 class="business-name">Jeff Horn Dry Good Store</h3>
-<div class="business-type">Dry goods</div>
-      <div class="business-details">
-<div class="biz-row"><div class="biz-key">Owners</div><div class="biz-value">Jeff Horn</div></div>
-<div class="biz-row"><div class="biz-key">Dates</div><div class="biz-value">Dates unknown</div></div>
-<div class="biz-row"><div class="biz-key">Affiliated</div><div class="biz-value">Normores, Hattie Lou Oliver</div></div>
-</div>
-      <p class="empty-narrative">Narrative not yet recorded. Research in progress.</p>
-      
-      
-      <section class="sub-section">
-        <h3 class="sub-head">Gallery</h3>
-        <div class="gallery-wrap">
-          <button class="gallery-arrow gallery-arrow-left" aria-label="Scroll left">‹</button>
-          <div class="gallery-clip">
-            <div class="gallery-row">
-          <div class="gallery-item archival" data-src="/sources/sign05_jeff_horn.jpg" data-title="Jeff Horn and wife" data-date="Dates unknown" data-source="Project archive" data-caption="Photograph of Jeff Horn and his wife, who ancestry records confirm also worked at the store. Jeff Horn operated dry goods stores in Clearview, including a rock building whose shell is still standing.">
-            <img src="/sources/sign05_jeff_horn.jpg" alt="Jeff Horn and wife" loading="lazy">
-          </div>
-            </div>
-          </div>
-          <button class="gallery-arrow gallery-arrow-right" aria-label="Scroll right">›</button>
-        </div>
-        <div class="gallery-hint">Click photos to enlarge · Use arrows or drag to browse</div>
-      </section>
-      
-      
-      <section class="sub-section">
-        <h3 class="sub-head">Sources</h3>
-        <div class="source-list">
-        <div class="source-entry">
-          <div class="source-label">Ancestry.com record</div>
-          <div class="source-detail">Census/ancestry records list Jeff Horn's wife as working at the store.</div>
-        </div></div>
-      </section>
-    </div>
-    
+    <!-- Business index -->
+    <nav class="biz-index">
+      <div class="biz-index-label">Businesses on this Sign</div>
+      <ul class="biz-index-list">
+        <li>
+          <a href="#jeff-horn">Jeff Horn Dry Good Store <span class="biz-index-type">Dry goods · 1920s</span></a>
+        </li>
+        <li>
+          <a href="#earl-french">Earl French Pool Hall <span class="biz-index-type">Pool hall · ca. 1940s – 1950s</span></a>
+        </li>
+      </ul>
+    </nav>
 
-    <div class="business-block">
-      <h3 class="business-name">Earl French Pool Hall</h3>
-<div class="business-type">Pool hall</div>
-      <div class="business-details">
-<div class="biz-row"><div class="biz-key">Owners</div><div class="biz-value">Earl French</div></div>
-<div class="biz-row"><div class="biz-key">Dates</div><div class="biz-value">Dates unknown</div></div>
-<div class="biz-row"><div class="biz-key">Affiliated</div><div class="biz-value">Normores, Marguerite French, Withers Cudjoe, Joe Golden, Hattie Lou Oliver</div></div>
-</div>
-      <p class="empty-narrative">Narrative not yet recorded. Research in progress.</p>
-      
-      
-      <section class="sub-section">
-        <h3 class="sub-head">Gallery</h3>
-        <div class="gallery-wrap">
-          <button class="gallery-arrow gallery-arrow-left" aria-label="Scroll left">‹</button>
-          <div class="gallery-clip">
-            <div class="gallery-row">
-          <div class="gallery-item" data-src="https://picsum.photos/seed/sign005b1img1/900/650" data-title="Placeholder photo 1" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of Earl French Pool Hall.">
-            <img src="https://picsum.photos/seed/sign005b1img1/900/650" alt="Placeholder photo 1" loading="lazy">
+    <section>
+      <h2 class="section-head">History</h2>
+
+      <!-- ── JEFF HORN ── -->
+      <div class="business-block" id="jeff-horn">
+        <h3 class="business-name">Jeff Horn Dry Good Store</h3>
+        <div class="business-type">Dry goods</div>
+
+        <div class="biz-catalog">
+          <div class="biz-catalog-item">
+            <div class="biz-catalog-key">Owner</div>
+            <div class="biz-catalog-value">Jeff Horn (1875 – 1981)</div>
           </div>
-          <div class="gallery-item" data-src="https://picsum.photos/seed/sign005b1img2/750/650" data-title="Placeholder photo 2" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of Earl French Pool Hall.">
-            <img src="https://picsum.photos/seed/sign005b1img2/750/650" alt="Placeholder photo 2" loading="lazy">
+          <div class="biz-catalog-item">
+            <div class="biz-catalog-key">Operated</div>
+            <div class="biz-catalog-value">1920s</div>
           </div>
-          <div class="gallery-item" data-src="https://picsum.photos/seed/sign005b1img3/850/650" data-title="Placeholder photo 3" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of Earl French Pool Hall.">
-            <img src="https://picsum.photos/seed/sign005b1img3/850/650" alt="Placeholder photo 3" loading="lazy">
+          <div class="biz-catalog-item">
+            <div class="biz-catalog-key">Type</div>
+            <div class="biz-catalog-value">Dry goods store</div>
           </div>
-          <div class="gallery-item" data-src="https://picsum.photos/seed/sign005b1img4/1000/650" data-title="Placeholder photo 4" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of Earl French Pool Hall.">
-            <img src="https://picsum.photos/seed/sign005b1img4/1000/650" alt="Placeholder photo 4" loading="lazy">
-          </div>
-            </div>
-          </div>
-          <button class="gallery-arrow gallery-arrow-right" aria-label="Scroll right">›</button>
         </div>
-        <div class="gallery-hint">Click photos to enlarge · Use arrows or drag to browse</div>
-      </section>
-      
-      
-      <section class="sub-section">
-        <h3 class="sub-head">Sources</h3>
-        <div class="source-list">
-        <div class="source-entry">
-          <div class="source-label">Court record</div>
-          <div class="source-detail">Earl French was charged with operating a pool hall without a license.</div>
+
+        <div class="prose">
+<p class="lead">Born in Louisiana in 1875, Jeff Horn migrated to Clearview and eventually opened two different grocery stores.</p>
+<p>He purchased one lot in 1920 and sold the store and its contents in 1925. A July 1921 article in the <em>Black Dispatch</em> noted that he offered ice cream and cold drinks. Horn died in 1981.</p>
         </div>
-        <div class="source-entry">
-          <div class="source-label">Oral history</div>
-          <div class="source-detail">Recollections from Marguerite French and others.</div>
-        </div></div>
-      </section>
-    </div>
-    
+      </div>
     </section>
 
   </div>
 
   <aside class="catalog">
-    <div class="catalog-label">Catalog Record</div>
-
+    <div class="catalog-label">Sign Record</div>
     <div class="catalog-row">
       <div class="catalog-key">Sign № · Lot</div>
       <div class="catalog-value">005 · Lot 41</div>
     </div>
     <div class="catalog-row">
-      <div class="catalog-key">Type</div>
-      <div class="catalog-value small">2 businesses on this sign</div>
+      <div class="catalog-key">Businesses</div>
+      <div class="catalog-value small">2 on this sign</div>
     </div>
     <div class="catalog-row">
-      <div class="catalog-key">Owners</div>
-      <div class="catalog-value small">See sections below</div>
+      <div class="catalog-key">Jeff Horn</div>
+      <div class="catalog-value small">Dry goods · 1920s</div>
     </div>
     <div class="catalog-row">
-      <div class="catalog-key">Operated</div>
-      <div class="catalog-value small">See sections below</div>
-    </div>
-    <div class="catalog-row">
-      <div class="catalog-key">Status</div>
-      <div class="catalog-value small">Research in progress</div>
-    </div>
-    <div class="catalog-row">
-      <div class="catalog-key">Surveyed</div>
-      <div class="catalog-value small">May 2026</div>
+      <div class="catalog-key">Earl French</div>
+      <div class="catalog-value small">Pool hall · ca. 1940s – 50s</div>
     </div>
   </aside>
 
 </main>
+
+<!-- Jeff Horn Gallery — full width -->
+<div class="biz-gallery">
+  <div class="gallery-full-title">Gallery — Jeff Horn Dry Good Store</div>
+  <div class="gallery-wrap">
+    <button class="gallery-arrow gallery-arrow-left" aria-label="Scroll left">‹</button>
+    <div class="gallery-clip">
+      <div class="gallery-row">
+        <div class="gallery-item archival" data-src="../sources/sign05_jeff_horn.jpg" data-title="Jeff Horn and wife" data-date="Dates unknown" data-source="Project archive" data-caption="Photograph of Jeff Horn and his wife. Jeff Horn operated dry goods stores in Clearview, including a rock building whose shell is still standing.">
+          <img src="../sources/sign05_jeff_horn.jpg" alt="Jeff Horn and wife" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
+        </div>
+        <div class="gallery-item archival" data-src="../sources/new_005_schoolbus.jpg" data-title="Clearview school bus" data-date="Undated" data-source="Family & community archive" data-caption="Clearview school bus.">
+          <img src="../sources/new_005_schoolbus.jpg" alt="Clearview school bus" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
+        </div>
+      </div>
+    </div>
+    <button class="gallery-arrow gallery-arrow-right" aria-label="Scroll right">›</button>
+  </div>
+  <div class="gallery-hint">Click photos to enlarge · Use arrows or drag to browse</div>
+</div>
+
+<!-- Jeff Horn Sources -->
+<div class="sources-outer">
+  <section class="sub-section sources-constrained">
+    <h3 class="sub-head">Sources — Jeff Horn Dry Good Store</h3>
+    <div class="source-list">
+      <div class="source-entry">
+        <div class="source-label">Photographic archive</div>
+        <div class="source-detail">Photographs of Jeff Horn's dry goods and grocery stores in Clearview. Collection of Tom Lucas.</div>
+      </div>
+      <div class="source-entry">
+        <div class="source-label">Newspaper</div>
+        <div class="source-detail"><em>Black Dispatch</em>, July 22, 1921 — Jeff Horn advertised ice cream and cold drinks at his store.</div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ── EARL FRENCH ── -->
+<div class="biz-gallery" style="padding-top: 80px; border-top: 2px solid var(--rule); margin-top: 0;">
+  <!-- Earl French business block lives here, outside main, full width -->
+</div>
+
+<!-- Earl French block — back inside a layout wrapper for the two-column format -->
+<div style="max-width: 1100px; margin: 0 auto; padding: 64px 40px 0; border-top: 2px solid var(--rule);">
+  <div style="max-width: calc(100% - 356px);">
+    <div class="business-block" id="earl-french">
+      <h3 class="business-name">Earl French Pool Hall</h3>
+      <div class="business-type">Pool hall</div>
+
+      <div class="biz-catalog">
+        <div class="biz-catalog-item">
+          <div class="biz-catalog-key">Owner</div>
+          <div class="biz-catalog-value">Earl French (1896 – 1983)</div>
+        </div>
+        <div class="biz-catalog-item">
+          <div class="biz-catalog-key">Operated</div>
+          <div class="biz-catalog-value">ca. 1940s – 1950s</div>
+        </div>
+        <div class="biz-catalog-item">
+          <div class="biz-catalog-key">Type</div>
+          <div class="biz-catalog-value">Pool hall</div>
+        </div>
+      </div>
+
+      <div class="prose">
+<p class="lead">Located at the corner of Main and Langston, Earl French's Pool Hall provided entertainment to residents young and old through the middle of the twentieth century.</p>
+<p>Earl French, a long-time Clearview resident dating back to the 1910s, caught a significant break in the 1920s when oil was found on his land. He would use the money he received from the oil wells to open a filling station and store, manage real estate, farm, purchase a bus, run a taxi service, and eventually run a pool hall. These establishments were strictly regulated to discourage gambling or illegal sale of alcohol and Earl French ran into trouble running an unlicensed pool hall in Weleetka in 1937.</p>
+<p>At the Clearview pool hall he would allow schoolchildren to socialize after school and become an adult-only establishment in the evenings. Earl French worked as a bus driver for Clearview schools from 1948–1957 and ran a taxi service bussing people across the state to attend church programs, funerals, as well as to harvest cotton in western Oklahoma. His entrepreneurial spirit provided essential services for Clearview residents and underscores the opportunities available in all-Black towns.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Earl French Gallery -->
+<div class="biz-gallery" style="padding-top: 40px;">
+  <div class="gallery-full-title">Gallery — Earl French Pool Hall</div>
+  <div class="gallery-wrap">
+    <button class="gallery-arrow gallery-arrow-left" aria-label="Scroll left">‹</button>
+    <div class="gallery-clip">
+      <div class="gallery-row">
+        <p class="empty-narrative" style="padding: 20px; font-family: 'Instrument Serif', serif; font-style: italic; color: var(--ink-faded); font-size: 17px;">No photographs yet identified for Earl French's Pool Hall.</p>
+      </div>
+    </div>
+    <button class="gallery-arrow gallery-arrow-right" aria-label="Scroll right">›</button>
+  </div>
+</div>
+
+<!-- Earl French Sources -->
+<div class="sources-outer page-end">
+  <section class="sub-section sources-constrained">
+    <h3 class="sub-head">Sources — Earl French Pool Hall</h3>
+    <div class="source-list">
+      <div class="source-entry">
+        <div class="source-label">Court record</div>
+        <div class="source-detail">Earl French was charged with operating a pool hall without a license in Weleetka, 1937.</div>
+      </div>
+      <div class="source-entry">
+        <div class="source-label">Oral history</div>
+        <div class="source-detail">Recollections from Marguerite French and other community members.</div>
+      </div>
+    </div>
+  </section>
+</div>
 
 <footer>
   Clearview Historical Mapping Project · 2026
@@ -869,7 +903,6 @@
 </div>
 
 <script>
-  // === Gallery arrows: scroll the row ===
   document.querySelectorAll('.gallery-wrap').forEach(wrap => {
     const row = wrap.querySelector('.gallery-row');
     const left = wrap.querySelector('.gallery-arrow-left');
@@ -878,13 +911,8 @@
     const scrollBy = () => Math.max(280, row.clientWidth * 0.7);
     if (left) left.addEventListener('click', () => row.scrollBy({ left: -scrollBy(), behavior: 'smooth' }));
     if (right) right.addEventListener('click', () => row.scrollBy({ left: scrollBy(), behavior: 'smooth' }));
-
-    // Drag-to-scroll (desktop)
     let isDown = false, startX = 0, startScroll = 0, dragged = false;
-    row.addEventListener('mousedown', e => {
-      isDown = true; dragged = false;
-      startX = e.pageX; startScroll = row.scrollLeft;
-    });
+    row.addEventListener('mousedown', e => { isDown = true; dragged = false; startX = e.pageX; startScroll = row.scrollLeft; });
     row.addEventListener('mouseleave', () => { isDown = false; });
     row.addEventListener('mouseup', () => { isDown = false; });
     row.addEventListener('mousemove', e => {
@@ -893,13 +921,11 @@
       if (Math.abs(dx) > 4) dragged = true;
       row.scrollLeft = startScroll - dx;
     });
-    // Suppress click on items when dragging
     row.querySelectorAll('.gallery-item').forEach(it => {
       it.addEventListener('click', e => { if (dragged) { e.stopPropagation(); e.preventDefault(); dragged = false; } }, true);
     });
   });
 
-  // === Lightbox with captions ===
   const lb = document.getElementById('lightbox');
   const lbImg = document.getElementById('lightboxImg');
   const lbDate = document.getElementById('lightboxDate');
@@ -908,8 +934,6 @@
   const lbSource = document.getElementById('lightboxSource');
   const lbPrev = document.getElementById('lightboxPrev');
   const lbNext = document.getElementById('lightboxNext');
-
-  // Collect all gallery items in document order across the whole page
   const allItems = Array.from(document.querySelectorAll('.gallery-item'));
   let currentIdx = 0;
 
@@ -920,7 +944,6 @@
     lbImg.src = item.dataset.src;
     lbDate.textContent = item.dataset.date || '';
     lbTitle.textContent = item.dataset.title || '';
-    // Allow basic HTML in description (for italicized newspaper names)
     lbDesc.innerHTML = item.dataset.caption || '';
     lbSource.textContent = item.dataset.source || '';
     lbDate.style.display = item.dataset.date ? '' : 'none';
@@ -933,15 +956,9 @@
     lbNext.style.display = idx === allItems.length - 1 ? 'none' : '';
   }
 
-  allItems.forEach((item, i) => {
-    item.addEventListener('click', () => openAt(i));
-  });
+  allItems.forEach((item, i) => { item.addEventListener('click', () => openAt(i)); });
 
-  function closeLb() {
-    lb.classList.remove('open');
-    document.body.style.overflow = '';
-  }
-
+  function closeLb() { lb.classList.remove('open'); document.body.style.overflow = ''; }
   document.getElementById('lightboxClose').addEventListener('click', closeLb);
   lbPrev.addEventListener('click', () => openAt(currentIdx - 1));
   lbNext.addEventListener('click', () => openAt(currentIdx + 1));

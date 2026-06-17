@@ -62,8 +62,7 @@
   }
 
   .hero {
-    padding: 56px 40px 44px;
-    border-bottom: 1px solid var(--rule);
+    padding: 56px 40px 48px;
     max-width: 1100px;
     margin: 0 auto;
     width: 100%;
@@ -89,9 +88,9 @@
   }
 
   .hero-subtitle {
-    font-family: 'Instrument Serif', serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 400;
-    font-size: 22px;
+    font-size: 16px;
     color: var(--ink-soft);
     margin-top: 20px;
     max-width: 640px;
@@ -101,12 +100,37 @@
   .layout {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 56px 40px 80px;
+    padding: 0 40px 0;
     display: grid;
     grid-template-columns: 1fr 300px;
     gap: 56px;
   }
 
+  .gallery-full-width {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 48px 40px 20px;
+  }
+  .gallery-full-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--rust);
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 20px;
+  }
+  .sources-outer {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 40px 80px;
+  }
+  .sources-constrained {
+    max-width: 664px;
+    margin-left: 0;
+  }
   .catalog {
     background: var(--paper-soft);
     border-radius: 4px;
@@ -416,7 +440,7 @@
   .layout {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 56px 40px 80px;
+    padding: 0 40px 0;
     display: grid;
     grid-template-columns: 1fr 300px;
     gap: 56px;
@@ -707,14 +731,14 @@
 <body>
 
 <div class="topbar">
-  <a href="index.html" class="back-link">← Back to Map</a>
+  <a href="../index.html" class="back-link">← Back to Map</a>
   <div class="breadcrumb">Clearview Historical Mapping Project / № 014</div>
 </div>
 
 <section class="hero">
   <div class="hero-tag">Sign № 014 · Lot 79</div>
   <h1 class="hero-title">Hicks Shoe Shop / Hattie Holmes Rooming House</h1>
-  <p class="hero-subtitle">Shoe shop and rooming house on Lot 79.</p>
+  <p class="hero-subtitle">J.H. Hicks built a shoe shop here in Clearview's early years, and long after he was gone, Hattie Holmes — teacher and landlady — gave the lot a second life.</p>
 </section>
 
 <main class="layout">
@@ -722,61 +746,14 @@
   <div class="content">
 
     <section>
-      <h2 class="section-head">History <span class="pill">Single business</span></h2>
+      <h2 class="section-head">History</h2>
       
     <div class="business-block">
-      
-      <div class="business-details">
-<div class="biz-row"><div class="biz-key">Owners</div><div class="biz-value">Hicks family; Hattie Holmes</div></div>
-<div class="biz-row"><div class="biz-key">Dates</div><div class="biz-value">c. 1910s</div></div>
-<div class="biz-row"><div class="biz-key">Affiliated</div><div class="biz-value">Shirley Nero, Normores, Withers Cudjoe, Joe Golden, Hattie Lou Oliver</div></div>
-</div>
       <div class="prose">
 <p class="lead">From the <em>Weleetka American</em>, October 4, 1956:</p>
 <p>"Mrs. Hattie Holmes is back after spending about five months in New York, Nevada and California. She was employed by Pearl Bailey, radio and TV star. Mrs. Holmes said she was baby sitting for Mrs. Bailey."</p>
 </div>
-      
-      
-      <section class="sub-section">
-        <h3 class="sub-head">Gallery</h3>
-        <div class="gallery-wrap">
-          <button class="gallery-arrow gallery-arrow-left" aria-label="Scroll left">‹</button>
-          <div class="gallery-clip">
-            <div class="gallery-row">
-          <div class="gallery-item" data-src="https://picsum.photos/seed/sign014b0img1/900/650" data-title="Placeholder photo 1" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of Hicks Shoe Shop / Hattie Holmes Rooming House.">
-            <img src="https://picsum.photos/seed/sign014b0img1/900/650" alt="Placeholder photo 1" loading="lazy">
-          </div>
-          <div class="gallery-item" data-src="https://picsum.photos/seed/sign014b0img2/750/650" data-title="Placeholder photo 2" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of Hicks Shoe Shop / Hattie Holmes Rooming House.">
-            <img src="https://picsum.photos/seed/sign014b0img2/750/650" alt="Placeholder photo 2" loading="lazy">
-          </div>
-          <div class="gallery-item" data-src="https://picsum.photos/seed/sign014b0img3/850/650" data-title="Placeholder photo 3" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of Hicks Shoe Shop / Hattie Holmes Rooming House.">
-            <img src="https://picsum.photos/seed/sign014b0img3/850/650" alt="Placeholder photo 3" loading="lazy">
-          </div>
-          <div class="gallery-item" data-src="https://picsum.photos/seed/sign014b0img4/1000/650" data-title="Placeholder photo 4" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of Hicks Shoe Shop / Hattie Holmes Rooming House.">
-            <img src="https://picsum.photos/seed/sign014b0img4/1000/650" alt="Placeholder photo 4" loading="lazy">
-          </div>
-            </div>
-          </div>
-          <button class="gallery-arrow gallery-arrow-right" aria-label="Scroll right">›</button>
-        </div>
-        <div class="gallery-hint">Click photos to enlarge · Use arrows or drag to browse</div>
-      </section>
-      
-      
-      <section class="sub-section">
-        <h3 class="sub-head">Sources</h3>
-        <div class="source-list">
-        <div class="source-entry">
-          <div class="source-label">Newspaper article</div>
-          <div class="source-detail"><em>Weleetka American</em>, October 4, 1956. "Mrs. Hattie Holmes is back after spending about five months..."</div>
-        </div>
-        <div class="source-entry">
-          <div class="source-label">Oral history</div>
-          <div class="source-detail">Recollections from Shirley Nero, Normores, Withers Cudjoe, Joe Golden, and Hattie Lou Oliver.</div>
-        </div></div>
-      </section>
-    </div>
-    
+      </div>
     </section>
 
   </div>
@@ -800,17 +777,65 @@
       <div class="catalog-key">Operated</div>
       <div class="catalog-value small">c. 1910s</div>
     </div>
-    <div class="catalog-row">
-      <div class="catalog-key">Status</div>
-      <div class="catalog-value small">Research in progress</div>
-    </div>
-    <div class="catalog-row">
-      <div class="catalog-key">Surveyed</div>
-      <div class="catalog-value small">May 2026</div>
-    </div>
   </aside>
 
 </main>
+<div class="gallery-full-width">
+  <div class="gallery-full-title">Gallery</div>
+  <div class="gallery-wrap">
+          <button class="gallery-arrow gallery-arrow-left" aria-label="Scroll left">‹</button>
+          <div class="gallery-clip">
+            <div class="gallery-row">
+          <div class="gallery-item archival" data-src="../sources/sign14_hattie_holmes.jpg" data-title="Hattie (Duby) Holmes" data-date="Undated" data-source="Project archive" data-caption="Hattie (Duby) Holmes, resident associated with the Hicks–Holmes property.">
+            <img src="../sources/sign14_hattie_holmes.jpg" alt="Hattie (Duby) Holmes" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/sign14_rodeo_1986.jpg" data-title="Clearview Rodeo program, 1986" data-date="1986" data-source="Rodeo program · project archive" data-caption="Page from the 1986 Clearview Rodeo program.">
+            <img src="../sources/sign14_rodeo_1986.jpg" alt="Clearview Rodeo program, 1986" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/sign14_rodeo_1989.jpg" data-title="Clearview Rodeo program, 1989" data-date="1989" data-source="Rodeo program · project archive" data-caption="Page from the 1989 Clearview Rodeo program.">
+            <img src="../sources/sign14_rodeo_1989.jpg" alt="Clearview Rodeo program, 1989" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/The_Patriarch_1911_11_09_4-1.png" data-title="The Patriarch, November 9, 1911" data-date="November 9, 1911" data-source="The Patriarch · project archive" data-caption="Clipping from <em>The Patriarch</em>, November 9, 1911.">
+            <img src="../sources/The_Patriarch_1911_11_09_4-1.png" alt="The Patriarch, November 9, 1911" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/new_014_Hattie_Holmes.jpg" data-title="Hattie Holmes" data-date="Undated" data-source="Family &amp; community archive" data-caption="Hattie Holmes.">
+            <img src="../sources/new_014_Hattie_Holmes.jpg" alt="Hattie Holmes" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
+          </div>
+          <div class="gallery-item archival" data-src="../sources/new_014_Hicks_Holmes_home.jpg" data-title="Hicks Shoe Shop / Holmes Rooming House" data-date="Undated" data-source="Family &amp; community archive" data-caption="Hicks Shoe Shop / Holmes Rooming House.">
+            <img src="../sources/new_014_Hicks_Holmes_home.jpg" alt="Hicks Shoe Shop / Holmes Rooming House" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
+          </div>
+
+            </div>
+          </div>
+          <button class="gallery-arrow gallery-arrow-right" aria-label="Scroll right">›</button>
+        </div>
+        <div class="gallery-hint">Click photos to enlarge · Use arrows or drag to browse</div>
+      
+  
+</div>
+<div class="sources-outer">
+  <section class="sub-section sources-constrained">
+    <h3 class="sub-head">Sources</h3>
+    <div class="source-list">
+        <div class="source-entry">
+          <div class="source-label">Newspaper · Nov 9, 1911</div>
+          <div class="source-detail"><em>The Patriarch</em>, November 9, 1911. <a href="../sources/The_Patriarch_1911_11_09_4.pdf" target="_blank" rel="noopener" style="color: var(--dirt); text-decoration: underline; font-weight: 500;">View PDF →</a></div>
+        </div>
+        <div class="source-entry">
+          <div class="source-label">Rodeo programs</div>
+          <div class="source-detail">Pages from the 1986 and 1989 Clearview Rodeo programs.</div>
+        </div>
+        <div class="source-entry">
+          <div class="source-label">Newspaper article</div>
+          <div class="source-detail"><em>Weleetka American</em>, October 4, 1956. "Mrs. Hattie Holmes is back after spending about five months..."</div>
+        </div>
+        <div class="source-entry">
+          <div class="source-label">Oral history</div>
+          <div class="source-detail">Recollections from Shirley Nero, Normores, Withers Cudjoe, Joe Golden, and Hattie Lou Oliver.</div>
+        </div>
+        </div>
+  </section>
+</div>
 
 <footer>
   Clearview Historical Mapping Project · 2026
@@ -828,7 +853,7 @@
     <div class="lightbox-title" id="lightboxTitle"></div>
     <div class="lightbox-description" id="lightboxDescription"></div>
     <div class="lightbox-source" id="lightboxSource"></div>
-  </div>
+</div>
 </div>
 
 <script>
