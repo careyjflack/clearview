@@ -6,692 +6,110 @@
 <title>№ 005 — Jeff Horn Dry Goods · Earl French Pool Hall · Clearview Historical Mapping Project</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --paper: #faf5e6;
-    --paper-deep: #f0e8cf;
-    --paper-soft: #fdfaee;
-    --butter: #fce98e;
-    --butter-deep: #f5dc5c;
-    --ink: #0a0a0a;
-    --ink-soft: #2a2a2a;
-    --ink-faded: #757575;
-    --dirt: #c44018;
-    --rust: #c44018;
-    --rule: #d4c89e;
-  }
-
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-
-  body {
-    font-family: 'Inter', sans-serif;
-    background: var(--paper);
-    color: var(--ink);
-    font-weight: 400;
-    line-height: 1.6;
-  }
-
-  .topbar {
-    padding: 14px 28px;
-    border-bottom: 1px solid var(--rule);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: var(--paper);
-  }
-
-  .back-link {
-    font-family: 'Inter', sans-serif;
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--ink);
-    text-decoration: none;
-    transition: color 0.2s ease;
-  }
-  .back-link:hover { color: var(--dirt); }
-
-  .breadcrumb {
-    font-family: 'Inter', sans-serif;
-    font-size: 11px;
-    font-weight: 400;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--ink-faded);
-  }
-
-  .hero {
-    padding: 56px 40px 48px;
-    max-width: 1100px;
-    margin: 0 auto;
-    width: 100%;
-  }
-
-  .hero-tag {
-    font-family: 'Inter', sans-serif;
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--ink-faded);
-    margin-bottom: 18px;
-  }
-
-  .hero-title {
-    font-family: 'Instrument Serif', serif;
-    font-size: clamp(44px, 6.5vw, 88px);
-    font-weight: 400;
-    line-height: 0.98;
-    letter-spacing: -0.02em;
-    color: var(--ink);
-  }
-
-  .hero-subtitle {
-    font-family: 'Inter', sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    color: var(--ink-soft);
-    margin-top: 14px;
-    max-width: 640px;
-    line-height: 1.6;
-  }
-
-  .layout {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 40px 0;
-    display: grid;
-    grid-template-columns: 1fr 300px;
-    gap: 56px;
-  }
-
-  /* Sign-level catalog sidebar */
-  .catalog {
-    background: var(--paper-soft);
-    border-radius: 4px;
-    padding: 28px;
-    position: sticky;
-    top: 24px;
-    align-self: start;
-  }
-
-  .catalog-label {
-    font-family: 'Inter', sans-serif;
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--ink);
-    margin-bottom: 20px;
-    padding-bottom: 14px;
-    border-bottom: 1px solid var(--rule);
-  }
-
-  .catalog-row {
-    padding: 11px 0;
-    border-bottom: 1px solid rgba(212, 200, 158, 0.5);
-  }
-  .catalog-row:last-child { border-bottom: none; }
-
-  .catalog-key {
-    font-family: 'Inter', sans-serif;
-    font-size: 11px;
-    font-weight: 400;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--ink-faded);
-    margin-bottom: 5px;
-  }
-
-  .catalog-value {
-    font-family: 'Instrument Serif', serif;
-    font-size: 20px;
-    font-weight: 400;
-    color: var(--ink);
-    line-height: 1.2;
-    letter-spacing: -0.01em;
-  }
-
-  .catalog-value.small {
-    font-family: 'Inter', sans-serif;
-    font-size: 13px;
-    font-weight: 500;
-  }
-
-  /* Business index (anchor nav) */
-  .biz-index {
-    margin-bottom: 48px;
-  }
-
-  .biz-index-label {
-    font-family: 'Inter', sans-serif;
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--ink);
-    padding-bottom: 14px;
-    margin-bottom: 16px;
-    border-bottom: 1px solid var(--rule);
-  }
-
-  .biz-index-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-
-  .biz-index-list a {
-    font-family: 'Instrument Serif', serif;
-    font-size: 20px;
-    font-weight: 400;
-    color: var(--ink);
-    text-decoration: none;
-    letter-spacing: -0.01em;
-    display: flex;
-    align-items: baseline;
-    gap: 10px;
-    transition: color 0.15s ease;
-  }
-  .biz-index-list a:hover { color: var(--dirt); }
-
-  .biz-index-list .biz-index-type {
-    font-family: 'Inter', sans-serif;
-    font-size: 11px;
-    font-weight: 400;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--ink-faded);
-  }
-
-  .content section + section { margin-top: 64px; }
-
-  .section-head {
-    font-family: 'Inter', sans-serif;
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--ink);
-    padding-bottom: 14px;
-    margin-bottom: 28px;
-    border-bottom: 1px solid var(--rule);
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-  }
-
-  /* sub-section */
-  .sub-section { margin-top: 36px; }
-
-  .sub-head {
-    font-family: 'Inter', sans-serif;
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--dirt);
-    margin-bottom: 18px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid var(--rule);
-  }
-
-  /* Business blocks */
-  .business-block {
-    scroll-margin-top: 32px;
-  }
-  .business-block + .business-block {
-    margin-top: 80px;
-    padding-top: 64px;
-    border-top: 2px solid var(--rule);
-  }
-
-  .business-name {
-    font-family: 'Instrument Serif', serif;
-    font-size: 34px;
-    font-weight: 400;
-    line-height: 1.05;
-    letter-spacing: -0.015em;
-    color: var(--ink);
-    margin-bottom: 6px;
-  }
-
-  .business-type {
-    font-family: 'Inter', sans-serif;
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--ink-faded);
-    margin-bottom: 24px;
-  }
-
-  /* Per-business inline catalog card */
-  .biz-catalog {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 0;
-    margin-bottom: 32px;
-    border: 1px solid var(--rule);
-    border-radius: 4px;
-    overflow: hidden;
-  }
-
-  .biz-catalog-item {
-    padding: 14px 18px;
-    border-right: 1px solid var(--rule);
-  }
-  .biz-catalog-item:last-child { border-right: none; }
-
-  .biz-catalog-key {
-    font-family: 'Inter', sans-serif;
-    font-size: 10px;
-    font-weight: 500;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--ink-faded);
-    margin-bottom: 5px;
-  }
-
-  .biz-catalog-value {
-    font-family: 'Inter', sans-serif;
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--ink);
-    line-height: 1.4;
-  }
-
-  .prose {
-    font-family: 'Inter', sans-serif;
-    font-size: 15px;
-    font-weight: 400;
-    line-height: 1.7;
-    color: var(--ink);
-    max-width: 72ch;
-  }
-  .prose p + p { margin-top: 16px; text-indent: 2em; }
-  .prose em { font-style: italic; }
-
-  .prose .lead {
-    font-family: 'Instrument Serif', serif;
-    font-size: 28px;
-    font-weight: 400;
-    line-height: 1.22;
-    color: var(--ink);
-    letter-spacing: -0.015em;
-    margin-bottom: 24px;
-    text-indent: 0;
-  }
-
-  .prose .lead::first-letter {
-    font-family: 'Instrument Serif', serif;
-    font-size: 70px;
-    float: left;
-    line-height: 0.85;
-    padding: 8px 14px 0 0;
-    color: var(--ink);
-    font-weight: 400;
-  }
-
-  .empty-narrative {
-    font-family: 'Instrument Serif', serif;
-    font-style: italic;
-    font-size: 17px;
-    color: var(--ink-faded);
-    padding: 20px 0;
-  }
-
-  /* Sources */
-  .source-list {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-  }
-
-  .source-entry {
-    padding: 14px 16px;
-    background: var(--paper-soft);
-    border-radius: 3px;
-    border-left: 3px solid var(--rule);
-  }
-
-  .source-label {
-    font-family: 'Inter', sans-serif;
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--dirt);
-    margin-bottom: 4px;
-  }
-
-  .source-detail {
-    font-family: 'Inter', sans-serif;
-    font-size: 13px;
-    font-weight: 400;
-    color: var(--ink);
-    line-height: 1.5;
-  }
-
-  .source-detail em { font-style: italic; }
-
-  /* Sources constrained width */
-  .sources-constrained { max-width: 664px; }
-
-  .layout-second {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 40px 0;
-  }
-
-  /* Gallery full-width per business */
-  .biz-gallery {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 40px 40px 0;
-  }
-
-  .gallery-full-title {
-    font-family: 'Inter', sans-serif;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--rust);
-    padding-bottom: 12px;
-    border-bottom: 1px solid var(--rule);
-    margin-bottom: 20px;
-  }
-
-  .content {
-    min-width: 0;
-    overflow: hidden;
-  }
-
-  /* GALLERY */
-  .gallery-wrap {
-    position: relative;
-    margin-top: 4px;
-    padding: 0 14px;
-    margin-left: -14px;
-    margin-right: -14px;
-  }
-
-  .gallery-clip {
-    overflow: hidden;
-    border-radius: 4px;
-    width: 100%;
-  }
-
-  .gallery-row {
-    display: flex;
-    gap: 8px;
-    overflow-x: scroll;
-    overflow-y: hidden;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    scroll-behavior: smooth;
-    padding-bottom: 4px;
-    cursor: grab;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-  }
-  .gallery-row::-webkit-scrollbar { display: none; }
-  .gallery-row:active { cursor: grabbing; }
-
-  .gallery-item {
-    flex: 0 0 auto;
-    height: 360px;
-    min-width: 260px;
-    max-width: 600px;
-    overflow: hidden;
-    border-radius: 4px;
-    cursor: pointer;
-    scroll-snap-align: start;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-    background: var(--paper-soft);
-  }
-  .gallery-item:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 24px rgba(10, 10, 10, 0.18);
-  }
-  .gallery-item img {
-    height: 100%;
-    width: 100%;
-    object-fit: contain;
-    object-position: center center;
-    display: block;
-    filter: sepia(0.3) contrast(1.04) brightness(0.96);
-    transition: transform 0.4s ease;
-    pointer-events: none;
-  }
-  .gallery-item:hover img { transform: scale(1.04); }
-  .gallery-item.archival img { filter: none; }
-
-  .gallery-arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: var(--paper);
-    border: 1px solid var(--rule);
-    color: var(--ink);
-    font-size: 22px;
-    font-family: serif;
-    cursor: pointer;
-    z-index: 10;
-    box-shadow: 0 4px 12px rgba(10, 10, 10, 0.14);
-    transition: background 0.2s ease, transform 0.2s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-bottom: 3px;
-  }
-  .gallery-arrow:hover {
-    background: var(--butter);
-    transform: translateY(-50%) scale(1.1);
-  }
-  .gallery-arrow-left  { left: 0; }
-  .gallery-arrow-right { right: 0; }
-
-  .gallery-hint {
-    font-family: 'Inter', sans-serif;
-    font-size: 11px;
-    font-weight: 400;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--ink-faded);
-    margin-top: 8px;
-  }
-
-  /* Sources outer */
-  .sources-outer {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 40px 0;
-  }
-
-  /* Final bottom spacing */
-  .page-end { padding-bottom: 80px; }
-
-  /* LIGHTBOX */
-  .lightbox {
-    position: fixed;
-    inset: 0;
-    background: rgba(10, 10, 10, 0.96);
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    z-index: 9999;
-    padding: 60px 40px 40px;
-  }
-  .lightbox.open { display: flex; }
-
-  .lightbox-img-wrap {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    min-height: 0;
-  }
-
-  .lightbox img {
-    max-width: 90vw;
-    max-height: 70vh;
-    object-fit: contain;
-    border-radius: 3px;
-  }
-
-  .lightbox-caption {
-    color: var(--paper);
-    max-width: 720px;
-    text-align: center;
-    margin-top: 28px;
-    padding: 0 20px;
-  }
-
-  .lightbox-date {
-    font-family: 'Inter', sans-serif;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--butter);
-    margin-bottom: 6px;
-  }
-
-  .lightbox-title {
-    font-family: 'Instrument Serif', serif;
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 1.2;
-    color: var(--paper);
-    margin-bottom: 10px;
-    letter-spacing: -0.01em;
-  }
-
-  .lightbox-description {
-    font-family: 'Inter', sans-serif;
-    font-size: 13px;
-    color: rgba(250, 245, 230, 0.85);
-    line-height: 1.55;
-    margin-bottom: 8px;
-  }
-
-  .lightbox-source {
-    font-family: 'Inter', sans-serif;
-    font-size: 11px;
-    color: rgba(250, 245, 230, 0.6);
-    letter-spacing: 0.04em;
-    font-style: italic;
-  }
-
-  .lightbox-close {
-    position: absolute;
-    top: 24px; right: 24px;
-    width: 44px; height: 44px;
-    border-radius: 50%;
-    background: var(--paper);
-    border: none;
-    color: var(--ink);
-    font-size: 20px;
-    cursor: pointer;
-    z-index: 2;
-  }
-
-  .lightbox-nav {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 52px;
-    height: 52px;
-    border-radius: 50%;
-    background: rgba(250, 245, 230, 0.95);
-    border: none;
-    color: var(--ink);
-    font-size: 24px;
-    font-family: serif;
-    cursor: pointer;
-    z-index: 2;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-bottom: 4px;
-    transition: background 0.2s ease;
-  }
-
-  .lightbox-nav:hover { background: var(--butter); }
-  .lightbox-prev { left: 24px; }
-  .lightbox-next { right: 24px; }
-
-  footer {
-    padding: 40px;
-    border-top: 1px solid var(--rule);
-    text-align: center;
-    font-family: 'Inter', sans-serif;
-    font-size: 11px;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--ink-faded);
-    font-weight: 400;
-  }
-
-  /* ── TABLET ── */
-  @media (max-width: 900px) {
-    .layout {
-      grid-template-columns: 1fr;
-      gap: 40px;
-      padding: 32px 24px 60px;
-    }
-    .catalog { position: static; order: -1; }
-    .hero { padding: 32px 24px 24px; }
-    .topbar { padding: 12px 24px; }
-    .business-name { font-size: 26px; }
-    .gallery-item { height: 260px; }
-    .gallery-arrow { width: 36px; height: 36px; font-size: 18px; }
-    .biz-gallery, .sources-outer { padding-left: 24px; padding-right: 24px; }
-    .lightbox-nav { width: 40px; height: 40px; font-size: 20px; }
-    .lightbox-title { font-size: 18px; }
-    .lightbox { padding: 52px 16px 24px; }
-    .lightbox img { max-height: 55vh; }
-  }
-
-  /* ── MOBILE ── */
-  @media (max-width: 480px) {
-    .topbar { padding: 10px 16px; }
-    .breadcrumb { display: none; }
-    .hero { padding: 24px 16px 20px; }
-    .hero-title { font-size: clamp(36px, 11vw, 72px); }
-    .hero-subtitle { font-size: 16px; margin-top: 12px; }
-    .layout { padding: 24px 16px 48px; gap: 32px; }
-    .business-name { font-size: 22px; }
-    .biz-catalog { grid-template-columns: 1fr 1fr; }
-    .biz-catalog-item { border-right: none; border-bottom: 1px solid var(--rule); }
-    .gallery-item { height: 220px; }
-    .gallery-hint { font-size: 10px; }
-    .sub-head { font-size: 10px; }
-    .source-entry { padding: 12px 14px; }
-    .catalog { padding: 20px 16px; }
-    .catalog-value { font-size: 17px; }
-    .biz-gallery, .sources-outer { padding-left: 16px; padding-right: 16px; }
-    .lightbox { padding: 48px 8px 16px; }
-    .lightbox img { max-height: 50vh; max-width: 98vw; }
-    .lightbox-close { top: 10px; right: 10px; width: 36px; height: 36px; font-size: 16px; }
-    .lightbox-caption { margin-top: 16px; }
-    .lightbox-title { font-size: 16px; }
-    .lightbox-description { font-size: 12px; }
-    .lightbox-prev { left: 4px; }
-    .lightbox-next { right: 4px; }
-    .prose { font-size: 14px; }
-    .prose .lead { font-size: 22px; }
-    .prose .lead::first-letter { font-size: 54px; padding: 6px 10px 0 0; }
+  :root{--paper:#faf5e6;--paper-soft:#fdfaee;--butter:#fce98e;--ink:#0a0a0a;--ink-soft:#2a2a2a;--ink-faded:#757575;--dirt:#c44018;--rule:#d4c89e;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Inter',sans-serif;background:var(--paper);color:var(--ink);font-weight:400;line-height:1.6;}
+  .topbar{padding:14px 28px;border-bottom:1px solid var(--rule);display:flex;justify-content:space-between;align-items:center;background:var(--paper);}
+  .back-link{font-family:'Inter',sans-serif;font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);text-decoration:none;transition:color .2s;}
+  .back-link:hover{color:var(--dirt);}
+  .breadcrumb{font-family:'Inter',sans-serif;font-size:11px;font-weight:400;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faded);}
+  .hero{padding:56px 40px 48px;max-width:1100px;margin:0 auto;width:100%;}
+  .hero-tag{font-family:'Inter',sans-serif;font-size:11px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-faded);margin-bottom:18px;}
+  .hero-title{font-family:'Instrument Serif',serif;font-size:clamp(44px,6.5vw,88px);font-weight:400;line-height:.98;letter-spacing:-.02em;color:var(--ink);}
+  .hero-subtitle{font-family:'Inter',sans-serif;font-weight:400;font-size:16px;color:var(--ink-soft);margin-top:14px;max-width:640px;line-height:1.6;}
+  .layout,.biz-two-col{max-width:1100px;margin:0 auto;padding:0 40px;display:grid;grid-template-columns:1fr 300px;gap:56px;}
+  .layout{padding-top:0;}
+  .biz-two-col{padding-top:40px;}
+  .content,.biz-left{min-width:0;overflow:visible;}
+  .catalog{background:var(--paper-soft);border-radius:4px;padding:28px;position:sticky;top:24px;align-self:start;}
+  .catalog-label{font-family:'Inter',sans-serif;font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);margin-bottom:20px;padding-bottom:14px;border-bottom:1px solid var(--rule);}
+  .section-head{font-family:'Inter',sans-serif;font-size:11px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--ink);padding-bottom:14px;margin-bottom:28px;border-bottom:1px solid var(--rule);}
+  .business-name+.section-head{margin-top:20px;}
+  .business-block{scroll-margin-top:32px;}
+  .business-name{font-family:'Instrument Serif',serif;font-size:34px;font-weight:400;line-height:1.05;letter-spacing:-.015em;color:var(--ink);margin-bottom:6px;}
+  .prose{font-family:'Inter',sans-serif;font-size:15px;font-weight:400;line-height:1.7;color:var(--ink);max-width:72ch;}
+  .prose p+p{margin-top:16px;}
+  .prose em{font-style:italic;}
+  .prose .lead{font-family:'Instrument Serif',serif;font-size:28px;font-weight:400;line-height:1.22;color:var(--ink);letter-spacing:-.015em;margin-bottom:24px;}
+  .prose .lead::first-letter{font-family:'Instrument Serif',serif;font-size:70px;float:left;line-height:.85;padding:8px 14px 0 0;color:var(--ink);font-weight:400;}
+  .biz-record{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--rule);border-radius:4px;overflow:hidden;margin-top:40px;margin-bottom:0;background:var(--paper-soft);}
+  .biz-record-item{padding:14px 18px;border-right:1px solid var(--rule);}
+  .biz-record-item:last-child{border-right:none;}
+  .biz-record-key{font-family:'Inter',sans-serif;font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faded);margin-bottom:5px;}
+  .biz-record-value{font-family:'Inter',sans-serif;font-size:13px;font-weight:500;color:var(--ink);line-height:1.4;}
+  .biz-gallery-inline{padding-top:48px;}
+  .gallery-full-title{font-family:'Inter',sans-serif;font-size:11px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--ink);padding-bottom:14px;border-bottom:1px solid var(--rule);margin-bottom:20px;}
+  .gallery-wrap{position:relative;margin-top:4px;padding:0 14px;margin-left:-14px;margin-right:-14px;}
+  .gallery-clip{overflow:hidden;border-radius:4px;width:100%;}
+  .gallery-row{display:flex;gap:8px;overflow-x:scroll;overflow-y:hidden;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scroll-behavior:smooth;padding-bottom:4px;cursor:grab;scrollbar-width:none;-ms-overflow-style:none;}
+  .gallery-row::-webkit-scrollbar{display:none;}
+  .gallery-row:active{cursor:grabbing;}
+  .gallery-item{flex:0 0 auto;height:360px;min-width:260px;max-width:540px;overflow:hidden;border-radius:4px;cursor:pointer;scroll-snap-align:start;transition:transform .25s,box-shadow .25s;background:var(--paper-soft);}
+  .gallery-item:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(10,10,10,.18);}
+  .gallery-item img{height:100%;width:100%;object-fit:cover;object-position:center center;display:block;filter:sepia(.3) contrast(1.04) brightness(.96);transition:transform .4s;pointer-events:none;}
+  .gallery-item:hover img{transform:scale(1.04);}
+  .gallery-item.archival img{filter:none;}
+  .gallery-hint{font-family:'Inter',sans-serif;font-size:11px;font-weight:400;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faded);margin-top:8px;}
+  .gallery-arrow{position:absolute;top:50%;transform:translateY(-50%);width:40px;height:40px;border-radius:50%;background:var(--paper);border:1px solid var(--rule);color:var(--ink);font-size:22px;font-family:serif;cursor:pointer;z-index:10;box-shadow:0 4px 12px rgba(10,10,10,.14);transition:background .2s,transform .2s;display:flex;align-items:center;justify-content:center;padding-bottom:3px;}
+  .gallery-arrow:hover{background:var(--butter);transform:translateY(-50%) scale(1.1);}
+  .gallery-arrow-left{left:0;}
+  .gallery-arrow-right{right:0;}
+  .sources-inline{padding-top:40px;}
+  .sources-inline.page-end{padding-bottom:80px;}
+  .sub-head{font-family:'Inter',sans-serif;font-size:11px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--dirt);margin-bottom:18px;padding-bottom:10px;border-bottom:1px solid var(--rule);}
+  .sub-section{margin-top:36px;}
+  .source-list{display:flex;flex-direction:column;gap:14px;}
+  .source-entry{padding:14px 16px;background:var(--paper-soft);border-radius:3px;border-left:3px solid var(--rule);}
+  .source-label{font-family:'Inter',sans-serif;font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--dirt);margin-bottom:4px;}
+  .source-detail{font-family:'Inter',sans-serif;font-size:13px;font-weight:400;color:var(--ink);line-height:1.5;}
+  .source-detail em{font-style:italic;}
+  .biz-divider{max-width:1100px;margin:0 auto;padding:0 40px;}
+  .biz-divider hr{border:none;border-top:1px solid var(--rule);margin:0;}
+  .empty-narrative{font-family:'Instrument Serif',serif;font-style:italic;font-size:17px;color:var(--ink-faded);padding:20px 0;}
+  .lightbox{position:fixed;inset:0;background:rgba(10,10,10,.96);display:none;flex-direction:column;align-items:center;justify-content:center;z-index:9999;padding:60px 40px 40px;}
+  .lightbox.open{display:flex;}
+  .lightbox-img-wrap{flex:1;display:flex;align-items:center;justify-content:center;width:100%;min-height:0;}
+  .lightbox img{max-width:90vw;max-height:70vh;object-fit:contain;border-radius:3px;}
+  .lightbox-caption{color:var(--paper);max-width:720px;text-align:center;margin-top:28px;padding:0 20px;}
+  .lightbox-date{font-family:'Inter',sans-serif;font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--butter);margin-bottom:6px;}
+  .lightbox-title{font-family:'Instrument Serif',serif;font-size:24px;font-weight:400;line-height:1.2;color:var(--paper);margin-bottom:10px;letter-spacing:-.01em;}
+  .lightbox-description{font-family:'Inter',sans-serif;font-size:13px;color:rgba(250,245,230,.85);line-height:1.55;margin-bottom:8px;}
+  .lightbox-source{font-family:'Inter',sans-serif;font-size:11px;color:rgba(250,245,230,.6);letter-spacing:.04em;font-style:italic;}
+  .lightbox-close{position:absolute;top:24px;right:24px;width:44px;height:44px;border-radius:50%;background:var(--paper);border:none;color:var(--ink);font-size:20px;cursor:pointer;z-index:2;}
+  .lightbox-nav{position:absolute;top:50%;transform:translateY(-50%);width:52px;height:52px;border-radius:50%;background:rgba(250,245,230,.95);border:none;color:var(--ink);font-size:24px;font-family:serif;cursor:pointer;z-index:2;display:flex;align-items:center;justify-content:center;padding-bottom:4px;transition:background .2s;}
+  .lightbox-nav:hover{background:var(--butter);}
+  .lightbox-prev{left:24px;}
+  .lightbox-next{right:24px;}
+  footer{padding:40px;border-top:1px solid var(--rule);text-align:center;font-family:'Inter',sans-serif;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-faded);font-weight:400;}
+  @media(max-width:900px){
+    .layout,.biz-two-col{grid-template-columns:1fr;gap:40px;padding-left:24px;padding-right:24px;}
+    .catalog{position:static;order:-1;}
+    .hero{padding:32px 24px 24px;}
+    .topbar{padding:12px 24px;}
+    .business-name{font-size:26px;}
+    .gallery-item{height:260px;}
+    .gallery-arrow{width:36px;height:36px;font-size:18px;}
+    .biz-divider{padding-left:24px;padding-right:24px;}
+  }
+  @media(max-width:480px){
+    .topbar{padding:10px 16px;}
+    .breadcrumb{display:none;}
+    .hero{padding:24px 16px 20px;}
+    .hero-title{font-size:clamp(36px,11vw,72px);}
+    .hero-subtitle{font-size:16px;margin-top:12px;}
+    .layout{padding:24px 16px 0;gap:32px;}
+    .biz-two-col{padding-left:16px;padding-right:16px;}
+    .biz-record{grid-template-columns:1fr 1fr;}
+    .biz-record-item{border-right:none;border-bottom:1px solid var(--rule);}
+    .gallery-item{height:220px;}
+    .gallery-hint{font-size:10px;}
+    .catalog{padding:20px 16px;}
+    .biz-divider{padding-left:16px;padding-right:16px;}
+    .prose{font-size:14px;}
+    .prose .lead{font-size:22px;}
+    .prose .lead::first-letter{font-size:54px;padding:6px 10px 0 0;}
   }
 </style>
 </head>
@@ -705,194 +123,98 @@
 <section class="hero">
   <div class="hero-tag">Sign № 005 · Lot 41</div>
   <h1 class="hero-title">Jeff Horn Dry Goods · Earl French Pool Hall</h1>
-  <p class="hero-subtitle">A corner of Lot 41 that fed the community and gave it somewhere to exhale — first a dry goods store, then a pool hall where children and adults alike found their own kind of shelter.</p>
+  <p class="hero-subtitle">Lot 41 held a dry goods store in the 1920s and a pool hall by the 1940s — Jeff Horn stocking the shelves, Earl French running the table.</p>
 </section>
 
 <main class="layout">
-
   <div class="content">
-
-    <!-- Business index -->
-    <nav class="biz-index">
-      <div class="biz-index-label">Businesses on this Sign</div>
-      <ul class="biz-index-list">
-        <li>
-          <a href="#jeff-horn">Jeff Horn Dry Good Store <span class="biz-index-type">Dry goods · 1920s</span></a>
-        </li>
-        <li>
-          <a href="#earl-french">Earl French Pool Hall <span class="biz-index-type">Pool hall · ca. 1940s – 1950s</span></a>
-        </li>
-      </ul>
-    </nav>
-
-    <section>
+    <div class="business-block" id="jeff-horn">
+      <h3 class="business-name">Jeff Horn Dry Good Store</h3>
       <h2 class="section-head">History</h2>
-
-      <!-- ── JEFF HORN ── -->
-      <div class="business-block" id="jeff-horn">
-        <h3 class="business-name">Jeff Horn Dry Good Store</h3>
-        <div class="business-type">Dry goods</div>
-
-        <div class="biz-catalog">
-          <div class="biz-catalog-item">
-            <div class="biz-catalog-key">Owner</div>
-            <div class="biz-catalog-value">Jeff Horn (1875 – 1981)</div>
-          </div>
-          <div class="biz-catalog-item">
-            <div class="biz-catalog-key">Operated</div>
-            <div class="biz-catalog-value">1920s</div>
-          </div>
-          <div class="biz-catalog-item">
-            <div class="biz-catalog-key">Type</div>
-            <div class="biz-catalog-value">Dry goods store</div>
-          </div>
-        </div>
-
-        <div class="prose">
+      <div class="prose">
 <p class="lead">Born in Louisiana in 1875, Jeff Horn migrated to Clearview and eventually opened two different grocery stores.</p>
-<p>He purchased one lot in 1920 and sold the store and its contents in 1925. A July 1921 article in the <em>Black Dispatch</em> noted that he offered ice cream and cold drinks. Horn died in 1981.</p>
-        </div>
+<p>He purchased one lot in 1920 and sold the store and its contents in 1925. A July 1921 article in the <em>Black Dispatch</em> noted that he offered ice cream and cold drinks; he died in 1981.</p>
       </div>
-    </section>
-
+      <div class="biz-record">
+        <div class="biz-record-item"><div class="biz-record-key">Sign № · Lot</div><div class="biz-record-value">005 · Lot 41</div></div>
+        <div class="biz-record-item"><div class="biz-record-key">Type</div><div class="biz-record-value">Dry goods store</div></div>
+        <div class="biz-record-item"><div class="biz-record-key">Owner</div><div class="biz-record-value">Jeff Horn (1875 – 1981)</div></div>
+        <div class="biz-record-item"><div class="biz-record-key">Operated</div><div class="biz-record-value">1920s</div></div>
+      </div>
+    </div>
+    <div class="biz-gallery-inline">
+      <div class="gallery-full-title">Gallery</div>
+      <div class="gallery-wrap">
+        <button class="gallery-arrow gallery-arrow-left" aria-label="Scroll left">‹</button>
+        <div class="gallery-clip"><div class="gallery-row">
+          <div class="gallery-item archival" data-src="../sources/sign05_jeff_horn.jpg" data-title="Jeff Horn and wife" data-date="Dates unknown" data-source="Project archive" data-caption="Photograph of Jeff Horn and his wife. Jeff Horn operated dry goods stores in Clearview, including a rock building whose shell is still standing."><img src="../sources/sign05_jeff_horn.jpg" alt="Jeff Horn and wife" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'"></div>
+          <div class="gallery-item archival" data-src="../sources/new_005_schoolbus.jpg" data-title="Clearview school bus" data-date="Undated" data-source="Family & community archive" data-caption="Clearview school bus."><img src="../sources/new_005_schoolbus.jpg" alt="Clearview school bus" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'"></div>
+        </div></div>
+        <button class="gallery-arrow gallery-arrow-right" aria-label="Scroll right">›</button>
+      </div>
+      <div class="gallery-hint">Click photos to enlarge · Use arrows or drag to browse</div>
+    </div>
+    <div class="sources-inline">
+      <section class="sub-section">
+        <h3 class="sub-head">Sources</h3>
+        <div class="source-list">
+          <div class="source-entry"><div class="source-label">Photographic archive</div><div class="source-detail">Photographs of Jeff Horn's dry goods and grocery stores in Clearview. Collection of Tom Lucas.</div></div>
+          <div class="source-entry"><div class="source-label">Newspaper</div><div class="source-detail"><em>Black Dispatch</em>, July 22, 1921 — Jeff Horn advertised ice cream and cold drinks at his store.</div></div>
+        </div>
+      </section>
+    </div>
   </div>
 
   <aside class="catalog">
-    <div class="catalog-label">Sign Record</div>
-    <div class="catalog-row">
-      <div class="catalog-key">Sign № · Lot</div>
-      <div class="catalog-value">005 · Lot 41</div>
-    </div>
-    <div class="catalog-row">
-      <div class="catalog-key">Businesses</div>
-      <div class="catalog-value small">2 on this sign</div>
-    </div>
-    <div class="catalog-row">
-      <div class="catalog-key">Jeff Horn</div>
-      <div class="catalog-value small">Dry goods · 1920s</div>
-    </div>
-    <div class="catalog-row">
-      <div class="catalog-key">Earl French</div>
-      <div class="catalog-value small">Pool hall · ca. 1940s – 50s</div>
+    <div class="catalog-label">Businesses on this Sign</div>
+    <div style="margin-top:4px;">
+      <div style="padding:12px 0;border-bottom:1px solid rgba(212,200,158,.5);"><a href="#jeff-horn" style="font-family:'Inter',sans-serif;font-size:13px;font-weight:500;color:var(--ink);text-decoration:none;">Jeff Horn Dry Good Store</a></div>
+      <div style="padding:12px 0;"><a href="#earl-french" style="font-family:'Inter',sans-serif;font-size:13px;font-weight:500;color:var(--ink);text-decoration:none;">Earl French Pool Hall</a></div>
     </div>
   </aside>
-
 </main>
 
-<!-- Jeff Horn Gallery — full width -->
-<div class="biz-gallery">
-  <div class="gallery-full-title">Gallery — Jeff Horn Dry Good Store</div>
-  <div class="gallery-wrap">
-    <button class="gallery-arrow gallery-arrow-left" aria-label="Scroll left">‹</button>
-    <div class="gallery-clip">
-      <div class="gallery-row">
-        <div class="gallery-item archival" data-src="../sources/sign05_jeff_horn.jpg" data-title="Jeff Horn and wife" data-date="Dates unknown" data-source="Project archive" data-caption="Photograph of Jeff Horn and his wife. Jeff Horn operated dry goods stores in Clearview, including a rock building whose shell is still standing.">
-          <img src="../sources/sign05_jeff_horn.jpg" alt="Jeff Horn and wife" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
-        </div>
-        <div class="gallery-item archival" data-src="../sources/new_005_schoolbus.jpg" data-title="Clearview school bus" data-date="Undated" data-source="Family & community archive" data-caption="Clearview school bus.">
-          <img src="../sources/new_005_schoolbus.jpg" alt="Clearview school bus" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
-        </div>
-      </div>
-    </div>
-    <button class="gallery-arrow gallery-arrow-right" aria-label="Scroll right">›</button>
-  </div>
-  <div class="gallery-hint">Click photos to enlarge · Use arrows or drag to browse</div>
-</div>
+<div class="biz-divider"><hr></div>
 
-<!-- Jeff Horn Sources -->
-<div class="sources-outer">
-  <section class="sub-section sources-constrained">
-    <h3 class="sub-head">Sources — Jeff Horn Dry Good Store</h3>
-    <div class="source-list">
-      <div class="source-entry">
-        <div class="source-label">Photographic archive</div>
-        <div class="source-detail">Photographs of Jeff Horn's dry goods and grocery stores in Clearview. Collection of Tom Lucas.</div>
-      </div>
-      <div class="source-entry">
-        <div class="source-label">Newspaper</div>
-        <div class="source-detail"><em>Black Dispatch</em>, July 22, 1921 — Jeff Horn advertised ice cream and cold drinks at his store.</div>
-      </div>
-    </div>
-  </section>
-</div>
-
-<!-- ── EARL FRENCH ── -->
-<div class="biz-gallery" style="padding-top: 80px; border-top: 2px solid var(--rule); margin-top: 0;">
-  <!-- Earl French business block lives here, outside main, full width -->
-</div>
-
-<!-- Earl French block — back inside a layout wrapper for the two-column format -->
-<div style="max-width: 1100px; margin: 0 auto; padding: 64px 40px 0; border-top: 2px solid var(--rule);">
-  <div style="max-width: calc(100% - 356px);">
+<div class="biz-two-col">
+  <div class="biz-left">
     <div class="business-block" id="earl-french">
       <h3 class="business-name">Earl French Pool Hall</h3>
-      <div class="business-type">Pool hall</div>
-
-      <div class="biz-catalog">
-        <div class="biz-catalog-item">
-          <div class="biz-catalog-key">Owner</div>
-          <div class="biz-catalog-value">Earl French (1896 – 1983)</div>
-        </div>
-        <div class="biz-catalog-item">
-          <div class="biz-catalog-key">Operated</div>
-          <div class="biz-catalog-value">ca. 1940s – 1950s</div>
-        </div>
-        <div class="biz-catalog-item">
-          <div class="biz-catalog-key">Type</div>
-          <div class="biz-catalog-value">Pool hall</div>
-        </div>
-      </div>
-
+      <h2 class="section-head">History</h2>
       <div class="prose">
 <p class="lead">Located at the corner of Main and Langston, Earl French's Pool Hall provided entertainment to residents young and old through the middle of the twentieth century.</p>
 <p>Earl French, a long-time Clearview resident dating back to the 1910s, caught a significant break in the 1920s when oil was found on his land. He would use the money he received from the oil wells to open a filling station and store, manage real estate, farm, purchase a bus, run a taxi service, and eventually run a pool hall. These establishments were strictly regulated to discourage gambling or illegal sale of alcohol and Earl French ran into trouble running an unlicensed pool hall in Weleetka in 1937.</p>
 <p>At the Clearview pool hall he would allow schoolchildren to socialize after school and become an adult-only establishment in the evenings. Earl French worked as a bus driver for Clearview schools from 1948–1957 and ran a taxi service bussing people across the state to attend church programs, funerals, as well as to harvest cotton in western Oklahoma. His entrepreneurial spirit provided essential services for Clearview residents and underscores the opportunities available in all-Black towns.</p>
       </div>
+      <div class="biz-record">
+        <div class="biz-record-item"><div class="biz-record-key">Sign № · Lot</div><div class="biz-record-value">005 · Lot 41</div></div>
+        <div class="biz-record-item"><div class="biz-record-key">Type</div><div class="biz-record-value">Pool hall</div></div>
+        <div class="biz-record-item"><div class="biz-record-key">Owner</div><div class="biz-record-value">Earl French (1896 – 1983)</div></div>
+        <div class="biz-record-item"><div class="biz-record-key">Operated</div><div class="biz-record-value">ca. 1940s – 1950s</div></div>
+      </div>
+    </div>
+    <div class="biz-gallery-inline">
+      <div class="gallery-full-title">Gallery</div>
+      <p class="empty-narrative">No photographs yet identified for Earl French's Pool Hall.</p>
+    </div>
+    <div class="sources-inline page-end">
+      <section class="sub-section">
+        <h3 class="sub-head">Sources</h3>
+        <div class="source-list">
+          <div class="source-entry"><div class="source-label">Court record</div><div class="source-detail">Earl French was charged with operating a pool hall without a license in Weleetka, 1937.</div></div>
+          <div class="source-entry"><div class="source-label">Oral history</div><div class="source-detail">Recollections from Marguerite French and other community members.</div></div>
+        </div>
+      </section>
     </div>
   </div>
 </div>
 
-<!-- Earl French Gallery -->
-<div class="biz-gallery" style="padding-top: 40px;">
-  <div class="gallery-full-title">Gallery — Earl French Pool Hall</div>
-  <div class="gallery-wrap">
-    <button class="gallery-arrow gallery-arrow-left" aria-label="Scroll left">‹</button>
-    <div class="gallery-clip">
-      <div class="gallery-row">
-        <p class="empty-narrative" style="padding: 20px; font-family: 'Instrument Serif', serif; font-style: italic; color: var(--ink-faded); font-size: 17px;">No photographs yet identified for Earl French's Pool Hall.</p>
-      </div>
-    </div>
-    <button class="gallery-arrow gallery-arrow-right" aria-label="Scroll right">›</button>
-  </div>
-</div>
-
-<!-- Earl French Sources -->
-<div class="sources-outer page-end">
-  <section class="sub-section sources-constrained">
-    <h3 class="sub-head">Sources — Earl French Pool Hall</h3>
-    <div class="source-list">
-      <div class="source-entry">
-        <div class="source-label">Court record</div>
-        <div class="source-detail">Earl French was charged with operating a pool hall without a license in Weleetka, 1937.</div>
-      </div>
-      <div class="source-entry">
-        <div class="source-label">Oral history</div>
-        <div class="source-detail">Recollections from Marguerite French and other community members.</div>
-      </div>
-    </div>
-  </section>
-</div>
-
-<footer>
-  Clearview Historical Mapping Project · 2026
-</footer>
+<footer>Clearview Historical Mapping Project · 2026</footer>
 
 <div class="lightbox" id="lightbox">
   <button class="lightbox-close" id="lightboxClose">✕</button>
   <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous photo">‹</button>
-  <div class="lightbox-img-wrap">
-    <img id="lightboxImg" src="" alt="">
-  </div>
+  <div class="lightbox-img-wrap"><img id="lightboxImg" src="" alt=""></div>
   <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next photo">›</button>
   <div class="lightbox-caption">
     <div class="lightbox-date" id="lightboxDate"></div>
@@ -903,73 +225,28 @@
 </div>
 
 <script>
-  document.querySelectorAll('.gallery-wrap').forEach(wrap => {
-    const row = wrap.querySelector('.gallery-row');
-    const left = wrap.querySelector('.gallery-arrow-left');
-    const right = wrap.querySelector('.gallery-arrow-right');
-    if (!row) return;
-    const scrollBy = () => Math.max(280, row.clientWidth * 0.7);
-    if (left) left.addEventListener('click', () => row.scrollBy({ left: -scrollBy(), behavior: 'smooth' }));
-    if (right) right.addEventListener('click', () => row.scrollBy({ left: scrollBy(), behavior: 'smooth' }));
-    let isDown = false, startX = 0, startScroll = 0, dragged = false;
-    row.addEventListener('mousedown', e => { isDown = true; dragged = false; startX = e.pageX; startScroll = row.scrollLeft; });
-    row.addEventListener('mouseleave', () => { isDown = false; });
-    row.addEventListener('mouseup', () => { isDown = false; });
-    row.addEventListener('mousemove', e => {
-      if (!isDown) return;
-      const dx = e.pageX - startX;
-      if (Math.abs(dx) > 4) dragged = true;
-      row.scrollLeft = startScroll - dx;
-    });
-    row.querySelectorAll('.gallery-item').forEach(it => {
-      it.addEventListener('click', e => { if (dragged) { e.stopPropagation(); e.preventDefault(); dragged = false; } }, true);
-    });
+  document.querySelectorAll('.gallery-wrap').forEach(wrap=>{
+    const row=wrap.querySelector('.gallery-row');const left=wrap.querySelector('.gallery-arrow-left');const right=wrap.querySelector('.gallery-arrow-right');
+    if(!row)return;
+    const scrollBy=()=>Math.max(280,row.clientWidth*0.7);
+    if(left)left.addEventListener('click',()=>row.scrollBy({left:-scrollBy(),behavior:'smooth'}));
+    if(right)right.addEventListener('click',()=>row.scrollBy({left:scrollBy(),behavior:'smooth'}));
+    let isDown=false,startX=0,startScroll=0,dragged=false;
+    row.addEventListener('mousedown',e=>{isDown=true;dragged=false;startX=e.pageX;startScroll=row.scrollLeft;});
+    row.addEventListener('mouseleave',()=>{isDown=false;});
+    row.addEventListener('mouseup',()=>{isDown=false;});
+    row.addEventListener('mousemove',e=>{if(!isDown)return;const dx=e.pageX-startX;if(Math.abs(dx)>4)dragged=true;row.scrollLeft=startScroll-dx;});
+    row.querySelectorAll('.gallery-item').forEach(it=>{it.addEventListener('click',e=>{if(dragged){e.stopPropagation();e.preventDefault();dragged=false;}},true);});
   });
-
-  const lb = document.getElementById('lightbox');
-  const lbImg = document.getElementById('lightboxImg');
-  const lbDate = document.getElementById('lightboxDate');
-  const lbTitle = document.getElementById('lightboxTitle');
-  const lbDesc = document.getElementById('lightboxDescription');
-  const lbSource = document.getElementById('lightboxSource');
-  const lbPrev = document.getElementById('lightboxPrev');
-  const lbNext = document.getElementById('lightboxNext');
-  const allItems = Array.from(document.querySelectorAll('.gallery-item'));
-  let currentIdx = 0;
-
-  function openAt(idx) {
-    if (idx < 0 || idx >= allItems.length) return;
-    currentIdx = idx;
-    const item = allItems[idx];
-    lbImg.src = item.dataset.src;
-    lbDate.textContent = item.dataset.date || '';
-    lbTitle.textContent = item.dataset.title || '';
-    lbDesc.innerHTML = item.dataset.caption || '';
-    lbSource.textContent = item.dataset.source || '';
-    lbDate.style.display = item.dataset.date ? '' : 'none';
-    lbTitle.style.display = item.dataset.title ? '' : 'none';
-    lbDesc.style.display = item.dataset.caption ? '' : 'none';
-    lbSource.style.display = item.dataset.source ? '' : 'none';
-    lb.classList.add('open');
-    document.body.style.overflow = 'hidden';
-    lbPrev.style.display = idx === 0 ? 'none' : '';
-    lbNext.style.display = idx === allItems.length - 1 ? 'none' : '';
-  }
-
-  allItems.forEach((item, i) => { item.addEventListener('click', () => openAt(i)); });
-
-  function closeLb() { lb.classList.remove('open'); document.body.style.overflow = ''; }
-  document.getElementById('lightboxClose').addEventListener('click', closeLb);
-  lbPrev.addEventListener('click', () => openAt(currentIdx - 1));
-  lbNext.addEventListener('click', () => openAt(currentIdx + 1));
-  lb.addEventListener('click', e => { if (e.target === lb || e.target === lbImg.parentElement) closeLb(); });
-  document.addEventListener('keydown', e => {
-    if (!lb.classList.contains('open')) return;
-    if (e.key === 'Escape') closeLb();
-    if (e.key === 'ArrowLeft') openAt(currentIdx - 1);
-    if (e.key === 'ArrowRight') openAt(currentIdx + 1);
-  });
+  const lb=document.getElementById('lightbox');const lbImg=document.getElementById('lightboxImg');const lbDate=document.getElementById('lightboxDate');const lbTitle=document.getElementById('lightboxTitle');const lbDesc=document.getElementById('lightboxDescription');const lbSource=document.getElementById('lightboxSource');const lbPrev=document.getElementById('lightboxPrev');const lbNext=document.getElementById('lightboxNext');
+  const allItems=Array.from(document.querySelectorAll('.gallery-item'));let currentIdx=0;
+  function openAt(idx){if(idx<0||idx>=allItems.length)return;currentIdx=idx;const item=allItems[idx];lbImg.src=item.dataset.src;lbDate.textContent=item.dataset.date||'';lbTitle.textContent=item.dataset.title||'';lbDesc.innerHTML=item.dataset.caption||'';lbSource.textContent=item.dataset.source||'';lbDate.style.display=item.dataset.date?'':'none';lbTitle.style.display=item.dataset.title?'':'none';lbDesc.style.display=item.dataset.caption?'':'none';lbSource.style.display=item.dataset.source?'':'none';lb.classList.add('open');document.body.style.overflow='hidden';lbPrev.style.display=idx===0?'none':'';lbNext.style.display=idx===allItems.length-1?'none':'';}
+  allItems.forEach((item,i)=>{item.addEventListener('click',()=>openAt(i));});
+  function closeLb(){lb.classList.remove('open');document.body.style.overflow='';}
+  document.getElementById('lightboxClose').addEventListener('click',closeLb);
+  lbPrev.addEventListener('click',()=>openAt(currentIdx-1));lbNext.addEventListener('click',()=>openAt(currentIdx+1));
+  lb.addEventListener('click',e=>{if(e.target===lb||e.target===lbImg.parentElement)closeLb();});
+  document.addEventListener('keydown',e=>{if(!lb.classList.contains('open'))return;if(e.key==='Escape')closeLb();if(e.key==='ArrowLeft')openAt(currentIdx-1);if(e.key==='ArrowRight')openAt(currentIdx+1);});
 </script>
-
 </body>
 </html>

@@ -3,704 +3,121 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>№ 022 — Lots 50 – 53 · Clearview Historical Mapping Project</title>
+<title>Alonzo Talton's Grocery · Sam Clark & Charlie Bush Grocery · J.W. Thompson's Law Office · Masonic Lodge · H. Haynes Telephone · Recreation Center · Pool Hall & Bar · Dry Cleaning · Public Water Well · Clearview Historical Mapping Project</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --paper: #faf5e6;
-    --paper-deep: #f0e8cf;
-    --paper-soft: #fdfaee;
-    --butter: #fce98e;
-    --butter-deep: #f5dc5c;
-    --ink: #0a0a0a;
-    --ink-soft: #2a2a2a;
-    --ink-faded: #757575;
-    --dirt: #c44018;
-    --rule: #d4c89e;
-  }
-
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-
-  body {
-    font-family: 'Inter', sans-serif;
-    background: var(--paper);
-    color: var(--ink);
-    font-weight: 400;
-    line-height: 1.6;
-  }
-
-  .topbar {
-    padding: 14px 28px;
-    border-bottom: 1px solid var(--rule);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: var(--paper);
-  }
-
-  .back-link {
-    font-family: 'Inter', sans-serif;
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--ink);
-    text-decoration: none;
-    transition: color 0.2s ease;
-  }
-  .back-link:hover { color: var(--dirt); }
-
-  .breadcrumb {
-    font-family: 'Inter', sans-serif;
-    font-size: 11px;
-    font-weight: 400;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--ink-faded);
-  }
-
-  .hero {
-    padding: 56px 40px 44px;
-    border-bottom: 1px solid var(--rule);
-    max-width: 1100px;
-    margin: 0 auto;
-    width: 100%;
-  }
-
-  .hero-tag {
-    font-family: 'Inter', sans-serif;
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--ink-faded);
-    margin-bottom: 18px;
-  }
-
-  .hero-title {
-    font-family: 'Instrument Serif', serif;
-    font-size: clamp(44px, 6.5vw, 88px);
-    font-weight: 400;
-    line-height: 0.98;
-    letter-spacing: -0.02em;
-    color: var(--ink);
-  }
-
-  .hero-subtitle {
-    font-family: 'Instrument Serif', serif;
-    font-weight: 400;
-    font-size: 22px;
-    color: var(--ink-soft);
-    margin-top: 20px;
-    max-width: 640px;
-    line-height: 1.35;
-  }
-
-  .layout {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 56px 40px 80px;
-    display: grid;
-    grid-template-columns: 1fr 300px;
-    gap: 56px;
-  }
-
-  .catalog {
-    background: var(--paper-soft);
-    border-radius: 4px;
-    padding: 28px;
-    position: sticky;
-    top: 24px;
-    align-self: start;
-  }
-
-  .catalog-label {
-    font-family: 'Inter', sans-serif;
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--ink);
-    margin-bottom: 20px;
-    padding-bottom: 14px;
-    border-bottom: 1px solid var(--rule);
-  }
-
-  .catalog-row {
-    padding: 11px 0;
-    border-bottom: 1px solid rgba(212, 200, 158, 0.5);
-  }
-  .catalog-row:last-child { border-bottom: none; }
-
-  .catalog-key {
-    font-family: 'Inter', sans-serif;
-    font-size: 11px;
-    font-weight: 400;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--ink-faded);
-    margin-bottom: 5px;
-  }
-
-  .catalog-value {
-    font-family: 'Instrument Serif', serif;
-    font-size: 20px;
-    font-weight: 400;
-    color: var(--ink);
-    line-height: 1.2;
-    letter-spacing: -0.01em;
-  }
-
-  .catalog-value.small {
-    font-family: 'Inter', sans-serif;
-    font-size: 13px;
-    font-weight: 500;
-  }
-
-  .content section + section { margin-top: 64px; }
-
-  .section-head {
-    font-family: 'Inter', sans-serif;
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--ink);
-    padding-bottom: 14px;
-    margin-bottom: 28px;
-    border-bottom: 1px solid var(--rule);
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-  }
-
-  .section-head .pill {
-    background: var(--butter);
-    color: var(--ink);
-    padding: 4px 12px;
-    border-radius: 999px;
-    font-size: 10px;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-  }
-
-  /* sub-section (timeline, sources) inside a business block */
-  .sub-section {
-    margin-top: 36px;
-  }
-
-  .sub-head {
-    font-family: 'Inter', sans-serif;
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--dirt);
-    margin-bottom: 18px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid var(--rule);
-  }
-
-  /* Business blocks */
-  .business-block + .business-block {
-    margin-top: 56px;
-    padding-top: 56px;
-    border-top: 1px solid var(--rule);
-  }
-
-  .business-name {
-    font-family: 'Instrument Serif', serif;
-    font-size: 34px;
-    font-weight: 400;
-    line-height: 1.05;
-    letter-spacing: -0.015em;
-    color: var(--ink);
-    margin-bottom: 6px;
-  }
-
-  .business-type {
-    font-family: 'Inter', sans-serif;
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--ink-faded);
-    margin-bottom: 24px;
-  }
-
-  .business-details {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 16px;
-    margin-bottom: 28px;
-    padding: 20px 22px;
-    background: var(--paper-soft);
-    border-radius: 4px;
-  }
-
-  .biz-row .biz-key {
-    font-family: 'Inter', sans-serif;
-    font-size: 10px;
-    font-weight: 500;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--ink-faded);
-    margin-bottom: 4px;
-  }
-
-  .biz-row .biz-value {
-    font-family: 'Inter', sans-serif;
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--ink);
-    line-height: 1.45;
-  }
-
-  .prose {
-    font-family: 'Inter', sans-serif;
-    font-size: 15px;
-    font-weight: 400;
-    line-height: 1.7;
-    color: var(--ink);
-    max-width: 72ch;
-  }
-  .prose p + p { margin-top: 16px; text-indent: 2em; }
-  .prose em { font-style: italic; }
-
-  .prose .lead {
-    font-family: 'Instrument Serif', serif;
-    font-size: 28px;
-    font-weight: 400;
-    line-height: 1.22;
-    color: var(--ink);
-    letter-spacing: -0.015em;
-    margin-bottom: 24px;
-    text-indent: 0;
-  }
-
-  .prose .lead::first-letter {
-    font-family: 'Instrument Serif', serif;
-    font-size: 70px;
-    float: left;
-    line-height: 0.85;
-    padding: 8px 14px 0 0;
-    color: var(--ink);
-    font-weight: 400;
-  }
-
-  .empty-narrative {
-    font-family: 'Instrument Serif', serif;
-    font-style: italic;
-    font-size: 17px;
-    color: var(--ink-faded);
-    padding: 20px 0;
-  }
-
-  .business-notes {
-    margin-top: 24px;
-    padding: 16px 18px;
-    background: var(--butter);
-    border-radius: 4px;
-  }
-
-  .notes-label {
-    font-family: 'Inter', sans-serif;
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--ink);
-    margin-bottom: 6px;
-  }
-
-  .notes-text {
-    font-family: 'Inter', sans-serif;
-    font-size: 13px;
-    font-weight: 400;
-    color: var(--ink-soft);
-    line-height: 1.6;
-  }
-
-  /* Timeline */
-  .timeline {
-    border-left: 2px solid var(--rule);
-    padding-left: 24px;
-    margin-left: 6px;
-  }
-
-  .timeline-entry {
-    position: relative;
-    padding-bottom: 22px;
-  }
-  .timeline-entry:last-child { padding-bottom: 0; }
-
-  .timeline-entry::before {
-    content: '';
-    position: absolute;
-    left: -32px;
-    top: 6px;
-    width: 12px;
-    height: 12px;
-    background: var(--ink);
-    border: 3px solid var(--paper);
-    border-radius: 50%;
-  }
-
-  .timeline-year {
-    font-family: 'Inter', sans-serif;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.14em;
-    color: var(--ink);
-    text-transform: uppercase;
-  }
-
-  .timeline-year .inferred {
-    color: var(--ink-faded);
-    font-weight: 400;
-    letter-spacing: 0.05em;
-  }
-
-  .timeline-text {
-    font-family: 'Instrument Serif', serif;
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 1.35;
-    color: var(--ink);
-    margin-top: 4px;
-    letter-spacing: -0.01em;
-  }
-
-  .timeline-text em { font-style: italic; }
-
-  /* Sources */
-  .source-list {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-  }
-
-  .source-entry {
-    padding: 14px 16px;
-    background: var(--paper-soft);
-    border-radius: 3px;
-    border-left: 3px solid var(--rule);
-  }
-
-  .source-label {
-    font-family: 'Inter', sans-serif;
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--dirt);
-    margin-bottom: 4px;
-  }
-
-  .source-detail {
-    font-family: 'Inter', sans-serif;
-    font-size: 13px;
-    font-weight: 400;
-    color: var(--ink);
-    line-height: 1.5;
-  }
-
-  .source-detail em { font-style: italic; }
-
-  /* Contain gallery within its grid column using min-width:0.
-     This is the correct CSS Grid fix — grid items default to min-width:auto
-     which allows them to overflow. Setting min-width:0 constrains them. */
-
-  .layout {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 56px 40px 80px;
-    display: grid;
-    grid-template-columns: 1fr 300px;
-    gap: 56px;
-  }
-
-  .content {
-    min-width: 0;    /* Critical — prevents content column overflowing grid */
-    overflow: hidden; /* Secondary containment */
-  }
-
-  /* GALLERY — contained carousel */
-  .gallery-wrap {
-    position: relative;
-    margin-top: 4px;
-    /* Arrows bleed ±14px outside the clip box so they're visible */
-    padding: 0 14px;
-    margin-left: -14px;
-    margin-right: -14px;
-  }
-
-  .gallery-clip {
-    overflow: hidden;      /* Clips the scrolling track — no page bleed */
-    border-radius: 4px;
-    width: 100%;
-  }
-
-  .gallery-row {
-    display: flex;
-    gap: 8px;
-    overflow-x: scroll;
-    overflow-y: hidden;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    scroll-behavior: smooth;
-    padding-bottom: 4px;
-    cursor: grab;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-  }
-  .gallery-row::-webkit-scrollbar { display: none; }
-  .gallery-row:active { cursor: grabbing; }
-
-  .gallery-item {
-    flex: 0 0 auto;
-    height: 360px;
-    min-width: 260px;   /* Even very tall portraits show at readable width */
-    max-width: 600px;   /* Landscape images don't go too wide */
-    overflow: hidden;
-    border-radius: 4px;
-    cursor: pointer;
-    scroll-snap-align: start;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-  }
-  .gallery-item:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 24px rgba(10, 10, 10, 0.18);
-  }
-  .gallery-item img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    object-position: center top; /* Show top of portrait images preferentially */
-    display: block;
-    filter: sepia(0.3) contrast(1.04) brightness(0.96);
-    transition: transform 0.4s ease;
-    pointer-events: none;
-  }
-  .gallery-item:hover img { transform: scale(1.04); }
-  .gallery-item.archival img { filter: none; }
-
-  /* Arrows — sit outside the clip, visible over it */
-  .gallery-arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: var(--paper);
-    border: 1px solid var(--rule);
-    color: var(--ink);
-    font-size: 22px;
-    font-family: serif;
-    cursor: pointer;
-    z-index: 10;
-    box-shadow: 0 4px 12px rgba(10, 10, 10, 0.14);
-    transition: background 0.2s ease, transform 0.2s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-bottom: 3px;
-  }
-  .gallery-arrow:hover {
-    background: var(--butter);
-    transform: translateY(-50%) scale(1.1);
-  }
-  .gallery-arrow-left  { left: 0; }
-  .gallery-arrow-right { right: 0; }
-    padding-bottom: 4px;
-  }
-
-  .gallery-hint {
-    font-family: 'Inter', sans-serif;
-    font-size: 11px;
-    font-weight: 400;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--ink-faded);
-    margin-top: 8px;
-  }
-
-  /* LIGHTBOX with caption */
-  .lightbox {
-    position: fixed;
-    inset: 0;
-    background: rgba(10, 10, 10, 0.96);
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    z-index: 9999;
-    padding: 60px 40px 40px;
-  }
-  .lightbox.open { display: flex; }
-
-  .lightbox-img-wrap {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    min-height: 0;
-  }
-
-  .lightbox img {
-    max-width: 90vw;
-    max-height: 70vh;
-    object-fit: contain;
-    border-radius: 3px;
-  }
-
-  .lightbox-caption {
-    color: var(--paper);
-    max-width: 720px;
-    text-align: center;
-    margin-top: 28px;
-    padding: 0 20px;
-  }
-
-  .lightbox-date {
-    font-family: 'Inter', sans-serif;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--butter);
-    margin-bottom: 6px;
-  }
-
-  .lightbox-title {
-    font-family: 'Instrument Serif', serif;
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 1.2;
-    color: var(--paper);
-    margin-bottom: 10px;
-    letter-spacing: -0.01em;
-  }
-
-  .lightbox-description {
-    font-family: 'Inter', sans-serif;
-    font-size: 13px;
-    color: rgba(250, 245, 230, 0.85);
-    line-height: 1.55;
-    margin-bottom: 8px;
-  }
-
-  .lightbox-source {
-    font-family: 'Inter', sans-serif;
-    font-size: 11px;
-    color: rgba(250, 245, 230, 0.6);
-    letter-spacing: 0.04em;
-    font-style: italic;
-  }
-
-  .lightbox-close {
-    position: absolute;
-    top: 24px; right: 24px;
-    width: 44px; height: 44px;
-    border-radius: 50%;
-    background: var(--paper);
-    border: none;
-    color: var(--ink);
-    font-size: 20px;
-    cursor: pointer;
-    z-index: 2;
-  }
-
-  .lightbox-nav {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 52px;
-    height: 52px;
-    border-radius: 50%;
-    background: rgba(250, 245, 230, 0.95);
-    border: none;
-    color: var(--ink);
-    font-size: 24px;
-    font-family: serif;
-    cursor: pointer;
-    z-index: 2;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-bottom: 4px;
-    transition: background 0.2s ease;
-  }
-
-  .lightbox-nav:hover { background: var(--butter); }
-  .lightbox-prev { left: 24px; }
-  .lightbox-next { right: 24px; }
-
-  footer {
-    padding: 40px;
-    border-top: 1px solid var(--rule);
-    text-align: center;
-    font-family: 'Inter', sans-serif;
-    font-size: 11px;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--ink-faded);
-    font-weight: 400;
-  }
-
-  /* ── TABLET (≤ 900px) ── */
-  @media (max-width: 900px) {
-    .layout {
-      grid-template-columns: 1fr;
-      gap: 40px;
-      padding: 32px 24px 60px;
-    }
-    .catalog {
-      position: static;
-      order: -1;          /* Move catalog ABOVE content on mobile */
-    }
-    .hero { padding: 32px 24px 24px; }
-    .topbar { padding: 12px 24px; }
-    .business-name { font-size: 26px; }
-    .gallery-item { height: 260px; }
-    .gallery-arrow { width: 36px; height: 36px; font-size: 18px; }
-    .lightbox-nav { width: 40px; height: 40px; font-size: 20px; }
-    .lightbox-title { font-size: 18px; }
-    .lightbox { padding: 52px 16px 24px; }
-    .lightbox img { max-height: 55vh; }
-  }
-
-  /* ── MOBILE (≤ 480px) ── */
-  @media (max-width: 480px) {
-    .topbar { padding: 10px 16px; }
-    .breadcrumb { display: none; }   /* Too narrow for breadcrumb */
-    .hero { padding: 24px 16px 20px; }
-    .hero-title { font-size: clamp(36px, 11vw, 72px); }
-    .hero-subtitle { font-size: 16px; margin-top: 12px; }
-    .layout { padding: 24px 16px 48px; gap: 32px; }
-    .business-name { font-size: 22px; }
-    .business-details { padding: 14px 16px; }
-    .gallery-item { height: 220px; }
-    .gallery-hint { font-size: 10px; }
-    .sub-head { font-size: 10px; }
-    .source-entry { padding: 12px 14px; }
-    .catalog { padding: 20px 16px; }
-    .catalog-value { font-size: 17px; }
-    .lightbox { padding: 48px 8px 16px; }
-    .lightbox img { max-height: 50vh; max-width: 98vw; }
-    .lightbox-close { top: 10px; right: 10px; width: 36px; height: 36px; font-size: 16px; }
-    .lightbox-caption { margin-top: 16px; }
-    .lightbox-title { font-size: 16px; }
-    .lightbox-description { font-size: 12px; }
-    .lightbox-prev { left: 4px; }
-    .lightbox-next { right: 4px; }
-    .prose { font-size: 14px; }
-    .prose .lead { font-size: 22px; }
-    .prose .lead::first-letter { font-size: 54px; padding: 6px 10px 0 0; }
+  :root{--paper:#faf5e6;--paper-soft:#fdfaee;--butter:#fce98e;--ink:#0a0a0a;--ink-soft:#2a2a2a;--ink-faded:#757575;--dirt:#c44018;--rust:#c44018;--rule:#d4c89e;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Inter',sans-serif;background:var(--paper);color:var(--ink);font-weight:400;line-height:1.6;}
+  .topbar{padding:14px 28px;border-bottom:1px solid var(--rule);display:flex;justify-content:space-between;align-items:center;background:var(--paper);}
+  .back-link{font-family:'Inter',sans-serif;font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);text-decoration:none;transition:color .2s;}
+  .back-link:hover{color:var(--dirt);}
+  .breadcrumb{font-family:'Inter',sans-serif;font-size:11px;font-weight:400;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faded);}
+  .hero{padding:56px 40px 48px;max-width:1100px;margin:0 auto;width:100%;}
+  .hero-tag{font-family:'Inter',sans-serif;font-size:11px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-faded);margin-bottom:18px;}
+  .hero-title{font-family:'Instrument Serif',serif;font-size:clamp(32px,4vw,64px);font-weight:400;line-height:1.0;letter-spacing:-.02em;color:var(--ink);}
+  .hero-subtitle{font-family:'Inter',sans-serif;font-weight:400;font-size:16px;color:var(--ink-soft);margin-top:14px;max-width:640px;line-height:1.6;}
+  .layout,.biz-two-col{max-width:1100px;margin:0 auto;padding:0 40px;display:grid;grid-template-columns:1fr 300px;gap:56px;}
+  .layout{padding-top:0;}
+  .biz-two-col{padding-top:40px;}
+  .content,.biz-left{min-width:0;overflow:visible;}
+  .catalog{background:var(--paper-soft);border-radius:4px;padding:28px;position:sticky;top:24px;align-self:start;}
+  .catalog-label{font-family:'Inter',sans-serif;font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);margin-bottom:20px;padding-bottom:14px;border-bottom:1px solid var(--rule);}
+  .catalog-row{padding:11px 0;border-bottom:1px solid rgba(212,200,158,.5);}
+  .catalog-row:last-child{border-bottom:none;}
+  .catalog-key{font-family:'Inter',sans-serif;font-size:11px;font-weight:400;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faded);margin-bottom:5px;}
+  .catalog-value{font-family:'Instrument Serif',serif;font-size:20px;font-weight:400;color:var(--ink);line-height:1.2;letter-spacing:-.01em;}
+  .catalog-value.small{font-family:'Inter',sans-serif;font-size:13px;font-weight:500;}
+  .section-head{font-family:'Inter',sans-serif;font-size:11px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--ink);padding-bottom:14px;margin-bottom:28px;border-bottom:1px solid var(--rule);}
+  .business-name+.section-head{margin-top:20px;}
+  .business-block{scroll-margin-top:32px;}
+  .business-name{font-family:'Instrument Serif',serif;font-size:34px;font-weight:400;line-height:1.05;letter-spacing:-.015em;color:var(--ink);margin-bottom:6px;}
+  .prose{font-family:'Inter',sans-serif;font-size:15px;font-weight:400;line-height:1.7;color:var(--ink);max-width:72ch;}
+  .prose p+p{margin-top:16px;}
+  .prose em{font-style:italic;}
+  .prose .lead{font-family:'Instrument Serif',serif;font-size:28px;font-weight:400;line-height:1.22;color:var(--ink);letter-spacing:-.015em;margin-bottom:24px;}
+  .prose .lead::first-letter{font-family:'Instrument Serif',serif;font-size:70px;float:left;line-height:.85;padding:8px 14px 0 0;color:var(--ink);font-weight:400;}
+  .empty-narrative{font-family:'Instrument Serif',serif;font-style:italic;font-size:17px;color:var(--ink-faded);padding:20px 0;}
+  .biz-record{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--rule);border-radius:4px;overflow:hidden;margin-top:40px;margin-bottom:0;background:var(--paper-soft);}
+  .biz-record-item{padding:14px 18px;border-right:1px solid var(--rule);}
+  .biz-record-item:last-child{border-right:none;}
+  .biz-record-key{font-family:'Inter',sans-serif;font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faded);margin-bottom:5px;}
+  .biz-record-value{font-family:'Inter',sans-serif;font-size:13px;font-weight:500;color:var(--ink);line-height:1.4;}
+  .biz-gallery-inline{padding-top:48px;}
+  .gallery-full-title{font-family:'Inter',sans-serif;font-size:11px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--ink);padding-bottom:14px;border-bottom:1px solid var(--rule);margin-bottom:20px;}
+  .gallery-wrap{position:relative;margin-top:4px;padding:0 14px;margin-left:-14px;margin-right:-14px;}
+  .gallery-clip{overflow:hidden;border-radius:4px;width:100%;}
+  .gallery-row{display:flex;gap:8px;overflow-x:scroll;overflow-y:hidden;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scroll-behavior:smooth;padding-bottom:4px;cursor:grab;scrollbar-width:none;-ms-overflow-style:none;}
+  .gallery-row::-webkit-scrollbar{display:none;}
+  .gallery-row:active{cursor:grabbing;}
+  .gallery-item{flex:0 0 auto;height:360px;min-width:260px;max-width:540px;overflow:hidden;border-radius:4px;cursor:pointer;scroll-snap-align:start;transition:transform .25s,box-shadow .25s;background:var(--paper-soft);}
+  .gallery-item:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(10,10,10,.18);}
+  .gallery-item img{height:100%;width:100%;object-fit:cover;object-position:center center;display:block;filter:sepia(.3) contrast(1.04) brightness(.96);transition:transform .4s;pointer-events:none;}
+  .gallery-item:hover img{transform:scale(1.04);}
+  .gallery-item.archival img{filter:none;}
+  .gallery-hint{font-family:'Inter',sans-serif;font-size:11px;font-weight:400;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faded);margin-top:8px;}
+  .gallery-arrow{position:absolute;top:50%;transform:translateY(-50%);width:40px;height:40px;border-radius:50%;background:var(--paper);border:1px solid var(--rule);color:var(--ink);font-size:22px;font-family:serif;cursor:pointer;z-index:10;box-shadow:0 4px 12px rgba(10,10,10,.14);transition:background .2s,transform .2s;display:flex;align-items:center;justify-content:center;padding-bottom:3px;}
+  .gallery-arrow:hover{background:var(--butter);transform:translateY(-50%) scale(1.1);}
+  .gallery-arrow-left{left:0;}
+  .gallery-arrow-right{right:0;}
+  .sources-inline{padding-top:40px;}
+  .sources-inline.page-end{padding-bottom:80px;}
+  .sources-constrained{max-width:100%;}
+  .sub-head{font-family:'Inter',sans-serif;font-size:11px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--dirt);margin-bottom:18px;padding-bottom:10px;border-bottom:1px solid var(--rule);}
+  .sub-section{margin-top:36px;}
+  .source-list{display:flex;flex-direction:column;gap:14px;}
+  .source-entry{padding:14px 16px;background:var(--paper-soft);border-radius:3px;border-left:3px solid var(--rule);}
+  .source-label{font-family:'Inter',sans-serif;font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--dirt);margin-bottom:4px;}
+  .source-detail{font-family:'Inter',sans-serif;font-size:13px;font-weight:400;color:var(--ink);line-height:1.5;}
+  .source-detail em{font-style:italic;}
+  .biz-divider{max-width:1100px;margin:0 auto;padding:0 40px;}
+  .biz-divider hr{border:none;border-top:1px solid var(--rule);margin:0;}
+  .lightbox{position:fixed;inset:0;background:rgba(10,10,10,.96);display:none;flex-direction:column;align-items:center;justify-content:center;z-index:9999;padding:60px 40px 40px;}
+  .lightbox.open{display:flex;}
+  .lightbox-img-wrap{flex:1;display:flex;align-items:center;justify-content:center;width:100%;min-height:0;}
+  .lightbox img{max-width:90vw;max-height:70vh;object-fit:contain;border-radius:3px;}
+  .lightbox-caption{color:var(--paper);max-width:720px;text-align:center;margin-top:28px;padding:0 20px;}
+  .lightbox-date{font-family:'Inter',sans-serif;font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--butter);margin-bottom:6px;}
+  .lightbox-title{font-family:'Instrument Serif',serif;font-size:24px;font-weight:400;line-height:1.2;color:var(--paper);margin-bottom:10px;letter-spacing:-.01em;}
+  .lightbox-description{font-family:'Inter',sans-serif;font-size:13px;color:rgba(250,245,230,.85);line-height:1.55;margin-bottom:8px;}
+  .lightbox-source{font-family:'Inter',sans-serif;font-size:11px;color:rgba(250,245,230,.6);letter-spacing:.04em;font-style:italic;}
+  .lightbox-close{position:absolute;top:24px;right:24px;width:44px;height:44px;border-radius:50%;background:var(--paper);border:none;color:var(--ink);font-size:20px;cursor:pointer;z-index:2;}
+  .lightbox-nav{position:absolute;top:50%;transform:translateY(-50%);width:52px;height:52px;border-radius:50%;background:rgba(250,245,230,.95);border:none;color:var(--ink);font-size:24px;font-family:serif;cursor:pointer;z-index:2;display:flex;align-items:center;justify-content:center;padding-bottom:4px;transition:background .2s;}
+  .lightbox-nav:hover{background:var(--butter);}
+  .lightbox-prev{left:24px;}
+  .lightbox-next{right:24px;}
+  footer{padding:40px;border-top:1px solid var(--rule);text-align:center;font-family:'Inter',sans-serif;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-faded);font-weight:400;}
+  @media(max-width:900px){
+    .layout,.biz-two-col{grid-template-columns:1fr;gap:40px;padding-left:24px;padding-right:24px;}
+    .catalog{position:static;order:-1;}
+    .hero{padding:32px 24px 24px;}
+    .topbar{padding:12px 24px;}
+    .business-name{font-size:26px;}
+    .gallery-item{height:260px;}
+    .gallery-arrow{width:36px;height:36px;font-size:18px;}
+    .biz-divider{padding-left:24px;padding-right:24px;}
+  }
+  @media(max-width:480px){
+    .topbar{padding:10px 16px;}
+    .breadcrumb{display:none;}
+    .hero{padding:24px 16px 20px;}
+    .hero-title{font-size:clamp(24px,7vw,44px);}
+    .hero-subtitle{font-size:16px;margin-top:12px;}
+    .layout{padding:24px 16px 0;gap:32px;}
+    .biz-two-col{padding-left:16px;padding-right:16px;}
+    .business-name{font-size:22px;}
+    .biz-record{grid-template-columns:1fr 1fr;}
+    .biz-record-item{border-right:none;border-bottom:1px solid var(--rule);}
+    .gallery-item{height:220px;}
+    .gallery-hint{font-size:10px;}
+    .catalog{padding:20px 16px;}
+    .catalog-value{font-size:17px;}
+    .biz-divider{padding-left:16px;padding-right:16px;}
+    .prose{font-size:14px;}
+    .prose .lead{font-size:22px;}
+    .prose .lead::first-letter{font-size:54px;padding:6px 10px 0 0;}
   }
 </style>
 </head>
@@ -713,622 +130,369 @@
 
 <section class="hero">
   <div class="hero-tag">Sign № 022 · Lots 50 – 53</div>
-  <h1 class="hero-title">Lots 50 – 53</h1>
-  <p class="hero-subtitle">A dense block of commerce: groceries, a Masonic Lodge, a law office, a telephone office, a recreation center, and the public water well.</p>
+  <h1 class="hero-title">Alonzo Talton's Grocery · Sam Clark & Charlie Bush Grocery · J.W. Thompson's Law Office · Masonic Lodge · H. Haynes Telephone · Recreation Center · Pool Hall & Bar · Dry Cleaning · Public Water Well</h1>
+  <p class="hero-subtitle">Alonzo Talton stocked the shelves for forty years, Luphus Haynes ran the telephone lines out into the countryside, and the Masons built their lodge on the same block — the few lots where Clearview did its organizing.</p>
 </section>
 
 <main class="layout">
-
   <div class="content">
-
-    <section>
-      <h2 class="section-head">Businesses on this Sign <span class="pill">9 businesses</span></h2>
-      
-    <div class="business-block">
+    <div class="business-block" id="alonzo-talton-grocery">
       <h3 class="business-name">Alonzo Talton's Grocery Store</h3>
-<div class="business-type">Grocery</div>
-      <div class="business-details">
-<div class="biz-row"><div class="biz-key">Owners</div><div class="biz-value">Alonzo Talton (1869 – 1957) and Nancy Talton</div></div>
-<div class="biz-row"><div class="biz-key">Dates</div><div class="biz-value">1947 – 1950s</div></div>
-<div class="biz-row"><div class="biz-key">Affiliated</div><div class="biz-value">Shirley Nero, Normores, Marguerite French (both interviews), JP Owens</div></div>
-</div>
-      <div class="prose">
-<p class="lead">Born in 1869, Alonzo Talton moved to Clearview in 1912 and opened his grocery and mercantile store.</p>
-<p>For nearly a half century the Taltons served the town and surrounding communities with most of their needs from clothes, tools, groceries, and other items. Items for sale included unground coffee, sewing thread, long johns, and overalls. Alonzo Talton retired in 1951 and passed away a few years later in 1957 at the age of 89, at an Okmulgee nursing home. In 1992 fire destroyed the mercantile store building.</p>
-</div>
-      
-      
-      <section class="sub-section">
-        <h3 class="sub-head">Gallery</h3>
-        <div class="gallery-wrap">
-          <button class="gallery-arrow gallery-arrow-left" aria-label="Scroll left">‹</button>
-          <div class="gallery-clip">
-            <div class="gallery-row">
-          <div class="gallery-item archival" data-src="../sources/clearview_008.jpg" data-title="Clearview — archival photograph 008" data-date="Undated" data-source="Project archive" data-caption="Clearview — archival photograph 008">
-            <img src="../sources/clearview_008.jpg" alt="Clearview — archival photograph 008" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
-          </div>
-          <div class="gallery-item archival" data-src="../sources/sign22_patriarch_1914_05_02.jpg" data-title="The Patriarch, May 2, 1914" data-date="May 2, 1914" data-source="The Patriarch · project archive" data-caption="The Patriarch, May 2, 1914">
-            <img src="../sources/sign22_patriarch_1914_05_02.jpg" alt="The Patriarch, May 2, 1914" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
-          </div>
-          <div class="gallery-item archival" data-src="../sources/sign22_rodeo_1985.jpg" data-title="Clearview Rodeo program, 1985" data-date="1985" data-source="Rodeo program · project archive" data-caption="Clearview Rodeo program, 1985">
-            <img src="../sources/sign22_rodeo_1985.jpg" alt="Clearview Rodeo program, 1985" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
-          </div>
-          <div class="gallery-item archival" data-src="../sources/Obituary_for_Alonzo_Talton_Aged_89-1.png" data-title="Obituary — Alonzo Talton, aged 89" data-date="Undated" data-source="Project archive" data-caption="Obituary for Alonzo Talton, aged 89.">
-            <img src="../sources/Obituary_for_Alonzo_Talton_Aged_89-1.png" alt="Obituary — Alonzo Talton, aged 89" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
-          </div>
-          <div class="gallery-item archival" data-src="../sources/sign22_clearview_p4-1.png" data-title="Pages from Clearview history booklet, p. 4" data-date="Undated" data-source="Project archive" data-caption="Pages from Clearview history booklet, p. 4">
-            <img src="../sources/sign22_clearview_p4-1.png" alt="Pages from Clearview history booklet, p. 4" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
-          </div>
-          <div class="gallery-item archival" data-src="../sources/new_022_Roy_Ballard_dry_cleaning.jpg" data-title="Roy Ballard & Dollie Sims — early Clearview settlers" data-date="Undated" data-source="Family &amp; community archive" data-caption="Roy Ballard & Dollie Sims — early Clearview settlers.">
-            <img src="../sources/new_022_Roy_Ballard_dry_cleaning.jpg" alt="Roy Ballard & Dollie Sims — early Clearview settlers" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
-          </div>
-          <div class="gallery-item archival" data-src="../sources/new3_022_1985_rodeo_program_006_cropped_01.jpg" data-title="Clearview Rodeo program, 1985 — Talton" data-date="1985" data-source="Family &amp; community archive" data-caption="Clearview Rodeo program, 1985 — Talton.">
-            <img src="../sources/new3_022_1985_rodeo_program_006_cropped_01.jpg" alt="Clearview Rodeo program, 1985 — Talton" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
-          </div>
-          <div class="gallery-item archival" data-src="../sources/new3_022_talton_store.jpg" data-title="Talton Store, Clearview" data-date="Undated" data-source="Family &amp; community archive" data-caption="Talton Store, Clearview.">
-            <img src="../sources/new3_022_talton_store.jpg" alt="Talton Store, Clearview" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
-          </div>
-          <div class="gallery-item archival" data-src="../sources/new3_022_talton.jpg" data-title="Talton, Clearview" data-date="Undated" data-source="Family &amp; community archive" data-caption="Talton, Clearview.">
-            <img src="../sources/new3_022_talton.jpg" alt="Talton, Clearview" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
-          </div>
-
-            </div>
-          </div>
-          <button class="gallery-arrow gallery-arrow-right" aria-label="Scroll right">›</button>
-        </div>
-        <div class="gallery-hint">Click photos to enlarge · Use arrows or drag to browse</div>
-      </section>
-      
-      
-      <section class="sub-section">
-        <h3 class="sub-head">Sources</h3>
-        <div class="source-list">
-        <div class="source-entry">
-          <div class="source-label">Obituary</div>
-          <div class="source-detail">Obituary for Alonzo Talton, aged 89. <a href="../sources/Obituary_for_Alonzo_Talton_Aged_89.pdf" target="_blank" rel="noopener" style="color:var(--dirt);text-decoration:underline;font-weight:500">View PDF →</a></div>
-        </div>
-        <div class="source-entry">
-          <div class="source-label">History booklet · p. 4</div>
-          <div class="source-detail">Pages from the Clearview history booklet, page 4. <a href="../sources/sign22_clearview_p4.pdf" target="_blank" rel="noopener" style="color:var(--dirt);text-decoration:underline;font-weight:500">View PDF →</a></div>
-        </div>
-        <div class="source-entry">
-          <div class="source-label">Oral history</div>
-          <div class="source-detail">Recollections from Shirley Nero and Withers Cudjoe.</div>
-        </div>
-        </div>
-      </section>
+      <h2 class="section-head">History</h2>
+      <div class="prose"><p class="lead">Born in 1869, Alonzo Talton moved to Clearview in 1912 and opened his grocery and mercantile store.</p>
+<p>For nearly a half century the Taltons served the town and surrounding communities with most of their needs from clothes, tools, groceries, and other items. Items for sale included unground coffee, sewing thread, long johns, and overalls. Alonzo Talton retired in 1951 and passed away a few years later in 1957 at the age of 89, at an Okmulgee nursing home. In 1992 fire destroyed the mercantile store building.</p></div>
+      <div class="biz-record">
+        <div class="biz-record-item"><div class="biz-record-key">Sign № · Lot</div><div class="biz-record-value">022 · Lot 50</div></div>
+        <div class="biz-record-item"><div class="biz-record-key">Type</div><div class="biz-record-value">Grocery & mercantile</div></div>
+        <div class="biz-record-item"><div class="biz-record-key">Owner</div><div class="biz-record-value">Alonzo Talton (1869 – 1957) and Nancy Talton</div></div>
+        <div class="biz-record-item"><div class="biz-record-key">Operated</div><div class="biz-record-value">1912 – 1951</div></div>
+      </div>
     </div>
-    
-
-    <div class="business-block">
-      <h3 class="business-name">Masonic Lodge</h3>
-<div class="business-type">Fraternal order</div>
-      <div class="business-details">
-<div class="biz-row"><div class="biz-key">Dates</div><div class="biz-value">1947 – 1950s</div></div>
-</div>
-      <div class="prose">
-<p class="lead">As early as 1904 Clearview housed a Masonic Temple and organization. The town also boasted the women's branch titled Eastern Star.</p>
-<p>In 1787 African Americans established the first Masonic Lodge in Boston, Massachusetts. The Clearview Masonic Order built this lodge in 1947. Fraternal orders, churches, and newspapers were key cogs for most early all-Black towns and Black communities in Oklahoma.</p>
-</div>
-      
-      
-      <section class="sub-section">
-        <h3 class="sub-head">Gallery</h3>
-        <div class="gallery-wrap">
-          <button class="gallery-arrow gallery-arrow-left" aria-label="Scroll left">‹</button>
-          <div class="gallery-clip">
-            <div class="gallery-row">
-          <div class="gallery-item" data-src="https://picsum.photos/seed/sign022b1img1/900/650" data-title="Placeholder photo 1" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of Masonic Lodge.">
-            <img src="https://picsum.photos/seed/sign022b1img1/900/650" alt="Placeholder photo 1" loading="lazy">
-          </div>
-          <div class="gallery-item" data-src="https://picsum.photos/seed/sign022b1img2/750/650" data-title="Placeholder photo 2" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of Masonic Lodge.">
-            <img src="https://picsum.photos/seed/sign022b1img2/750/650" alt="Placeholder photo 2" loading="lazy">
-          </div>
-          <div class="gallery-item" data-src="https://picsum.photos/seed/sign022b1img3/850/650" data-title="Placeholder photo 3" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of Masonic Lodge.">
-            <img src="https://picsum.photos/seed/sign022b1img3/850/650" alt="Placeholder photo 3" loading="lazy">
-          </div>
-          <div class="gallery-item" data-src="https://picsum.photos/seed/sign022b1img4/1000/650" data-title="Placeholder photo 4" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of Masonic Lodge.">
-            <img src="https://picsum.photos/seed/sign022b1img4/1000/650" alt="Placeholder photo 4" loading="lazy">
-          </div>
-            </div>
-          </div>
-          <button class="gallery-arrow gallery-arrow-right" aria-label="Scroll right">›</button>
-        </div>
-        <div class="gallery-hint">Click photos to enlarge · Use arrows or drag to browse</div>
-      </section>
-      
-      
-    </div>
-    
-
-    <div class="business-block">
-      <h3 class="business-name">Recreation Center</h3>
-<div class="business-type">Recreation</div>
-      <div class="business-details">
-<div class="biz-row"><div class="biz-key">Dates</div><div class="biz-value">1947 – 1950s</div></div>
-<div class="biz-row"><div class="biz-key">Affiliated</div><div class="biz-value">Normores</div></div>
-</div>
-      <div class="prose">
-<p class="lead">Luphus Haynes was a pioneering resident who came to Clearview from Mississippi in 1907.</p>
-<p>He was a rural mail carrier, teacher and principal, minister, cafe owner, and between the 1920s–1930s he managed a telephone office on Main Street and laid the lines that would connect Clearview and its residents to other towns. He operated his telephone office in the building that would later become Langston Bush's grocery store.</p>
-<p>According to town historian James P. Owens, they would go 'out in the woods and cut holes to make the telephone lines. And they extended the lines out in the country for about three miles. And they operated on these old wall telephones. You know, you have to come down and turn the crank.' His daughter, Rosie Haynes Swain, is listed as an operator in the 1930 census. L. H. Haynes would eventually relocate to Oklahoma City and pass away in 1956. His ability to operate a local telephone system underscores the resourcefulness of Clearview residents and the incredible services they were able to provide to the town.</p>
-</div>
-      
-      
-      <section class="sub-section">
-        <h3 class="sub-head">Gallery</h3>
-        <div class="gallery-wrap">
-          <button class="gallery-arrow gallery-arrow-left" aria-label="Scroll left">‹</button>
-          <div class="gallery-clip">
-            <div class="gallery-row">
-          <div class="gallery-item" data-src="https://picsum.photos/seed/sign022b2img1/900/650" data-title="Placeholder photo 1" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of Recreation Center.">
-            <img src="https://picsum.photos/seed/sign022b2img1/900/650" alt="Placeholder photo 1" loading="lazy">
-          </div>
-          <div class="gallery-item" data-src="https://picsum.photos/seed/sign022b2img2/750/650" data-title="Placeholder photo 2" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of Recreation Center.">
-            <img src="https://picsum.photos/seed/sign022b2img2/750/650" alt="Placeholder photo 2" loading="lazy">
-          </div>
-          <div class="gallery-item" data-src="https://picsum.photos/seed/sign022b2img3/850/650" data-title="Placeholder photo 3" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of Recreation Center.">
-            <img src="https://picsum.photos/seed/sign022b2img3/850/650" alt="Placeholder photo 3" loading="lazy">
-          </div>
-          <div class="gallery-item" data-src="https://picsum.photos/seed/sign022b2img4/1000/650" data-title="Placeholder photo 4" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of Recreation Center.">
-            <img src="https://picsum.photos/seed/sign022b2img4/1000/650" alt="Placeholder photo 4" loading="lazy">
-          </div>
-            </div>
-          </div>
-          <button class="gallery-arrow gallery-arrow-right" aria-label="Scroll right">›</button>
-        </div>
-        <div class="gallery-hint">Click photos to enlarge · Use arrows or drag to browse</div>
-      </section>
-      
-      
-      <section class="sub-section">
-        <h3 class="sub-head">Sources</h3>
-        <div class="source-list">
-        <div class="source-entry">
-          <div class="source-label">Oral history</div>
-          <div class="source-detail">Recollections from Normores.</div>
+    <div class="biz-gallery-inline">
+      <div class="gallery-full-title">Gallery</div>
+      <div class="gallery-wrap">
+        <button class="gallery-arrow gallery-arrow-left" aria-label="Scroll left">‹</button>
+        <div class="gallery-clip"><div class="gallery-row">
+          <div class="gallery-item archival" data-src="../sources/clearview_008.jpg" data-title="Clearview — archival photograph 008" data-date="Undated" data-source="Project archive" data-caption="Clearview — archival photograph 008"><img src="../sources/clearview_008.jpg" alt="Clearview — archival photograph 008" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'"></div>
+          <div class="gallery-item archival" data-src="../sources/sign22_patriarch_1914_05_02.jpg" data-title="The Patriarch, May 2, 1914" data-date="May 2, 1914" data-source="The Patriarch · project archive" data-caption="The Patriarch, May 2, 1914"><img src="../sources/sign22_patriarch_1914_05_02.jpg" alt="The Patriarch, May 2, 1914" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'"></div>
+          <div class="gallery-item archival" data-src="../sources/sign22_rodeo_1985.jpg" data-title="Clearview Rodeo program, 1985" data-date="1985" data-source="Rodeo program · project archive" data-caption="Clearview Rodeo program, 1985"><img src="../sources/sign22_rodeo_1985.jpg" alt="Clearview Rodeo program, 1985" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'"></div>
+          <div class="gallery-item archival" data-src="../sources/Obituary_for_Alonzo_Talton_Aged_89-1.png" data-title="Obituary — Alonzo Talton, aged 89" data-date="Undated" data-source="Project archive" data-caption="Obituary for Alonzo Talton, aged 89."><img src="../sources/Obituary_for_Alonzo_Talton_Aged_89-1.png" alt="Obituary — Alonzo Talton, aged 89" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'"></div>
+          <div class="gallery-item archival" data-src="../sources/sign22_clearview_p4-1.png" data-title="Pages from Clearview history booklet, p. 4" data-date="Undated" data-source="Project archive" data-caption="Pages from Clearview history booklet, p. 4"><img src="../sources/sign22_clearview_p4-1.png" alt="Pages from Clearview history booklet, p. 4" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'"></div>
+          <div class="gallery-item archival" data-src="../sources/new3_022_1985_rodeo_program_006_cropped_01.jpg" data-title="Clearview Rodeo program, 1985 — Talton" data-date="1985" data-source="Family & community archive" data-caption="Clearview Rodeo program, 1985 — Talton."><img src="../sources/new3_022_1985_rodeo_program_006_cropped_01.jpg" alt="Clearview Rodeo program, 1985 — Talton" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'"></div>
+          <div class="gallery-item archival" data-src="../sources/new3_022_talton_store.jpg" data-title="Talton Store, Clearview" data-date="Undated" data-source="Family & community archive" data-caption="Talton Store, Clearview."><img src="../sources/new3_022_talton_store.jpg" alt="Talton Store, Clearview" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'"></div>
+          <div class="gallery-item archival" data-src="../sources/new3_022_talton.jpg" data-title="Talton, Clearview" data-date="Undated" data-source="Family & community archive" data-caption="Talton, Clearview."><img src="../sources/new3_022_talton.jpg" alt="Talton, Clearview" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'"></div>
         </div></div>
-      </section>
+        <button class="gallery-arrow gallery-arrow-right" aria-label="Scroll right">›</button>
+      </div>
+      <div class="gallery-hint">Click photos to enlarge · Use arrows or drag to browse</div>
     </div>
-    
-
-    <div class="business-block">
-      <h3 class="business-name">H. Haynes Telephone Office</h3>
-<div class="business-type">Telephone office</div>
-      <div class="business-details">
-<div class="biz-row"><div class="biz-key">Owners</div><div class="biz-value">L. H. Haynes (d. 1956)</div></div>
-<div class="biz-row"><div class="biz-key">Dates</div><div class="biz-value">1920s – 1930s</div></div>
-</div>
-      <div class="prose">
-<p class="lead">Roy Ballard and Dollie Sims operated a Dry Cleaning and Pressing Shop in Clearview.</p>
-<p>He also delivered and picked up clothing in his dry cleaner logo'd truck. Like many Clearview businessmen, Ballard also had farming interests. Ballard, born in 1889, passed away in 1979. Dollie, born in 1900, lived until 1998.</p>
-</div>
-      
-      
-      <section class="sub-section">
-        <h3 class="sub-head">Gallery</h3>
-        <div class="gallery-wrap">
-          <button class="gallery-arrow gallery-arrow-left" aria-label="Scroll left">‹</button>
-          <div class="gallery-clip">
-            <div class="gallery-row">
-          <div class="gallery-item archival" data-src="../sources/sign22_rodeo_1985_c.jpg" data-title="Clearview Rodeo program, 1985" data-date="1985" data-source="Rodeo program · project archive" data-caption="Clearview Rodeo program, 1985">
-            <img src="../sources/sign22_rodeo_1985_c.jpg" alt="Clearview Rodeo program, 1985" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
-          </div>
-          <div class="gallery-item archival" data-src="../sources/sign22_rodeo_1986.jpg" data-title="Clearview Rodeo program, 1986" data-date="1986" data-source="Rodeo program · project archive" data-caption="Clearview Rodeo program, 1986">
-            <img src="../sources/sign22_rodeo_1986.jpg" alt="Clearview Rodeo program, 1986" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
-          </div>
-          <div class="gallery-item archival" data-src="../sources/sign22_rodeo_1986_b.jpg" data-title="Clearview Rodeo program, 1986 (B)" data-date="1986" data-source="Rodeo program · project archive" data-caption="Clearview Rodeo program, 1986 (B)">
-            <img src="../sources/sign22_rodeo_1986_b.jpg" alt="Clearview Rodeo program, 1986 (B)" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
-          </div>
-            </div>
-          </div>
-          <button class="gallery-arrow gallery-arrow-right" aria-label="Scroll right">›</button>
-        </div>
-        <div class="gallery-hint">Click photos to enlarge · Use arrows or drag to browse</div>
-      </section>
-      
-      
-    </div>
-    
-
-    <div class="business-block">
-      <h3 class="business-name">Dry Cleaning & Pressing Shop</h3>
-<div class="business-type">Dry cleaning</div>
-      <div class="business-details">
-<div class="biz-row"><div class="biz-key">Dates</div><div class="biz-value">Dates unknown</div></div>
-</div>
-      <div class="prose">
-<p class="lead">This lot was home to a succession of stores and cafes that operated from 1903 through the 1950s.</p>
-<p>Located on Mvskoke Freedmen land originally allotted to George Jackson, his son Lemuel opened the Abe Lincoln Trading Company in 1903 the same year Clearview (then Lincoln) was incorporated. Its location alongside the western side of the Ft. Smith and Western railroad tracks made it an ideal site to operate, selling goods and building materials to new residents as they settled in the newly incorporated town.</p>
-<p>The building had several owners and notably was reopened as a grocery store by Sam Clark, an early Clearview resident and farmer from Louisiana, around the start of World War I. He operated the store for several years before relocating to Bristow by 1930. Charlie Bush took over the store in the early 1920s which became the first of eventually three grocery stores operated by the Bush brothers: Charlie, Julius, and Langston.</p>
-<p>Originally from Kentucky, the Bush family relocated to Oklahoma in 1901 before settling in Clearview by 1910. Charlie and his wife, Faye, offered meals, dry goods, blocks of ice, ice cream, cold drinks, and fresh groceries and their store was known as 'the cheapest and most sanitary restaurant in town.' He would stock his store with locally sourced goods like eggs that patrons would bring in and trade for other merchandise. Charlie Bush also drove a route through the rural African American communities around Clearview as far as Grassy Lake and North Fork, trading and selling groceries from his delivery truck. Known as a fast driver, residents would be ready to look for Charlie Bush's truck or listen for his whistling before coming out to purchase ice, ice cream, or other goods. Charlie Bush's store was considered the best grocery in Clearview and is remembered as a high quality establishment to purchase goods through the highs and lows of World War I, oil booms, the Great Depression, and World War II.</p>
-<p>Believed to be the first building built in Clearview, it is still standing today.</p>
-</div>
-      
-      
-      <section class="sub-section">
-        <h3 class="sub-head">Gallery</h3>
-        <div class="gallery-wrap">
-          <button class="gallery-arrow gallery-arrow-left" aria-label="Scroll left">‹</button>
-          <div class="gallery-clip">
-            <div class="gallery-row">
-          <div class="gallery-item" data-src="https://picsum.photos/seed/sign022b4img1/900/650" data-title="Placeholder photo 1" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of Dry Cleaning & Pressing Shop.">
-            <img src="https://picsum.photos/seed/sign022b4img1/900/650" alt="Placeholder photo 1" loading="lazy">
-          </div>
-          <div class="gallery-item" data-src="https://picsum.photos/seed/sign022b4img2/750/650" data-title="Placeholder photo 2" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of Dry Cleaning & Pressing Shop.">
-            <img src="https://picsum.photos/seed/sign022b4img2/750/650" alt="Placeholder photo 2" loading="lazy">
-          </div>
-          <div class="gallery-item" data-src="https://picsum.photos/seed/sign022b4img3/850/650" data-title="Placeholder photo 3" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of Dry Cleaning & Pressing Shop.">
-            <img src="https://picsum.photos/seed/sign022b4img3/850/650" alt="Placeholder photo 3" loading="lazy">
-          </div>
-          <div class="gallery-item" data-src="https://picsum.photos/seed/sign022b4img4/1000/650" data-title="Placeholder photo 4" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of Dry Cleaning & Pressing Shop.">
-            <img src="https://picsum.photos/seed/sign022b4img4/1000/650" alt="Placeholder photo 4" loading="lazy">
-          </div>
-            </div>
-          </div>
-          <button class="gallery-arrow gallery-arrow-right" aria-label="Scroll right">›</button>
-        </div>
-        <div class="gallery-hint">Click photos to enlarge · Use arrows or drag to browse</div>
-      </section>
-      
-      
-      <section class="sub-section">
+    <div class="sources-inline">
+      <section class="sub-section sources-constrained">
         <h3 class="sub-head">Sources</h3>
         <div class="source-list">
-        <div class="source-entry">
-          <div class="source-label">Rodeo programs</div>
-          <div class="source-detail">Pages from the 1985 and 1986 Clearview Rodeo programs associated with the H. Haynes Telephone Office site.</div>
-        </div>
-        </div>
-      </section>
-    </div>
-    
-
-    <div class="business-block">
-      <h3 class="business-name">Sam Clark & Charlie Bush Grocery Store</h3>
-<div class="business-type">Grocery</div>
-      <div class="business-details">
-<div class="biz-row"><div class="biz-key">Owners</div><div class="biz-value">Sam Clark (1881 – ?); Charlie W. Bush (1889 – 1957)</div></div>
-<div class="biz-row"><div class="biz-key">Dates</div><div class="biz-value">1903 – 1950s</div></div>
-<div class="biz-row"><div class="biz-key">Affiliated</div><div class="biz-value">Otis Davis, JP Owens</div></div>
-</div>
-      <div class="prose">
-<p class="lead">This lot was home to a succession of grocery stores and cafes that operated between the 1910s through the 1950s. The first grocery store was opened by Sam Clark, an early Clearview resident and farmer from Louisiana, around the start of World War I. He operated the store for several years before relocating to Bristow by 1930. Charlie Bush took over the store in the early 1920s which became the first of eventually three grocery stores operated by the Bush brothers: Charlie, Julius, and Langston.</p>
-<p>Originally from Kentucky, the Bush family relocated to Oklahoma in 1901 before settling in Clearview by 1910. Charlie and his wife, Faye, offered meals, dry goods, blocks of ice, and fresh groceries and their store was known as 'the cheapest and most sanitary restaurant in town.' He would stock his store with locally sourced goods like eggs that patrons would bring in and trade for other merchandise. It's possible that his mother, Matilda, helped manage the store based on the 1930 census listing her as the proprietor of a cafe. Charlie Bush also drove a route through the rural African American communities around Clearview as far as Grassy Lake and North Fork, selling groceries from his truck. Known as a fast driver, residents would be ready to look for Charlie Bush's truck or listen for his whistling before coming out to purchase ice, ice cream, or other goods. For a brief time in the 1930s residents recall playing slot machines in the store before they were confiscated by the county sheriff. Charlie Bush's store was considered the best grocery in Clearview and is remembered as a high quality establishment to purchase goods through the highs and lows of World War I, oil booms, the Great Depression, and World War II.</p>
-</div>
-      
-      
-      <section class="sub-section">
-        <h3 class="sub-head">Gallery</h3>
-        <div class="gallery-wrap">
-          <button class="gallery-arrow gallery-arrow-left" aria-label="Scroll left">‹</button>
-          <div class="gallery-clip">
-            <div class="gallery-row">
-          <div class="gallery-item" data-src="https://picsum.photos/seed/sign022b5img1/900/650" data-title="Placeholder photo 1" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of Sam Clark & Charlie Bush Grocery Store.">
-            <img src="https://picsum.photos/seed/sign022b5img1/900/650" alt="Placeholder photo 1" loading="lazy">
-          </div>
-          <div class="gallery-item" data-src="https://picsum.photos/seed/sign022b5img2/750/650" data-title="Placeholder photo 2" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of Sam Clark & Charlie Bush Grocery Store.">
-            <img src="https://picsum.photos/seed/sign022b5img2/750/650" alt="Placeholder photo 2" loading="lazy">
-          </div>
-          <div class="gallery-item" data-src="https://picsum.photos/seed/sign022b5img3/850/650" data-title="Placeholder photo 3" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of Sam Clark & Charlie Bush Grocery Store.">
-            <img src="https://picsum.photos/seed/sign022b5img3/850/650" alt="Placeholder photo 3" loading="lazy">
-          </div>
-          <div class="gallery-item" data-src="https://picsum.photos/seed/sign022b5img4/1000/650" data-title="Placeholder photo 4" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of Sam Clark & Charlie Bush Grocery Store.">
-            <img src="https://picsum.photos/seed/sign022b5img4/1000/650" alt="Placeholder photo 4" loading="lazy">
-          </div>
-            </div>
-          </div>
-          <button class="gallery-arrow gallery-arrow-right" aria-label="Scroll right">›</button>
-        </div>
-        <div class="gallery-hint">Click photos to enlarge · Use arrows or drag to browse</div>
-      </section>
-      
-      
-      <section class="sub-section">
-        <h3 class="sub-head">Sources</h3>
-        <div class="source-list">
-        <div class="source-entry">
-          <div class="source-label">Census record</div>
-          <div class="source-detail">1930 U.S. Census lists Matilda Bush as proprietor of a café.</div>
-        </div>
-        <div class="source-entry">
-          <div class="source-label">Oral history interview</div>
-          <div class="source-detail">Otis Davis interview (clips available).</div>
-        </div>
-        <div class="source-entry">
-          <div class="source-label">Oral history</div>
-          <div class="source-detail">Recollections from JP Owens.</div>
-        </div></div>
-      </section>
-    </div>
-    
-
-    <div class="business-block">
-      <h3 class="business-name">Pool Hall & Bar</h3>
-<div class="business-type">Pool hall & bar</div>
-      <div class="business-details">
-<div class="biz-row"><div class="biz-key">Dates</div><div class="biz-value">1903 – 1950s</div></div>
-<div class="biz-row"><div class="biz-key">Affiliated</div><div class="biz-value">Possibly JP Owens</div></div>
-</div>
-      <p class="empty-narrative">Narrative not yet recorded. Research in progress.</p>
-      
-      
-      <section class="sub-section">
-        <h3 class="sub-head">Gallery</h3>
-        <div class="gallery-wrap">
-          <button class="gallery-arrow gallery-arrow-left" aria-label="Scroll left">‹</button>
-          <div class="gallery-clip">
-            <div class="gallery-row">
-          <div class="gallery-item" data-src="https://picsum.photos/seed/sign022b6img1/900/650" data-title="Placeholder photo 1" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of Pool Hall & Bar.">
-            <img src="https://picsum.photos/seed/sign022b6img1/900/650" alt="Placeholder photo 1" loading="lazy">
-          </div>
-          <div class="gallery-item" data-src="https://picsum.photos/seed/sign022b6img2/750/650" data-title="Placeholder photo 2" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of Pool Hall & Bar.">
-            <img src="https://picsum.photos/seed/sign022b6img2/750/650" alt="Placeholder photo 2" loading="lazy">
-          </div>
-          <div class="gallery-item" data-src="https://picsum.photos/seed/sign022b6img3/850/650" data-title="Placeholder photo 3" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of Pool Hall & Bar.">
-            <img src="https://picsum.photos/seed/sign022b6img3/850/650" alt="Placeholder photo 3" loading="lazy">
-          </div>
-          <div class="gallery-item" data-src="https://picsum.photos/seed/sign022b6img4/1000/650" data-title="Placeholder photo 4" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of Pool Hall & Bar.">
-            <img src="https://picsum.photos/seed/sign022b6img4/1000/650" alt="Placeholder photo 4" loading="lazy">
-          </div>
-            </div>
-          </div>
-          <button class="gallery-arrow gallery-arrow-right" aria-label="Scroll right">›</button>
-        </div>
-        <div class="gallery-hint">Click photos to enlarge · Use arrows or drag to browse</div>
-      </section>
-      
-      
-    </div>
-    
-
-    <div class="business-block">
-      <h3 class="business-name">J.W. Thompson's Law Office & Voter Registration</h3>
-<div class="business-type">Law office & voter registration</div>
-      <div class="business-details">
-<div class="biz-row"><div class="biz-key">Owners</div><div class="biz-value">Sam Clark (1881 – ?); Charlie W. Bush (1889 – 1957)</div></div>
-<div class="biz-row"><div class="biz-key">Dates</div><div class="biz-value">Dates unknown</div></div>
-<div class="biz-row"><div class="biz-key">Affiliated</div><div class="biz-value">JP Owens (about Thompson), Mack French (both interviews)</div></div>
-</div>
-      <p class="empty-narrative">Narrative not yet recorded. Research in progress.</p>
-      
-      
-      <section class="sub-section">
-        <h3 class="sub-head">Gallery</h3>
-        <div class="gallery-wrap">
-          <button class="gallery-arrow gallery-arrow-left" aria-label="Scroll left">‹</button>
-          <div class="gallery-clip">
-            <div class="gallery-row">
-          <div class="gallery-item archival" data-src="../sources/sign22_patriarch_1913_05_17.jpg" data-title="The Patriarch, May 17, 1913" data-date="May 17, 1913" data-source="The Patriarch · project archive" data-caption="The Patriarch, May 17, 1913">
-            <img src="../sources/sign22_patriarch_1913_05_17.jpg" alt="The Patriarch, May 17, 1913" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
-          </div>
-          <div class="gallery-item archival" data-src="../sources/sign22_thompson_img.jpg" data-title="J.W. Thompson — photograph" data-date="Undated" data-source="Project archive" data-caption="Photograph associated with J.W. Thompson's Law Office and voter registration activities.">
-            <img src="../sources/sign22_thompson_img.jpg" alt="J.W. Thompson — photograph" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
-          </div>
-          <div class="gallery-item archival" data-src="../sources/clearview_008.jpg" data-title="Clearview — archival photograph 008" data-date="Undated" data-source="Project archive" data-caption="Clearview — archival photograph 008">
-            <img src="../sources/clearview_008.jpg" alt="Clearview — archival photograph 008" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
-          </div>
-          <div class="gallery-item archival" data-src="../sources/sign22_rodeo_1983.jpg" data-title="Clearview Rodeo, 1983 (image 06)" data-date="1983" data-source="Rodeo archive · project archive" data-caption="Clearview Rodeo, 1983 (image 06)">
-            <img src="../sources/sign22_rodeo_1983.jpg" alt="Clearview Rodeo, 1983 (image 06)" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
-          </div>
-          <div class="gallery-item archival" data-src="../sources/sign22_rodeo_1985_b.jpg" data-title="Clearview Rodeo program, 1985 (B)" data-date="1985" data-source="Rodeo program · project archive" data-caption="Clearview Rodeo program, 1985 (B)">
-            <img src="../sources/sign22_rodeo_1985_b.jpg" alt="Clearview Rodeo program, 1985 (B)" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
-          </div>
-          <div class="gallery-item archival" data-src="../sources/sign22_clearview_002-1.png" data-title="Clearview — archival document 002" data-date="Undated" data-source="Project archive" data-caption="Clearview — archival document 002">
-            <img src="../sources/sign22_clearview_002-1.png" alt="Clearview — archival document 002" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
-          </div>
-            </div>
-          </div>
-          <button class="gallery-arrow gallery-arrow-right" aria-label="Scroll right">›</button>
-        </div>
-        <div class="gallery-hint">Click photos to enlarge · Use arrows or drag to browse</div>
-      </section>
-      
-      
-      <section class="sub-section">
-        <h3 class="sub-head">Sources</h3>
-        <div class="source-list">
-        <div class="source-entry">
-          <div class="source-label">Oral history interview</div>
-          <div class="source-detail">Mack French interview (both interviews).</div>
-        </div>
-        <div class="source-entry">
-          <div class="source-label">Oral history</div>
-          <div class="source-detail">Recollections from JP Owens.</div>
-        </div></div>
-      </section>
-    </div>
-    
-
-    <div class="business-block">
-      <h3 class="business-name">Public Water Well</h3>
-<div class="business-type">Public water well</div>
-      <div class="business-details">
-<div class="biz-row"><div class="biz-key">Dates</div><div class="biz-value">Dates unknown</div></div>
-<div class="biz-row"><div class="biz-key">Affiliated</div><div class="biz-value">Shirley Nero, Normores, Joe Golden</div></div>
-</div>
-      <p class="empty-narrative">Narrative not yet recorded. Research in progress.</p>
-      
-      
-      <section class="sub-section">
-        <h3 class="sub-head">Gallery</h3>
-        <div class="gallery-wrap">
-          <button class="gallery-arrow gallery-arrow-left" aria-label="Scroll left">‹</button>
-          <div class="gallery-clip">
-            <div class="gallery-row">
-          <div class="gallery-item" data-src="https://picsum.photos/seed/sign022b8img1/900/650" data-title="Placeholder photo 1" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of Public Water Well.">
-            <img src="https://picsum.photos/seed/sign022b8img1/900/650" alt="Placeholder photo 1" loading="lazy">
-          </div>
-          <div class="gallery-item" data-src="https://picsum.photos/seed/sign022b8img2/750/650" data-title="Placeholder photo 2" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of Public Water Well.">
-            <img src="https://picsum.photos/seed/sign022b8img2/750/650" alt="Placeholder photo 2" loading="lazy">
-          </div>
-          <div class="gallery-item" data-src="https://picsum.photos/seed/sign022b8img3/850/650" data-title="Placeholder photo 3" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of Public Water Well.">
-            <img src="https://picsum.photos/seed/sign022b8img3/850/650" alt="Placeholder photo 3" loading="lazy">
-          </div>
-          <div class="gallery-item" data-src="https://picsum.photos/seed/sign022b8img4/1000/650" data-title="Placeholder photo 4" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of Public Water Well.">
-            <img src="https://picsum.photos/seed/sign022b8img4/1000/650" alt="Placeholder photo 4" loading="lazy">
-          </div>
-            </div>
-          </div>
-          <button class="gallery-arrow gallery-arrow-right" aria-label="Scroll right">›</button>
-        </div>
-        <div class="gallery-hint">Click photos to enlarge · Use arrows or drag to browse</div>
-      </section>
-      
-      
-      <section class="sub-section">
-        <h3 class="sub-head">Sources</h3>
-        <div class="source-list">
-        <div class="source-entry">
-          <div class="source-label">Archival document</div>
-          <div class="source-detail">Clearview archival document 002. <a href="../sources/sign22_clearview_002.pdf" target="_blank" rel="noopener" style="color:var(--dirt);text-decoration:underline;font-weight:500">View PDF →</a></div>
-        </div>
-        <div class="source-entry">
-          <div class="source-label">Oral history</div>
-          <div class="source-detail">Recollections from Shirley Nero and Withers Cudjoe.</div>
-        </div>
+          <div class="source-entry"><div class="source-label">Obituary</div><div class="source-detail">Obituary for Alonzo Talton, aged 89. <a href="../sources/Obituary_for_Alonzo_Talton_Aged_89.pdf" target="_blank" rel="noopener" style="color:var(--dirt);text-decoration:underline;font-weight:500">View PDF →</a></div></div>
+          <div class="source-entry"><div class="source-label">History booklet · p. 4</div><div class="source-detail">Pages from the Clearview history booklet, page 4. <a href="../sources/sign22_clearview_p4.pdf" target="_blank" rel="noopener" style="color:var(--dirt);text-decoration:underline;font-weight:500">View PDF →</a></div></div>
+          <div class="source-entry"><div class="source-label">Oral history</div><div class="source-detail">Recollections from Shirley Nero and Thomasene Withers Cudjoe.</div></div>
         </div>
       </section>
     </div>
-    
-    </section>
-
   </div>
-
   <aside class="catalog">
-    <div class="catalog-label">Catalog Record</div>
-
-    <div class="catalog-row">
-      <div class="catalog-key">Sign № · Lot</div>
-      <div class="catalog-value">022 · Lots 50 – 53</div>
-    </div>
-    <div class="catalog-row">
-      <div class="catalog-key">Type</div>
-      <div class="catalog-value small">9 businesses on this sign</div>
-    </div>
-    <div class="catalog-row">
-      <div class="catalog-key">Owners</div>
-      <div class="catalog-value small">See sections below</div>
-    </div>
-    <div class="catalog-row">
-      <div class="catalog-key">Operated</div>
-      <div class="catalog-value small">See sections below</div>
-    </div>
-    <div class="catalog-row">
-      <div class="catalog-key">Status</div>
-      <div class="catalog-value small">Research in progress · One documented</div>
-    </div>
-    <div class="catalog-row">
-      <div class="catalog-key">Surveyed</div>
-      <div class="catalog-value small">May 2026</div>
+    <div class="catalog-label">Businesses on this Sign</div>
+    <div style="margin-top:4px;">
+      <div style="padding:12px 0;border-bottom:1px solid rgba(212,200,158,.5);"><a href="#alonzo-talton-grocery" style="font-family:'Inter',sans-serif;font-size:13px;font-weight:500;color:var(--ink);text-decoration:none;">Alonzo Talton's Grocery Store</a></div>
+      <div style="padding:12px 0;border-bottom:1px solid rgba(212,200,158,.5);"><a href="#sam-clark-charlie-bush-grocery" style="font-family:'Inter',sans-serif;font-size:13px;font-weight:500;color:var(--ink);text-decoration:none;">Sam Clark & Charlie Bush Grocery Store</a></div>
+      <div style="padding:12px 0;border-bottom:1px solid rgba(212,200,158,.5);"><a href="#jw-thompson-law-office" style="font-family:'Inter',sans-serif;font-size:13px;font-weight:500;color:var(--ink);text-decoration:none;">J.W. Thompson's Law Office & Voter Registration</a></div>
+      <div style="padding:12px 0;border-bottom:1px solid rgba(212,200,158,.5);"><a href="#masonic-lodge" style="font-family:'Inter',sans-serif;font-size:13px;font-weight:500;color:var(--ink);text-decoration:none;">Masonic Lodge</a></div>
+      <div style="padding:12px 0;border-bottom:1px solid rgba(212,200,158,.5);"><a href="#h-haynes-telephone" style="font-family:'Inter',sans-serif;font-size:13px;font-weight:500;color:var(--ink);text-decoration:none;">H. Haynes Telephone Office</a></div>
+      <div style="padding:12px 0;border-bottom:1px solid rgba(212,200,158,.5);"><a href="#dry-cleaning" style="font-family:'Inter',sans-serif;font-size:13px;font-weight:500;color:var(--ink);text-decoration:none;">Dry Cleaning & Pressing Shop</a></div>
+      <div style="padding:12px 0;border-bottom:1px solid rgba(212,200,158,.5);"><a href="#recreation-center" style="font-family:'Inter',sans-serif;font-size:13px;font-weight:500;color:var(--ink);text-decoration:none;">Recreation Center</a></div>
+      <div style="padding:12px 0;border-bottom:1px solid rgba(212,200,158,.5);"><a href="#pool-hall-bar" style="font-family:'Inter',sans-serif;font-size:13px;font-weight:500;color:var(--ink);text-decoration:none;">Pool Hall & Bar</a></div>
+      <div style="padding:12px 0;"><a href="#public-water-well" style="font-family:'Inter',sans-serif;font-size:13px;font-weight:500;color:var(--ink);text-decoration:none;">Public Water Well</a></div>
     </div>
   </aside>
-
 </main>
 
-<footer>
-  Clearview Historical Mapping Project · 2026
-</footer>
+<div class="biz-divider"><hr></div>
+<div class="biz-two-col">
+  <div class="biz-left">
+    <div class="business-block" id="sam-clark-charlie-bush-grocery">
+      <h3 class="business-name">Sam Clark & Charlie Bush Grocery Store</h3>
+      <h2 class="section-head">History</h2>
+      <div class="prose"><p class="lead">This lot was home to a succession of stores and cafes that operated from 1903 through the 1950s.</p>
+<p>Located on Mvskoke Freedmen land originally allotted to George Jackson, his son Lemuel opened the Abe Lincoln Trading Company in 1903 the same year Clearview was incorporated. Sam Clark, an early Clearview resident and farmer from Louisiana, reopened the store around the start of World War I. Charlie Bush took over in the early 1920s, offering meals, dry goods, blocks of ice, ice cream, cold drinks, and fresh groceries. His store was known as "the cheapest and most sanitary restaurant in town." Believed to be the first building built in Clearview, it is still standing today.</p></div>
+      <div class="biz-record">
+        <div class="biz-record-item"><div class="biz-record-key">Sign № · Lot</div><div class="biz-record-value">022 · Lot 51a</div></div>
+        <div class="biz-record-item"><div class="biz-record-key">Type</div><div class="biz-record-value">Grocery store</div></div>
+        <div class="biz-record-item"><div class="biz-record-key">Owner</div><div class="biz-record-value">Sam Clark (1881 – ?); Charlie W. Bush (1889 – 1957)</div></div>
+        <div class="biz-record-item"><div class="biz-record-key">Operated</div><div class="biz-record-value">1903 – 1950s</div></div>
+      </div>
+    </div>
+    <div class="biz-gallery-inline">
+      <div class="gallery-full-title">Gallery</div>
+      <div class="gallery-wrap">
+        <button class="gallery-arrow gallery-arrow-left" aria-label="Scroll left">‹</button>
+        <div class="gallery-clip"><div class="gallery-row">
+          <div class="gallery-item archival" data-src="../sources/new_022_Roy_Ballard_dry_cleaning.jpg" data-title="Roy Ballard & Dollie Sims — early Clearview settlers" data-date="Undated" data-source="Family & community archive" data-caption="Roy Ballard & Dollie Sims — early Clearview settlers."><img src="../sources/new_022_Roy_Ballard_dry_cleaning.jpg" alt="Roy Ballard & Dollie Sims — early Clearview settlers" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'"></div>
+        </div></div>
+        <button class="gallery-arrow gallery-arrow-right" aria-label="Scroll right">›</button>
+      </div>
+      <div class="gallery-hint">Click photos to enlarge · Use arrows or drag to browse</div>
+    </div>
+    <div class="sources-inline">
+      <section class="sub-section sources-constrained">
+        <h3 class="sub-head">Sources</h3>
+        <div class="source-list">
+          <div class="source-entry"><div class="source-label">Oral history</div><div class="source-detail">Recollections from Shirley Nero and others.</div></div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+
+<div class="biz-divider"><hr></div>
+<div class="biz-two-col">
+  <div class="biz-left">
+    <div class="business-block" id="jw-thompson-law-office">
+      <h3 class="business-name">J.W. Thompson's Law Office & Voter Registration</h3>
+      <h2 class="section-head">History</h2>
+      <div class="prose"><p class="lead">J.E. Thompson's law office and voter registration headquarters served as a civic anchor in Clearview's early years.</p>
+<p class="empty-narrative">Additional research is in progress for this location.</p></div>
+      <div class="biz-record">
+        <div class="biz-record-item"><div class="biz-record-key">Sign № · Lot</div><div class="biz-record-value">022 · Lot 52</div></div>
+        <div class="biz-record-item"><div class="biz-record-key">Type</div><div class="biz-record-value">Law office</div></div>
+        <div class="biz-record-item"><div class="biz-record-key">Owner</div><div class="biz-record-value">J.E. Thompson</div></div>
+        <div class="biz-record-item"><div class="biz-record-key">Operated</div><div class="biz-record-value">Dates unknown</div></div>
+      </div>
+    </div>
+    <div class="biz-gallery-inline">
+      <div class="gallery-full-title">Gallery</div>
+      <p class="empty-narrative" style="padding:20px 0;">No photographs yet identified for this business.</p>
+    </div>
+    <div class="sources-inline">
+      <section class="sub-section sources-constrained">
+        <h3 class="sub-head">Sources</h3>
+        <div class="source-list">
+          <div class="source-entry"><div class="source-label">Research in progress</div><div class="source-detail">Sources for J.W. Thompson's Law Office are being identified.</div></div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+
+<div class="biz-divider"><hr></div>
+<div class="biz-two-col">
+  <div class="biz-left">
+    <div class="business-block" id="masonic-lodge">
+      <h3 class="business-name">Masonic Lodge</h3>
+      <h2 class="section-head">History</h2>
+      <div class="prose"><p class="lead">As early as 1904 Clearview housed a Masonic Temple and organization. The town also boasted the women's branch titled Eastern Star.</p>
+<p>In 1787 African Americans established the first Masonic Lodge in Boston, Massachusetts. The Clearview Masonic Order built this lodge in 1947. Fraternal orders, churches, and newspapers were key cogs for most early all-Black towns and Black communities in Oklahoma.</p></div>
+      <div class="biz-record">
+        <div class="biz-record-item"><div class="biz-record-key">Sign № · Lot</div><div class="biz-record-value">022 · Lot 50</div></div>
+        <div class="biz-record-item"><div class="biz-record-key">Type</div><div class="biz-record-value">Fraternal organization</div></div>
+        <div class="biz-record-item"><div class="biz-record-key">Owner</div><div class="biz-record-value">—</div></div>
+        <div class="biz-record-item"><div class="biz-record-key">Operated</div><div class="biz-record-value">1947 – 1950s?</div></div>
+      </div>
+    </div>
+    <div class="biz-gallery-inline">
+      <div class="gallery-full-title">Gallery</div>
+      <p class="empty-narrative" style="padding:20px 0;">No photographs yet identified for this business.</p>
+    </div>
+    <div class="sources-inline">
+      <section class="sub-section sources-constrained">
+        <h3 class="sub-head">Sources</h3>
+        <div class="source-list">
+          <div class="source-entry"><div class="source-label">Newspaper · Dec 27, 1947</div><div class="source-detail"><em>Black Dispatch</em>, December 27, 1947 — Masonic Lodge and Eastern Star of Clearview.</div></div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+
+<div class="biz-divider"><hr></div>
+<div class="biz-two-col">
+  <div class="biz-left">
+    <div class="business-block" id="h-haynes-telephone">
+      <h3 class="business-name">H. Haynes Telephone Office</h3>
+      <h2 class="section-head">History</h2>
+      <div class="prose"><p class="lead">Luphus Haynes was a pioneering resident who came to Clearview from Mississippi in 1907.</p>
+<p>He was a rural mail carrier, teacher and principal, minister, cafe owner, and between the 1920s–1930s he managed a telephone office on Main Street and laid the lines that would connect Clearview and its residents to other towns. According to town historian James P. Owens, they would go 'out in the woods and cut holes to make the telephone lines. And they extended the lines out in the country for about three miles. And they operated on these old wall telephones. You know, you have to come down and turn the crank.' His daughter, Rosie Haynes Swain, is listed as an operator in the 1930 census.</p></div>
+      <div class="biz-record">
+        <div class="biz-record-item"><div class="biz-record-key">Sign № · Lot</div><div class="biz-record-value">022 · Lot 51</div></div>
+        <div class="biz-record-item"><div class="biz-record-key">Type</div><div class="biz-record-value">Telephone office</div></div>
+        <div class="biz-record-item"><div class="biz-record-key">Owner</div><div class="biz-record-value">L. H. Haynes (d. 1956)</div></div>
+        <div class="biz-record-item"><div class="biz-record-key">Operated</div><div class="biz-record-value">1920s – 1930s</div></div>
+      </div>
+    </div>
+    <div class="biz-gallery-inline">
+      <div class="gallery-full-title">Gallery</div>
+      <div class="gallery-wrap">
+        <button class="gallery-arrow gallery-arrow-left" aria-label="Scroll left">‹</button>
+        <div class="gallery-clip"><div class="gallery-row">
+          <div class="gallery-item archival" data-src="../sources/sign22_rodeo_1985_c.jpg" data-title="Clearview Rodeo program, 1985" data-date="1985" data-source="Rodeo program · project archive" data-caption="Clearview Rodeo program, 1985"><img src="../sources/sign22_rodeo_1985_c.jpg" alt="Clearview Rodeo program, 1985" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'"></div>
+          <div class="gallery-item archival" data-src="../sources/sign22_rodeo_1986.jpg" data-title="Clearview Rodeo program, 1986" data-date="1986" data-source="Rodeo program · project archive" data-caption="Clearview Rodeo program, 1986"><img src="../sources/sign22_rodeo_1986.jpg" alt="Clearview Rodeo program, 1986" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'"></div>
+        </div></div>
+        <button class="gallery-arrow gallery-arrow-right" aria-label="Scroll right">›</button>
+      </div>
+      <div class="gallery-hint">Click photos to enlarge · Use arrows or drag to browse</div>
+    </div>
+    <div class="sources-inline">
+      <section class="sub-section sources-constrained">
+        <h3 class="sub-head">Sources</h3>
+        <div class="source-list">
+          <div class="source-entry"><div class="source-label">Oral history</div><div class="source-detail">Recollections from Normores and JP Owens.</div></div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+
+<div class="biz-divider"><hr></div>
+<div class="biz-two-col">
+  <div class="biz-left">
+    <div class="business-block" id="dry-cleaning">
+      <h3 class="business-name">Dry Cleaning & Pressing Shop</h3>
+      <h2 class="section-head">History</h2>
+      <div class="prose"><p class="lead">Roy Ballard and Dollie Sims operated a Dry Cleaning and Pressing Shop in Clearview.</p>
+<p>He also delivered and picked up clothing in his dry cleaner logo'd truck. Like many Clearview businessmen, Ballard also had farming interests. Ballard, born in 1889, passed away in 1979. Dollie, born in 1900, lived until 1998.</p></div>
+      <div class="biz-record">
+        <div class="biz-record-item"><div class="biz-record-key">Sign № · Lot</div><div class="biz-record-value">022 · Lot 51</div></div>
+        <div class="biz-record-item"><div class="biz-record-key">Type</div><div class="biz-record-value">Dry cleaners</div></div>
+        <div class="biz-record-item"><div class="biz-record-key">Owner</div><div class="biz-record-value">Roy Ballard (1889 – 1979); Dollie Sims (1900 – 1998)</div></div>
+        <div class="biz-record-item"><div class="biz-record-key">Operated</div><div class="biz-record-value">Dates unknown</div></div>
+      </div>
+    </div>
+    <div class="biz-gallery-inline">
+      <div class="gallery-full-title">Gallery</div>
+      <div class="gallery-wrap">
+        <button class="gallery-arrow gallery-arrow-left" aria-label="Scroll left">‹</button>
+        <div class="gallery-clip"><div class="gallery-row">
+          <div class="gallery-item archival" data-src="../sources/new_022_Roy_Ballard_dry_cleaning.jpg" data-title="Roy Ballard & Dollie Sims — dry cleaning truck" data-date="Undated" data-source="Family & community archive" data-caption="Roy Ballard & Dollie Sims — early Clearview settlers and dry cleaning operators."><img src="../sources/new_022_Roy_Ballard_dry_cleaning.jpg" alt="Roy Ballard & Dollie Sims — dry cleaning truck" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'"></div>
+        </div></div>
+        <button class="gallery-arrow gallery-arrow-right" aria-label="Scroll right">›</button>
+      </div>
+      <div class="gallery-hint">Click photos to enlarge · Use arrows or drag to browse</div>
+    </div>
+    <div class="sources-inline">
+      <section class="sub-section sources-constrained">
+        <h3 class="sub-head">Sources</h3>
+        <div class="source-list">
+          <div class="source-entry"><div class="source-label">Photograph</div><div class="source-detail">Photograph of Roy Ballard and Dollie Sims, from OSU photo collection.</div></div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+
+<div class="biz-divider"><hr></div>
+<div class="biz-two-col">
+  <div class="biz-left">
+    <div class="business-block" id="recreation-center">
+      <h3 class="business-name">Recreation Center</h3>
+      <h2 class="section-head">History</h2>
+      <div class="prose"><p class="lead">A recreation center operated on Lot 50, serving as a gathering place for Clearview residents.</p>
+<p class="empty-narrative">Narrative not yet recorded. Research in progress.</p></div>
+      <div class="biz-record">
+        <div class="biz-record-item"><div class="biz-record-key">Sign № · Lot</div><div class="biz-record-value">022 · Lot 50</div></div>
+        <div class="biz-record-item"><div class="biz-record-key">Type</div><div class="biz-record-value">Recreation</div></div>
+        <div class="biz-record-item"><div class="biz-record-key">Owner</div><div class="biz-record-value">—</div></div>
+        <div class="biz-record-item"><div class="biz-record-key">Operated</div><div class="biz-record-value">Dates unknown</div></div>
+      </div>
+    </div>
+    <div class="biz-gallery-inline">
+      <div class="gallery-full-title">Gallery</div>
+      <p class="empty-narrative" style="padding:20px 0;">No photographs yet identified for this business.</p>
+    </div>
+    <div class="sources-inline">
+      <section class="sub-section sources-constrained">
+        <h3 class="sub-head">Sources</h3>
+        <div class="source-list">
+          <div class="source-entry"><div class="source-label">Research in progress</div><div class="source-detail">Sources for the Recreation Center are being identified.</div></div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+
+<div class="biz-divider"><hr></div>
+<div class="biz-two-col">
+  <div class="biz-left">
+    <div class="business-block" id="pool-hall-bar">
+      <h3 class="business-name">Pool Hall & Bar</h3>
+      <h2 class="section-head">History</h2>
+      <div class="prose"><p class="lead">A pool hall and bar operated on Lot 51a.</p>
+<p class="empty-narrative">Narrative not yet recorded. Research in progress.</p></div>
+      <div class="biz-record">
+        <div class="biz-record-item"><div class="biz-record-key">Sign № · Lot</div><div class="biz-record-value">022 · Lot 51a</div></div>
+        <div class="biz-record-item"><div class="biz-record-key">Type</div><div class="biz-record-value">Pool hall</div></div>
+        <div class="biz-record-item"><div class="biz-record-key">Owner</div><div class="biz-record-value">—</div></div>
+        <div class="biz-record-item"><div class="biz-record-key">Operated</div><div class="biz-record-value">Dates unknown</div></div>
+      </div>
+    </div>
+    <div class="biz-gallery-inline">
+      <div class="gallery-full-title">Gallery</div>
+      <p class="empty-narrative" style="padding:20px 0;">No photographs yet identified for this business.</p>
+    </div>
+    <div class="sources-inline">
+      <section class="sub-section sources-constrained">
+        <h3 class="sub-head">Sources</h3>
+        <div class="source-list">
+          <div class="source-entry"><div class="source-label">Research in progress</div><div class="source-detail">Sources for the Pool Hall & Bar are being identified.</div></div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+
+<div class="biz-divider"><hr></div>
+<div class="biz-two-col">
+  <div class="biz-left">
+    <div class="business-block" id="public-water-well">
+      <h3 class="business-name">Public Water Well</h3>
+      <h2 class="section-head">History</h2>
+      <div class="prose"><p class="lead">A public water well served Lot 53 and the surrounding community.</p>
+<p class="empty-narrative">Narrative not yet recorded. Research in progress.</p></div>
+      <div class="biz-record">
+        <div class="biz-record-item"><div class="biz-record-key">Sign № · Lot</div><div class="biz-record-value">022 · Lot 53</div></div>
+        <div class="biz-record-item"><div class="biz-record-key">Type</div><div class="biz-record-value">Public utility</div></div>
+        <div class="biz-record-item"><div class="biz-record-key">Owner</div><div class="biz-record-value">—</div></div>
+        <div class="biz-record-item"><div class="biz-record-key">Operated</div><div class="biz-record-value">Dates unknown</div></div>
+      </div>
+    </div>
+    <div class="biz-gallery-inline">
+      <div class="gallery-full-title">Gallery</div>
+      <p class="empty-narrative" style="padding:20px 0;">No photographs yet identified for this business.</p>
+    </div>
+    <div class="sources-inline page-end">
+      <section class="sub-section sources-constrained">
+        <h3 class="sub-head">Sources</h3>
+        <div class="source-list">
+          <div class="source-entry"><div class="source-label">Research in progress</div><div class="source-detail">Sources for the Public Water Well are being identified.</div></div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+
+<footer>Clearview Historical Mapping Project · 2026</footer>
 
 <div class="lightbox" id="lightbox">
   <button class="lightbox-close" id="lightboxClose">✕</button>
   <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous photo">‹</button>
-  <div class="lightbox-img-wrap">
-    <img id="lightboxImg" src="" alt="">
-  </div>
+  <div class="lightbox-img-wrap"><img id="lightboxImg" src="" alt=""></div>
   <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next photo">›</button>
   <div class="lightbox-caption">
     <div class="lightbox-date" id="lightboxDate"></div>
     <div class="lightbox-title" id="lightboxTitle"></div>
     <div class="lightbox-description" id="lightboxDescription"></div>
     <div class="lightbox-source" id="lightboxSource"></div>
-</div>
+  </div>
 </div>
 
 <script>
-  // === Gallery arrows: scroll the row ===
-  document.querySelectorAll('.gallery-wrap').forEach(wrap => {
-    const row = wrap.querySelector('.gallery-row');
-    const left = wrap.querySelector('.gallery-arrow-left');
-    const right = wrap.querySelector('.gallery-arrow-right');
-    if (!row) return;
-    const scrollBy = () => Math.max(280, row.clientWidth * 0.7);
-    if (left) left.addEventListener('click', () => row.scrollBy({ left: -scrollBy(), behavior: 'smooth' }));
-    if (right) right.addEventListener('click', () => row.scrollBy({ left: scrollBy(), behavior: 'smooth' }));
-
-    // Drag-to-scroll (desktop)
-    let isDown = false, startX = 0, startScroll = 0, dragged = false;
-    row.addEventListener('mousedown', e => {
-      isDown = true; dragged = false;
-      startX = e.pageX; startScroll = row.scrollLeft;
-    });
-    row.addEventListener('mouseleave', () => { isDown = false; });
-    row.addEventListener('mouseup', () => { isDown = false; });
-    row.addEventListener('mousemove', e => {
-      if (!isDown) return;
-      const dx = e.pageX - startX;
-      if (Math.abs(dx) > 4) dragged = true;
-      row.scrollLeft = startScroll - dx;
-    });
-    // Suppress click on items when dragging
-    row.querySelectorAll('.gallery-item').forEach(it => {
-      it.addEventListener('click', e => { if (dragged) { e.stopPropagation(); e.preventDefault(); dragged = false; } }, true);
-    });
+  document.querySelectorAll('.gallery-wrap').forEach(wrap=>{
+    const row=wrap.querySelector('.gallery-row');const left=wrap.querySelector('.gallery-arrow-left');const right=wrap.querySelector('.gallery-arrow-right');
+    if(!row)return;
+    const scrollBy=()=>Math.max(280,row.clientWidth*0.7);
+    if(left)left.addEventListener('click',()=>row.scrollBy({left:-scrollBy(),behavior:'smooth'}));
+    if(right)right.addEventListener('click',()=>row.scrollBy({left:scrollBy(),behavior:'smooth'}));
+    let isDown=false,startX=0,startScroll=0,dragged=false;
+    row.addEventListener('mousedown',e=>{isDown=true;dragged=false;startX=e.pageX;startScroll=row.scrollLeft;});
+    row.addEventListener('mouseleave',()=>{isDown=false;});
+    row.addEventListener('mouseup',()=>{isDown=false;});
+    row.addEventListener('mousemove',e=>{if(!isDown)return;const dx=e.pageX-startX;if(Math.abs(dx)>4)dragged=true;row.scrollLeft=startScroll-dx;});
+    row.querySelectorAll('.gallery-item').forEach(it=>{it.addEventListener('click',e=>{if(dragged){e.stopPropagation();e.preventDefault();dragged=false;}},true);});
   });
-
-  // === Lightbox with captions ===
-  const lb = document.getElementById('lightbox');
-  const lbImg = document.getElementById('lightboxImg');
-  const lbDate = document.getElementById('lightboxDate');
-  const lbTitle = document.getElementById('lightboxTitle');
-  const lbDesc = document.getElementById('lightboxDescription');
-  const lbSource = document.getElementById('lightboxSource');
-  const lbPrev = document.getElementById('lightboxPrev');
-  const lbNext = document.getElementById('lightboxNext');
-
-  // Collect all gallery items in document order across the whole page
-  const allItems = Array.from(document.querySelectorAll('.gallery-item'));
-  let currentIdx = 0;
-
-  function openAt(idx) {
-    if (idx < 0 || idx >= allItems.length) return;
-    currentIdx = idx;
-    const item = allItems[idx];
-    lbImg.src = item.dataset.src;
-    lbDate.textContent = item.dataset.date || '';
-    lbTitle.textContent = item.dataset.title || '';
-    // Allow basic HTML in description (for italicized newspaper names)
-    lbDesc.innerHTML = item.dataset.caption || '';
-    lbSource.textContent = item.dataset.source || '';
-    lbDate.style.display = item.dataset.date ? '' : 'none';
-    lbTitle.style.display = item.dataset.title ? '' : 'none';
-    lbDesc.style.display = item.dataset.caption ? '' : 'none';
-    lbSource.style.display = item.dataset.source ? '' : 'none';
-    lb.classList.add('open');
-    document.body.style.overflow = 'hidden';
-    lbPrev.style.display = idx === 0 ? 'none' : '';
-    lbNext.style.display = idx === allItems.length - 1 ? 'none' : '';
-  }
-
-  allItems.forEach((item, i) => {
-    item.addEventListener('click', () => openAt(i));
-  });
-
-  function closeLb() {
-    lb.classList.remove('open');
-    document.body.style.overflow = '';
-  }
-
-  document.getElementById('lightboxClose').addEventListener('click', closeLb);
-  lbPrev.addEventListener('click', () => openAt(currentIdx - 1));
-  lbNext.addEventListener('click', () => openAt(currentIdx + 1));
-  lb.addEventListener('click', e => { if (e.target === lb || e.target === lbImg.parentElement) closeLb(); });
-  document.addEventListener('keydown', e => {
-    if (!lb.classList.contains('open')) return;
-    if (e.key === 'Escape') closeLb();
-    if (e.key === 'ArrowLeft') openAt(currentIdx - 1);
-    if (e.key === 'ArrowRight') openAt(currentIdx + 1);
-  });
+  const lb=document.getElementById('lightbox');const lbImg=document.getElementById('lightboxImg');const lbDate=document.getElementById('lightboxDate');const lbTitle=document.getElementById('lightboxTitle');const lbDesc=document.getElementById('lightboxDescription');const lbSource=document.getElementById('lightboxSource');const lbPrev=document.getElementById('lightboxPrev');const lbNext=document.getElementById('lightboxNext');
+  const allItems=Array.from(document.querySelectorAll('.gallery-item'));let currentIdx=0;
+  function openAt(idx){if(idx<0||idx>=allItems.length)return;currentIdx=idx;const item=allItems[idx];lbImg.src=item.dataset.src;lbDate.textContent=item.dataset.date||'';lbTitle.textContent=item.dataset.title||'';lbDesc.innerHTML=item.dataset.caption||'';lbSource.textContent=item.dataset.source||'';lbDate.style.display=item.dataset.date?'':'none';lbTitle.style.display=item.dataset.title?'':'none';lbDesc.style.display=item.dataset.caption?'':'none';lbSource.style.display=item.dataset.source?'':'none';lb.classList.add('open');document.body.style.overflow='hidden';lbPrev.style.display=idx===0?'none':'';lbNext.style.display=idx===allItems.length-1?'none':'';}
+  allItems.forEach((item,i)=>{item.addEventListener('click',()=>openAt(i));});
+  function closeLb(){lb.classList.remove('open');document.body.style.overflow='';}
+  document.getElementById('lightboxClose').addEventListener('click',closeLb);
+  lbPrev.addEventListener('click',()=>openAt(currentIdx-1));lbNext.addEventListener('click',()=>openAt(currentIdx+1));
+  lb.addEventListener('click',e=>{if(e.target===lb||e.target===lbImg.parentElement)closeLb();});
+  document.addEventListener('keydown',e=>{if(!lb.classList.contains('open'))return;if(e.key==='Escape')closeLb();if(e.key==='ArrowLeft')openAt(currentIdx-1);if(e.key==='ArrowRight')openAt(currentIdx+1);});
 </script>
 
 </body>

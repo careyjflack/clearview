@@ -3,704 +3,121 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>№ 025 — Lots 80 – 83 · Clearview Historical Mapping Project</title>
+<title>Jeff Horn Grocery · Foster Liggon's Grocery · J.C. Bush Grocery · W.M. Irving Dry Goods · Second Post Office · L.H. Haynes Telephone Office · Doster Restaurant · W.L. Bush Grocery · Dr. M.C. Alford Drug Store · Trotter's Cleaning & Barbershop · M.M. Alford Home · Clearview Historical Mapping Project</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --paper: #faf5e6;
-    --paper-deep: #f0e8cf;
-    --paper-soft: #fdfaee;
-    --butter: #fce98e;
-    --butter-deep: #f5dc5c;
-    --ink: #0a0a0a;
-    --ink-soft: #2a2a2a;
-    --ink-faded: #757575;
-    --dirt: #c44018;
-    --rule: #d4c89e;
-  }
-
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-
-  body {
-    font-family: 'Inter', sans-serif;
-    background: var(--paper);
-    color: var(--ink);
-    font-weight: 400;
-    line-height: 1.6;
-  }
-
-  .topbar {
-    padding: 14px 28px;
-    border-bottom: 1px solid var(--rule);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: var(--paper);
-  }
-
-  .back-link {
-    font-family: 'Inter', sans-serif;
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--ink);
-    text-decoration: none;
-    transition: color 0.2s ease;
-  }
-  .back-link:hover { color: var(--dirt); }
-
-  .breadcrumb {
-    font-family: 'Inter', sans-serif;
-    font-size: 11px;
-    font-weight: 400;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--ink-faded);
-  }
-
-  .hero {
-    padding: 56px 40px 44px;
-    border-bottom: 1px solid var(--rule);
-    max-width: 1100px;
-    margin: 0 auto;
-    width: 100%;
-  }
-
-  .hero-tag {
-    font-family: 'Inter', sans-serif;
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--ink-faded);
-    margin-bottom: 18px;
-  }
-
-  .hero-title {
-    font-family: 'Instrument Serif', serif;
-    font-size: clamp(44px, 6.5vw, 88px);
-    font-weight: 400;
-    line-height: 0.98;
-    letter-spacing: -0.02em;
-    color: var(--ink);
-  }
-
-  .hero-subtitle {
-    font-family: 'Instrument Serif', serif;
-    font-weight: 400;
-    font-size: 22px;
-    color: var(--ink-soft);
-    margin-top: 20px;
-    max-width: 640px;
-    line-height: 1.35;
-  }
-
-  .layout {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 56px 40px 80px;
-    display: grid;
-    grid-template-columns: 1fr 300px;
-    gap: 56px;
-  }
-
-  .catalog {
-    background: var(--paper-soft);
-    border-radius: 4px;
-    padding: 28px;
-    position: sticky;
-    top: 24px;
-    align-self: start;
-  }
-
-  .catalog-label {
-    font-family: 'Inter', sans-serif;
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--ink);
-    margin-bottom: 20px;
-    padding-bottom: 14px;
-    border-bottom: 1px solid var(--rule);
-  }
-
-  .catalog-row {
-    padding: 11px 0;
-    border-bottom: 1px solid rgba(212, 200, 158, 0.5);
-  }
-  .catalog-row:last-child { border-bottom: none; }
-
-  .catalog-key {
-    font-family: 'Inter', sans-serif;
-    font-size: 11px;
-    font-weight: 400;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--ink-faded);
-    margin-bottom: 5px;
-  }
-
-  .catalog-value {
-    font-family: 'Instrument Serif', serif;
-    font-size: 20px;
-    font-weight: 400;
-    color: var(--ink);
-    line-height: 1.2;
-    letter-spacing: -0.01em;
-  }
-
-  .catalog-value.small {
-    font-family: 'Inter', sans-serif;
-    font-size: 13px;
-    font-weight: 500;
-  }
-
-  .content section + section { margin-top: 64px; }
-
-  .section-head {
-    font-family: 'Inter', sans-serif;
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--ink);
-    padding-bottom: 14px;
-    margin-bottom: 28px;
-    border-bottom: 1px solid var(--rule);
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-  }
-
-  .section-head .pill {
-    background: var(--butter);
-    color: var(--ink);
-    padding: 4px 12px;
-    border-radius: 999px;
-    font-size: 10px;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-  }
-
-  /* sub-section (timeline, sources) inside a business block */
-  .sub-section {
-    margin-top: 36px;
-  }
-
-  .sub-head {
-    font-family: 'Inter', sans-serif;
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--dirt);
-    margin-bottom: 18px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid var(--rule);
-  }
-
-  /* Business blocks */
-  .business-block + .business-block {
-    margin-top: 56px;
-    padding-top: 56px;
-    border-top: 1px solid var(--rule);
-  }
-
-  .business-name {
-    font-family: 'Instrument Serif', serif;
-    font-size: 34px;
-    font-weight: 400;
-    line-height: 1.05;
-    letter-spacing: -0.015em;
-    color: var(--ink);
-    margin-bottom: 6px;
-  }
-
-  .business-type {
-    font-family: 'Inter', sans-serif;
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--ink-faded);
-    margin-bottom: 24px;
-  }
-
-  .business-details {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 16px;
-    margin-bottom: 28px;
-    padding: 20px 22px;
-    background: var(--paper-soft);
-    border-radius: 4px;
-  }
-
-  .biz-row .biz-key {
-    font-family: 'Inter', sans-serif;
-    font-size: 10px;
-    font-weight: 500;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--ink-faded);
-    margin-bottom: 4px;
-  }
-
-  .biz-row .biz-value {
-    font-family: 'Inter', sans-serif;
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--ink);
-    line-height: 1.45;
-  }
-
-  .prose {
-    font-family: 'Inter', sans-serif;
-    font-size: 15px;
-    font-weight: 400;
-    line-height: 1.7;
-    color: var(--ink);
-    max-width: 72ch;
-  }
-  .prose p + p { margin-top: 16px; text-indent: 2em; }
-  .prose em { font-style: italic; }
-
-  .prose .lead {
-    font-family: 'Instrument Serif', serif;
-    font-size: 28px;
-    font-weight: 400;
-    line-height: 1.22;
-    color: var(--ink);
-    letter-spacing: -0.015em;
-    margin-bottom: 24px;
-    text-indent: 0;
-  }
-
-  .prose .lead::first-letter {
-    font-family: 'Instrument Serif', serif;
-    font-size: 70px;
-    float: left;
-    line-height: 0.85;
-    padding: 8px 14px 0 0;
-    color: var(--ink);
-    font-weight: 400;
-  }
-
-  .empty-narrative {
-    font-family: 'Instrument Serif', serif;
-    font-style: italic;
-    font-size: 17px;
-    color: var(--ink-faded);
-    padding: 20px 0;
-  }
-
-  .business-notes {
-    margin-top: 24px;
-    padding: 16px 18px;
-    background: var(--butter);
-    border-radius: 4px;
-  }
-
-  .notes-label {
-    font-family: 'Inter', sans-serif;
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--ink);
-    margin-bottom: 6px;
-  }
-
-  .notes-text {
-    font-family: 'Inter', sans-serif;
-    font-size: 13px;
-    font-weight: 400;
-    color: var(--ink-soft);
-    line-height: 1.6;
-  }
-
-  /* Timeline */
-  .timeline {
-    border-left: 2px solid var(--rule);
-    padding-left: 24px;
-    margin-left: 6px;
-  }
-
-  .timeline-entry {
-    position: relative;
-    padding-bottom: 22px;
-  }
-  .timeline-entry:last-child { padding-bottom: 0; }
-
-  .timeline-entry::before {
-    content: '';
-    position: absolute;
-    left: -32px;
-    top: 6px;
-    width: 12px;
-    height: 12px;
-    background: var(--ink);
-    border: 3px solid var(--paper);
-    border-radius: 50%;
-  }
-
-  .timeline-year {
-    font-family: 'Inter', sans-serif;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.14em;
-    color: var(--ink);
-    text-transform: uppercase;
-  }
-
-  .timeline-year .inferred {
-    color: var(--ink-faded);
-    font-weight: 400;
-    letter-spacing: 0.05em;
-  }
-
-  .timeline-text {
-    font-family: 'Instrument Serif', serif;
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 1.35;
-    color: var(--ink);
-    margin-top: 4px;
-    letter-spacing: -0.01em;
-  }
-
-  .timeline-text em { font-style: italic; }
-
-  /* Sources */
-  .source-list {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-  }
-
-  .source-entry {
-    padding: 14px 16px;
-    background: var(--paper-soft);
-    border-radius: 3px;
-    border-left: 3px solid var(--rule);
-  }
-
-  .source-label {
-    font-family: 'Inter', sans-serif;
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--dirt);
-    margin-bottom: 4px;
-  }
-
-  .source-detail {
-    font-family: 'Inter', sans-serif;
-    font-size: 13px;
-    font-weight: 400;
-    color: var(--ink);
-    line-height: 1.5;
-  }
-
-  .source-detail em { font-style: italic; }
-
-  /* Contain gallery within its grid column using min-width:0.
-     This is the correct CSS Grid fix — grid items default to min-width:auto
-     which allows them to overflow. Setting min-width:0 constrains them. */
-
-  .layout {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 56px 40px 80px;
-    display: grid;
-    grid-template-columns: 1fr 300px;
-    gap: 56px;
-  }
-
-  .content {
-    min-width: 0;    /* Critical — prevents content column overflowing grid */
-    overflow: hidden; /* Secondary containment */
-  }
-
-  /* GALLERY — contained carousel */
-  .gallery-wrap {
-    position: relative;
-    margin-top: 4px;
-    /* Arrows bleed ±14px outside the clip box so they're visible */
-    padding: 0 14px;
-    margin-left: -14px;
-    margin-right: -14px;
-  }
-
-  .gallery-clip {
-    overflow: hidden;      /* Clips the scrolling track — no page bleed */
-    border-radius: 4px;
-    width: 100%;
-  }
-
-  .gallery-row {
-    display: flex;
-    gap: 8px;
-    overflow-x: scroll;
-    overflow-y: hidden;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    scroll-behavior: smooth;
-    padding-bottom: 4px;
-    cursor: grab;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-  }
-  .gallery-row::-webkit-scrollbar { display: none; }
-  .gallery-row:active { cursor: grabbing; }
-
-  .gallery-item {
-    flex: 0 0 auto;
-    height: 360px;
-    min-width: 260px;   /* Even very tall portraits show at readable width */
-    max-width: 600px;   /* Landscape images don't go too wide */
-    overflow: hidden;
-    border-radius: 4px;
-    cursor: pointer;
-    scroll-snap-align: start;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-  }
-  .gallery-item:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 24px rgba(10, 10, 10, 0.18);
-  }
-  .gallery-item img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    object-position: center top; /* Show top of portrait images preferentially */
-    display: block;
-    filter: sepia(0.3) contrast(1.04) brightness(0.96);
-    transition: transform 0.4s ease;
-    pointer-events: none;
-  }
-  .gallery-item:hover img { transform: scale(1.04); }
-  .gallery-item.archival img { filter: none; }
-
-  /* Arrows — sit outside the clip, visible over it */
-  .gallery-arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: var(--paper);
-    border: 1px solid var(--rule);
-    color: var(--ink);
-    font-size: 22px;
-    font-family: serif;
-    cursor: pointer;
-    z-index: 10;
-    box-shadow: 0 4px 12px rgba(10, 10, 10, 0.14);
-    transition: background 0.2s ease, transform 0.2s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-bottom: 3px;
-  }
-  .gallery-arrow:hover {
-    background: var(--butter);
-    transform: translateY(-50%) scale(1.1);
-  }
-  .gallery-arrow-left  { left: 0; }
-  .gallery-arrow-right { right: 0; }
-    padding-bottom: 4px;
-  }
-
-  .gallery-hint {
-    font-family: 'Inter', sans-serif;
-    font-size: 11px;
-    font-weight: 400;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--ink-faded);
-    margin-top: 8px;
-  }
-
-  /* LIGHTBOX with caption */
-  .lightbox {
-    position: fixed;
-    inset: 0;
-    background: rgba(10, 10, 10, 0.96);
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    z-index: 9999;
-    padding: 60px 40px 40px;
-  }
-  .lightbox.open { display: flex; }
-
-  .lightbox-img-wrap {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    min-height: 0;
-  }
-
-  .lightbox img {
-    max-width: 90vw;
-    max-height: 70vh;
-    object-fit: contain;
-    border-radius: 3px;
-  }
-
-  .lightbox-caption {
-    color: var(--paper);
-    max-width: 720px;
-    text-align: center;
-    margin-top: 28px;
-    padding: 0 20px;
-  }
-
-  .lightbox-date {
-    font-family: 'Inter', sans-serif;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--butter);
-    margin-bottom: 6px;
-  }
-
-  .lightbox-title {
-    font-family: 'Instrument Serif', serif;
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 1.2;
-    color: var(--paper);
-    margin-bottom: 10px;
-    letter-spacing: -0.01em;
-  }
-
-  .lightbox-description {
-    font-family: 'Inter', sans-serif;
-    font-size: 13px;
-    color: rgba(250, 245, 230, 0.85);
-    line-height: 1.55;
-    margin-bottom: 8px;
-  }
-
-  .lightbox-source {
-    font-family: 'Inter', sans-serif;
-    font-size: 11px;
-    color: rgba(250, 245, 230, 0.6);
-    letter-spacing: 0.04em;
-    font-style: italic;
-  }
-
-  .lightbox-close {
-    position: absolute;
-    top: 24px; right: 24px;
-    width: 44px; height: 44px;
-    border-radius: 50%;
-    background: var(--paper);
-    border: none;
-    color: var(--ink);
-    font-size: 20px;
-    cursor: pointer;
-    z-index: 2;
-  }
-
-  .lightbox-nav {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 52px;
-    height: 52px;
-    border-radius: 50%;
-    background: rgba(250, 245, 230, 0.95);
-    border: none;
-    color: var(--ink);
-    font-size: 24px;
-    font-family: serif;
-    cursor: pointer;
-    z-index: 2;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-bottom: 4px;
-    transition: background 0.2s ease;
-  }
-
-  .lightbox-nav:hover { background: var(--butter); }
-  .lightbox-prev { left: 24px; }
-  .lightbox-next { right: 24px; }
-
-  footer {
-    padding: 40px;
-    border-top: 1px solid var(--rule);
-    text-align: center;
-    font-family: 'Inter', sans-serif;
-    font-size: 11px;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--ink-faded);
-    font-weight: 400;
-  }
-
-  /* ── TABLET (≤ 900px) ── */
-  @media (max-width: 900px) {
-    .layout {
-      grid-template-columns: 1fr;
-      gap: 40px;
-      padding: 32px 24px 60px;
-    }
-    .catalog {
-      position: static;
-      order: -1;          /* Move catalog ABOVE content on mobile */
-    }
-    .hero { padding: 32px 24px 24px; }
-    .topbar { padding: 12px 24px; }
-    .business-name { font-size: 26px; }
-    .gallery-item { height: 260px; }
-    .gallery-arrow { width: 36px; height: 36px; font-size: 18px; }
-    .lightbox-nav { width: 40px; height: 40px; font-size: 20px; }
-    .lightbox-title { font-size: 18px; }
-    .lightbox { padding: 52px 16px 24px; }
-    .lightbox img { max-height: 55vh; }
-  }
-
-  /* ── MOBILE (≤ 480px) ── */
-  @media (max-width: 480px) {
-    .topbar { padding: 10px 16px; }
-    .breadcrumb { display: none; }   /* Too narrow for breadcrumb */
-    .hero { padding: 24px 16px 20px; }
-    .hero-title { font-size: clamp(36px, 11vw, 72px); }
-    .hero-subtitle { font-size: 16px; margin-top: 12px; }
-    .layout { padding: 24px 16px 48px; gap: 32px; }
-    .business-name { font-size: 22px; }
-    .business-details { padding: 14px 16px; }
-    .gallery-item { height: 220px; }
-    .gallery-hint { font-size: 10px; }
-    .sub-head { font-size: 10px; }
-    .source-entry { padding: 12px 14px; }
-    .catalog { padding: 20px 16px; }
-    .catalog-value { font-size: 17px; }
-    .lightbox { padding: 48px 8px 16px; }
-    .lightbox img { max-height: 50vh; max-width: 98vw; }
-    .lightbox-close { top: 10px; right: 10px; width: 36px; height: 36px; font-size: 16px; }
-    .lightbox-caption { margin-top: 16px; }
-    .lightbox-title { font-size: 16px; }
-    .lightbox-description { font-size: 12px; }
-    .lightbox-prev { left: 4px; }
-    .lightbox-next { right: 4px; }
-    .prose { font-size: 14px; }
-    .prose .lead { font-size: 22px; }
-    .prose .lead::first-letter { font-size: 54px; padding: 6px 10px 0 0; }
+  :root{--paper:#faf5e6;--paper-soft:#fdfaee;--butter:#fce98e;--ink:#0a0a0a;--ink-soft:#2a2a2a;--ink-faded:#757575;--dirt:#c44018;--rust:#c44018;--rule:#d4c89e;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Inter',sans-serif;background:var(--paper);color:var(--ink);font-weight:400;line-height:1.6;}
+  .topbar{padding:14px 28px;border-bottom:1px solid var(--rule);display:flex;justify-content:space-between;align-items:center;background:var(--paper);}
+  .back-link{font-family:'Inter',sans-serif;font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);text-decoration:none;transition:color .2s;}
+  .back-link:hover{color:var(--dirt);}
+  .breadcrumb{font-family:'Inter',sans-serif;font-size:11px;font-weight:400;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faded);}
+  .hero{padding:56px 40px 48px;max-width:1100px;margin:0 auto;width:100%;}
+  .hero-tag{font-family:'Inter',sans-serif;font-size:11px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-faded);margin-bottom:18px;}
+  .hero-title{font-family:'Instrument Serif',serif;font-size:clamp(32px,4vw,64px);font-weight:400;line-height:1.0;letter-spacing:-.02em;color:var(--ink);}
+  .hero-subtitle{font-family:'Inter',sans-serif;font-weight:400;font-size:16px;color:var(--ink-soft);margin-top:14px;max-width:640px;line-height:1.6;}
+  .layout,.biz-two-col{max-width:1100px;margin:0 auto;padding:0 40px;display:grid;grid-template-columns:1fr 300px;gap:56px;}
+  .layout{padding-top:0;}
+  .biz-two-col{padding-top:40px;}
+  .content,.biz-left{min-width:0;overflow:visible;}
+  .catalog{background:var(--paper-soft);border-radius:4px;padding:28px;position:sticky;top:24px;align-self:start;}
+  .catalog-label{font-family:'Inter',sans-serif;font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);margin-bottom:20px;padding-bottom:14px;border-bottom:1px solid var(--rule);}
+  .catalog-row{padding:11px 0;border-bottom:1px solid rgba(212,200,158,.5);}
+  .catalog-row:last-child{border-bottom:none;}
+  .catalog-key{font-family:'Inter',sans-serif;font-size:11px;font-weight:400;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faded);margin-bottom:5px;}
+  .catalog-value{font-family:'Instrument Serif',serif;font-size:20px;font-weight:400;color:var(--ink);line-height:1.2;letter-spacing:-.01em;}
+  .catalog-value.small{font-family:'Inter',sans-serif;font-size:13px;font-weight:500;}
+  .section-head{font-family:'Inter',sans-serif;font-size:11px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--ink);padding-bottom:14px;margin-bottom:28px;border-bottom:1px solid var(--rule);}
+  .business-name+.section-head{margin-top:20px;}
+  .business-block{scroll-margin-top:32px;}
+  .business-name{font-family:'Instrument Serif',serif;font-size:34px;font-weight:400;line-height:1.05;letter-spacing:-.015em;color:var(--ink);margin-bottom:6px;}
+  .prose{font-family:'Inter',sans-serif;font-size:15px;font-weight:400;line-height:1.7;color:var(--ink);max-width:72ch;}
+  .prose p+p{margin-top:16px;}
+  .prose em{font-style:italic;}
+  .prose .lead{font-family:'Instrument Serif',serif;font-size:28px;font-weight:400;line-height:1.22;color:var(--ink);letter-spacing:-.015em;margin-bottom:24px;}
+  .prose .lead::first-letter{font-family:'Instrument Serif',serif;font-size:70px;float:left;line-height:.85;padding:8px 14px 0 0;color:var(--ink);font-weight:400;}
+  .empty-narrative{font-family:'Instrument Serif',serif;font-style:italic;font-size:17px;color:var(--ink-faded);padding:20px 0;}
+  .biz-record{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--rule);border-radius:4px;overflow:hidden;margin-top:40px;margin-bottom:0;background:var(--paper-soft);}
+  .biz-record-item{padding:14px 18px;border-right:1px solid var(--rule);}
+  .biz-record-item:last-child{border-right:none;}
+  .biz-record-key{font-family:'Inter',sans-serif;font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faded);margin-bottom:5px;}
+  .biz-record-value{font-family:'Inter',sans-serif;font-size:13px;font-weight:500;color:var(--ink);line-height:1.4;}
+  .biz-gallery-inline{padding-top:48px;}
+  .gallery-full-title{font-family:'Inter',sans-serif;font-size:11px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--ink);padding-bottom:14px;border-bottom:1px solid var(--rule);margin-bottom:20px;}
+  .gallery-wrap{position:relative;margin-top:4px;padding:0 14px;margin-left:-14px;margin-right:-14px;}
+  .gallery-clip{overflow:hidden;border-radius:4px;width:100%;}
+  .gallery-row{display:flex;gap:8px;overflow-x:scroll;overflow-y:hidden;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scroll-behavior:smooth;padding-bottom:4px;cursor:grab;scrollbar-width:none;-ms-overflow-style:none;}
+  .gallery-row::-webkit-scrollbar{display:none;}
+  .gallery-row:active{cursor:grabbing;}
+  .gallery-item{flex:0 0 auto;height:360px;min-width:260px;max-width:540px;overflow:hidden;border-radius:4px;cursor:pointer;scroll-snap-align:start;transition:transform .25s,box-shadow .25s;background:var(--paper-soft);}
+  .gallery-item:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(10,10,10,.18);}
+  .gallery-item img{height:100%;width:100%;object-fit:cover;object-position:center center;display:block;filter:sepia(.3) contrast(1.04) brightness(.96);transition:transform .4s;pointer-events:none;}
+  .gallery-item:hover img{transform:scale(1.04);}
+  .gallery-item.archival img{filter:none;}
+  .gallery-hint{font-family:'Inter',sans-serif;font-size:11px;font-weight:400;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faded);margin-top:8px;}
+  .gallery-arrow{position:absolute;top:50%;transform:translateY(-50%);width:40px;height:40px;border-radius:50%;background:var(--paper);border:1px solid var(--rule);color:var(--ink);font-size:22px;font-family:serif;cursor:pointer;z-index:10;box-shadow:0 4px 12px rgba(10,10,10,.14);transition:background .2s,transform .2s;display:flex;align-items:center;justify-content:center;padding-bottom:3px;}
+  .gallery-arrow:hover{background:var(--butter);transform:translateY(-50%) scale(1.1);}
+  .gallery-arrow-left{left:0;}
+  .gallery-arrow-right{right:0;}
+  .sources-inline{padding-top:40px;}
+  .sources-inline.page-end{padding-bottom:80px;}
+  .sources-constrained{max-width:100%;}
+  .sub-head{font-family:'Inter',sans-serif;font-size:11px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--dirt);margin-bottom:18px;padding-bottom:10px;border-bottom:1px solid var(--rule);}
+  .sub-section{margin-top:36px;}
+  .source-list{display:flex;flex-direction:column;gap:14px;}
+  .source-entry{padding:14px 16px;background:var(--paper-soft);border-radius:3px;border-left:3px solid var(--rule);}
+  .source-label{font-family:'Inter',sans-serif;font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--dirt);margin-bottom:4px;}
+  .source-detail{font-family:'Inter',sans-serif;font-size:13px;font-weight:400;color:var(--ink);line-height:1.5;}
+  .source-detail em{font-style:italic;}
+  .biz-divider{max-width:1100px;margin:0 auto;padding:0 40px;}
+  .biz-divider hr{border:none;border-top:1px solid var(--rule);margin:0;}
+  .lightbox{position:fixed;inset:0;background:rgba(10,10,10,.96);display:none;flex-direction:column;align-items:center;justify-content:center;z-index:9999;padding:60px 40px 40px;}
+  .lightbox.open{display:flex;}
+  .lightbox-img-wrap{flex:1;display:flex;align-items:center;justify-content:center;width:100%;min-height:0;}
+  .lightbox img{max-width:90vw;max-height:70vh;object-fit:contain;border-radius:3px;}
+  .lightbox-caption{color:var(--paper);max-width:720px;text-align:center;margin-top:28px;padding:0 20px;}
+  .lightbox-date{font-family:'Inter',sans-serif;font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--butter);margin-bottom:6px;}
+  .lightbox-title{font-family:'Instrument Serif',serif;font-size:24px;font-weight:400;line-height:1.2;color:var(--paper);margin-bottom:10px;letter-spacing:-.01em;}
+  .lightbox-description{font-family:'Inter',sans-serif;font-size:13px;color:rgba(250,245,230,.85);line-height:1.55;margin-bottom:8px;}
+  .lightbox-source{font-family:'Inter',sans-serif;font-size:11px;color:rgba(250,245,230,.6);letter-spacing:.04em;font-style:italic;}
+  .lightbox-close{position:absolute;top:24px;right:24px;width:44px;height:44px;border-radius:50%;background:var(--paper);border:none;color:var(--ink);font-size:20px;cursor:pointer;z-index:2;}
+  .lightbox-nav{position:absolute;top:50%;transform:translateY(-50%);width:52px;height:52px;border-radius:50%;background:rgba(250,245,230,.95);border:none;color:var(--ink);font-size:24px;font-family:serif;cursor:pointer;z-index:2;display:flex;align-items:center;justify-content:center;padding-bottom:4px;transition:background .2s;}
+  .lightbox-nav:hover{background:var(--butter);}
+  .lightbox-prev{left:24px;}
+  .lightbox-next{right:24px;}
+  footer{padding:40px;border-top:1px solid var(--rule);text-align:center;font-family:'Inter',sans-serif;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-faded);font-weight:400;}
+  @media(max-width:900px){
+    .layout,.biz-two-col{grid-template-columns:1fr;gap:40px;padding-left:24px;padding-right:24px;}
+    .catalog{position:static;order:-1;}
+    .hero{padding:32px 24px 24px;}
+    .topbar{padding:12px 24px;}
+    .business-name{font-size:26px;}
+    .gallery-item{height:260px;}
+    .gallery-arrow{width:36px;height:36px;font-size:18px;}
+    .biz-divider{padding-left:24px;padding-right:24px;}
+  }
+  @media(max-width:480px){
+    .topbar{padding:10px 16px;}
+    .breadcrumb{display:none;}
+    .hero{padding:24px 16px 20px;}
+    .hero-title{font-size:clamp(24px,7vw,44px);}
+    .hero-subtitle{font-size:16px;margin-top:12px;}
+    .layout{padding:24px 16px 0;gap:32px;}
+    .biz-two-col{padding-left:16px;padding-right:16px;}
+    .business-name{font-size:22px;}
+    .biz-record{grid-template-columns:1fr 1fr;}
+    .biz-record-item{border-right:none;border-bottom:1px solid var(--rule);}
+    .gallery-item{height:220px;}
+    .gallery-hint{font-size:10px;}
+    .catalog{padding:20px 16px;}
+    .catalog-value{font-size:17px;}
+    .biz-divider{padding-left:16px;padding-right:16px;}
+    .prose{font-size:14px;}
+    .prose .lead{font-size:22px;}
+    .prose .lead::first-letter{font-size:54px;padding:6px 10px 0 0;}
   }
 </style>
 </head>
@@ -713,754 +130,657 @@
 
 <section class="hero">
   <div class="hero-tag">Sign № 025 · Lots 80 – 83</div>
-  <h1 class="hero-title">Lots 80 – 83</h1>
-  <p class="hero-subtitle">Two of the Bush brothers' grocery stores, a drug store, a barbershop, two more groceries, a post office, and a telephone office.</p>
+  <h1 class="hero-title">Jeff Horn Grocery · Foster Liggon's Grocery · J.C. Bush Grocery · W.M. Irving Dry Goods · Second Post Office · L.H. Haynes Telephone Office · Doster Restaurant · W.L. Bush Grocery · Dr. M.C. Alford Drug Store · Trotter's Cleaning & Barbershop · M.M. Alford Home</h1>
+  <p class="hero-subtitle">Julius Bush and his brother Langston each ran a grocery here, schoolchildren spent their lunch money at J.C.'s counter on crackers and pop, and Dr. Alford filled prescriptions a few doors down — the block Clearview depended on.</p>
 </section>
 
 <main class="layout">
-
   <div class="content">
-
-    <section>
-      <h2 class="section-head">Businesses on this Sign <span class="pill">11 businesses</span></h2>
-      
-    <div class="business-block">
+    <div class="business-block" id="jeff-horn-grocery">
       <h3 class="business-name">Jeff Horn Grocery Store</h3>
-<div class="business-type">Grocery</div>
-      <div class="business-details">
-<div class="biz-row"><div class="biz-key">Owners</div><div class="biz-value">Jeff Horn</div></div>
-<div class="biz-row"><div class="biz-key">Dates</div><div class="biz-value">Dates unknown</div></div>
-</div>
-      <div class="prose">
-<p class="lead">Jeff Horn operated a grocery store at this location in the 1920s.</p>
-<p>A July 1921 article in the <em>Black Dispatch</em> noted that Horn offered ice cream and cold drinks at this store. Born in Louisiana in 1875, Jeff Horn migrated to Clearview and opened multiple grocery locations in town. He died in 1981.</p>
-</div>
-      
-      
-      <section class="sub-section">
-        <h3 class="sub-head">Gallery</h3>
-        <div class="gallery-wrap">
-          <button class="gallery-arrow gallery-arrow-left" aria-label="Scroll left">‹</button>
-          <div class="gallery-clip">
-            <div class="gallery-row">
-          <div class="gallery-item archival" data-src="../sources/sign25_rodeo_1986.jpg" data-title="Clearview Rodeo program, 1986 — Second Post Office" data-date="1986" data-source="Rodeo program · project archive" data-caption="Page from the 1986 Clearview Rodeo program, associated with the Second Post Office site.">
+      <h2 class="section-head">History</h2>
+      <div class="prose"><div class="prose"><p class="lead">Jeff Horn operated a grocery store at this location in the 1920s.</p>
+<p>A July 1921 article in the <em>Black Dispatch</em> noted that Horn offered ice cream and cold drinks at this store. Born in Louisiana in 1875, Jeff Horn migrated to Clearview and opened multiple grocery locations in town. He died in 1981.</p></div></div>
+      <div class="biz-record">
+        <div class="biz-record-item"><div class="biz-record-key">Sign № · Lot</div><div class="biz-record-value">025 · Lot 80</div></div>
+        <div class="biz-record-item"><div class="biz-record-key">Type</div><div class="biz-record-value">Grocery store</div></div>
+        <div class="biz-record-item"><div class="biz-record-key">Owner</div><div class="biz-record-value">Jeff Horn (1875 – 1981)</div></div>
+        <div class="biz-record-item"><div class="biz-record-key">Operated</div><div class="biz-record-value">1920s</div></div>
+      </div>
+    </div>
+    <div class="biz-gallery-inline">
+      <div class="gallery-full-title">Gallery</div>
+      <div class="gallery-wrap">
+        <button class="gallery-arrow gallery-arrow-left" aria-label="Scroll left">‹</button>
+        <div class="gallery-clip"><div class="gallery-row">
+<div class="gallery-item archival" data-src="../sources/sign25_rodeo_1986.jpg" data-title="Clearview Rodeo program, 1986 — Second Post Office" data-date="1986" data-source="Rodeo program · project archive" data-caption="Page from the 1986 Clearview Rodeo program, associated with the Second Post Office site.">
             <img src="../sources/sign25_rodeo_1986.jpg" alt="Clearview Rodeo program, 1986 — Second Post Office" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
           </div>
-          <div class="gallery-item archival" data-src="../sources/The_Patriarch_1911_10_12_1-1.png" data-title="The Patriarch, October 12, 1911" data-date="October 12, 1911" data-source="The Patriarch · project archive" data-caption="Clipping from <em>The Patriarch</em>, October 12, 1911, referencing the William Irving Store or related Lots 80–83 businesses.">
+<div class="gallery-item archival" data-src="../sources/The_Patriarch_1911_10_12_1-1.png" data-title="The Patriarch, October 12, 1911" data-date="October 12, 1911" data-source="The Patriarch · project archive" data-caption="Clipping from <em>The Patriarch</em>, October 12, 1911, referencing the William Irving Store or related Lots 80–83 businesses.">
             <img src="../sources/The_Patriarch_1911_10_12_1-1.png" alt="The Patriarch, October 12, 1911" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
           </div>
-          <div class="gallery-item archival" data-src="../sources/sign05_jeff_horn_b.jpg" data-title="Jeff Horn grocery stores — rock building shell" data-date="Undated" data-source="Project archive" data-caption="Jeff Horn owned two grocery stores in Clearview. The rock building shell is still standing.">
+<div class="gallery-item archival" data-src="../sources/sign05_jeff_horn_b.jpg" data-title="Jeff Horn grocery stores — rock building shell" data-date="Undated" data-source="Project archive" data-caption="Jeff Horn owned two grocery stores in Clearview. The rock building shell is still standing.">
             <img src="../sources/sign05_jeff_horn_b.jpg" alt="Jeff Horn grocery stores — rock building shell" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
           </div>
-          <div class="gallery-item archival" data-src="../sources/new_025_alford_drug_store.jpg" data-title="Dr. M.C. Alford Drug Store" data-date="Undated" data-source="Family &amp; community archive" data-caption="Dr. M.C. Alford Drug Store.">
+<div class="gallery-item archival" data-src="../sources/new_025_alford_drug_store.jpg" data-title="Dr. M.C. Alford Drug Store" data-date="Undated" data-source="Family &amp; community archive" data-caption="Dr. M.C. Alford Drug Store.">
             <img src="../sources/new_025_alford_drug_store.jpg" alt="Dr. M.C. Alford Drug Store" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
           </div>
-          <div class="gallery-item archival" data-src="../sources/new_025_drug_store.jpg" data-title="Drug store, Clearview" data-date="Undated" data-source="Family &amp; community archive" data-caption="Drug store, Clearview.">
+<div class="gallery-item archival" data-src="../sources/new_025_drug_store.jpg" data-title="Drug store, Clearview" data-date="Undated" data-source="Family &amp; community archive" data-caption="Drug store, Clearview.">
             <img src="../sources/new_025_drug_store.jpg" alt="Drug store, Clearview" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
           </div>
-          <div class="gallery-item archival" data-src="../sources/new_025_1985_rodeo_program_003_cropped.jpg" data-title="Clearview Rodeo program, 1985 — Haynes" data-date="1985" data-source="Family &amp; community archive" data-caption="Clearview Rodeo program, 1985 — Haynes.">
+<div class="gallery-item archival" data-src="../sources/new_025_1985_rodeo_program_003_cropped.jpg" data-title="Clearview Rodeo program, 1985 — Haynes" data-date="1985" data-source="Family &amp; community archive" data-caption="Clearview Rodeo program, 1985 — Haynes.">
             <img src="../sources/new_025_1985_rodeo_program_003_cropped.jpg" alt="Clearview Rodeo program, 1985 — Haynes" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
           </div>
-          <div class="gallery-item archival" data-src="../sources/new_025_LH_Haynes.jpg" data-title="L.H. Haynes" data-date="Undated" data-source="Family &amp; community archive" data-caption="L.H. Haynes.">
+<div class="gallery-item archival" data-src="../sources/new_025_LH_Haynes.jpg" data-title="L.H. Haynes" data-date="Undated" data-source="Family &amp; community archive" data-caption="L.H. Haynes.">
             <img src="../sources/new_025_LH_Haynes.jpg" alt="L.H. Haynes" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
           </div>
-          <div class="gallery-item archival" data-src="../sources/new_025_LH_and_Susie_Haynes.jpg" data-title="L.H. and Susie Haynes" data-date="Undated" data-source="Family &amp; community archive" data-caption="L.H. and Susie Haynes.">
+<div class="gallery-item archival" data-src="../sources/new_025_LH_and_Susie_Haynes.jpg" data-title="L.H. and Susie Haynes" data-date="Undated" data-source="Family &amp; community archive" data-caption="L.H. and Susie Haynes.">
             <img src="../sources/new_025_LH_and_Susie_Haynes.jpg" alt="L.H. and Susie Haynes" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
           </div>
-          <div class="gallery-item archival" data-src="../sources/new_025_Rosie-Haynes-Swain.jpg" data-title="Rosie Haynes-Swain" data-date="Undated" data-source="Family &amp; community archive" data-caption="Rosie Haynes-Swain.">
+<div class="gallery-item archival" data-src="../sources/new_025_Rosie-Haynes-Swain.jpg" data-title="Rosie Haynes-Swain" data-date="Undated" data-source="Family &amp; community archive" data-caption="Rosie Haynes-Swain.">
             <img src="../sources/new_025_Rosie-Haynes-Swain.jpg" alt="Rosie Haynes-Swain" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
           </div>
-          <div class="gallery-item archival" data-src="../sources/new_025_susie-haynes.jpg" data-title="Susie Haynes" data-date="Undated" data-source="Family &amp; community archive" data-caption="Susie Haynes.">
+<div class="gallery-item archival" data-src="../sources/new_025_susie-haynes.jpg" data-title="Susie Haynes" data-date="Undated" data-source="Family &amp; community archive" data-caption="Susie Haynes.">
             <img src="../sources/new_025_susie-haynes.jpg" alt="Susie Haynes" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
           </div>
-          <div class="gallery-item archival" data-src="../sources/new2_025_Julius_Bush_store.jpg" data-title="Julius Bush Store" data-date="Undated" data-source="Family &amp; community archive" data-caption="Julius Bush Store.">
+<div class="gallery-item archival" data-src="../sources/new2_025_Julius_Bush_store.jpg" data-title="Julius Bush Store" data-date="Undated" data-source="Family &amp; community archive" data-caption="Julius Bush Store.">
             <img src="../sources/new2_025_Julius_Bush_store.jpg" alt="Julius Bush Store" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
           </div>
-          <div class="gallery-item archival" data-src="../sources/new2_025_Julius-Bush-Store-with-wife-Violet-about-1940-enhanced.jpg" data-title="Julius Bush Store with wife Violet" data-date="c. 1940" data-source="Family &amp; community archive" data-caption="Julius Bush Store with wife Violet.">
+<div class="gallery-item archival" data-src="../sources/new2_025_Julius-Bush-Store-with-wife-Violet-about-1940-enhanced.jpg" data-title="Julius Bush Store with wife Violet" data-date="c. 1940" data-source="Family &amp; community archive" data-caption="Julius Bush Store with wife Violet.">
             <img src="../sources/new2_025_Julius-Bush-Store-with-wife-Violet-about-1940-enhanced.jpg" alt="Julius Bush Store with wife Violet" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
           </div>
-          <div class="gallery-item archival" data-src="../sources/new2_025_1985_rodeo_program_006_cropped_02.jpg" data-title="Clearview Rodeo program, 1985 — Langston Bush Store" data-date="1985" data-source="Family &amp; community archive" data-caption="Clearview Rodeo program, 1985 — Langston Bush Store.">
+<div class="gallery-item archival" data-src="../sources/new2_025_1985_rodeo_program_006_cropped_02.jpg" data-title="Clearview Rodeo program, 1985 — Langston Bush Store" data-date="1985" data-source="Family &amp; community archive" data-caption="Clearview Rodeo program, 1985 — Langston Bush Store.">
             <img src="../sources/new2_025_1985_rodeo_program_006_cropped_02.jpg" alt="Clearview Rodeo program, 1985 — Langston Bush Store" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
           </div>
-          <div class="gallery-item archival" data-src="../sources/new2_025_Langston-Bush-Store-and-then-wife-Mary-Ann-about-1940-enhanced.jpg" data-title="Langston Bush Store with wife Mary Ann" data-date="c. 1940" data-source="Family &amp; community archive" data-caption="Langston Bush Store with wife Mary Ann.">
+<div class="gallery-item archival" data-src="../sources/new2_025_Langston-Bush-Store-and-then-wife-Mary-Ann-about-1940-enhanced.jpg" data-title="Langston Bush Store with wife Mary Ann" data-date="c. 1940" data-source="Family &amp; community archive" data-caption="Langston Bush Store with wife Mary Ann.">
             <img src="../sources/new2_025_Langston-Bush-Store-and-then-wife-Mary-Ann-about-1940-enhanced.jpg" alt="Langston Bush Store with wife Mary Ann" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
           </div>
-          <div class="gallery-item archival" data-src="../sources/new2_025_Men-outside-Langston-Bush-store-about-1940-enhanced.jpg" data-title="Men outside Langston Bush Store" data-date="c. 1940" data-source="Family &amp; community archive" data-caption="Men outside Langston Bush Store.">
+<div class="gallery-item archival" data-src="../sources/new2_025_Men-outside-Langston-Bush-store-about-1940-enhanced.jpg" data-title="Men outside Langston Bush Store" data-date="c. 1940" data-source="Family &amp; community archive" data-caption="Men outside Langston Bush Store.">
             <img src="../sources/new2_025_Men-outside-Langston-Bush-store-about-1940-enhanced.jpg" alt="Men outside Langston Bush Store" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
           </div>
-          <div class="gallery-item archival" data-src="../sources/new3_025_Irving_House.jpg" data-title="W.M. Irving House" data-date="Undated" data-source="Family &amp; community archive" data-caption="W.M. Irving House.">
+<div class="gallery-item archival" data-src="../sources/new3_025_Irving_House.jpg" data-title="W.M. Irving House" data-date="Undated" data-source="Family &amp; community archive" data-caption="W.M. Irving House.">
             <img src="../sources/new3_025_Irving_House.jpg" alt="W.M. Irving House" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
           </div>
-
-            </div>
-          </div>
-          <button class="gallery-arrow gallery-arrow-right" aria-label="Scroll right">›</button>
-        </div>
-        <div class="gallery-hint">Click photos to enlarge · Use arrows or drag to browse</div>
-      </section>
-      
-      
-      <section class="sub-section">
+        </div></div>
+        <button class="gallery-arrow gallery-arrow-right" aria-label="Scroll right">›</button>
+      </div>
+      <div class="gallery-hint">Click photos to enlarge · Use arrows or drag to browse</div>
+    </div>
+    <div class="sources-inline">
+      <section class="sub-section sources-constrained">
         <h3 class="sub-head">Sources</h3>
         <div class="source-list">
-        <div class="source-entry">
+<div class="source-entry">
           <div class="source-label">Newspaper · Nov 26, 1908</div>
-          <div class="source-detail"><em>The Okemah Ledger</em>, November 26, 1908. <a href="../sources/The_Okemah_Ledger_1908_11_26_9.pdf" target="_blank" rel="noopener" style="color:var(--dirt);text-decoration:underline;font-weight:500">View PDF →</a></div>
-        </div>
-        <div class="source-entry">
+<div class="source-entry">
           <div class="source-label">Newspaper · May 3, 1913</div>
-          <div class="source-detail"><em>The Patriarch</em>, May 3, 1913. <a href="../sources/The_Patriarch_1913_05_03_3.pdf" target="_blank" rel="noopener" style="color:var(--dirt);text-decoration:underline;font-weight:500">View PDF →</a></div>
-        </div>
-        <div class="source-entry">
+<div class="source-entry">
           <div class="source-label">Newspaper · Jul 27, 1940</div>
-          <div class="source-detail"><em>The Black Dispatch</em>, July 27, 1940. <a href="../sources/The_Black_Dispatch_1940_07_27_7.pdf" target="_blank" rel="noopener" style="color:var(--dirt);text-decoration:underline;font-weight:500">View PDF →</a></div>
-        </div>
         </div>
       </section>
     </div>
-    
-
-    <div class="business-block">
-      <h3 class="business-name">Foster Liggon's Grocery Store</h3>
-<div class="business-type">Grocery</div>
-      <div class="business-details">
-<div class="biz-row"><div class="biz-key">Owners</div><div class="biz-value">Dr. Major Clemon \'Doc\' Alford (1881 – 1940)</div></div>
-<div class="biz-row"><div class="biz-key">Dates</div><div class="biz-value">1908 – 1940</div></div>
-<div class="biz-row"><div class="biz-key">Affiliated</div><div class="biz-value">Normores, Hattie Lou Oliver, Mack French (Elayne interview)</div></div>
-</div>
-      <div class="prose">
-<p class="lead">Foster Ligons, born in 1890, operated an early grocery store at this location.</p>
-<p>He was also a town leader, with his name on the cornerstone of the WPA gymnasium, which became a community center. Ligons passed away in 1972.</p>
-</div>
-      
-      
-      <section class="sub-section">
-        <h3 class="sub-head">Gallery</h3>
-        <div class="gallery-wrap">
-          <button class="gallery-arrow gallery-arrow-left" aria-label="Scroll left">‹</button>
-          <div class="gallery-clip">
-            <div class="gallery-row">
-          <div class="gallery-item archival" data-src="../sources/sign25_patriarch_irving.jpg" data-title="The Patriarch, August 17, 1911 (p. 2)" data-date="August 17, 1911" data-source="The Patriarch · project archive" data-caption="The Patriarch, August 17, 1911 (p. 2)">
-            <img src="../sources/sign25_patriarch_irving.jpg" alt="The Patriarch, August 17, 1911 (p. 2)" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
-          </div>
-          <div class="gallery-item archival" data-src="../sources/sign25_patriarch_1912_01_11-1.png" data-title="The Patriarch, January 11, 1912" data-date="January 11, 1912" data-source="The Patriarch · project archive" data-caption="The Patriarch, January 11, 1912">
-            <img src="../sources/sign25_patriarch_1912_01_11-1.png" alt="The Patriarch, January 11, 1912" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
-          </div>
-          <div class="gallery-item archival" data-src="../sources/The_Patriarch_1911_03_09_4-1.png" data-title="The Patriarch, March 9, 1911" data-date="March 9, 1911" data-source="The Patriarch · project archive" data-caption="The Patriarch, March 9, 1911">
-            <img src="../sources/The_Patriarch_1911_03_09_4-1.png" alt="The Patriarch, March 9, 1911" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
-          </div>
-          <div class="gallery-item archival" data-src="../sources/sign25_rodeo_1983_irving.jpg" data-title="Clearview Rodeo, 1983 (image 10)" data-date="1983" data-source="Rodeo archive · project archive" data-caption="Clearview Rodeo, 1983 (image 10)">
-            <img src="../sources/sign25_rodeo_1983_irving.jpg" alt="Clearview Rodeo, 1983 (image 10)" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
-          </div>
-            </div>
-          </div>
-          <button class="gallery-arrow gallery-arrow-right" aria-label="Scroll right">›</button>
-        </div>
-        <div class="gallery-hint">Click photos to enlarge · Use arrows or drag to browse</div>
-      </section>
-      
-      
-      <section class="sub-section">
-        <h3 class="sub-head">Sources</h3>
-        <div class="source-list">
-        <div class="source-entry">
-          <div class="source-label">Photographic archive</div>
-          <div class="source-detail">Photographs of the Langston (W.L.) Bush Store, c. 1940.</div>
-        </div>
-        </div>
-      </section>
-    </div>
-    
-
-    <div class="business-block">
-      <h3 class="business-name">J.C. Bush Grocery Store</h3>
-<div class="business-type">Grocery & market</div>
-      <div class="business-details">
-<div class="biz-row"><div class="biz-key">Owners</div><div class="biz-value">Julius Caesar "J.C." Bush (1904 – 1970)</div></div>
-<div class="biz-row"><div class="biz-key">Dates</div><div class="biz-value">ca. 1935 – 1970</div></div>
-<div class="biz-row"><div class="biz-key">Affiliated</div><div class="biz-value">Shirley Nero, Normores, Withers Cudjoe, Joe Golden, Hattie Lou Oliver, Mack French</div></div>
-</div>
-      <div class="prose">
-<p class="lead">There are few other locations that stand out in the minds of Clearview residents as much as the J. C. Bush Grocery and Market. Townsfolk fondly recall walking over to the store as kids on their lunch break from school and spending fifteen cents to purchase a pop and either peanuts or a bologna sandwich on crackers.</p>
-<p>Originally from Kentucky, the Bush family relocated to Oklahoma in 1901 before settling in Clearview by 1910. The J. C. Bush store was one of three grocery stores operated by the Bush brothers: Charlie, Julius, and Langston. Initially opened in the mid-1930s as a joint venture between Julius and Langston Bush, the J.C. Bush store would become a distinct business at this current location. Like many of the other proprietors in Clearview, J. C. Bush renovated a residential building to function as a grocery store.</p>
-<p>Over the years he would expand the store, build a porch, add double glass to the storefront, and install streetlights to brighten the area around the store (possibly to ward off potential burglars). Men would gather on the porch to tell stories, or 'lies', play checkers, or listen to the Dodgers game on the radio. Julius Bush could be found among the crowd on the porch until a customer needed to be serviced. Inside there would be glass counters on either side with penny candies and household goods to the right and the butcher area and refrigerators to the left, as well as wall shelves lined with canned foods on both sides. Julius Bush also stocked the <em>Black Dispatch</em>, a weekly African-American newspaper published in Oklahoma City, and a news box where townsfolk could leave their news to be featured in the paper. Julius Bush lived in the back of the store along with his wife, Violet. They ran the store for approximately 35 years until his death in 1970. In addition to being a grocer, Julius Bush was also a dedicated civic leader in the community. He was a school board member, voting registrar, election official, 4-H Club advisor, and superintendent at the Church of Christ church across the street.</p>
-<p>The J. C. Bush Grocery Store was a commercial and social pillar of the community that represents the self-sufficiency and entrepreneurship found in Clearview and other all-Black towns during and after segregation.</p>
-</div>
-      
-      
-      <section class="sub-section">
-        <h3 class="sub-head">Gallery</h3>
-        <div class="gallery-wrap">
-          <button class="gallery-arrow gallery-arrow-left" aria-label="Scroll left">‹</button>
-          <div class="gallery-clip">
-            <div class="gallery-row">
-          <div class="gallery-item archival" data-src="../sources/julius_bush_store_1940.jpg" data-title="Julius and Violet Bush on the store porch" data-date="c. 1940" data-source="Clearview Historical Mapping Project archive" data-caption="Julius Caesar Bush and his wife Violet standing on the porch of the J.C. Bush Grocery and Market, with Coca-Cola advertisements on either side of the entrance. The porch was a gathering place where men would tell stories, play checkers, and listen to the Dodgers game on the radio.">
-            <img src="../sources/julius_bush_store_1940.jpg" alt="Julius and Violet Bush on the store porch" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
-          </div>
-          <div class="gallery-item archival" data-src="../sources/clearview_in_photos.jpg" data-title="Clearview in Photos — J.C. Bush Store and town collage" data-date="c. 1990s (compilation)" data-source="Photos from collection of Shirley Nero and Tom Lucas" data-caption="A page from a Clearview commemorative publication featuring historical photographs of the town. The J.C. Bush store appears in the lower center, with caption noting Violet Bush and Danny Bush. Also visible: the Clearview Patriarch masthead (February 26, 1911), Clearview's train depot, the Fort Smith & Western freight locomotive, Clearview's drug store, the post office, and the Alonzo and Nancy Talton building (built 1911, destroyed by fire 1992).">
-            <img src="../sources/clearview_in_photos.jpg" alt="Clearview in Photos — J.C. Bush Store and town collage" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
-          </div>
-            </div>
-          </div>
-          <button class="gallery-arrow gallery-arrow-right" aria-label="Scroll right">›</button>
-        </div>
-        <div class="gallery-hint">Click photos to enlarge · Use arrows or drag to browse</div>
-      </section>
-      
-      
-      <section class="sub-section">
-        <h3 class="sub-head">Sources</h3>
-        <div class="source-list">
-        <div class="source-entry">
-          <div class="source-label">Photograph</div>
-          <div class="source-detail">Two photos of the store held in project archive.</div>
-        </div>
-        <div class="source-entry">
-          <div class="source-label">Oral history interview</div>
-          <div class="source-detail">Several oral history excerpts available.</div>
-        </div>
-        <div class="source-entry">
-          <div class="source-label">Newspaper article</div>
-          <div class="source-detail">Article on a robbery at the store exists.</div>
-        </div></div>
-      </section>
-    </div>
-    
-
-    <div class="business-block">
-      <h3 class="business-name">W.M. (Wash) Irving Dry Goods</h3>
-<div class="business-type">Dry goods</div>
-      <div class="business-details">
-<div class="biz-row"><div class="biz-key">Owners</div><div class="biz-value">William "Wash" Irving</div></div>
-<div class="biz-row"><div class="biz-key">Dates</div><div class="biz-value">1910s</div></div>
-</div>
-      <div class="prose">
-<p class="lead">There are few other locations that stand out in the minds of Clearview residents as much as the J. C. Bush Grocery and Market. Townsfolk fondly recall walking over to the store as kids on their lunch break from school and spending fifteen cents to purchase a pop and either peanuts or a bologna sandwich on crackers.</p>
-<p>Originally from Kentucky, the Bush family relocated to Oklahoma in 1901 before settling in Clearview by 1910. The J. C. Bush store was one of three grocery stores operated by the Bush brothers: Charlie, Julius, and Langston. Initially opened in the mid-1930s as a joint venture between Julius and Langston Bush, the J.C. Bush store would become a distinct business at this current location.</p>
-<p>Over the years he would expand the store, build a porch, add double glass to the storefront, and install streetlights to brighten the area around the store. Men would gather on the porch to tell stories, or 'lies', play checkers, or listen to the Dodgers game on the radio. Julius Bush could be found among the crowd on the porch until a customer needed to be serviced. Inside there would be glass counters on either side with penny candies and household goods to the right and the butcher area and refrigerators to the left, as well as wall shelves lined with canned foods on both sides. Julius Bush also stocked the <em>Black Dispatch</em>, a weekly African-American newspaper published in Oklahoma City, and a news box where townsfolk could leave their news to be featured in the paper.</p>
-<p>Julius Bush lived in the back of the store along with his wife, Violet. They ran the store for approximately 35 years until his death in 1970. In addition to being a grocer, Julius Bush was also a dedicated civic leader: school board member, voting registrar, election official, 4-H Club advisor, and superintendent at the Church of Christ church across the street. The J. C. Bush Grocery Store was a commercial and social pillar of the community that represents the self-sufficiency and entrepreneurship found in Clearview and other all-Black towns during and after segregation.</p>
-</div>
-      
-      
-      <section class="sub-section">
-        <h3 class="sub-head">Gallery</h3>
-        <div class="gallery-wrap">
-          <button class="gallery-arrow gallery-arrow-left" aria-label="Scroll left">‹</button>
-          <div class="gallery-clip">
-            <div class="gallery-row">
-          <div class="gallery-item archival" data-src="../sources/clearview_008.jpg" data-title="Clearview — archival photograph 008" data-date="Undated" data-source="Project archive" data-caption="Clearview — archival photograph 008">
-            <img src="../sources/clearview_008.jpg" alt="Clearview — archival photograph 008" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
-          </div>
-          <div class="gallery-item archival" data-src="../sources/sign25_rodeo_1985_post.jpg" data-title="Clearview Rodeo program, 1985" data-date="1985" data-source="Rodeo program · project archive" data-caption="Clearview Rodeo program, 1985">
-            <img src="../sources/sign25_rodeo_1985_post.jpg" alt="Clearview Rodeo program, 1985" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
-          </div>
-          <div class="gallery-item archival" data-src="../sources/sign25_clearview_p8-1.png" data-title="Pages from Clearview history booklet, p. 8" data-date="Undated" data-source="Project archive" data-caption="Pages from Clearview history booklet, p. 8">
-            <img src="../sources/sign25_clearview_p8-1.png" alt="Pages from Clearview history booklet, p. 8" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
-          </div>
-            </div>
-          </div>
-          <button class="gallery-arrow gallery-arrow-right" aria-label="Scroll right">›</button>
-        </div>
-        <div class="gallery-hint">Click photos to enlarge · Use arrows or drag to browse</div>
-      </section>
-      
-      
-      <section class="sub-section">
-        <h3 class="sub-head">Sources</h3>
-        <div class="source-list">
-        <div class="source-entry">
-          <div class="source-label">Newspaper advertisement</div>
-          <div class="source-detail">Advertisement located by Larry (researcher).</div>
-        </div></div>
-      </section>
-    </div>
-    
-
-    <div class="business-block">
-      <h3 class="business-name">Second Post Office</h3>
-<div class="business-type">Post office</div>
-      <div class="business-details">
-<div class="biz-row"><div class="biz-key">Dates</div><div class="biz-value">1902 – 1992</div></div>
-<div class="biz-row"><div class="biz-key">Affiliated</div><div class="biz-value">JP Owens</div></div>
-</div>
-      <div class="prose">
-<p class="lead">In the early years of Clearview, William "Wash" Irving operated a general merchandise store on this lot.</p>
-<p>He claimed to have the largest inventory in town and could sell items cheaper than his competition. The Clearview Patriarch claimed that Irving received the first shipment of freight in 1912.</p>
-</div>
-      
-      
-      <section class="sub-section">
-        <h3 class="sub-head">Gallery</h3>
-        <div class="gallery-wrap">
-          <button class="gallery-arrow gallery-arrow-left" aria-label="Scroll left">‹</button>
-          <div class="gallery-clip">
-            <div class="gallery-row">
-          <div class="gallery-item archival" data-src="../sources/sign25_patriarch_1912_10_10-1.png" data-title="The Patriarch, October 10, 1912" data-date="October 10, 1912" data-source="The Patriarch · project archive" data-caption="The Patriarch, October 10, 1912">
-            <img src="../sources/sign25_patriarch_1912_10_10-1.png" alt="The Patriarch, October 10, 1912" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
-          </div>
-          <div class="gallery-item archival" data-src="../sources/sign25_rodeo_1985_haynes.jpg" data-title="Clearview Rodeo program, 1985" data-date="1985" data-source="Rodeo program · project archive" data-caption="Clearview Rodeo program, 1985">
-            <img src="../sources/sign25_rodeo_1985_haynes.jpg" alt="Clearview Rodeo program, 1985" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
-          </div>
-          <div class="gallery-item archival" data-src="../sources/sign25_rodeo_1986_haynes.jpg" data-title="Clearview Rodeo program, 1986" data-date="1986" data-source="Rodeo program · project archive" data-caption="Clearview Rodeo program, 1986">
-            <img src="../sources/sign25_rodeo_1986_haynes.jpg" alt="Clearview Rodeo program, 1986" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
-          </div>
-          <div class="gallery-item archival" data-src="../sources/sign25_rodeo_1986_haynes_b.jpg" data-title="Clearview Rodeo program, 1986 (B)" data-date="1986" data-source="Rodeo program · project archive" data-caption="Clearview Rodeo program, 1986 (B)">
-            <img src="../sources/sign25_rodeo_1986_haynes_b.jpg" alt="Clearview Rodeo program, 1986 (B)" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
-          </div>
-            </div>
-          </div>
-          <button class="gallery-arrow gallery-arrow-right" aria-label="Scroll right">›</button>
-        </div>
-        <div class="gallery-hint">Click photos to enlarge · Use arrows or drag to browse</div>
-      </section>
-      
-      
-      <section class="sub-section">
-        <h3 class="sub-head">Sources</h3>
-        <div class="source-list">
-        <div class="source-entry">
-          <div class="source-label">Oral history</div>
-          <div class="source-detail">Recollections from JP Owens.</div>
-        </div></div>
-      </section>
-    </div>
-    
-
-    <div class="business-block">
-      <h3 class="business-name">L.H. Haynes Telephone Office</h3>
-<div class="business-type">Telephone office</div>
-      <div class="business-details">
-<div class="biz-row"><div class="biz-key">Owners</div><div class="biz-value">Luphus H. Haynes (1878 – 1956)</div></div>
-<div class="biz-row"><div class="biz-key">Dates</div><div class="biz-value">1920s – 1930s</div></div>
-</div>
-      <div class="prose">
-<p class="lead">From a 3/2/1956 obituary in the <em>Okemah News Leader</em>:</p>
-<p>"Masonic Rites for L.H. Haynes, 78, pioneer Clearview resident who died at his home, will be at 2 p.m. Sunday at the Tyree Methodist church. Interment will follow in the Clearview cemetery under direction of the Hyde Park funeral home. Haynes, a native of Mississippi, came to Clearview in 1907 and was a rural mail carrier there for many years. He also taught school for several years, served as a minister in the Methodist church, and was active in civic movement. Survivors include his wife, two daughters, Mrs. Rosie Swain and Mrs. Borsey Henderson, both of Clearview, and one son R. H. Haynes. There are also two brothers, Clemans Haynes, Oakland, Miss. and W. H. Haynes, Enid; and tow grandchildren. Pallbearers will be Earl French, J. P. Owens, Fred McMillan, Tom Withers Jr., R. Reynolds, and Ollie Walker."</p>
-</div>
-      
-      
-      <section class="sub-section">
-        <h3 class="sub-head">Gallery</h3>
-        <div class="gallery-wrap">
-          <button class="gallery-arrow gallery-arrow-left" aria-label="Scroll left">‹</button>
-          <div class="gallery-clip">
-            <div class="gallery-row">
-          <div class="gallery-item archival" data-src="../sources/sign25_patriarch_alford_1911.jpg" data-title="The Patriarch, August 17, 1911" data-date="August 17, 1911" data-source="The Patriarch · project archive" data-caption="The Patriarch, August 17, 1911">
-            <img src="../sources/sign25_patriarch_alford_1911.jpg" alt="The Patriarch, August 17, 1911" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
-          </div>
-          <div class="gallery-item archival" data-src="../sources/sign25_patriarch_alford_1913a.jpg" data-title="The Patriarch, November 29, 1913" data-date="November 29, 1913" data-source="The Patriarch · project archive" data-caption="The Patriarch, November 29, 1913">
-            <img src="../sources/sign25_patriarch_alford_1913a.jpg" alt="The Patriarch, November 29, 1913" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
-          </div>
-          <div class="gallery-item archival" data-src="../sources/sign25_patriarch_alford_1913b.jpg" data-title="The Patriarch, November 15, 1913" data-date="November 15, 1913" data-source="The Patriarch · project archive" data-caption="The Patriarch, November 15, 1913">
-            <img src="../sources/sign25_patriarch_alford_1913b.jpg" alt="The Patriarch, November 15, 1913" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
-          </div>
-          <div class="gallery-item archival" data-src="../sources/sign25_alford_img.jpg" data-title="Dr. M.C. Alford — photograph" data-date="Undated" data-source="Project archive" data-caption="Dr. M.C. Alford — photograph">
-            <img src="../sources/sign25_alford_img.jpg" alt="Dr. M.C. Alford — photograph" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
-          </div>
-          <div class="gallery-item archival" data-src="../sources/sign25_rodeo_1983.jpg" data-title="Clearview Rodeo, 1983 (image 09)" data-date="1983" data-source="Rodeo archive · project archive" data-caption="Clearview Rodeo, 1983 (image 09)">
-            <img src="../sources/sign25_rodeo_1983.jpg" alt="Clearview Rodeo, 1983 (image 09)" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
-          </div>
-          <div class="gallery-item archival" data-src="../sources/sign25_rodeo_1986_alford.jpg" data-title="Clearview Rodeo program, 1986" data-date="1986" data-source="Rodeo program · project archive" data-caption="Clearview Rodeo program, 1986">
-            <img src="../sources/sign25_rodeo_1986_alford.jpg" alt="Clearview Rodeo program, 1986" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
-          </div>
-          <div class="gallery-item archival" data-src="../sources/sign25_rodeo_2005.jpg" data-title="Clearview Rodeo program, 2005" data-date="2005" data-source="Rodeo program · project archive" data-caption="Clearview Rodeo program, 2005">
-            <img src="../sources/sign25_rodeo_2005.jpg" alt="Clearview Rodeo program, 2005" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
-          </div>
-          <div class="gallery-item archival" data-src="../sources/The_Okemah_Ledger_1908_11_26_9-1.png" data-title="The Okemah Ledger, November 26, 1908" data-date="November 26, 1908" data-source="The Okemah Ledger · project archive" data-caption="The Okemah Ledger, November 26, 1908">
-            <img src="../sources/The_Okemah_Ledger_1908_11_26_9-1.png" alt="The Okemah Ledger, November 26, 1908" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
-          </div>
-          <div class="gallery-item archival" data-src="../sources/The_Patriarch_1913_05_03_3-1.png" data-title="The Patriarch, May 3, 1913" data-date="May 3, 1913" data-source="The Patriarch · project archive" data-caption="The Patriarch, May 3, 1913">
-            <img src="../sources/The_Patriarch_1913_05_03_3-1.png" alt="The Patriarch, May 3, 1913" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
-          </div>
-          <div class="gallery-item archival" data-src="../sources/sign25_patriarch_1913_09_06-1.png" data-title="The Patriarch, September 6, 1913" data-date="September 6, 1913" data-source="The Patriarch · project archive" data-caption="The Patriarch, September 6, 1913">
-            <img src="../sources/sign25_patriarch_1913_09_06-1.png" alt="The Patriarch, September 6, 1913" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
-          </div>
-          <div class="gallery-item archival" data-src="../sources/The_Black_Dispatch_1940_07_27_7-1.png" data-title="The Black Dispatch, July 27, 1940" data-date="July 27, 1940" data-source="The Black Dispatch · project archive" data-caption="The Black Dispatch, July 27, 1940">
-            <img src="../sources/The_Black_Dispatch_1940_07_27_7-1.png" alt="The Black Dispatch, July 27, 1940" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
-          </div>
-            </div>
-          </div>
-          <button class="gallery-arrow gallery-arrow-right" aria-label="Scroll right">›</button>
-        </div>
-        <div class="gallery-hint">Click photos to enlarge · Use arrows or drag to browse</div>
-      </section>
-      
-      
-      <section class="sub-section">
-        <h3 class="sub-head">Sources</h3>
-        <div class="source-list">
-        <div class="source-entry">
-          <div class="source-label">Newspaper obituary</div>
-          <div class="source-detail"><em>Okemah News Leader</em>, March 2, 1956. "Masonic Rites for L.H. Haynes, 78, pioneer Clearview resident..."</div>
-        </div></div>
-      </section>
-    </div>
-    
-
-    <div class="business-block">
-      <h3 class="business-name">Doster Restaurant</h3>
-<div class="business-type">Restaurant</div>
-      <div class="business-details">
-<div class="biz-row"><div class="biz-key">Dates</div><div class="biz-value">Dates unknown</div></div>
-</div>
-      <div class="prose">
-<p class="lead">The first U.S. Post Office was established September 30, 1902. In 1904 an order was issued by the U.S. Postal Department changing the name Clearview Post Office to Abe Lincoln Post Office, but was rescinded a month later, retaining the original name.</p>
-<p>John Grayson was named the first postmaster. Those who succeeded him were N. H. Starks, M. W. (Wash) Irving, Mary Doggett, Mattie E. Lucas, and Imogene Chilton Bruton. From the Clearview Post Office, the outlying area was served by a rural route carrier. The first rural route mail carrier was Ellis Washington, followed by O. J. Simms, L. H. Haynes, J. P. Owens, Robert (Bob) Burden, and Jimmie Burden. J. P. Owens served as rural route carrier from 1927 to 1974.</p>
-<p>During the early 1970s the Clearview and Weleetka routes were consolidated due to a vacancy in the Weleetka rural delivery service, moving the Clearview carrier to the Weleetka office. Postal service from the Clearview office was continued until November 17, 1992 when the Postal Department discontinued service from the office after ninety years. However, mail service was provided to the area by the rural carrier from the Weleetka Post Office along with rural route and cluster box service.</p>
-</div>
-      
-      
-      <section class="sub-section">
-        <h3 class="sub-head">Gallery</h3>
-        <div class="gallery-wrap">
-          <button class="gallery-arrow gallery-arrow-left" aria-label="Scroll left">‹</button>
-          <div class="gallery-clip">
-            <div class="gallery-row">
-          <div class="gallery-item archival" data-src="../sources/sign25_langston_bush.jpg" data-title="Langston Bush Store — with wife Mary Ann, c. 1940" data-date="c. 1940" data-source="Project archive" data-caption="Langston Bush Store — with wife Mary Ann, c. 1940">
-            <img src="../sources/sign25_langston_bush.jpg" alt="Langston Bush Store — with wife Mary Ann, c. 1940" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
-          </div>
-          <div class="gallery-item archival" data-src="../sources/sign25_langston_bush_men.jpg" data-title="Men outside Langston Bush Store, c. 1940" data-date="c. 1940" data-source="Project archive" data-caption="Men outside Langston Bush Store, c. 1940">
-            <img src="../sources/sign25_langston_bush_men.jpg" alt="Men outside Langston Bush Store, c. 1940" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
-          </div>
-          <div class="gallery-item archival" data-src="../sources/sign25_rodeo_1985_bush.jpg" data-title="Clearview Rodeo program, 1985" data-date="1985" data-source="Rodeo program · project archive" data-caption="Clearview Rodeo program, 1985">
-            <img src="../sources/sign25_rodeo_1985_bush.jpg" alt="Clearview Rodeo program, 1985" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
-          </div>
-            </div>
-          </div>
-          <button class="gallery-arrow gallery-arrow-right" aria-label="Scroll right">›</button>
-        </div>
-        <div class="gallery-hint">Click photos to enlarge · Use arrows or drag to browse</div>
-      </section>
-      
-      
-    </div>
-    
-
-    <div class="business-block">
-      <h3 class="business-name">W.L. Bush Grocery</h3>
-<div class="business-type">Grocery</div>
-      <div class="business-details">
-<div class="biz-row"><div class="biz-key">Owners</div><div class="biz-value">William L. Bush (1892 – 1984)</div></div>
-<div class="biz-row"><div class="biz-key">Dates</div><div class="biz-value">1935 – 1984</div></div>
-<div class="biz-row"><div class="biz-key">Affiliated</div><div class="biz-value">Shirley Nero, Normores, Withers Cudjoe, Joe Golden, Hattie Lou Oliver</div></div>
-</div>
-      <div class="prose">
-<p class="lead">The W. L. Bush store was one of three grocery stores operated by the Bush brothers: Charlie, Julius, and Langston. Initially opened in the mid-1930s as a joint venture between Julius and Langston Bush, the W. L. Bush Grocery store would become a distinct business at this current location. Like many of the other proprietors in Clearview, Langston Bush renovated a residential building to function as a grocery store.</p>
-<p>Langston and Julius Bush's stores offered similar goods although some residents recall that Langston served more of the professional people in town such as schoolteachers. Langston didn't play checkers or serve bologna sandwiches and possibly offered some higher end items. What made his store stand out is that it had one of the first telephones in Clearview. He would let anyone use the phone and would go around town delivering messages at people's homes. Langston Bush lived in the back of his store for several years until moving into a separate home in town and permitting Dessie Forshee to operate a barbershop in the store in 1952.</p>
-<p>Langston was a long-time school board member, sponsor of the Miniature Golf Course, vice-president of the Clearview branch of the NAACP, and was active in veterans organizations. The W. L. Bush Grocery store is another example of the thriving entrepreneurship and civic engagement in Clearview during the mid 1900s.</p>
-</div>
-      
-      
-      <section class="sub-section">
-        <h3 class="sub-head">Gallery</h3>
-        <div class="gallery-wrap">
-          <button class="gallery-arrow gallery-arrow-left" aria-label="Scroll left">‹</button>
-          <div class="gallery-clip">
-            <div class="gallery-row">
-          <div class="gallery-item archival" data-src="../sources/clearview_008.jpg" data-title="Clearview — archival photograph 008" data-date="Undated" data-source="Project archive" data-caption="Clearview — archival photograph 008">
-            <img src="../sources/clearview_008.jpg" alt="Clearview — archival photograph 008" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
-          </div>
-            </div>
-          </div>
-          <button class="gallery-arrow gallery-arrow-right" aria-label="Scroll right">›</button>
-        </div>
-        <div class="gallery-hint">Click photos to enlarge · Use arrows or drag to browse</div>
-      </section>
-      
-      
-      <section class="sub-section">
-        <h3 class="sub-head">Sources</h3>
-        <div class="source-list">
-        <div class="source-entry">
-          <div class="source-label">Oral history</div>
-          <div class="source-detail">Recollections from Shirley Nero, Normores, Withers Cudjoe, Joe Golden, and Hattie Lou Oliver.</div>
-        </div></div>
-      </section>
-    </div>
-    
-
-    <div class="business-block">
-      <h3 class="business-name">Dr. M.C. Alford Drug Store</h3>
-<div class="business-type">Drug store</div>
-      <div class="business-details">
-<div class="biz-row"><div class="biz-key">Owners</div><div class="biz-value">Dr. Major Clemon \'Doc\' Alford (1881 – 1940)</div></div>
-<div class="biz-row"><div class="biz-key">Dates</div><div class="biz-value">1908 – 1940</div></div>
-<div class="biz-row"><div class="biz-key">Affiliated</div><div class="biz-value">Marguerite French, Patton/Anderson, JP Owens, Herbert Johnson</div></div>
-</div>
-      <div class="prose">
-<p class="lead">Luphus Haynes was a pioneering resident who came to Clearview from Mississippi in 1907.</p>
-<p>He was a rural mail carrier, teacher and principal, minister, cafe owner, and between the 1920s–1930s he managed a telephone office on Main Street and laid the lines that would connect Clearview and its residents to other towns. He operated his telephone office in the building that would later become Langston Bush's grocery store.</p>
-<p>According to town historian James P. Owens, they would go 'out in the woods and cut holes to make the telephone lines. And they extended the lines out in the country for about three miles. And they operated on these old wall telephones. You know, you have to come down and turn the crank.' His daughter, Rosie Haynes Swain, is listed as an operator in the 1930 census. L. H. Haynes would eventually relocate to Oklahoma City and pass away in 1956.</p>
-</div>
-      
-      
-      <section class="sub-section">
-        <h3 class="sub-head">Gallery</h3>
-        <div class="gallery-wrap">
-          <button class="gallery-arrow gallery-arrow-left" aria-label="Scroll left">‹</button>
-          <div class="gallery-clip">
-            <div class="gallery-row">
-          <div class="gallery-item" data-src="https://picsum.photos/seed/sign025b8img1/900/650" data-title="Placeholder photo 1" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of Dr. M.C. Alford Drug Store.">
-            <img src="https://picsum.photos/seed/sign025b8img1/900/650" alt="Placeholder photo 1" loading="lazy">
-          </div>
-          <div class="gallery-item" data-src="https://picsum.photos/seed/sign025b8img2/750/650" data-title="Placeholder photo 2" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of Dr. M.C. Alford Drug Store.">
-            <img src="https://picsum.photos/seed/sign025b8img2/750/650" alt="Placeholder photo 2" loading="lazy">
-          </div>
-          <div class="gallery-item" data-src="https://picsum.photos/seed/sign025b8img3/850/650" data-title="Placeholder photo 3" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of Dr. M.C. Alford Drug Store.">
-            <img src="https://picsum.photos/seed/sign025b8img3/850/650" alt="Placeholder photo 3" loading="lazy">
-          </div>
-          <div class="gallery-item" data-src="https://picsum.photos/seed/sign025b8img4/1000/650" data-title="Placeholder photo 4" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of Dr. M.C. Alford Drug Store.">
-            <img src="https://picsum.photos/seed/sign025b8img4/1000/650" alt="Placeholder photo 4" loading="lazy">
-          </div>
-            </div>
-          </div>
-          <button class="gallery-arrow gallery-arrow-right" aria-label="Scroll right">›</button>
-        </div>
-        <div class="gallery-hint">Click photos to enlarge · Use arrows or drag to browse</div>
-      </section>
-      
-      
-      <section class="sub-section">
-        <h3 class="sub-head">Sources</h3>
-        <div class="source-list">
-        <div class="source-entry">
-          <div class="source-label">Newspaper advertisement</div>
-          <div class="source-detail">Advertisement located by Larry (researcher).</div>
-        </div>
-        <div class="source-entry">
-          <div class="source-label">Photograph</div>
-          <div class="source-detail">Photo of Dr. M.C. Alford exists.</div>
-        </div></div>
-      </section>
-    </div>
-    
-
-    <div class="business-block">
-      <h3 class="business-name">Trotter's Cleaning & Pressing & Barbershop</h3>
-<div class="business-type">Cleaning, pressing & barbershop</div>
-      <div class="business-details">
-<div class="biz-row"><div class="biz-key">Dates</div><div class="biz-value">1908 – 1940</div></div>
-<div class="biz-row"><div class="biz-key">Affiliated</div><div class="biz-value">Possibly JP Owens</div></div>
-</div>
-      <div class="prose">
-<p class="lead">The W. L. Bush store was one of three grocery stores operated by the Bush brothers: Charlie, Julius, and Langston.</p>
-<p>Initially opened in the mid-1930s as a joint venture between Julius and Langston Bush, the W. L. Bush Grocery store would become a distinct business at this current location. Like many of the other proprietors in Clearview, Langston Bush renovated a residential building to function as a grocery store.</p>
-<p>Langston and Julius Bush's stores offered similar goods although some residents recall that Langston served more of the professional people in town such as schoolteachers. What made his store stand out is that it had one of the first telephones in Clearview, a unique feature carried over from the former telephone office which operated out of the building. He would let anyone use the phone and would go around town delivering messages at people's homes. Langston Bush lived in the back of his store for several years until moving into a separate home in town and permitting Dessie Forshee to operate a barbershop in the store in 1952.</p>
-<p>Langston was a long-time school board member, sponsor of the Miniature Golf Course, vice-president of the Clearview branch of the NAACP, and was active in veterans organizations. The W. L. Bush Grocery store is another example of the thriving entrepreneurship and civic engagement in Clearview during the mid-1900s.</p>
-</div>
-      
-      
-      <section class="sub-section">
-        <h3 class="sub-head">Gallery</h3>
-        <div class="gallery-wrap">
-          <button class="gallery-arrow gallery-arrow-left" aria-label="Scroll left">‹</button>
-          <div class="gallery-clip">
-            <div class="gallery-row">
-          <div class="gallery-item" data-src="https://picsum.photos/seed/sign025b9img1/900/650" data-title="Placeholder photo 1" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of Trotter's Cleaning & Pressing & Barbershop.">
-            <img src="https://picsum.photos/seed/sign025b9img1/900/650" alt="Placeholder photo 1" loading="lazy">
-          </div>
-          <div class="gallery-item" data-src="https://picsum.photos/seed/sign025b9img2/750/650" data-title="Placeholder photo 2" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of Trotter's Cleaning & Pressing & Barbershop.">
-            <img src="https://picsum.photos/seed/sign025b9img2/750/650" alt="Placeholder photo 2" loading="lazy">
-          </div>
-          <div class="gallery-item" data-src="https://picsum.photos/seed/sign025b9img3/850/650" data-title="Placeholder photo 3" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of Trotter's Cleaning & Pressing & Barbershop.">
-            <img src="https://picsum.photos/seed/sign025b9img3/850/650" alt="Placeholder photo 3" loading="lazy">
-          </div>
-          <div class="gallery-item" data-src="https://picsum.photos/seed/sign025b9img4/1000/650" data-title="Placeholder photo 4" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of Trotter's Cleaning & Pressing & Barbershop.">
-            <img src="https://picsum.photos/seed/sign025b9img4/1000/650" alt="Placeholder photo 4" loading="lazy">
-          </div>
-            </div>
-          </div>
-          <button class="gallery-arrow gallery-arrow-right" aria-label="Scroll right">›</button>
-        </div>
-        <div class="gallery-hint">Click photos to enlarge · Use arrows or drag to browse</div>
-      </section>
-      
-      
-    </div>
-    
-
-    <div class="business-block">
-      <h3 class="business-name">M.M. (Blanks) Alford Home</h3>
-<div class="business-type">Residence</div>
-      <div class="business-details">
-<div class="biz-row"><div class="biz-key">Owners</div><div class="biz-value">Dr. Major Clemon \'Doc\' Alford (1881 – 1940)</div></div>
-<div class="biz-row"><div class="biz-key">Dates</div><div class="biz-value">Dates unknown</div></div>
-<div class="biz-row"><div class="biz-key">Affiliated</div><div class="biz-value">Possibly Elayne Evans, Patton/Anderson, Mack French</div></div>
-</div>
-      <div class="prose">
-<p class="lead">Referred to as 'Clearview's Greatest Citizen' in his obituary in the <em>Black Dispatch</em>, Dr. M.C. Alford was a long-time drug store operator and civic and business leader in Clearview.</p>
-<p>Originally from Mississippi, he was born to a slavemaster father and formerly enslaved mother and was sent to Indian Territory in 1902 with the hope of a better life. He eventually settled in Clearview where he built and operated Clearview Drugs, the only drugstore in town, from 1908 until his death. Dr. Alford received his medical training from Meharry Medical College, a private historically Black medical school, and went into the drugstore business after realizing he didn't like practicing medicine. He partnered with Drs. J. H. C. Lucas and Scott to fill the prescriptions written by the other two physicians.</p>
-<p>Beginning in the 1920s he began offering burial services in town including burial, caskets, and transportation. Dr. Alford was also well-known for his civic involvement through the Clearview Commercial Club, the Clearview Burial Association, the school board, and donating the construction of a new church in Clearview. His keen business sense enabled him to acquire property and oil releases in several states across the South through the Black Cow Oil, Gas and Mining Co. of Clearview and he accumulated a significant fortune which he intentionally invested back into the community through the purchase of tax resale property located in Black communities.</p>
-<p>Dr. Alford's extraordinary life and career embodies the expanding opportunities and success available to African Americans in all-Black towns in the early twentieth century.</p>
-</div>
-      
-      
-      <section class="sub-section">
-        <h3 class="sub-head">Gallery</h3>
-        <div class="gallery-wrap">
-          <button class="gallery-arrow gallery-arrow-left" aria-label="Scroll left">‹</button>
-          <div class="gallery-clip">
-            <div class="gallery-row">
-          <div class="gallery-item" data-src="https://picsum.photos/seed/sign025b10img1/900/650" data-title="Placeholder photo 1" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of M.M. (Blanks) Alford Home.">
-            <img src="https://picsum.photos/seed/sign025b10img1/900/650" alt="Placeholder photo 1" loading="lazy">
-          </div>
-          <div class="gallery-item" data-src="https://picsum.photos/seed/sign025b10img2/750/650" data-title="Placeholder photo 2" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of M.M. (Blanks) Alford Home.">
-            <img src="https://picsum.photos/seed/sign025b10img2/750/650" alt="Placeholder photo 2" loading="lazy">
-          </div>
-          <div class="gallery-item" data-src="https://picsum.photos/seed/sign025b10img3/850/650" data-title="Placeholder photo 3" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of M.M. (Blanks) Alford Home.">
-            <img src="https://picsum.photos/seed/sign025b10img3/850/650" alt="Placeholder photo 3" loading="lazy">
-          </div>
-          <div class="gallery-item" data-src="https://picsum.photos/seed/sign025b10img4/1000/650" data-title="Placeholder photo 4" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of M.M. (Blanks) Alford Home.">
-            <img src="https://picsum.photos/seed/sign025b10img4/1000/650" alt="Placeholder photo 4" loading="lazy">
-          </div>
-            </div>
-          </div>
-          <button class="gallery-arrow gallery-arrow-right" aria-label="Scroll right">›</button>
-        </div>
-        <div class="gallery-hint">Click photos to enlarge · Use arrows or drag to browse</div>
-      </section>
-      
-      
-    </div>
-    
-    </section>
-
   </div>
-
   <aside class="catalog">
-    <div class="catalog-label">Catalog Record</div>
-
-    <div class="catalog-row">
-      <div class="catalog-key">Sign № · Lot</div>
-      <div class="catalog-value">025 · Lots 80 – 83</div>
-    </div>
-    <div class="catalog-row">
-      <div class="catalog-key">Type</div>
-      <div class="catalog-value small">11 businesses on this sign</div>
-    </div>
-    <div class="catalog-row">
-      <div class="catalog-key">Owners</div>
-      <div class="catalog-value small">See sections below</div>
-    </div>
-    <div class="catalog-row">
-      <div class="catalog-key">Operated</div>
-      <div class="catalog-value small">See sections below</div>
-    </div>
-    <div class="catalog-row">
-      <div class="catalog-key">Status</div>
-      <div class="catalog-value small">Research in progress · Two documented</div>
-    </div>
-    <div class="catalog-row">
-      <div class="catalog-key">Surveyed</div>
-      <div class="catalog-value small">May 2026</div>
+    <div class="catalog-label">Businesses on this Sign</div>
+    <div style="margin-top:4px;">
+      <div style="padding:12px 0;border-bottom:1px solid rgba(212,200,158,.5);"><a href="#jeff-horn-grocery" style="font-family:'Inter',sans-serif;font-size:13px;font-weight:500;color:var(--ink);text-decoration:none;">Jeff Horn Grocery Store</a></div>
+      <div style="padding:12px 0;border-bottom:1px solid rgba(212,200,158,.5);"><a href="#foster-liggon-grocery" style="font-family:'Inter',sans-serif;font-size:13px;font-weight:500;color:var(--ink);text-decoration:none;">Foster Liggon's Grocery Store</a></div>
+      <div style="padding:12px 0;border-bottom:1px solid rgba(212,200,158,.5);"><a href="#jc-bush-grocery" style="font-family:'Inter',sans-serif;font-size:13px;font-weight:500;color:var(--ink);text-decoration:none;">J.C. Bush Grocery Store</a></div>
+      <div style="padding:12px 0;border-bottom:1px solid rgba(212,200,158,.5);"><a href="#wm-irving-dry-goods" style="font-family:'Inter',sans-serif;font-size:13px;font-weight:500;color:var(--ink);text-decoration:none;">W.M. (Wash) Irving Dry Goods</a></div>
+      <div style="padding:12px 0;border-bottom:1px solid rgba(212,200,158,.5);"><a href="#second-post-office" style="font-family:'Inter',sans-serif;font-size:13px;font-weight:500;color:var(--ink);text-decoration:none;">Second Post Office</a></div>
+      <div style="padding:12px 0;border-bottom:1px solid rgba(212,200,158,.5);"><a href="#lh-haynes-telephone" style="font-family:'Inter',sans-serif;font-size:13px;font-weight:500;color:var(--ink);text-decoration:none;">L.H. Haynes Telephone Office</a></div>
+      <div style="padding:12px 0;border-bottom:1px solid rgba(212,200,158,.5);"><a href="#doster-restaurant" style="font-family:'Inter',sans-serif;font-size:13px;font-weight:500;color:var(--ink);text-decoration:none;">Doster Restaurant</a></div>
+      <div style="padding:12px 0;border-bottom:1px solid rgba(212,200,158,.5);"><a href="#wl-bush-grocery" style="font-family:'Inter',sans-serif;font-size:13px;font-weight:500;color:var(--ink);text-decoration:none;">W.L. Bush Grocery</a></div>
+      <div style="padding:12px 0;border-bottom:1px solid rgba(212,200,158,.5);"><a href="#mc-alford-drug-store" style="font-family:'Inter',sans-serif;font-size:13px;font-weight:500;color:var(--ink);text-decoration:none;">Dr. M.C. Alford Drug Store</a></div>
+      <div style="padding:12px 0;border-bottom:1px solid rgba(212,200,158,.5);"><a href="#trotters-cleaning" style="font-family:'Inter',sans-serif;font-size:13px;font-weight:500;color:var(--ink);text-decoration:none;">Trotter's Cleaning & Pressing & Barbershop</a></div>
+      <div style="padding:12px 0;"><a href="#mm-alford-home" style="font-family:'Inter',sans-serif;font-size:13px;font-weight:500;color:var(--ink);text-decoration:none;">M.M. (Blanks) Alford Home</a></div>
     </div>
   </aside>
-
 </main>
 
-<footer>
-  Clearview Historical Mapping Project · 2026
-</footer>
+<div class="biz-divider"><hr></div>
+<div class="biz-two-col">
+  <div class="biz-left">
+    <div class="business-block" id="foster-liggon-grocery">
+      <h3 class="business-name">Foster Liggon's Grocery Store</h3>
+      <h2 class="section-head">History</h2>
+      <div class="prose"><div class="prose"><p class="lead">Foster Ligons, born in 1890, operated an early grocery store at this location.</p>
+<p>He was also a town leader, with his name on the cornerstone of the WPA gymnasium, which became a community center. Ligons passed away in 1972.</p></div></div>
+      <div class="biz-record">
+        <div class="biz-record-item"><div class="biz-record-key">Sign № · Lot</div><div class="biz-record-value">025 · Lot 80</div></div>
+        <div class="biz-record-item"><div class="biz-record-key">Type</div><div class="biz-record-value">Grocery store</div></div>
+        <div class="biz-record-item"><div class="biz-record-key">Owner</div><div class="biz-record-value">Foster Ligons (1890 – 1972)</div></div>
+        <div class="biz-record-item"><div class="biz-record-key">Operated</div><div class="biz-record-value">Dates unknown</div></div>
+      </div>
+    </div>
+    <div class="biz-gallery-inline">
+      <div class="gallery-full-title">Gallery</div>
+      <div class="gallery-wrap">
+        <button class="gallery-arrow gallery-arrow-left" aria-label="Scroll left">‹</button>
+        <div class="gallery-clip"><div class="gallery-row">
+<div class="gallery-item archival" data-src="../sources/sign25_patriarch_irving.jpg" data-title="The Patriarch, August 17, 1911 (p. 2)" data-date="August 17, 1911" data-source="The Patriarch · project archive" data-caption="The Patriarch, August 17, 1911 (p. 2)">
+            <img src="../sources/sign25_patriarch_irving.jpg" alt="The Patriarch, August 17, 1911 (p. 2)" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
+          </div>
+<div class="gallery-item archival" data-src="../sources/sign25_patriarch_1912_01_11-1.png" data-title="The Patriarch, January 11, 1912" data-date="January 11, 1912" data-source="The Patriarch · project archive" data-caption="The Patriarch, January 11, 1912">
+            <img src="../sources/sign25_patriarch_1912_01_11-1.png" alt="The Patriarch, January 11, 1912" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
+          </div>
+<div class="gallery-item archival" data-src="../sources/The_Patriarch_1911_03_09_4-1.png" data-title="The Patriarch, March 9, 1911" data-date="March 9, 1911" data-source="The Patriarch · project archive" data-caption="The Patriarch, March 9, 1911">
+            <img src="../sources/The_Patriarch_1911_03_09_4-1.png" alt="The Patriarch, March 9, 1911" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
+          </div>
+<div class="gallery-item archival" data-src="../sources/sign25_rodeo_1983_irving.jpg" data-title="Clearview Rodeo, 1983 (image 10)" data-date="1983" data-source="Rodeo archive · project archive" data-caption="Clearview Rodeo, 1983 (image 10)">
+            <img src="../sources/sign25_rodeo_1983_irving.jpg" alt="Clearview Rodeo, 1983 (image 10)" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
+          </div>
+        </div></div>
+        <button class="gallery-arrow gallery-arrow-right" aria-label="Scroll right">›</button>
+      </div>
+      <div class="gallery-hint">Click photos to enlarge · Use arrows or drag to browse</div>
+    </div>
+    <div class="sources-inline">
+      <section class="sub-section sources-constrained">
+        <h3 class="sub-head">Sources</h3>
+        <div class="source-list">
+<div class="source-entry">
+          <div class="source-label">Photographic archive</div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+
+<div class="biz-divider"><hr></div>
+<div class="biz-two-col">
+  <div class="biz-left">
+    <div class="business-block" id="jc-bush-grocery">
+      <h3 class="business-name">J.C. Bush Grocery Store</h3>
+      <h2 class="section-head">History</h2>
+      <div class="prose"><div class="prose"><p class="lead">There are few other locations that stand out in the minds of Clearview residents as much as the J. C. Bush Grocery and Market. Townsfolk fondly recall walking over to the store as kids on their lunch break from school and spending fifteen cents to purchase a pop and either peanuts or a bologna sandwich on crackers.</p>
+<p>Originally from Kentucky, the Bush family relocated to Oklahoma in 1901 before settling in Clearview by 1910. The J. C. Bush store was one of three grocery stores operated by the Bush brothers: Charlie, Julius, and Langston. Initially opened in the mid-1930s as a joint venture between Julius and Langston Bush, the J.C. Bush store would become a distinct business at this current location. Like many of the other proprietors in Clearview, J. C. Bush renovated a residential building to function as a grocery store.</p>
+<p>Over the years he would expand the store, build a porch, add double glass to the storefront, and install streetlights to brighten the area around the store (possibly to ward off potential burglars). Men would gather on the porch to tell stories, or 'lies', play checkers, or listen to the Dodgers game on the radio. Julius Bush could be found among the crowd on the porch until a customer needed to be serviced. Inside there would be glass counters on either side with penny candies and household goods to the right and the butcher area and refrigerators to the left, as well as wall shelves lined with canned foods on both sides. Julius Bush also stocked the <em>Black Dispatch</em>, a weekly African-American newspaper published in Oklahoma City, and a news box where townsfolk could leave their news to be featured in the paper. Julius Bush lived in the back of the store along with his wife, Violet. They ran the store for approximately 35 years until his death in 1970. In addition to being a grocer, Julius Bush was also a dedicated civic leader in the community. He was a school board member, voting registrar, election official, 4-H Club advisor, and superintendent at the Church of Christ church across the street.</p>
+<p>The J. C. Bush Grocery Store was a commercial and social pillar of the community that represents the self-sufficiency and entrepreneurship found in Clearview and other all-Black towns during and after segregation.</p></div></div>
+      <div class="biz-record">
+        <div class="biz-record-item"><div class="biz-record-key">Sign № · Lot</div><div class="biz-record-value">025 · Lot 81</div></div>
+        <div class="biz-record-item"><div class="biz-record-key">Type</div><div class="biz-record-value">Grocery store</div></div>
+        <div class="biz-record-item"><div class="biz-record-key">Owner</div><div class="biz-record-value">Julius Caesar "J.C." Bush (1904 – 1970)</div></div>
+        <div class="biz-record-item"><div class="biz-record-key">Operated</div><div class="biz-record-value">ca. 1935 – 1970</div></div>
+      </div>
+    </div>
+    <div class="biz-gallery-inline">
+      <div class="gallery-full-title">Gallery</div>
+      <div class="gallery-wrap">
+        <button class="gallery-arrow gallery-arrow-left" aria-label="Scroll left">‹</button>
+        <div class="gallery-clip"><div class="gallery-row">
+<div class="gallery-item archival" data-src="../sources/julius_bush_store_1940.jpg" data-title="Julius and Violet Bush on the store porch" data-date="c. 1940" data-source="Clearview Historical Mapping Project archive" data-caption="Julius Caesar Bush and his wife Violet standing on the porch of the J.C. Bush Grocery and Market, with Coca-Cola advertisements on either side of the entrance. The porch was a gathering place where men would tell stories, play checkers, and listen to the Dodgers game on the radio.">
+            <img src="../sources/julius_bush_store_1940.jpg" alt="Julius and Violet Bush on the store porch" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
+          </div>
+<div class="gallery-item archival" data-src="../sources/clearview_in_photos.jpg" data-title="Clearview in Photos — J.C. Bush Store and town collage" data-date="c. 1990s (compilation)" data-source="Photos from collection of Shirley Nero and Tom Lucas" data-caption="A page from a Clearview commemorative publication featuring historical photographs of the town. The J.C. Bush store appears in the lower center, with caption noting Violet Bush and Danny Bush. Also visible: the Clearview Patriarch masthead (February 26, 1911), Clearview's train depot, the Fort Smith & Western freight locomotive, Clearview's drug store, the post office, and the Alonzo and Nancy Talton building (built 1911, destroyed by fire 1992).">
+            <img src="../sources/clearview_in_photos.jpg" alt="Clearview in Photos — J.C. Bush Store and town collage" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
+          </div>
+        </div></div>
+        <button class="gallery-arrow gallery-arrow-right" aria-label="Scroll right">›</button>
+      </div>
+      <div class="gallery-hint">Click photos to enlarge · Use arrows or drag to browse</div>
+    </div>
+    <div class="sources-inline">
+      <section class="sub-section sources-constrained">
+        <h3 class="sub-head">Sources</h3>
+        <div class="source-list">
+<div class="source-entry">
+          <div class="source-label">Photograph</div>
+<div class="source-entry">
+          <div class="source-label">Oral history interview</div>
+<div class="source-entry">
+          <div class="source-label">Newspaper article</div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+
+<div class="biz-divider"><hr></div>
+<div class="biz-two-col">
+  <div class="biz-left">
+    <div class="business-block" id="wm-irving-dry-goods">
+      <h3 class="business-name">W.M. (Wash) Irving Dry Goods</h3>
+      <h2 class="section-head">History</h2>
+      <div class="prose"><div class="prose"><p class="lead">There are few other locations that stand out in the minds of Clearview residents as much as the J. C. Bush Grocery and Market. Townsfolk fondly recall walking over to the store as kids on their lunch break from school and spending fifteen cents to purchase a pop and either peanuts or a bologna sandwich on crackers.</p>
+<p>Originally from Kentucky, the Bush family relocated to Oklahoma in 1901 before settling in Clearview by 1910. The J. C. Bush store was one of three grocery stores operated by the Bush brothers: Charlie, Julius, and Langston. Initially opened in the mid-1930s as a joint venture between Julius and Langston Bush, the J.C. Bush store would become a distinct business at this current location.</p>
+<p>Over the years he would expand the store, build a porch, add double glass to the storefront, and install streetlights to brighten the area around the store. Men would gather on the porch to tell stories, or 'lies', play checkers, or listen to the Dodgers game on the radio. Julius Bush could be found among the crowd on the porch until a customer needed to be serviced. Inside there would be glass counters on either side with penny candies and household goods to the right and the butcher area and refrigerators to the left, as well as wall shelves lined with canned foods on both sides. Julius Bush also stocked the <em>Black Dispatch</em>, a weekly African-American newspaper published in Oklahoma City, and a news box where townsfolk could leave their news to be featured in the paper.</p>
+<p>Julius Bush lived in the back of the store along with his wife, Violet. They ran the store for approximately 35 years until his death in 1970. In addition to being a grocer, Julius Bush was also a dedicated civic leader: school board member, voting registrar, election official, 4-H Club advisor, and superintendent at the Church of Christ church across the street. The J. C. Bush Grocery Store was a commercial and social pillar of the community that represents the self-sufficiency and entrepreneurship found in Clearview and other all-Black towns during and after segregation.</p></div></div>
+      <div class="biz-record">
+        <div class="biz-record-item"><div class="biz-record-key">Sign № · Lot</div><div class="biz-record-value">025 · Lot 82</div></div>
+        <div class="biz-record-item"><div class="biz-record-key">Type</div><div class="biz-record-value">General merchandise</div></div>
+        <div class="biz-record-item"><div class="biz-record-key">Owner</div><div class="biz-record-value">William "Wash" Irving</div></div>
+        <div class="biz-record-item"><div class="biz-record-key">Operated</div><div class="biz-record-value">1910s</div></div>
+      </div>
+    </div>
+    <div class="biz-gallery-inline">
+      <div class="gallery-full-title">Gallery</div>
+      <div class="gallery-wrap">
+        <button class="gallery-arrow gallery-arrow-left" aria-label="Scroll left">‹</button>
+        <div class="gallery-clip"><div class="gallery-row">
+<div class="gallery-item archival" data-src="../sources/clearview_008.jpg" data-title="Clearview — archival photograph 008" data-date="Undated" data-source="Project archive" data-caption="Clearview — archival photograph 008">
+            <img src="../sources/clearview_008.jpg" alt="Clearview — archival photograph 008" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
+          </div>
+<div class="gallery-item archival" data-src="../sources/sign25_rodeo_1985_post.jpg" data-title="Clearview Rodeo program, 1985" data-date="1985" data-source="Rodeo program · project archive" data-caption="Clearview Rodeo program, 1985">
+            <img src="../sources/sign25_rodeo_1985_post.jpg" alt="Clearview Rodeo program, 1985" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
+          </div>
+<div class="gallery-item archival" data-src="../sources/sign25_clearview_p8-1.png" data-title="Pages from Clearview history booklet, p. 8" data-date="Undated" data-source="Project archive" data-caption="Pages from Clearview history booklet, p. 8">
+            <img src="../sources/sign25_clearview_p8-1.png" alt="Pages from Clearview history booklet, p. 8" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
+          </div>
+        </div></div>
+        <button class="gallery-arrow gallery-arrow-right" aria-label="Scroll right">›</button>
+      </div>
+      <div class="gallery-hint">Click photos to enlarge · Use arrows or drag to browse</div>
+    </div>
+    <div class="sources-inline">
+      <section class="sub-section sources-constrained">
+        <h3 class="sub-head">Sources</h3>
+        <div class="source-list">
+<div class="source-entry">
+          <div class="source-label">Newspaper advertisement</div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+
+<div class="biz-divider"><hr></div>
+<div class="biz-two-col">
+  <div class="biz-left">
+    <div class="business-block" id="second-post-office">
+      <h3 class="business-name">Second Post Office</h3>
+      <h2 class="section-head">History</h2>
+      <div class="prose"><div class="prose"><p class="lead">In the early years of Clearview, William "Wash" Irving operated a general merchandise store on this lot.</p>
+<p>He claimed to have the largest inventory in town and could sell items cheaper than his competition. The Clearview Patriarch claimed that Irving received the first shipment of freight in 1912.</p></div></div>
+      <div class="biz-record">
+        <div class="biz-record-item"><div class="biz-record-key">Sign № · Lot</div><div class="biz-record-value">025 · Lot 82</div></div>
+        <div class="biz-record-item"><div class="biz-record-key">Type</div><div class="biz-record-value">Post office</div></div>
+        <div class="biz-record-item"><div class="biz-record-key">Owner</div><div class="biz-record-value">Multiple postmasters</div></div>
+        <div class="biz-record-item"><div class="biz-record-key">Operated</div><div class="biz-record-value">1902 – 1992</div></div>
+      </div>
+    </div>
+    <div class="biz-gallery-inline">
+      <div class="gallery-full-title">Gallery</div>
+      <div class="gallery-wrap">
+        <button class="gallery-arrow gallery-arrow-left" aria-label="Scroll left">‹</button>
+        <div class="gallery-clip"><div class="gallery-row">
+<div class="gallery-item archival" data-src="../sources/sign25_patriarch_1912_10_10-1.png" data-title="The Patriarch, October 10, 1912" data-date="October 10, 1912" data-source="The Patriarch · project archive" data-caption="The Patriarch, October 10, 1912">
+            <img src="../sources/sign25_patriarch_1912_10_10-1.png" alt="The Patriarch, October 10, 1912" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
+          </div>
+<div class="gallery-item archival" data-src="../sources/sign25_rodeo_1985_haynes.jpg" data-title="Clearview Rodeo program, 1985" data-date="1985" data-source="Rodeo program · project archive" data-caption="Clearview Rodeo program, 1985">
+            <img src="../sources/sign25_rodeo_1985_haynes.jpg" alt="Clearview Rodeo program, 1985" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
+          </div>
+<div class="gallery-item archival" data-src="../sources/sign25_rodeo_1986_haynes.jpg" data-title="Clearview Rodeo program, 1986" data-date="1986" data-source="Rodeo program · project archive" data-caption="Clearview Rodeo program, 1986">
+            <img src="../sources/sign25_rodeo_1986_haynes.jpg" alt="Clearview Rodeo program, 1986" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
+          </div>
+<div class="gallery-item archival" data-src="../sources/sign25_rodeo_1986_haynes_b.jpg" data-title="Clearview Rodeo program, 1986 (B)" data-date="1986" data-source="Rodeo program · project archive" data-caption="Clearview Rodeo program, 1986 (B)">
+            <img src="../sources/sign25_rodeo_1986_haynes_b.jpg" alt="Clearview Rodeo program, 1986 (B)" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
+          </div>
+        </div></div>
+        <button class="gallery-arrow gallery-arrow-right" aria-label="Scroll right">›</button>
+      </div>
+      <div class="gallery-hint">Click photos to enlarge · Use arrows or drag to browse</div>
+    </div>
+    <div class="sources-inline">
+      <section class="sub-section sources-constrained">
+        <h3 class="sub-head">Sources</h3>
+        <div class="source-list">
+<div class="source-entry">
+          <div class="source-label">Oral history</div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+
+<div class="biz-divider"><hr></div>
+<div class="biz-two-col">
+  <div class="biz-left">
+    <div class="business-block" id="lh-haynes-telephone">
+      <h3 class="business-name">L.H. Haynes Telephone Office</h3>
+      <h2 class="section-head">History</h2>
+      <div class="prose"><div class="prose"><p class="lead">From a 3/2/1956 obituary in the <em>Okemah News Leader</em>:</p>
+<p>"Masonic Rites for L.H. Haynes, 78, pioneer Clearview resident who died at his home, will be at 2 p.m. Sunday at the Tyree Methodist church. Interment will follow in the Clearview cemetery under direction of the Hyde Park funeral home. Haynes, a native of Mississippi, came to Clearview in 1907 and was a rural mail carrier there for many years. He also taught school for several years, served as a minister in the Methodist church, and was active in civic movement. Survivors include his wife, two daughters, Mrs. Rosie Swain and Mrs. Borsey Henderson, both of Clearview, and one son R. H. Haynes. There are also two brothers, Clemans Haynes, Oakland, Miss. and W. H. Haynes, Enid; and tow grandchildren. Pallbearers will be Earl French, J. P. Owens, Fred McMillan, Tom Withers Jr., R. Reynolds, and Ollie Walker."</p></div></div>
+      <div class="biz-record">
+        <div class="biz-record-item"><div class="biz-record-key">Sign № · Lot</div><div class="biz-record-value">025 · Lot 82</div></div>
+        <div class="biz-record-item"><div class="biz-record-key">Type</div><div class="biz-record-value">Telephone office</div></div>
+        <div class="biz-record-item"><div class="biz-record-key">Owner</div><div class="biz-record-value">Luphus H. Haynes (1878 – 1956)</div></div>
+        <div class="biz-record-item"><div class="biz-record-key">Operated</div><div class="biz-record-value">1920s – 1930s</div></div>
+      </div>
+    </div>
+    <div class="biz-gallery-inline">
+      <div class="gallery-full-title">Gallery</div>
+      <div class="gallery-wrap">
+        <button class="gallery-arrow gallery-arrow-left" aria-label="Scroll left">‹</button>
+        <div class="gallery-clip"><div class="gallery-row">
+<div class="gallery-item archival" data-src="../sources/sign25_patriarch_alford_1911.jpg" data-title="The Patriarch, August 17, 1911" data-date="August 17, 1911" data-source="The Patriarch · project archive" data-caption="The Patriarch, August 17, 1911">
+            <img src="../sources/sign25_patriarch_alford_1911.jpg" alt="The Patriarch, August 17, 1911" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
+          </div>
+<div class="gallery-item archival" data-src="../sources/sign25_patriarch_alford_1913a.jpg" data-title="The Patriarch, November 29, 1913" data-date="November 29, 1913" data-source="The Patriarch · project archive" data-caption="The Patriarch, November 29, 1913">
+            <img src="../sources/sign25_patriarch_alford_1913a.jpg" alt="The Patriarch, November 29, 1913" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
+          </div>
+<div class="gallery-item archival" data-src="../sources/sign25_patriarch_alford_1913b.jpg" data-title="The Patriarch, November 15, 1913" data-date="November 15, 1913" data-source="The Patriarch · project archive" data-caption="The Patriarch, November 15, 1913">
+            <img src="../sources/sign25_patriarch_alford_1913b.jpg" alt="The Patriarch, November 15, 1913" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
+          </div>
+<div class="gallery-item archival" data-src="../sources/sign25_alford_img.jpg" data-title="Dr. M.C. Alford — photograph" data-date="Undated" data-source="Project archive" data-caption="Dr. M.C. Alford — photograph">
+            <img src="../sources/sign25_alford_img.jpg" alt="Dr. M.C. Alford — photograph" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
+          </div>
+<div class="gallery-item archival" data-src="../sources/sign25_rodeo_1983.jpg" data-title="Clearview Rodeo, 1983 (image 09)" data-date="1983" data-source="Rodeo archive · project archive" data-caption="Clearview Rodeo, 1983 (image 09)">
+            <img src="../sources/sign25_rodeo_1983.jpg" alt="Clearview Rodeo, 1983 (image 09)" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
+          </div>
+<div class="gallery-item archival" data-src="../sources/sign25_rodeo_1986_alford.jpg" data-title="Clearview Rodeo program, 1986" data-date="1986" data-source="Rodeo program · project archive" data-caption="Clearview Rodeo program, 1986">
+            <img src="../sources/sign25_rodeo_1986_alford.jpg" alt="Clearview Rodeo program, 1986" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
+          </div>
+<div class="gallery-item archival" data-src="../sources/sign25_rodeo_2005.jpg" data-title="Clearview Rodeo program, 2005" data-date="2005" data-source="Rodeo program · project archive" data-caption="Clearview Rodeo program, 2005">
+            <img src="../sources/sign25_rodeo_2005.jpg" alt="Clearview Rodeo program, 2005" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
+          </div>
+<div class="gallery-item archival" data-src="../sources/The_Okemah_Ledger_1908_11_26_9-1.png" data-title="The Okemah Ledger, November 26, 1908" data-date="November 26, 1908" data-source="The Okemah Ledger · project archive" data-caption="The Okemah Ledger, November 26, 1908">
+            <img src="../sources/The_Okemah_Ledger_1908_11_26_9-1.png" alt="The Okemah Ledger, November 26, 1908" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
+          </div>
+<div class="gallery-item archival" data-src="../sources/The_Patriarch_1913_05_03_3-1.png" data-title="The Patriarch, May 3, 1913" data-date="May 3, 1913" data-source="The Patriarch · project archive" data-caption="The Patriarch, May 3, 1913">
+            <img src="../sources/The_Patriarch_1913_05_03_3-1.png" alt="The Patriarch, May 3, 1913" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
+          </div>
+<div class="gallery-item archival" data-src="../sources/sign25_patriarch_1913_09_06-1.png" data-title="The Patriarch, September 6, 1913" data-date="September 6, 1913" data-source="The Patriarch · project archive" data-caption="The Patriarch, September 6, 1913">
+            <img src="../sources/sign25_patriarch_1913_09_06-1.png" alt="The Patriarch, September 6, 1913" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
+          </div>
+<div class="gallery-item archival" data-src="../sources/The_Black_Dispatch_1940_07_27_7-1.png" data-title="The Black Dispatch, July 27, 1940" data-date="July 27, 1940" data-source="The Black Dispatch · project archive" data-caption="The Black Dispatch, July 27, 1940">
+            <img src="../sources/The_Black_Dispatch_1940_07_27_7-1.png" alt="The Black Dispatch, July 27, 1940" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
+          </div>
+        </div></div>
+        <button class="gallery-arrow gallery-arrow-right" aria-label="Scroll right">›</button>
+      </div>
+      <div class="gallery-hint">Click photos to enlarge · Use arrows or drag to browse</div>
+    </div>
+    <div class="sources-inline">
+      <section class="sub-section sources-constrained">
+        <h3 class="sub-head">Sources</h3>
+        <div class="source-list">
+<div class="source-entry">
+          <div class="source-label">Newspaper obituary</div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+
+<div class="biz-divider"><hr></div>
+<div class="biz-two-col">
+  <div class="biz-left">
+    <div class="business-block" id="doster-restaurant">
+      <h3 class="business-name">Doster Restaurant</h3>
+      <h2 class="section-head">History</h2>
+      <div class="prose"><div class="prose"><p class="lead">The first U.S. Post Office was established September 30, 1902. In 1904 an order was issued by the U.S. Postal Department changing the name Clearview Post Office to Abe Lincoln Post Office, but was rescinded a month later, retaining the original name.</p>
+<p>John Grayson was named the first postmaster. Those who succeeded him were N. H. Starks, M. W. (Wash) Irving, Mary Doggett, Mattie E. Lucas, and Imogene Chilton Bruton. From the Clearview Post Office, the outlying area was served by a rural route carrier. The first rural route mail carrier was Ellis Washington, followed by O. J. Simms, L. H. Haynes, J. P. Owens, Robert (Bob) Burden, and Jimmie Burden. J. P. Owens served as rural route carrier from 1927 to 1974.</p>
+<p>During the early 1970s the Clearview and Weleetka routes were consolidated due to a vacancy in the Weleetka rural delivery service, moving the Clearview carrier to the Weleetka office. Postal service from the Clearview office was continued until November 17, 1992 when the Postal Department discontinued service from the office after ninety years. However, mail service was provided to the area by the rural carrier from the Weleetka Post Office along with rural route and cluster box service.</p></div></div>
+      <div class="biz-record">
+        <div class="biz-record-item"><div class="biz-record-key">Sign № · Lot</div><div class="biz-record-value">025 · Lot 82</div></div>
+        <div class="biz-record-item"><div class="biz-record-key">Type</div><div class="biz-record-value">Restaurant</div></div>
+        <div class="biz-record-item"><div class="biz-record-key">Owner</div><div class="biz-record-value">—</div></div>
+        <div class="biz-record-item"><div class="biz-record-key">Operated</div><div class="biz-record-value">Dates unknown</div></div>
+      </div>
+    </div>
+    <div class="biz-gallery-inline">
+      <div class="gallery-full-title">Gallery</div>
+      <div class="gallery-wrap">
+        <button class="gallery-arrow gallery-arrow-left" aria-label="Scroll left">‹</button>
+        <div class="gallery-clip"><div class="gallery-row">
+<div class="gallery-item archival" data-src="../sources/sign25_langston_bush.jpg" data-title="Langston Bush Store — with wife Mary Ann, c. 1940" data-date="c. 1940" data-source="Project archive" data-caption="Langston Bush Store — with wife Mary Ann, c. 1940">
+            <img src="../sources/sign25_langston_bush.jpg" alt="Langston Bush Store — with wife Mary Ann, c. 1940" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
+          </div>
+<div class="gallery-item archival" data-src="../sources/sign25_langston_bush_men.jpg" data-title="Men outside Langston Bush Store, c. 1940" data-date="c. 1940" data-source="Project archive" data-caption="Men outside Langston Bush Store, c. 1940">
+            <img src="../sources/sign25_langston_bush_men.jpg" alt="Men outside Langston Bush Store, c. 1940" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
+          </div>
+<div class="gallery-item archival" data-src="../sources/sign25_rodeo_1985_bush.jpg" data-title="Clearview Rodeo program, 1985" data-date="1985" data-source="Rodeo program · project archive" data-caption="Clearview Rodeo program, 1985">
+            <img src="../sources/sign25_rodeo_1985_bush.jpg" alt="Clearview Rodeo program, 1985" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
+          </div>
+        </div></div>
+        <button class="gallery-arrow gallery-arrow-right" aria-label="Scroll right">›</button>
+      </div>
+      <div class="gallery-hint">Click photos to enlarge · Use arrows or drag to browse</div>
+    </div>
+    <div class="sources-inline">
+      <section class="sub-section sources-constrained">
+        <h3 class="sub-head">Sources</h3>
+        <div class="source-list">
+<div class="source-entry">
+          <div class="source-label">Oral history</div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+
+<div class="biz-divider"><hr></div>
+<div class="biz-two-col">
+  <div class="biz-left">
+    <div class="business-block" id="wl-bush-grocery">
+      <h3 class="business-name">W.L. Bush Grocery</h3>
+      <h2 class="section-head">History</h2>
+      <div class="prose"><div class="prose"><p class="lead">The W. L. Bush store was one of three grocery stores operated by the Bush brothers: Charlie, Julius, and Langston. Initially opened in the mid-1930s as a joint venture between Julius and Langston Bush, the W. L. Bush Grocery store would become a distinct business at this current location. Like many of the other proprietors in Clearview, Langston Bush renovated a residential building to function as a grocery store.</p>
+<p>Langston and Julius Bush's stores offered similar goods although some residents recall that Langston served more of the professional people in town such as schoolteachers. Langston didn't play checkers or serve bologna sandwiches and possibly offered some higher end items. What made his store stand out is that it had one of the first telephones in Clearview. He would let anyone use the phone and would go around town delivering messages at people's homes. Langston Bush lived in the back of his store for several years until moving into a separate home in town and permitting Dessie Forshee to operate a barbershop in the store in 1952.</p>
+<p>Langston was a long-time school board member, sponsor of the Miniature Golf Course, vice-president of the Clearview branch of the NAACP, and was active in veterans organizations. The W. L. Bush Grocery store is another example of the thriving entrepreneurship and civic engagement in Clearview during the mid 1900s.</p></div></div>
+      <div class="biz-record">
+        <div class="biz-record-item"><div class="biz-record-key">Sign № · Lot</div><div class="biz-record-value">025 · Lot 82</div></div>
+        <div class="biz-record-item"><div class="biz-record-key">Type</div><div class="biz-record-value">Grocery store</div></div>
+        <div class="biz-record-item"><div class="biz-record-key">Owner</div><div class="biz-record-value">William L. Bush (1892 – 1984)</div></div>
+        <div class="biz-record-item"><div class="biz-record-key">Operated</div><div class="biz-record-value">1935 – 1984</div></div>
+      </div>
+    </div>
+    <div class="biz-gallery-inline">
+      <div class="gallery-full-title">Gallery</div>
+      <div class="gallery-wrap">
+        <button class="gallery-arrow gallery-arrow-left" aria-label="Scroll left">‹</button>
+        <div class="gallery-clip"><div class="gallery-row">
+<div class="gallery-item archival" data-src="../sources/clearview_008.jpg" data-title="Clearview — archival photograph 008" data-date="Undated" data-source="Project archive" data-caption="Clearview — archival photograph 008">
+            <img src="../sources/clearview_008.jpg" alt="Clearview — archival photograph 008" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
+          </div>
+        </div></div>
+        <button class="gallery-arrow gallery-arrow-right" aria-label="Scroll right">›</button>
+      </div>
+      <div class="gallery-hint">Click photos to enlarge · Use arrows or drag to browse</div>
+    </div>
+    <div class="sources-inline">
+      <section class="sub-section sources-constrained">
+        <h3 class="sub-head">Sources</h3>
+        <div class="source-list">
+<div class="source-entry">
+          <div class="source-label">Oral history</div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+
+<div class="biz-divider"><hr></div>
+<div class="biz-two-col">
+  <div class="biz-left">
+    <div class="business-block" id="mc-alford-drug-store">
+      <h3 class="business-name">Dr. M.C. Alford Drug Store</h3>
+      <h2 class="section-head">History</h2>
+      <div class="prose"><div class="prose"><p class="lead">Luphus Haynes was a pioneering resident who came to Clearview from Mississippi in 1907.</p>
+<p>He was a rural mail carrier, teacher and principal, minister, cafe owner, and between the 1920s–1930s he managed a telephone office on Main Street and laid the lines that would connect Clearview and its residents to other towns. He operated his telephone office in the building that would later become Langston Bush's grocery store.</p>
+<p>According to town historian James P. Owens, they would go 'out in the woods and cut holes to make the telephone lines. And they extended the lines out in the country for about three miles. And they operated on these old wall telephones. You know, you have to come down and turn the crank.' His daughter, Rosie Haynes Swain, is listed as an operator in the 1930 census. L. H. Haynes would eventually relocate to Oklahoma City and pass away in 1956.</p></div></div>
+      <div class="biz-record">
+        <div class="biz-record-item"><div class="biz-record-key">Sign № · Lot</div><div class="biz-record-value">025 · Lot 83</div></div>
+        <div class="biz-record-item"><div class="biz-record-key">Type</div><div class="biz-record-value">Drug store</div></div>
+        <div class="biz-record-item"><div class="biz-record-key">Owner</div><div class="biz-record-value">Dr. Major Clemon 'Doc' Alford (1881 – 1940)</div></div>
+        <div class="biz-record-item"><div class="biz-record-key">Operated</div><div class="biz-record-value">1908 – 1940</div></div>
+      </div>
+    </div>
+    <div class="biz-gallery-inline">
+      <div class="gallery-full-title">Gallery</div>
+      <div class="gallery-wrap">
+        <button class="gallery-arrow gallery-arrow-left" aria-label="Scroll left">‹</button>
+        <div class="gallery-clip"><div class="gallery-row">
+<div class="gallery-item" data-src="https://picsum.photos/seed/sign025b8img1/900/650" data-title="Placeholder photo 1" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of Dr. M.C. Alford Drug Store.">
+            <img src="https://picsum.photos/seed/sign025b8img1/900/650" alt="Placeholder photo 1" loading="lazy">
+          </div>
+<div class="gallery-item" data-src="https://picsum.photos/seed/sign025b8img2/750/650" data-title="Placeholder photo 2" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of Dr. M.C. Alford Drug Store.">
+            <img src="https://picsum.photos/seed/sign025b8img2/750/650" alt="Placeholder photo 2" loading="lazy">
+          </div>
+<div class="gallery-item" data-src="https://picsum.photos/seed/sign025b8img3/850/650" data-title="Placeholder photo 3" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of Dr. M.C. Alford Drug Store.">
+            <img src="https://picsum.photos/seed/sign025b8img3/850/650" alt="Placeholder photo 3" loading="lazy">
+          </div>
+<div class="gallery-item" data-src="https://picsum.photos/seed/sign025b8img4/1000/650" data-title="Placeholder photo 4" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of Dr. M.C. Alford Drug Store.">
+            <img src="https://picsum.photos/seed/sign025b8img4/1000/650" alt="Placeholder photo 4" loading="lazy">
+          </div>
+        </div></div>
+        <button class="gallery-arrow gallery-arrow-right" aria-label="Scroll right">›</button>
+      </div>
+      <div class="gallery-hint">Click photos to enlarge · Use arrows or drag to browse</div>
+    </div>
+    <div class="sources-inline">
+      <section class="sub-section sources-constrained">
+        <h3 class="sub-head">Sources</h3>
+        <div class="source-list">
+<div class="source-entry">
+          <div class="source-label">Newspaper advertisement</div>
+<div class="source-entry">
+          <div class="source-label">Photograph</div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+
+<div class="biz-divider"><hr></div>
+<div class="biz-two-col">
+  <div class="biz-left">
+    <div class="business-block" id="trotters-cleaning">
+      <h3 class="business-name">Trotter's Cleaning & Pressing & Barbershop</h3>
+      <h2 class="section-head">History</h2>
+      <div class="prose"><div class="prose"><p class="lead">The W. L. Bush store was one of three grocery stores operated by the Bush brothers: Charlie, Julius, and Langston.</p>
+<p>Initially opened in the mid-1930s as a joint venture between Julius and Langston Bush, the W. L. Bush Grocery store would become a distinct business at this current location. Like many of the other proprietors in Clearview, Langston Bush renovated a residential building to function as a grocery store.</p>
+<p>Langston and Julius Bush's stores offered similar goods although some residents recall that Langston served more of the professional people in town such as schoolteachers. What made his store stand out is that it had one of the first telephones in Clearview, a unique feature carried over from the former telephone office which operated out of the building. He would let anyone use the phone and would go around town delivering messages at people's homes. Langston Bush lived in the back of his store for several years until moving into a separate home in town and permitting Dessie Forshee to operate a barbershop in the store in 1952.</p>
+<p>Langston was a long-time school board member, sponsor of the Miniature Golf Course, vice-president of the Clearview branch of the NAACP, and was active in veterans organizations. The W. L. Bush Grocery store is another example of the thriving entrepreneurship and civic engagement in Clearview during the mid-1900s.</p></div></div>
+      <div class="biz-record">
+        <div class="biz-record-item"><div class="biz-record-key">Sign № · Lot</div><div class="biz-record-value">025 · Lot 83</div></div>
+        <div class="biz-record-item"><div class="biz-record-key">Type</div><div class="biz-record-value">Cleaning & barbershop</div></div>
+        <div class="biz-record-item"><div class="biz-record-key">Owner</div><div class="biz-record-value">W. G. Trotter</div></div>
+        <div class="biz-record-item"><div class="biz-record-key">Operated</div><div class="biz-record-value">Early 1900s</div></div>
+      </div>
+    </div>
+    <div class="biz-gallery-inline">
+      <div class="gallery-full-title">Gallery</div>
+      <div class="gallery-wrap">
+        <button class="gallery-arrow gallery-arrow-left" aria-label="Scroll left">‹</button>
+        <div class="gallery-clip"><div class="gallery-row">
+<div class="gallery-item" data-src="https://picsum.photos/seed/sign025b9img1/900/650" data-title="Placeholder photo 1" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of Trotter's Cleaning & Pressing & Barbershop.">
+            <img src="https://picsum.photos/seed/sign025b9img1/900/650" alt="Placeholder photo 1" loading="lazy">
+          </div>
+<div class="gallery-item" data-src="https://picsum.photos/seed/sign025b9img2/750/650" data-title="Placeholder photo 2" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of Trotter's Cleaning & Pressing & Barbershop.">
+            <img src="https://picsum.photos/seed/sign025b9img2/750/650" alt="Placeholder photo 2" loading="lazy">
+          </div>
+<div class="gallery-item" data-src="https://picsum.photos/seed/sign025b9img3/850/650" data-title="Placeholder photo 3" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of Trotter's Cleaning & Pressing & Barbershop.">
+            <img src="https://picsum.photos/seed/sign025b9img3/850/650" alt="Placeholder photo 3" loading="lazy">
+          </div>
+<div class="gallery-item" data-src="https://picsum.photos/seed/sign025b9img4/1000/650" data-title="Placeholder photo 4" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of Trotter's Cleaning & Pressing & Barbershop.">
+            <img src="https://picsum.photos/seed/sign025b9img4/1000/650" alt="Placeholder photo 4" loading="lazy">
+          </div>
+        </div></div>
+        <button class="gallery-arrow gallery-arrow-right" aria-label="Scroll right">›</button>
+      </div>
+      <div class="gallery-hint">Click photos to enlarge · Use arrows or drag to browse</div>
+    </div>
+    <div class="sources-inline">
+      <section class="sub-section sources-constrained">
+        <h3 class="sub-head">Sources</h3>
+        <div class="source-list">
+          <div class="source-entry"><div class="source-label">Research in progress</div><div class="source-detail">Sources are being identified.</div></div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+
+<div class="biz-divider"><hr></div>
+<div class="biz-two-col">
+  <div class="biz-left">
+    <div class="business-block" id="mm-alford-home">
+      <h3 class="business-name">M.M. (Blanks) Alford Home</h3>
+      <h2 class="section-head">History</h2>
+      <div class="prose"><div class="prose"><p class="lead">Referred to as 'Clearview's Greatest Citizen' in his obituary in the <em>Black Dispatch</em>, Dr. M.C. Alford was a long-time drug store operator and civic and business leader in Clearview.</p>
+<p>Originally from Mississippi, he was born to a slavemaster father and formerly enslaved mother and was sent to Indian Territory in 1902 with the hope of a better life. He eventually settled in Clearview where he built and operated Clearview Drugs, the only drugstore in town, from 1908 until his death. Dr. Alford received his medical training from Meharry Medical College, a private historically Black medical school, and went into the drugstore business after realizing he didn't like practicing medicine. He partnered with Drs. J. H. C. Lucas and Scott to fill the prescriptions written by the other two physicians.</p>
+<p>Beginning in the 1920s he began offering burial services in town including burial, caskets, and transportation. Dr. Alford was also well-known for his civic involvement through the Clearview Commercial Club, the Clearview Burial Association, the school board, and donating the construction of a new church in Clearview. His keen business sense enabled him to acquire property and oil releases in several states across the South through the Black Cow Oil, Gas and Mining Co. of Clearview and he accumulated a significant fortune which he intentionally invested back into the community through the purchase of tax resale property located in Black communities.</p>
+<p>Dr. Alford's extraordinary life and career embodies the expanding opportunities and success available to African Americans in all-Black towns in the early twentieth century.</p></div></div>
+      <div class="biz-record">
+        <div class="biz-record-item"><div class="biz-record-key">Sign № · Lot</div><div class="biz-record-value">025 · Lot 83</div></div>
+        <div class="biz-record-item"><div class="biz-record-key">Type</div><div class="biz-record-value">Residence</div></div>
+        <div class="biz-record-item"><div class="biz-record-key">Owner</div><div class="biz-record-value">—</div></div>
+        <div class="biz-record-item"><div class="biz-record-key">Operated</div><div class="biz-record-value">Dates unknown</div></div>
+      </div>
+    </div>
+    <div class="biz-gallery-inline">
+      <div class="gallery-full-title">Gallery</div>
+      <div class="gallery-wrap">
+        <button class="gallery-arrow gallery-arrow-left" aria-label="Scroll left">‹</button>
+        <div class="gallery-clip"><div class="gallery-row">
+<div class="gallery-item" data-src="https://picsum.photos/seed/sign025b10img1/900/650" data-title="Placeholder photo 1" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of M.M. (Blanks) Alford Home.">
+            <img src="https://picsum.photos/seed/sign025b10img1/900/650" alt="Placeholder photo 1" loading="lazy">
+          </div>
+<div class="gallery-item" data-src="https://picsum.photos/seed/sign025b10img2/750/650" data-title="Placeholder photo 2" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of M.M. (Blanks) Alford Home.">
+            <img src="https://picsum.photos/seed/sign025b10img2/750/650" alt="Placeholder photo 2" loading="lazy">
+          </div>
+<div class="gallery-item" data-src="https://picsum.photos/seed/sign025b10img3/850/650" data-title="Placeholder photo 3" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of M.M. (Blanks) Alford Home.">
+            <img src="https://picsum.photos/seed/sign025b10img3/850/650" alt="Placeholder photo 3" loading="lazy">
+          </div>
+<div class="gallery-item" data-src="https://picsum.photos/seed/sign025b10img4/1000/650" data-title="Placeholder photo 4" data-date="Date unknown" data-source="Placeholder image" data-caption="Replace with archival photo of M.M. (Blanks) Alford Home.">
+            <img src="https://picsum.photos/seed/sign025b10img4/1000/650" alt="Placeholder photo 4" loading="lazy">
+          </div>
+        </div></div>
+        <button class="gallery-arrow gallery-arrow-right" aria-label="Scroll right">›</button>
+      </div>
+      <div class="gallery-hint">Click photos to enlarge · Use arrows or drag to browse</div>
+    </div>
+    <div class="sources-inline page-end">
+      <section class="sub-section sources-constrained">
+        <h3 class="sub-head">Sources</h3>
+        <div class="source-list">
+          <div class="source-entry"><div class="source-label">Research in progress</div><div class="source-detail">Sources are being identified.</div></div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+
+<footer>Clearview Historical Mapping Project · 2026</footer>
 
 <div class="lightbox" id="lightbox">
   <button class="lightbox-close" id="lightboxClose">✕</button>
   <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous photo">‹</button>
-  <div class="lightbox-img-wrap">
-    <img id="lightboxImg" src="" alt="">
-  </div>
+  <div class="lightbox-img-wrap"><img id="lightboxImg" src="" alt=""></div>
   <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next photo">›</button>
   <div class="lightbox-caption">
     <div class="lightbox-date" id="lightboxDate"></div>
     <div class="lightbox-title" id="lightboxTitle"></div>
     <div class="lightbox-description" id="lightboxDescription"></div>
     <div class="lightbox-source" id="lightboxSource"></div>
-</div>
+  </div>
 </div>
 
 <script>
-  // === Gallery arrows: scroll the row ===
-  document.querySelectorAll('.gallery-wrap').forEach(wrap => {
-    const row = wrap.querySelector('.gallery-row');
-    const left = wrap.querySelector('.gallery-arrow-left');
-    const right = wrap.querySelector('.gallery-arrow-right');
-    if (!row) return;
-    const scrollBy = () => Math.max(280, row.clientWidth * 0.7);
-    if (left) left.addEventListener('click', () => row.scrollBy({ left: -scrollBy(), behavior: 'smooth' }));
-    if (right) right.addEventListener('click', () => row.scrollBy({ left: scrollBy(), behavior: 'smooth' }));
-
-    // Drag-to-scroll (desktop)
-    let isDown = false, startX = 0, startScroll = 0, dragged = false;
-    row.addEventListener('mousedown', e => {
-      isDown = true; dragged = false;
-      startX = e.pageX; startScroll = row.scrollLeft;
-    });
-    row.addEventListener('mouseleave', () => { isDown = false; });
-    row.addEventListener('mouseup', () => { isDown = false; });
-    row.addEventListener('mousemove', e => {
-      if (!isDown) return;
-      const dx = e.pageX - startX;
-      if (Math.abs(dx) > 4) dragged = true;
-      row.scrollLeft = startScroll - dx;
-    });
-    // Suppress click on items when dragging
-    row.querySelectorAll('.gallery-item').forEach(it => {
-      it.addEventListener('click', e => { if (dragged) { e.stopPropagation(); e.preventDefault(); dragged = false; } }, true);
-    });
+  document.querySelectorAll('.gallery-wrap').forEach(wrap=>{
+    const row=wrap.querySelector('.gallery-row');const left=wrap.querySelector('.gallery-arrow-left');const right=wrap.querySelector('.gallery-arrow-right');
+    if(!row)return;
+    const scrollBy=()=>Math.max(280,row.clientWidth*0.7);
+    if(left)left.addEventListener('click',()=>row.scrollBy({left:-scrollBy(),behavior:'smooth'}));
+    if(right)right.addEventListener('click',()=>row.scrollBy({left:scrollBy(),behavior:'smooth'}));
+    let isDown=false,startX=0,startScroll=0,dragged=false;
+    row.addEventListener('mousedown',e=>{isDown=true;dragged=false;startX=e.pageX;startScroll=row.scrollLeft;});
+    row.addEventListener('mouseleave',()=>{isDown=false;});
+    row.addEventListener('mouseup',()=>{isDown=false;});
+    row.addEventListener('mousemove',e=>{if(!isDown)return;const dx=e.pageX-startX;if(Math.abs(dx)>4)dragged=true;row.scrollLeft=startScroll-dx;});
+    row.querySelectorAll('.gallery-item').forEach(it=>{it.addEventListener('click',e=>{if(dragged){e.stopPropagation();e.preventDefault();dragged=false;}},true);});
   });
-
-  // === Lightbox with captions ===
-  const lb = document.getElementById('lightbox');
-  const lbImg = document.getElementById('lightboxImg');
-  const lbDate = document.getElementById('lightboxDate');
-  const lbTitle = document.getElementById('lightboxTitle');
-  const lbDesc = document.getElementById('lightboxDescription');
-  const lbSource = document.getElementById('lightboxSource');
-  const lbPrev = document.getElementById('lightboxPrev');
-  const lbNext = document.getElementById('lightboxNext');
-
-  // Collect all gallery items in document order across the whole page
-  const allItems = Array.from(document.querySelectorAll('.gallery-item'));
-  let currentIdx = 0;
-
-  function openAt(idx) {
-    if (idx < 0 || idx >= allItems.length) return;
-    currentIdx = idx;
-    const item = allItems[idx];
-    lbImg.src = item.dataset.src;
-    lbDate.textContent = item.dataset.date || '';
-    lbTitle.textContent = item.dataset.title || '';
-    // Allow basic HTML in description (for italicized newspaper names)
-    lbDesc.innerHTML = item.dataset.caption || '';
-    lbSource.textContent = item.dataset.source || '';
-    lbDate.style.display = item.dataset.date ? '' : 'none';
-    lbTitle.style.display = item.dataset.title ? '' : 'none';
-    lbDesc.style.display = item.dataset.caption ? '' : 'none';
-    lbSource.style.display = item.dataset.source ? '' : 'none';
-    lb.classList.add('open');
-    document.body.style.overflow = 'hidden';
-    lbPrev.style.display = idx === 0 ? 'none' : '';
-    lbNext.style.display = idx === allItems.length - 1 ? 'none' : '';
-  }
-
-  allItems.forEach((item, i) => {
-    item.addEventListener('click', () => openAt(i));
-  });
-
-  function closeLb() {
-    lb.classList.remove('open');
-    document.body.style.overflow = '';
-  }
-
-  document.getElementById('lightboxClose').addEventListener('click', closeLb);
-  lbPrev.addEventListener('click', () => openAt(currentIdx - 1));
-  lbNext.addEventListener('click', () => openAt(currentIdx + 1));
-  lb.addEventListener('click', e => { if (e.target === lb || e.target === lbImg.parentElement) closeLb(); });
-  document.addEventListener('keydown', e => {
-    if (!lb.classList.contains('open')) return;
-    if (e.key === 'Escape') closeLb();
-    if (e.key === 'ArrowLeft') openAt(currentIdx - 1);
-    if (e.key === 'ArrowRight') openAt(currentIdx + 1);
-  });
+  const lb=document.getElementById('lightbox');const lbImg=document.getElementById('lightboxImg');const lbDate=document.getElementById('lightboxDate');const lbTitle=document.getElementById('lightboxTitle');const lbDesc=document.getElementById('lightboxDescription');const lbSource=document.getElementById('lightboxSource');const lbPrev=document.getElementById('lightboxPrev');const lbNext=document.getElementById('lightboxNext');
+  const allItems=Array.from(document.querySelectorAll('.gallery-item'));let currentIdx=0;
+  function openAt(idx){if(idx<0||idx>=allItems.length)return;currentIdx=idx;const item=allItems[idx];lbImg.src=item.dataset.src;lbDate.textContent=item.dataset.date||'';lbTitle.textContent=item.dataset.title||'';lbDesc.innerHTML=item.dataset.caption||'';lbSource.textContent=item.dataset.source||'';lbDate.style.display=item.dataset.date?'':'none';lbTitle.style.display=item.dataset.title?'':'none';lbDesc.style.display=item.dataset.caption?'':'none';lbSource.style.display=item.dataset.source?'':'none';lb.classList.add('open');document.body.style.overflow='hidden';lbPrev.style.display=idx===0?'none':'';lbNext.style.display=idx===allItems.length-1?'none':'';}
+  allItems.forEach((item,i)=>{item.addEventListener('click',()=>openAt(i));});
+  function closeLb(){lb.classList.remove('open');document.body.style.overflow='';}
+  document.getElementById('lightboxClose').addEventListener('click',closeLb);
+  lbPrev.addEventListener('click',()=>openAt(currentIdx-1));lbNext.addEventListener('click',()=>openAt(currentIdx+1));
+  lb.addEventListener('click',e=>{if(e.target===lb||e.target===lbImg.parentElement)closeLb();});
+  document.addEventListener('keydown',e=>{if(!lb.classList.contains('open'))return;if(e.key==='Escape')closeLb();if(e.key==='ArrowLeft')openAt(currentIdx-1);if(e.key==='ArrowRight')openAt(currentIdx+1);});
 </script>
 
 </body>
