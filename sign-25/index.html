@@ -45,7 +45,7 @@
   .biz-record-item:last-child{border-right:none;}
   .biz-record-key{font-family:'Inter',sans-serif;font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faded);margin-bottom:5px;}
   .biz-record-value{font-family:'Inter',sans-serif;font-size:13px;font-weight:500;color:var(--ink);line-height:1.4;}
-  .biz-gallery-inline{padding-top:48px;}
+  .biz-gallery-inline{padding-top:48px;max-width:664px;}
   .gallery-full-title{font-family:'Inter',sans-serif;font-size:11px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--ink);padding-bottom:14px;border-bottom:1px solid var(--rule);margin-bottom:20px;}
   .gallery-wrap{position:relative;margin-top:4px;padding:0 14px;margin-left:-14px;margin-right:-14px;}
   .gallery-clip{overflow:hidden;border-radius:4px;width:100%;}
@@ -54,7 +54,7 @@
   .gallery-row:active{cursor:grabbing;}
   .gallery-item{flex:0 0 auto;height:432px;min-width:260px;max-width:540px;overflow:hidden;border-radius:4px;cursor:pointer;scroll-snap-align:start;transition:transform .25s,box-shadow .25s;background:var(--paper-soft);}
   .gallery-item:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(10,10,10,.18);}
-  .gallery-item img{height:100%;width:100%;object-fit:cover;object-position:center center;display:block;filter:sepia(.3) contrast(1.04) brightness(.96);transition:transform .4s;pointer-events:none;}
+  .gallery-item img{height:100%;width:auto;max-width:none;display:block;filter:sepia(.3) contrast(1.04) brightness(.96);transition:transform .4s;pointer-events:none;}
   .gallery-item:hover img{transform:scale(1.04);}
   .gallery-item.archival img{filter:none;}
   .gallery-hint{font-family:'Inter',sans-serif;font-size:11px;font-weight:400;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faded);margin-top:8px;}
@@ -72,7 +72,7 @@
   .source-label{font-family:'Inter',sans-serif;font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--dirt);margin-bottom:4px;}
   .source-detail{font-family:'Inter',sans-serif;font-size:13px;font-weight:400;color:var(--ink);line-height:1.5;}
   .source-detail em{font-style:italic;}
-  .biz-divider{max-width:1100px;margin:0 auto;padding:0 40px;}
+  .biz-divider{max-width:1100px;margin:0 auto;padding:0 40px;display:grid;grid-template-columns:1fr 300px;gap:56px;}.biz-divider hr{border:none;border-top:1px solid var(--rule);margin:0;grid-column:1;}
   .biz-divider hr{border:none;border-top:1px solid var(--rule);margin:0;}
   .lightbox{position:fixed;inset:0;background:rgba(10,10,10,.96);display:none;flex-direction:column;align-items:center;justify-content:center;z-index:9999;padding:60px 40px 40px;}
   .lightbox.open{display:flex;}
@@ -193,30 +193,24 @@
       </div>
       <div class="gallery-hint">Click photos to enlarge · Use arrows or drag to browse</div>
     </div>
-    
+  </div>
+
+  <aside class="catalog">
+    <div class="catalog-label">Businesses on this Sign</div>
+    <div style="margin-top:4px;">
+      <div style="padding:12px 0;border-bottom:1px solid rgba(212,200,158,.5);"><a href="#jeff-horn-grocery" style="font-family:'Inter',sans-serif;font-size:13px;font-weight:500;color:var(--ink);text-decoration:none;">Jeff Horn Grocery Store</a></div>
+      <div style="padding:12px 0;border-bottom:1px solid rgba(212,200,158,.5);"><a href="#jc-bush-grocery" style="font-family:'Inter',sans-serif;font-size:13px;font-weight:500;color:var(--ink);text-decoration:none;">J.C. Bush Grocery Store</a></div>
+      <div style="padding:12px 0;border-bottom:1px solid rgba(212,200,158,.5);"><a href="#wm-irving-dry-goods" style="font-family:'Inter',sans-serif;font-size:13px;font-weight:500;color:var(--ink);text-decoration:none;">W.M. (Wash) Irving Dry Goods</a></div>
+      <div style="padding:12px 0;border-bottom:1px solid rgba(212,200,158,.5);"><a href="#second-post-office" style="font-family:'Inter',sans-serif;font-size:13px;font-weight:500;color:var(--ink);text-decoration:none;">Second Post Office</a></div>
+      <div style="padding:12px 0;border-bottom:1px solid rgba(212,200,158,.5);"><a href="#lh-haynes-telephone" style="font-family:'Inter',sans-serif;font-size:13px;font-weight:500;color:var(--ink);text-decoration:none;">L.H. Haynes Telephone Office</a></div>
+      <div style="padding:12px 0;border-bottom:1px solid rgba(212,200,158,.5);"><a href="#doster-restaurant" style="font-family:'Inter',sans-serif;font-size:13px;font-weight:500;color:var(--ink);text-decoration:none;">Doster Restaurant</a></div>
+      <div style="padding:12px 0;border-bottom:1px solid rgba(212,200,158,.5);"><a href="#wl-bush-grocery" style="font-family:'Inter',sans-serif;font-size:13px;font-weight:500;color:var(--ink);text-decoration:none;">W.L. Bush Grocery</a></div>
+      <div style="padding:12px 0;border-bottom:1px solid rgba(212,200,158,.5);"><a href="#mc-alford-drug-store" style="font-family:'Inter',sans-serif;font-size:13px;font-weight:500;color:var(--ink);text-decoration:none;">Dr. M.C. Alford Drug Store</a></div>
+      <div style="padding:12px 0;border-bottom:1px solid rgba(212,200,158,.5);"><a href="#trotters-cleaning" style="font-family:'Inter',sans-serif;font-size:13px;font-weight:500;color:var(--ink);text-decoration:none;">Trotter's Cleaning & Pressing & Barbershop</a></div>
+      <div style="padding:12px 0;"><a href="#mm-alford-home" style="font-family:'Inter',sans-serif;font-size:13px;font-weight:500;color:var(--ink);text-decoration:none;">M.M. (Blanks) Alford Home</a></div>
     </div>
-    <div class="biz-gallery-inline">
-      <div class="gallery-full-title">Gallery</div>
-      <div class="gallery-wrap">
-        <button class="gallery-arrow gallery-arrow-left" aria-label="Scroll left">‹</button>
-        <div class="gallery-clip"><div class="gallery-row">
-<div class="gallery-item archival" data-src="../sources/sign25_patriarch_irving.jpg" data-title="The Patriarch, August 17, 1911 (p. 2)" data-date="August 17, 1911" data-source="The Patriarch · project archive" data-caption="The Patriarch, August 17, 1911 (p. 2)">
-            <img src="../sources/sign25_patriarch_irving.jpg" alt="The Patriarch, August 17, 1911 (p. 2)" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
-          </div>
-<div class="gallery-item archival" data-src="../sources/sign25_patriarch_1912_01_11-1.png" data-title="The Patriarch, January 11, 1912" data-date="January 11, 1912" data-source="The Patriarch · project archive" data-caption="The Patriarch, January 11, 1912">
-            <img src="../sources/sign25_patriarch_1912_01_11-1.png" alt="The Patriarch, January 11, 1912" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
-          </div>
-<div class="gallery-item archival" data-src="../sources/The_Patriarch_1911_03_09_4-1.png" data-title="The Patriarch, March 9, 1911" data-date="March 9, 1911" data-source="The Patriarch · project archive" data-caption="The Patriarch, March 9, 1911">
-            <img src="../sources/The_Patriarch_1911_03_09_4-1.png" alt="The Patriarch, March 9, 1911" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
-          </div>
-<div class="gallery-item archival" data-src="../sources/sign25_rodeo_1983_irving.jpg" data-title="Clearview Rodeo, 1983 (image 10)" data-date="1983" data-source="Rodeo archive · project archive" data-caption="Clearview Rodeo, 1983 (image 10)">
-            <img src="../sources/sign25_rodeo_1983_irving.jpg" alt="Clearview Rodeo, 1983 (image 10)" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
-          </div>
-        </div></div>
-        <button class="gallery-arrow gallery-arrow-right" aria-label="Scroll right">›</button>
-      </div>
-    </div>
-    
+  </aside>
+</main>
 
 <div class="biz-divider"><hr></div>
 <div class="biz-two-col">
@@ -250,7 +244,8 @@
         <button class="gallery-arrow gallery-arrow-right" aria-label="Scroll right">›</button>
       </div>
     </div>
-    
+  </div>
+</div>
 
 <div class="biz-divider"><hr></div>
 <div class="biz-two-col">
@@ -273,6 +268,18 @@
       <div class="gallery-wrap">
         <button class="gallery-arrow gallery-arrow-left" aria-label="Scroll left">‹</button>
         <div class="gallery-clip"><div class="gallery-row">
+<div class="gallery-item archival" data-src="../sources/sign25_patriarch_irving.jpg" data-title="The Patriarch, August 17, 1911 (p. 2)" data-date="August 17, 1911" data-source="The Patriarch · project archive" data-caption="The Patriarch, August 17, 1911 (p. 2)">
+            <img src="../sources/sign25_patriarch_irving.jpg" alt="The Patriarch, August 17, 1911 (p. 2)" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
+          </div>
+<div class="gallery-item archival" data-src="../sources/sign25_patriarch_1912_01_11-1.png" data-title="The Patriarch, January 11, 1912" data-date="January 11, 1912" data-source="The Patriarch · project archive" data-caption="The Patriarch, January 11, 1912">
+            <img src="../sources/sign25_patriarch_1912_01_11-1.png" alt="The Patriarch, January 11, 1912" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
+          </div>
+<div class="gallery-item archival" data-src="../sources/The_Patriarch_1911_03_09_4-1.png" data-title="The Patriarch, March 9, 1911" data-date="March 9, 1911" data-source="The Patriarch · project archive" data-caption="The Patriarch, March 9, 1911">
+            <img src="../sources/The_Patriarch_1911_03_09_4-1.png" alt="The Patriarch, March 9, 1911" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
+          </div>
+<div class="gallery-item archival" data-src="../sources/sign25_rodeo_1983_irving.jpg" data-title="Clearview Rodeo, 1983 (image 10)" data-date="1983" data-source="Rodeo archive · project archive" data-caption="Clearview Rodeo, 1983 (image 10)">
+            <img src="../sources/sign25_rodeo_1983_irving.jpg" alt="Clearview Rodeo, 1983 (image 10)" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
+          </div>
 
 <div class="gallery-item archival" data-src="../sources/sign25_rodeo_1985_post.jpg" data-title="Clearview Rodeo program, 1985" data-date="1985" data-source="Rodeo program · project archive" data-caption="Clearview Rodeo program, 1985">
             <img src="../sources/sign25_rodeo_1985_post.jpg" alt="Clearview Rodeo program, 1985" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
@@ -284,7 +291,8 @@
         <button class="gallery-arrow gallery-arrow-right" aria-label="Scroll right">›</button>
       </div>
     </div>
-    
+  </div>
+</div>
 
 <div class="biz-divider"><hr></div>
 <div class="biz-two-col">
@@ -324,7 +332,8 @@
         <button class="gallery-arrow gallery-arrow-right" aria-label="Scroll right">›</button>
       </div>
     </div>
-    
+  </div>
+</div>
 
 <div class="biz-divider"><hr></div>
 <div class="biz-two-col">
@@ -353,7 +362,8 @@
         <button class="gallery-arrow gallery-arrow-right" aria-label="Scroll right">›</button>
       </div>
     </div>
-    
+  </div>
+</div>
 
 <div class="biz-divider"><hr></div>
 <div class="biz-two-col">
@@ -389,7 +399,8 @@
         <button class="gallery-arrow gallery-arrow-right" aria-label="Scroll right">›</button>
       </div>
     </div>
-    
+  </div>
+</div>
 
 <div class="biz-divider"><hr></div>
 <div class="biz-two-col">
@@ -418,7 +429,8 @@
         <button class="gallery-arrow gallery-arrow-right" aria-label="Scroll right">›</button>
       </div>
     </div>
-    
+  </div>
+</div>
 
 <div class="biz-divider"><hr></div>
 <div class="biz-two-col">
@@ -480,7 +492,8 @@
         <button class="gallery-arrow gallery-arrow-right" aria-label="Scroll right">›</button>
       </div>
     </div>
-    
+  </div>
+</div>
 
 <div class="biz-divider"><hr></div>
 <div class="biz-two-col">
@@ -508,8 +521,6 @@
       </div>
     </div>
     
-      </section>
-    </div>
   </div>
 </div>
 

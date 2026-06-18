@@ -486,8 +486,6 @@
   .gallery-item {
     flex: 0 0 auto;
     height: 432px;
-    min-width: 260px;   /* Even very tall portraits show at readable width */
-    max-width: 600px;   /* Landscape images don't go too wide */
     overflow: hidden;
     border-radius: 4px;
     cursor: pointer;
@@ -500,9 +498,8 @@
   }
   .gallery-item img {
     height: 100%;
-    width: 100%;
-    object-fit: cover;
-    object-position: center top; /* Show top of portrait images preferentially */
+    width: auto;
+    max-width: none;
     display: block;
     filter: sepia(0.3) contrast(1.04) brightness(0.96);
     transition: transform 0.4s ease;

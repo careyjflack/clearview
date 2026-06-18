@@ -497,14 +497,11 @@
   .gallery-item {
     flex: 0 0 auto;
     height: 432px;
-    min-width: 240px;
-    max-width: 640px;
     overflow: hidden;
     border-radius: 4px;
     cursor: pointer;
     scroll-snap-align: start;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
-    background: var(--paper-soft);
   }
   .gallery-item:hover {
     transform: translateY(-3px);
@@ -512,9 +509,8 @@
   }
   .gallery-item img {
     height: 100%;
-    width: 100%;
-    object-fit: contain;
-    object-position: center center;
+    width: auto;
+    max-width: none;
     display: block;
     filter: sepia(0.3) contrast(1.04) brightness(0.96);
     transition: transform 0.4s ease;

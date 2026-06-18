@@ -56,7 +56,7 @@
   .biz-record-value{font-family:'Inter',sans-serif;font-size:13px;font-weight:500;color:var(--ink);line-height:1.4;}
 
   /* Gallery INLINE — matches left column width automatically */
-  .biz-gallery-inline{padding-top:48px;}
+  .biz-gallery-inline{padding-top:48px;max-width:664px;}
   .gallery-full-title{font-family:'Inter',sans-serif;font-size:11px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--ink);padding-bottom:14px;border-bottom:1px solid var(--rule);margin-bottom:20px;}
   .gallery-wrap{position:relative;margin-top:4px;padding:0 14px;margin-left:-14px;margin-right:-14px;}
   .gallery-clip{overflow:hidden;border-radius:4px;width:100%;}
@@ -65,7 +65,7 @@
   .gallery-row:active{cursor:grabbing;}
   .gallery-item{flex:0 0 auto;height:432px;min-width:260px;max-width:540px;overflow:hidden;border-radius:4px;cursor:pointer;scroll-snap-align:start;transition:transform .25s,box-shadow .25s;background:var(--paper-soft);}
   .gallery-item:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(10,10,10,.18);}
-  .gallery-item img{height:100%;width:100%;object-fit:cover;object-position:center center;display:block;filter:sepia(.3) contrast(1.04) brightness(.96);transition:transform .4s;pointer-events:none;}
+  .gallery-item img{height:100%;width:auto;max-width:none;display:block;filter:sepia(.3) contrast(1.04) brightness(.96);transition:transform .4s;pointer-events:none;}
   .gallery-item:hover img{transform:scale(1.04);}
   .gallery-item.archival img{filter:none;}
   .gallery-hint{font-family:'Inter',sans-serif;font-size:11px;font-weight:400;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faded);margin-top:8px;}
@@ -87,7 +87,7 @@
   .source-detail em{font-style:italic;}
 
   /* Divider between businesses */
-  .biz-divider{max-width:1100px;margin:0 auto;padding:0 40px;}
+  .biz-divider{max-width:1100px;margin:0 auto;padding:0 40px;display:grid;grid-template-columns:1fr 300px;gap:56px;}.biz-divider hr{border:none;border-top:1px solid var(--rule);margin:0;grid-column:1;}
   .biz-divider hr{border:none;border-top:1px solid var(--rule);margin:0;}
 
   /* Lightbox */

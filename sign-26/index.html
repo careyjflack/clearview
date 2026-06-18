@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -45,7 +43,7 @@
   .biz-record-item:last-child{border-right:none;}
   .biz-record-key{font-family:'Inter',sans-serif;font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faded);margin-bottom:5px;}
   .biz-record-value{font-family:'Inter',sans-serif;font-size:13px;font-weight:500;color:var(--ink);line-height:1.4;}
-  .biz-gallery-inline{padding-top:48px;}
+  .biz-gallery-inline{padding-top:48px;max-width:664px;}
   .gallery-full-title{font-family:'Inter',sans-serif;font-size:11px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--ink);padding-bottom:14px;border-bottom:1px solid var(--rule);margin-bottom:20px;}
   .gallery-wrap{position:relative;margin-top:4px;padding:0 14px;margin-left:-14px;margin-right:-14px;}
   .gallery-clip{overflow:hidden;border-radius:4px;width:100%;}
@@ -54,7 +52,7 @@
   .gallery-row:active{cursor:grabbing;}
   .gallery-item{flex:0 0 auto;height:432px;min-width:260px;max-width:540px;overflow:hidden;border-radius:4px;cursor:pointer;scroll-snap-align:start;transition:transform .25s,box-shadow .25s;background:var(--paper-soft);}
   .gallery-item:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(10,10,10,.18);}
-  .gallery-item img{height:100%;width:100%;object-fit:cover;object-position:center center;display:block;filter:sepia(.3) contrast(1.04) brightness(.96);transition:transform .4s;pointer-events:none;}
+  .gallery-item img{height:100%;width:auto;max-width:none;display:block;filter:sepia(.3) contrast(1.04) brightness(.96);transition:transform .4s;pointer-events:none;}
   .gallery-item:hover img{transform:scale(1.04);}
   .gallery-item.archival img{filter:none;}
   .gallery-hint{font-family:'Inter',sans-serif;font-size:11px;font-weight:400;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faded);margin-top:8px;}
@@ -72,7 +70,7 @@
   .source-label{font-family:'Inter',sans-serif;font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--dirt);margin-bottom:4px;}
   .source-detail{font-family:'Inter',sans-serif;font-size:13px;font-weight:400;color:var(--ink);line-height:1.5;}
   .source-detail em{font-style:italic;}
-  .biz-divider{max-width:1100px;margin:0 auto;padding:0 40px;}
+  .biz-divider{max-width:1100px;margin:0 auto;padding:0 40px;display:grid;grid-template-columns:1fr 300px;gap:56px;}.biz-divider hr{border:none;border-top:1px solid var(--rule);margin:0;grid-column:1;}
   .biz-divider hr{border:none;border-top:1px solid var(--rule);margin:0;}
   .lightbox{position:fixed;inset:0;background:rgba(10,10,10,.96);display:none;flex-direction:column;align-items:center;justify-content:center;z-index:9999;padding:60px 40px 40px;}
   .lightbox.open{display:flex;}
@@ -168,7 +166,61 @@
       </div>
       <div class="gallery-hint">Click photos to enlarge · Use arrows or drag to browse</div>
     </div>
+  </div>
+  <aside class="catalog">
+    <div class="catalog-label">Businesses on this Sign</div>
+    <div style="margin-top:4px;">
+      <div style="padding:12px 0;border-bottom:1px solid rgba(212,200,158,.5);"><a href="#restaurant-pool-hall" style="font-family:'Inter',sans-serif;font-size:13px;font-weight:500;color:var(--ink);text-decoration:none;">Restaurant / Pool Hall</a></div>
+      <div style="padding:12px 0;border-bottom:1px solid rgba(212,200,158,.5);"><a href="#carpenters-confectionary" style="font-family:'Inter',sans-serif;font-size:13px;font-weight:500;color:var(--ink);text-decoration:none;">Tom Carpenters' Confectionary Stand</a></div>
+      <div style="padding:12px 0;"><a href="#clearview-patriot" style="font-family:'Inter',sans-serif;font-size:13px;font-weight:500;color:var(--ink);text-decoration:none;">Clearview Patriot — Printing Office, Restaurant & BBQ, Gas Station</a></div>
+    </div>
+  </aside>
+</main>
+
+<div class="biz-divider"><hr></div>
+<div class="biz-two-col">
+  <div class="biz-left">
+    <div class="business-block" id="carpenters-confectionary">
+      <h3 class="business-name">Tom Carpenters' Confectionary Stand</h3>
+      <h2 class="section-head">History</h2>
+      <div class="prose"><div class="prose"><p class="empty-narrative">Narrative not yet recorded. Research in progress.</p></div></div>
+      <div class="biz-record">
+        <div class="biz-record-item"><div class="biz-record-key">Sign № · Lot</div><div class="biz-record-value">026 · Lot 89</div></div>
+        <div class="biz-record-item"><div class="biz-record-key">Type</div><div class="biz-record-value">Confectionary</div></div>
+        <div class="biz-record-item"><div class="biz-record-key">Owner</div><div class="biz-record-value">Tom Carpenter</div></div>
+        <div class="biz-record-item"><div class="biz-record-key">Operated</div><div class="biz-record-value">1910s</div></div>
+      </div>
+    </div>
+    <div class="biz-gallery-inline">
+      <div class="gallery-full-title">Gallery</div>
+      <div class="gallery-wrap">
+        <button class="gallery-arrow gallery-arrow-left" aria-label="Scroll left">‹</button>
+        <div class="gallery-clip"><div class="gallery-row">
+                </div></div>
+        <button class="gallery-arrow gallery-arrow-right" aria-label="Scroll right">›</button>
+      </div>
+      <div class="gallery-hint">Click photos to enlarge · Use arrows or drag to browse</div>
+    </div>
     
+  </div>
+</div>
+
+<div class="biz-divider"><hr></div>
+<div class="biz-two-col">
+  <div class="biz-left">
+    <div class="business-block" id="clearview-patriot">
+      <h3 class="business-name">Clearview Patriot — Printing Office, Restaurant & BBQ, Gas Station</h3>
+      <h2 class="section-head">History</h2>
+      <div class="prose"><p class="lead">This lot was home to several early Clearview establishments. J. E. Thompson, a prominent promoter and financier in town, financed the town newspaper, the Clearview Patriarch. Between 1904–1917 Clearview had a succession of weekly newspapers known at various times as the Clearview Tribune, the Lincoln, and the Patriarch/Clearview Patriarch. The newspaper was essential for promoting the town throughout the country and encouraging people to move to Clearview.</p>
+<p>Over the years there have been restaurants and gas stations including the filling station that Earl and Mallie French opened on this corner in 1927. A 1929 ad lists the Earl French Station as one of 32 filling stations in the area offering Conoco Ethyl Gasoline as distributed by the Okemah Oil and Gasoline Co.</p>
+<p>With at least one other gas station operating at this time in Clearview, the presence of these stations implies the ownership of enough cars in Clearview to provide this type of service. Frank Bush would later take over the Earl French Station.</p>
+</div>
+      <div class="biz-record">
+        <div class="biz-record-item"><div class="biz-record-key">Sign № · Lot</div><div class="biz-record-value">026 · Lot 90</div></div>
+        <div class="biz-record-item"><div class="biz-record-key">Type</div><div class="biz-record-value">Newspaper / restaurant / gas station</div></div>
+        <div class="biz-record-item"><div class="biz-record-key">Owner</div><div class="biz-record-value">Earl French; Frank Bush</div></div>
+        <div class="biz-record-item"><div class="biz-record-key">Operated</div><div class="biz-record-value">1900s – 1930s</div></div>
+      </div>
     </div>
     <div class="biz-gallery-inline">
       <div class="gallery-full-title">Gallery</div>
@@ -244,56 +296,12 @@
 <div class="gallery-item archival" data-src="../sources/sign26_rodeo_1986.jpg" data-title="Clearview Rodeo program, 1986" data-date="1986" data-source="Rodeo program · project archive" data-caption="Clearview Rodeo program, 1986">
             <img src="../sources/sign26_rodeo_1986.jpg" alt="Clearview Rodeo program, 1986" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
           </div>
+<!DOCTYPE html>
+<html lang="en">
         </div></div>
         <button class="gallery-arrow gallery-arrow-right" aria-label="Scroll right">›</button>
       </div>
-    </div>
-    
-
-<div class="biz-divider"><hr></div>
-<div class="biz-two-col">
-  <div class="biz-left">
-    <div class="business-block" id="carpenters-confectionary">
-      <h3 class="business-name">Tom Carpenters' Confectionary Stand</h3>
-      <h2 class="section-head">History</h2>
-      <div class="prose"><div class="prose"><p class="empty-narrative">Narrative not yet recorded. Research in progress.</p></div></div>
-      <div class="biz-record">
-        <div class="biz-record-item"><div class="biz-record-key">Sign № · Lot</div><div class="biz-record-value">026 · Lot 89</div></div>
-        <div class="biz-record-item"><div class="biz-record-key">Type</div><div class="biz-record-value">Confectionary</div></div>
-        <div class="biz-record-item"><div class="biz-record-key">Owner</div><div class="biz-record-value">Tom Carpenter</div></div>
-        <div class="biz-record-item"><div class="biz-record-key">Operated</div><div class="biz-record-value">1910s</div></div>
-      </div>
-    </div>
-    <div class="biz-gallery-inline">
-      <div class="gallery-full-title">Gallery</div>
-      <p class="empty-narrative" style="padding:20px 0;">No photographs yet identified for this business.</p>
-    </div>
-    
-      </section>
-    </div>
-  </div>
-</div>
-
-<div class="biz-divider"><hr></div>
-<div class="biz-two-col">
-  <div class="biz-left">
-    <div class="business-block" id="clearview-patriot">
-      <h3 class="business-name">Clearview Patriot — Printing Office, Restaurant & BBQ, Gas Station</h3>
-      <h2 class="section-head">History</h2>
-      <div class="prose"><p class="lead">This lot was home to several early Clearview establishments. J. E. Thompson, a prominent promoter and financier in town, financed the town newspaper, the Clearview Patriarch. Between 1904–1917 Clearview had a succession of weekly newspapers known at various times as the Clearview Tribune, the Lincoln, and the Patriarch/Clearview Patriarch. The newspaper was essential for promoting the town throughout the country and encouraging people to move to Clearview.</p>
-<p>Over the years there have been restaurants and gas stations including the filling station that Earl and Mallie French opened on this corner in 1927. A 1929 ad lists the Earl French Station as one of 32 filling stations in the area offering Conoco Ethyl Gasoline as distributed by the Okemah Oil and Gasoline Co.</p>
-<p>With at least one other gas station operating at this time in Clearview, the presence of these stations implies the ownership of enough cars in Clearview to provide this type of service. Frank Bush would later take over the Earl French Station.</p>
-</div>
-      <div class="biz-record">
-        <div class="biz-record-item"><div class="biz-record-key">Sign № · Lot</div><div class="biz-record-value">026 · Lot 90</div></div>
-        <div class="biz-record-item"><div class="biz-record-key">Type</div><div class="biz-record-value">Newspaper / restaurant / gas station</div></div>
-        <div class="biz-record-item"><div class="biz-record-key">Owner</div><div class="biz-record-value">Earl French; Frank Bush</div></div>
-        <div class="biz-record-item"><div class="biz-record-key">Operated</div><div class="biz-record-value">1900s – 1930s</div></div>
-      </div>
-    </div>
-    <div class="biz-gallery-inline">
-      <div class="gallery-full-title">Gallery</div>
-      <p class="empty-narrative" style="padding:20px 0;">No photographs yet identified for this business.</p>
+      <div class="gallery-hint">Click photos to enlarge · Use arrows or drag to browse</div>
     </div>
     <div class="sources-inline page-end">
       
