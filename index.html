@@ -528,14 +528,18 @@
       overflow: visible;
     }
 
+    /* Map: 5px padding each side, background 3x taller, map centered in it */
     .map-wrap {
       flex: 0 0 auto;
       width: 100%;
-      padding: 6px 2px;
+      padding: 0 5px;
       overflow: visible;
-      display: block;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       position: relative;
       z-index: 5;
+      box-sizing: border-box;
     }
 
     .map-stage {
@@ -550,41 +554,45 @@
       overflow: visible;
     }
 
+    /* Stretch the map background area to 3x map height, map stays centered */
+    .map-wrap::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      bottom: 0;
+      background: var(--paper-deep);
+      z-index: -1;
+    }
+
     .leaflet-overlay-pane svg path {
       shape-rendering: geometricPrecision;
     }
 
+    /* No popups on mobile — suppress entirely */
     .leaflet-popup-pane {
-      z-index: 1000;
+      display: none !important;
     }
 
-    .leaflet-popup-content {
-      width: min(190px, calc(100vw - 28px)) !important;
-    }
-
-    .popup-image { height: 68px; }
-    .popup-name { font-size: 14px; margin: 2px 0 4px; }
-    .popup-body { padding: 8px 10px 10px; }
-    .popup-num { font-size: 9px; }
-    .popup-meta { font-size: 10px; margin-bottom: 8px; line-height: 1.4; }
-    .popup-link { font-size: 9px; padding: 7px 10px; letter-spacing: 0.12em; }
-    .leaflet-popup-content-wrapper { border-radius: 3px; }
-
+    /* Footer: stack intro above index on mobile */
     .site-footer {
       flex: 0 0 auto;
-      grid-template-columns: minmax(128px, 0.95fr) minmax(0, 1.45fr);
+      display: flex;
+      flex-direction: column;
+      border-top: 1px solid var(--rule);
     }
 
     .footer-intro {
-      border-right: 1px solid var(--rule);
-      border-bottom: none;
-      padding: 9px 16px;
-      overflow-y: visible;
-      -webkit-overflow-scrolling: touch;
+      border-right: none;
+      border-bottom: 1px solid var(--rule);
+      padding: 16px 16px 14px;
+      width: 100%;
+      overflow: visible;
     }
 
     .footer-index {
-      padding: 9px 16px 7px;
+      padding: 12px 16px 10px;
+      width: 100%;
       min-width: 0;
       overflow: hidden;
       display: flex;
@@ -597,18 +605,20 @@
     }
 
     .footer-intro .section-label {
-      margin-bottom: 8px;
+      margin-bottom: 10px;
     }
 
     .intro {
       font-size: 18px;
       line-height: 1.15;
       margin-bottom: 10px;
+      max-width: 100%;
     }
 
     .body-copy {
-      font-size: 11px;
+      font-size: 13px;
       line-height: 1.55;
+      max-width: 100%;
     }
 
     .section-label {
@@ -649,35 +659,24 @@
       flex-shrink: 0;
       margin-top: 4px;
     }
-
-    .popup-meta { font-size: 11px; }
   }
 
   @media (max-width: 480px) {
     header { padding: 10px 16px; }
     .masthead { font-size: 18px; }
 
-    .site-footer {
-      grid-template-columns: minmax(112px, 0.9fr) minmax(0, 1.5fr);
-    }
-
     .footer-intro,
-    .footer-index { padding: 7px 12px; }
+    .footer-index { padding: 10px 12px; }
 
     .intro { font-size: 16px; }
+
+    .body-copy { font-size: 12px; }
 
     .sign-card {
       flex: 0 0 168px;
       width: 168px;
       height: 168px;
     }
-
-    .leaflet-popup-content {
-      width: min(180px, calc(100vw - 24px)) !important;
-    }
-
-    .popup-image { height: 60px; }
-    .popup-name { font-size: 13px; }
   }
 </style>
 </head>
@@ -745,9 +744,9 @@
     { id: "001", name: "Zenia Talton's Café", business: "Café & Restaurant", lot: "Lot 34", dates: "Dates unknown", lat: 35.3990, lng: -96.1917, slug: "sign-001-zenia-taltons-cafe", image: "sources/patriarch.png" },
     { id: "002", name: "L.M. Atkins Hotel / Charlotte Jackson Home", business: "Hotel & residence", lot: "Lot 45", dates: "c. 1911 – 1914", lat: 35.3992, lng: -96.1873, slug: "sign-002-atkins-hotel", image: "sources/bd_sign02_okemah-1.png" },
     { id: "003", name: "Miniature Golf Course & Tent Revival Site", business: "Recreation & assembly", lot: "Lot 53a", dates: "1931 – ", lat: 35.399, lng: -96.186, slug: "sign-003-miniature-golf", image: "sources/new_003_langston_bush_portrait.png" },
-    { id: "004", name: "High Pocket Wilson's", business: "School Supplies & Confectionary", lot: "Lot 38", dates: "Dates unknown", lat: 35.399, lng: -96.1897, slug: "sign-004-high-pocket-wilson", image: "https://picsum.photos/seed/clearview004/400/300" },
+    { id: "004", name: "High Pocket Wilson's", business: "School Supplies & Confectionary", lot: "Lot 38", dates: "Dates unknown", lat: 35.399, lng: -96.1897, slug: "sign-004-high-pocket-wilson", image: "" },
     { id: "005", name: "Jeff Horn Dry Goods · Earl French Pool Hall", business: "Dry goods & pool hall", lot: "Lot 41", dates: "Dates unknown", lat: 35.399, lng: -96.1897, slug: "sign-005-horn-french", image: "sources/sign05_jeff_horn_pin.jpg" },
-    { id: "006", name: "Colored Methodist Episcopal Church", business: "Church (third location)", lot: "Lot 75", dates: "Dates unknown", lat: 35.3976, lng: -96.1917, slug: "sign-006-cme-church", image: "https://picsum.photos/seed/clearview006/400/300" },
+    { id: "006", name: "Colored Methodist Episcopal Church", business: "Church (third location)", lot: "Lot 75", dates: "Dates unknown", lat: 35.3976, lng: -96.1917, slug: "sign-006-cme-church", image: "" },
     { id: "007", name: "Dessie Forshee's Barber Shop", business: "Barbershop", lot: "Lot 68", dates: "1952 – ", lat: 35.3976, lng: -96.1956, slug: "sign-007-dessie-forshee", image: "sources/new_007_clearview_school_buses.png" },
     { id: "008", name: "James P. Owens", business: "Rural Mail Carrier", lot: "Lot 72", dates: "1927 – 1970", lat: 35.3976, lng: -96.1936, slug: "sign-008-james-p-owens", image: "sources/new_008_jp_owens_rural_carrier.png" },
     { id: "009", name: "Ada (Harris) Davis Alford", business: "House, café, store, garment factory & boarding house", lot: "Lot 32", dates: "Dates unknown", lat: 35.399, lng: -96.1956, slug: "sign-009-ada-alford", image: "sources/sign09_sewing_1935.jpg" },
@@ -756,7 +755,7 @@
     { id: "012", name: "Ft. Smith & Western Section Foreman's Shop", business: "Railroad maintenance shop", lot: "Lot 15", dates: "1903 – 1939", lat: 35.3999, lng: -96.1873, slug: "sign-012-section-foreman-shop", image: "sources/sign12_walker_1921_pin.jpg" },
     { id: "013", name: "J.C. Cossey", business: "Justice of the Peace", lot: "Lot 78", dates: "1910s – 1920s", lat: 35.3976, lng: -96.1897, slug: "sign-013-jc-cossey", image: "sources/The_Patriarch_1912_06_06_4.jpg" },
     { id: "014", name: "Hicks Shoe Shop / Hattie Holmes Rooming House", business: "Shoe shop & rooming house", lot: "Lot 79", dates: "c. 1910s", lat: 35.3976, lng: -96.1897, slug: "sign-014-hicks-holmes", image: "sources/sign14_hattie_holmes.jpg" },
-    { id: "015", name: "Clearview Movie Theater", business: "Movie theater", lot: "Lot 98", dates: "c. 1930", lat: 35.3976, lng: -96.1839, slug: "sign-015-clearview-theater", image: "https://picsum.photos/seed/clearview015/400/300" },
+    { id: "015", name: "Clearview Movie Theater", business: "Movie theater", lot: "Lot 98", dates: "c. 1930", lat: 35.3976, lng: -96.1839, slug: "sign-015-clearview-theater", image: "" },
     { id: "016", name: "\u201cDiddy\u201d Oliver Grocery Store", business: "Grocery", lot: "Lot 99", dates: "1910s – 1920s", lat: 35.3981, lng: -96.1833, slug: "sign-016-diddy-oliver", image: "sources/The_Patriarch_1911_08_17_3.jpg" },
     { id: "017", name: "First Baptist Church", business: "Church", lot: "Lot 100", dates: "Dates unknown", lat: 35.3978, lng: -96.1833, slug: "sign-017-first-baptist", image: "sources/new_017_baptism_clearview_lake.png" },
     { id: "018", name: "M.J. Blanks Dry Goods & Notions", business: "Dry goods", lot: "Lot 97", dates: "c. 1910s", lat: 35.3976, lng: -96.1839, slug: "sign-018-mj-blanks", image: "sources/The_Patriarch_1914_05_30_6.jpg" },
@@ -881,10 +880,16 @@
 
       const sw = map.latLngToContainerPoint(viewBounds.getSouthWest());
       const ne = map.latLngToContainerPoint(viewBounds.getNorthEast());
-      const targetH = Math.ceil(Math.abs(sw.y - ne.y) + padY * 2);
+      const mapH = Math.ceil(Math.abs(sw.y - ne.y) + padY * 2);
+      // Map itself is natural height; wrap is 3x to give breathing room
+      const wrapH = mapH * 3;
 
-      mapEl.style.height = targetH + 'px';
-      stageEl.style.height = targetH + 'px';
+      mapEl.style.height = mapH + 'px';
+      stageEl.style.height = mapH + 'px';
+      wrapEl.style.height = wrapH + 'px';
+      wrapEl.style.display = 'flex';
+      wrapEl.style.alignItems = 'center';
+      wrapEl.style.justifyContent = 'center';
       map.invalidateSize();
 
       map.fitBounds(viewBounds, {
@@ -1132,7 +1137,7 @@
   signs.forEach((sign) => {
     const customIcon = L.divIcon({
       className: 'clearview-marker-wrap',
-      html: `<div class="clearview-marker"><img src="${sign.image}" alt="" loading="lazy" /></div>`,
+      html: `<div class="clearview-marker">${sign.image ? `<img src="${sign.image}" alt="" loading="lazy" />` : ''}</div>`,
       iconSize: [42, 42],
       iconAnchor: [21, 21],
       popupAnchor: [0, -22]
@@ -1141,7 +1146,7 @@
     const marker = L.marker([sign.lat, sign.lng], { icon: customIcon }).addTo(map);
 
     const popupHtml = `
-      <div class="popup-image"><img src="${sign.image}" alt="${sign.name}" /></div>
+      ${sign.image ? `<div class="popup-image"><img src="${sign.image}" alt="${sign.name}" /></div>` : ''}
       <div class="popup-body">
         <div class="popup-num">№ ${sign.id} · ${sign.lot}</div>
         <div class="popup-name">${sign.name}</div>
@@ -1230,30 +1235,32 @@
     let _savedCenter = null;
     let _savedZoom = null;
     marker.on('click', () => {
-      setActiveCard(sign.id);
       const isMobileClick = window.innerWidth <= MOBILE_BREAK;
+      if (isMobileClick) {
+        // On mobile: navigate directly to sign page, no popup
+        const signNum = String(parseInt(sign.id, 10)).padStart(2, '0');
+        window.location.href = 'sign-' + signNum + '/';
+        return;
+      }
+      setActiveCard(sign.id);
       const fresh = popupOffset([sign.lat, sign.lng]);
       marker.getPopup().options.offset = fresh;
-      marker.getPopup().options.autoPan = isMobileClick;
-      if (!isMobileClick) {
-        _savedCenter = map.getCenter();
-        _savedZoom = map.getZoom();
-      }
+      marker.getPopup().options.autoPan = false;
+      _savedCenter = map.getCenter();
+      _savedZoom = map.getZoom();
 
       // After popup opens, toggle tip visibility based on direction
       setTimeout(() => {
-        const isMobilePopup = window.innerWidth <= MOBILE_BREAK;
         const popupEl = marker.getPopup()._container;
         if (popupEl) {
           const tip = popupEl.querySelector('.leaflet-popup-tip-container');
-          if (tip) tip.style.display = isMobilePopup ? 'none' : '';
-          if (!isMobilePopup) {
+          if (tip) {
             const pt   = map.latLngToContainerPoint([sign.lat, sign.lng]);
             const POPUP_H = 330;
             const PIN_R   = 21;
             const MARGIN  = 16;
             const openedBeside = (pt.y - PIN_R - POPUP_H) < MARGIN;
-            if (tip) tip.style.display = openedBeside ? 'none' : '';
+            tip.style.display = openedBeside ? 'none' : '';
           }
         }
       }, 10);
@@ -1272,12 +1279,17 @@
     card.className = 'sign-card';
     card.dataset.sign = sign.id;
     card.innerHTML = `
-      <div class="sign-thumb"><img src="${sign.image}" alt="" loading="lazy" /></div>
+      <div class="sign-thumb">${sign.image ? `<img src="${sign.image}" alt="" loading="lazy" />` : ''}</div>
       <div class="sign-num">№ ${sign.id}</div>
       <div class="sign-name">${sign.name}</div>
       <div class="sign-dates">${sign.dates}</div>
     `;
     card.addEventListener('click', () => {
+      if (window.innerWidth <= MOBILE_BREAK) {
+        const signNum = String(parseInt(sign.id, 10)).padStart(2, '0');
+        window.location.href = 'sign-' + signNum + '/';
+        return;
+      }
       setActiveCard(sign.id);
       marker.openPopup();
     });
