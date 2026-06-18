@@ -485,7 +485,7 @@
 
   .gallery-item {
     flex: 0 0 auto;
-    height: 360px;
+    height: 432px;
     min-width: 260px;   /* Even very tall portraits show at readable width */
     max-width: 600px;   /* Landscape images don't go too wide */
     overflow: hidden;
@@ -690,7 +690,7 @@
     .hero { padding: 32px 24px 24px; }
     .topbar { padding: 12px 24px; }
     .business-name { font-size: 26px; }
-    .gallery-item { height: 260px; }
+    .gallery-item { height: 312px; }
     .gallery-arrow { width: 36px; height: 36px; font-size: 18px; }
     .lightbox-nav { width: 40px; height: 40px; font-size: 20px; }
     .lightbox-title { font-size: 18px; }
@@ -708,7 +708,7 @@
     .layout { padding: 24px 16px 48px; gap: 32px; }
     .business-name { font-size: 22px; }
     .business-details { padding: 14px 16px; }
-    .gallery-item { height: 220px; }
+    .gallery-item { height: 264px; }
     .gallery-hint { font-size: 10px; }
     .sub-head { font-size: 10px; }
     .source-entry { padding: 12px 14px; }
@@ -725,6 +725,13 @@
     .prose { font-size: 14px; }
     .prose .lead { font-size: 22px; }
     .prose .lead::first-letter { font-size: 54px; padding: 6px 10px 0 0; }
+  }
+
+  .gallery-arrow:disabled,
+  .gallery-arrow[disabled] {
+    opacity: 0.2;
+    cursor: default;
+    pointer-events: none;
   }
 </style>
 </head>
@@ -861,6 +868,17 @@
     row.querySelectorAll('.gallery-item').forEach(it => {
       it.addEventListener('click', e => { if (dragged) { e.stopPropagation(); e.preventDefault(); dragged = false; } }, true);
     });
+
+    // Arrow disabled state — update on scroll and init
+    function updateArrows() {
+      const atStart = row.scrollLeft <= 2;
+      const atEnd = row.scrollLeft + row.clientWidth >= row.scrollWidth - 2;
+      if (left)  { left.disabled  = atStart; }
+      if (right) { right.disabled = atEnd;   }
+    }
+    row.addEventListener('scroll', updateArrows, { passive: true });
+    // Init after a short delay so layout is settled
+    setTimeout(updateArrows, 100);
   });
 
   // === Lightbox with captions ===

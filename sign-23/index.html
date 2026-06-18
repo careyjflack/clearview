@@ -52,7 +52,7 @@
   .gallery-row{display:flex;gap:8px;overflow-x:scroll;overflow-y:hidden;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scroll-behavior:smooth;padding-bottom:4px;cursor:grab;scrollbar-width:none;-ms-overflow-style:none;}
   .gallery-row::-webkit-scrollbar{display:none;}
   .gallery-row:active{cursor:grabbing;}
-  .gallery-item{flex:0 0 auto;height:360px;min-width:260px;max-width:540px;overflow:hidden;border-radius:4px;cursor:pointer;scroll-snap-align:start;transition:transform .25s,box-shadow .25s;background:var(--paper-soft);}
+  .gallery-item{flex:0 0 auto;height:432px;min-width:260px;max-width:540px;overflow:hidden;border-radius:4px;cursor:pointer;scroll-snap-align:start;transition:transform .25s,box-shadow .25s;background:var(--paper-soft);}
   .gallery-item:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(10,10,10,.18);}
   .gallery-item img{height:100%;width:100%;object-fit:cover;object-position:center center;display:block;filter:sepia(.3) contrast(1.04) brightness(.96);transition:transform .4s;pointer-events:none;}
   .gallery-item:hover img{transform:scale(1.04);}
@@ -95,7 +95,7 @@
     .hero{padding:32px 24px 24px;}
     .topbar{padding:12px 24px;}
     .business-name{font-size:26px;}
-    .gallery-item{height:260px;}
+    .gallery-item{height:312px;}
     .gallery-arrow{width:36px;height:36px;font-size:18px;}
     .biz-divider{padding-left:24px;padding-right:24px;}
   }
@@ -110,7 +110,7 @@
     .business-name{font-size:22px;}
     .biz-record{grid-template-columns:1fr 1fr;}
     .biz-record-item{border-right:none;border-bottom:1px solid var(--rule);}
-    .gallery-item{height:220px;}
+    .gallery-item{height:264px;}
     .gallery-hint{font-size:10px;}
     .catalog{padding:20px 16px;}
     .catalog-value{font-size:17px;}
@@ -118,6 +118,13 @@
     .prose{font-size:14px;}
     .prose .lead{font-size:22px;}
     .prose .lead::first-letter{font-size:54px;padding:6px 10px 0 0;}
+  }
+
+  .gallery-arrow:disabled,
+  .gallery-arrow[disabled] {
+    opacity: 0.2;
+    cursor: default;
+    pointer-events: none;
   }
 </style>
 </head>
@@ -160,8 +167,8 @@
           <div class="gallery-item archival" data-src="../sources/sign23_clearview_p5-1.png" data-title="Pages from Clearview history booklet, p. 5" data-date="Undated" data-source="Project archive" data-caption="Pages from Clearview history booklet, p. 5"><img src="../sources/sign23_clearview_p5-1.png" alt="Pages from Clearview history booklet, p. 5" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'"></div>
           <div class="gallery-item archival" data-src="../sources/The_Okemah_Ledger_1909_08_26_4-1.png" data-title="The Okemah Ledger, August 26, 1909" data-date="August 26, 1909" data-source="The Okemah Ledger · project archive" data-caption="The Okemah Ledger, August 26, 1909"><img src="../sources/The_Okemah_Ledger_1909_08_26_4-1.png" alt="The Okemah Ledger, August 26, 1909" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'"></div>
           <div class="gallery-item archival" data-src="../sources/The_Shawnee_Daily_Herald_1911_10_29_2-1.png" data-title="The Shawnee Daily Herald, October 29, 1911" data-date="October 29, 1911" data-source="The Shawnee Daily Herald · project archive" data-caption="The Shawnee Daily Herald, October 29, 1911"><img src="../sources/The_Shawnee_Daily_Herald_1911_10_29_2-1.png" alt="The Shawnee Daily Herald, October 29, 1911" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'"></div>
-          <div class="gallery-item archival" data-src="../sources/new2_023_Ollie-Walker-Ft-Smith-_-Western-Railroad-workers-cropped.jpg" data-title="Ollie Walker & Ft. Smith & Western Railroad workers" data-date="1921" data-source="Family & community archive" data-caption="Railroad Section: Ollie Walker Sr., Walter McBrayer, Milton Marind, Edd McBrayer, Walter Galbrath and Baby Mary. Pictured 1921 — Ollie Lee Walker Sr. (center) and Ollie Leonard Walker (baby)."><img src="../sources/new2_023_Ollie-Walker-Ft-Smith-_-Western-Railroad-workers-cropped.jpg" alt="Ollie Walker & Ft. Smith & Western Railroad workers" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'"></div>
-          <div class="gallery-item archival" data-src="../sources/new2_023_ft_smith_railroad.jpg" data-title="Ft. Smith & Western Railroad" data-date="Undated" data-source="Family & community archive" data-caption="Ft. Smith & Western Railroad."><img src="../sources/new2_023_ft_smith_railroad.jpg" alt="Ft. Smith & Western Railroad" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'"></div>
+          <div class="gallery-item archival" data-src="../sources/new2_023_railroad__2_.jpg" data-title="Clearview railroad" data-date="Undated" data-source="Family & community archive" data-caption="Clearview railroad."><img src="../sources/new2_023_railroad__2_.jpg" alt="Clearview railroad" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'"></div>
+          <div class="gallery-item archival" data-src="../sources/new2_023_railroad.jpg" data-title="Clearview railroad" data-date="Undated" data-source="Family & community archive" data-caption="Clearview railroad."><img src="../sources/new2_023_railroad.jpg" alt="Clearview railroad" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'"></div>
           <div class="gallery-item archival" data-src="../sources/new2_023_train_depot.jpg" data-title="Clearview train depot" data-date="Undated" data-source="Family & community archive" data-caption="Clearview train depot."><img src="../sources/new2_023_train_depot.jpg" alt="Clearview train depot" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'"></div>
         </div></div>
         <button class="gallery-arrow gallery-arrow-right" aria-label="Scroll right">›</button>
@@ -213,7 +220,6 @@
         </div></div>
         <button class="gallery-arrow gallery-arrow-right" aria-label="Scroll right">›</button>
       </div>
-      <div class="gallery-hint">Click photos to enlarge · Use arrows or drag to browse</div>
     </div>
     <div class="sources-inline page-end">
       <section class="sub-section sources-constrained">

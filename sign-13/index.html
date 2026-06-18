@@ -485,7 +485,7 @@
 
   .gallery-item {
     flex: 0 0 auto;
-    height: 360px;
+    height: 432px;
     min-width: 260px;   /* Even very tall portraits show at readable width */
     max-width: 600px;   /* Landscape images don't go too wide */
     overflow: hidden;
@@ -690,7 +690,7 @@
     .hero { padding: 32px 24px 24px; }
     .topbar { padding: 12px 24px; }
     .business-name { font-size: 26px; }
-    .gallery-item { height: 260px; }
+    .gallery-item { height: 312px; }
     .gallery-arrow { width: 36px; height: 36px; font-size: 18px; }
     .lightbox-nav { width: 40px; height: 40px; font-size: 20px; }
     .lightbox-title { font-size: 18px; }
@@ -708,7 +708,7 @@
     .layout { padding: 24px 16px 48px; gap: 32px; }
     .business-name { font-size: 22px; }
     .business-details { padding: 14px 16px; }
-    .gallery-item { height: 220px; }
+    .gallery-item { height: 264px; }
     .gallery-hint { font-size: 10px; }
     .sub-head { font-size: 10px; }
     .source-entry { padding: 12px 14px; }
@@ -725,6 +725,13 @@
     .prose { font-size: 14px; }
     .prose .lead { font-size: 22px; }
     .prose .lead::first-letter { font-size: 54px; padding: 6px 10px 0 0; }
+  }
+
+  .gallery-arrow:disabled,
+  .gallery-arrow[disabled] {
+    opacity: 0.2;
+    cursor: default;
+    pointer-events: none;
   }
 </style>
 </head>
@@ -798,72 +805,6 @@
           <div class="gallery-item archival" data-src="../sources/The_Patriarch_1912_06_27_8-1.png" data-title="The Patriarch, June 27, 1912" data-date="June 27, 1912" data-source="The Patriarch · project archive" data-caption="Clipping from <em>The Patriarch</em>, June 27, 1912.">
             <img src="../sources/The_Patriarch_1912_06_27_8-1.png" alt="The Patriarch, June 27, 1912" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
           </div>
-          <div class="gallery-item archival" data-src="../sources/The_Patriarch_1912_07_11_1-1.png" data-title="The Patriarch, July 11, 1912" data-date="July 11, 1912" data-source="The Patriarch · project archive" data-caption="Clipping from <em>The Patriarch</em>, July 11, 1912.">
-            <img src="../sources/The_Patriarch_1912_07_11_1-1.png" alt="The Patriarch, July 11, 1912" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
-          </div>
-          <div class="gallery-item archival" data-src="../sources/The_Patriarch_1912_07_18_1-1.png" data-title="The Patriarch, July 18, 1912" data-date="July 18, 1912" data-source="The Patriarch · project archive" data-caption="Clipping from <em>The Patriarch</em>, July 18, 1912.">
-            <img src="../sources/The_Patriarch_1912_07_18_1-1.png" alt="The Patriarch, July 18, 1912" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
-          </div>
-          <div class="gallery-item archival" data-src="../sources/The_Patriarch_1913_08_09_1-1.png" data-title="The Patriarch, August 9, 1913" data-date="August 9, 1913" data-source="The Patriarch · project archive" data-caption="Clipping from <em>The Patriarch</em>, August 9, 1913.">
-            <img src="../sources/The_Patriarch_1913_08_09_1-1.png" alt="The Patriarch, August 9, 1913" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
-          </div>
-          <div class="gallery-item archival" data-src="../sources/The_Patriarch_1913_08_23_3-1.png" data-title="The Patriarch, August 23, 1913" data-date="August 23, 1913" data-source="The Patriarch · project archive" data-caption="Clipping from <em>The Patriarch</em>, August 23, 1913.">
-            <img src="../sources/The_Patriarch_1913_08_23_3-1.png" alt="The Patriarch, August 23, 1913" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
-          </div>
-          <div class="gallery-item archival" data-src="../sources/The_Patriarch_1913_09_06_3-1.png" data-title="The Patriarch, September 6, 1913" data-date="September 6, 1913" data-source="The Patriarch · project archive" data-caption="Clipping from <em>The Patriarch</em>, September 6, 1913.">
-            <img src="../sources/The_Patriarch_1913_09_06_3-1.png" alt="The Patriarch, September 6, 1913" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
-          </div>
-          <div class="gallery-item archival" data-src="../sources/The_Patriarch_1913_10_25_1-1.png" data-title="The Patriarch, October 25, 1913" data-date="October 25, 1913" data-source="The Patriarch · project archive" data-caption="Clipping from <em>The Patriarch</em>, October 25, 1913.">
-            <img src="../sources/The_Patriarch_1913_10_25_1-1.png" alt="The Patriarch, October 25, 1913" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
-          </div>
-          <div class="gallery-item archival" data-src="../sources/The_Patriarch_1913_11_15_1-1.png" data-title="The Patriarch, November 15, 1913" data-date="November 15, 1913" data-source="The Patriarch · project archive" data-caption="Clipping from <em>The Patriarch</em>, November 15, 1913.">
-            <img src="../sources/The_Patriarch_1913_11_15_1-1.png" alt="The Patriarch, November 15, 1913" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
-          </div>
-          <div class="gallery-item archival" data-src="../sources/The_Okemah_Ledger_1912_03_07_8-1.png" data-title="The Okemah Ledger, March 7, 1912" data-date="March 7, 1912" data-source="The Okemah Ledger · project archive" data-caption="Clipping from <em>The Okemah Ledger</em>, March 7, 1912.">
-            <img src="../sources/The_Okemah_Ledger_1912_03_07_8-1.png" alt="The Okemah Ledger, March 7, 1912" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
-          </div>
-          <div class="gallery-item archival" data-src="../sources/The_Okemah_Ledger_1913_12_04_7-1.png" data-title="The Okemah Ledger, December 4, 1913" data-date="December 4, 1913" data-source="The Okemah Ledger · project archive" data-caption="Clipping from <em>The Okemah Ledger</em>, December 4, 1913.">
-            <img src="../sources/The_Okemah_Ledger_1913_12_04_7-1.png" alt="The Okemah Ledger, December 4, 1913" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
-          </div>
-          <div class="gallery-item archival" data-src="../sources/The_Okemah_Ledger_1914_01_15_2-1.png" data-title="The Okemah Ledger, January 15, 1914" data-date="January 15, 1914" data-source="The Okemah Ledger · project archive" data-caption="Clipping from <em>The Okemah Ledger</em>, January 15, 1914.">
-            <img src="../sources/The_Okemah_Ledger_1914_01_15_2-1.png" alt="The Okemah Ledger, January 15, 1914" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
-          </div>
-          <div class="gallery-item archival" data-src="../sources/The_Okemah_Ledger_1915_04_08_1-1.png" data-title="The Okemah Ledger, April 8, 1915" data-date="April 8, 1915" data-source="The Okemah Ledger · project archive" data-caption="Clipping from <em>The Okemah Ledger</em>, April 8, 1915.">
-            <img src="../sources/The_Okemah_Ledger_1915_04_08_1-1.png" alt="The Okemah Ledger, April 8, 1915" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
-          </div>
-          <div class="gallery-item archival" data-src="../sources/The_Okemah_Ledger_1915_04_08_1_v2-1.png" data-title="The Okemah Ledger, April 8, 1915 (variant 2)" data-date="April 8, 1915" data-source="The Okemah Ledger · project archive" data-caption="Second clipping from <em>The Okemah Ledger</em>, April 8, 1915.">
-            <img src="../sources/The_Okemah_Ledger_1915_04_08_1_v2-1.png" alt="The Okemah Ledger, April 8, 1915 (variant 2)" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
-          </div>
-          <div class="gallery-item archival" data-src="../sources/The_Okemah_Ledger_1915_06_24_2-1.png" data-title="The Okemah Ledger, June 24, 1915" data-date="June 24, 1915" data-source="The Okemah Ledger · project archive" data-caption="Clipping from <em>The Okemah Ledger</em>, June 24, 1915.">
-            <img src="../sources/The_Okemah_Ledger_1915_06_24_2-1.png" alt="The Okemah Ledger, June 24, 1915" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
-          </div>
-          <div class="gallery-item archival" data-src="../sources/The_Okemah_Ledger_1917_11_08_5-1.png" data-title="The Okemah Ledger, November 8, 1917" data-date="November 8, 1917" data-source="The Okemah Ledger · project archive" data-caption="Clipping from <em>The Okemah Ledger</em>, November 8, 1917.">
-            <img src="../sources/The_Okemah_Ledger_1917_11_08_5-1.png" alt="The Okemah Ledger, November 8, 1917" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
-          </div>
-          <div class="gallery-item archival" data-src="../sources/The_Okemah_Ledger_1920_03_25_3-1.png" data-title="The Okemah Ledger, March 25, 1920" data-date="March 25, 1920" data-source="The Okemah Ledger · project archive" data-caption="Clipping from <em>The Okemah Ledger</em>, March 25, 1920.">
-            <img src="../sources/The_Okemah_Ledger_1920_03_25_3-1.png" alt="The Okemah Ledger, March 25, 1920" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
-          </div>
-          <div class="gallery-item archival" data-src="../sources/The_Okemah_Ledger_1920_04_01_3-1.png" data-title="The Okemah Ledger, April 1, 1920" data-date="April 1, 1920" data-source="The Okemah Ledger · project archive" data-caption="Clipping from <em>The Okemah Ledger</em>, April 1, 1920.">
-            <img src="../sources/The_Okemah_Ledger_1920_04_01_3-1.png" alt="The Okemah Ledger, April 1, 1920" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
-          </div>
-          <div class="gallery-item archival" data-src="../sources/The_Okemah_Ledger_1920_09_30_2-1.png" data-title="The Okemah Ledger, September 30, 1920" data-date="September 30, 1920" data-source="The Okemah Ledger · project archive" data-caption="Clipping from <em>The Okemah Ledger</em>, September 30, 1920.">
-            <img src="../sources/The_Okemah_Ledger_1920_09_30_2-1.png" alt="The Okemah Ledger, September 30, 1920" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
-          </div>
-          <div class="gallery-item archival" data-src="../sources/The_Okemah_Ledger_1921_02_10_2-1.png" data-title="The Okemah Ledger, February 10, 1921" data-date="February 10, 1921" data-source="The Okemah Ledger · project archive" data-caption="Clipping from <em>The Okemah Ledger</em>, February 10, 1921.">
-            <img src="../sources/The_Okemah_Ledger_1921_02_10_2-1.png" alt="The Okemah Ledger, February 10, 1921" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
-          </div>
-          <div class="gallery-item archival" data-src="../sources/The_Okemah_Ledger_1924_05_01_8-1.png" data-title="The Okemah Ledger, May 1, 1924" data-date="May 1, 1924" data-source="The Okemah Ledger · project archive" data-caption="Clipping from <em>The Okemah Ledger</em>, May 1, 1924.">
-            <img src="../sources/The_Okemah_Ledger_1924_05_01_8-1.png" alt="The Okemah Ledger, May 1, 1924" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
-          </div>
-          <div class="gallery-item archival" data-src="../sources/Okemah_News_Leader_1946_05_02_2-1.png" data-title="Okemah News Leader, May 2, 1946" data-date="May 2, 1946" data-source="Okemah News Leader · project archive" data-caption="Clipping from the <em>Okemah News Leader</em>, May 2, 1946.">
-            <img src="../sources/Okemah_News_Leader_1946_05_02_2-1.png" alt="Okemah News Leader, May 2, 1946" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
-          </div>
-          <div class="gallery-item archival" data-src="../sources/The_Okfuskee_County_News_1946_05_02_2-1.png" data-title="Okfuskee County News, May 2, 1946" data-date="May 2, 1946" data-source="Okfuskee County News · project archive" data-caption="Clipping from the <em>Okfuskee County News</em>, May 2, 1946.">
-            <img src="../sources/The_Okfuskee_County_News_1946_05_02_2-1.png" alt="Okfuskee County News, May 2, 1946" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
-          </div>
-          <div class="gallery-item archival" data-src="../sources/Weleetka_American_1922_03_23_1-1.png" data-title="Weleetka American, March 23, 1922" data-date="March 23, 1922" data-source="Weleetka American · project archive" data-caption="Clipping from the <em>Weleetka American</em>, March 23, 1922.">
-            <img src="../sources/Weleetka_American_1922_03_23_1-1.png" alt="Weleetka American, March 23, 1922" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
-          </div>
             </div>
           </div>
           <button class="gallery-arrow gallery-arrow-right" aria-label="Scroll right">›</button>
@@ -920,6 +861,17 @@
     row.querySelectorAll('.gallery-item').forEach(it => {
       it.addEventListener('click', e => { if (dragged) { e.stopPropagation(); e.preventDefault(); dragged = false; } }, true);
     });
+
+    // Arrow disabled state — update on scroll and init
+    function updateArrows() {
+      const atStart = row.scrollLeft <= 2;
+      const atEnd = row.scrollLeft + row.clientWidth >= row.scrollWidth - 2;
+      if (left)  { left.disabled  = atStart; }
+      if (right) { right.disabled = atEnd;   }
+    }
+    row.addEventListener('scroll', updateArrows, { passive: true });
+    // Init after a short delay so layout is settled
+    setTimeout(updateArrows, 100);
   });
 
   // === Lightbox with captions ===
