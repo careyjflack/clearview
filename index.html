@@ -39,18 +39,8 @@
     flex-direction: column;
   }
 
-  body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: 1000;
-    opacity: 0.18;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.35 0 0 0 0 0.25 0 0 0 0 0.15 0 0 0 0.15 0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
-  }
-
   header {
-    padding: 14px 28px;
+    padding: 16px 32px;
     border-bottom: 1px solid var(--rule);
     background: var(--paper);
     position: relative;
@@ -64,7 +54,7 @@
 
   .masthead {
     font-family: 'Instrument Serif', serif;
-    font-size: 28px;
+    font-size: 30px;
     font-weight: 400;
     line-height: 1;
     letter-spacing: -0.01em;
@@ -86,28 +76,33 @@
     color: var(--ink-soft);
     text-align: right;
     line-height: 1.4;
+    white-space: nowrap;
   }
-
-  .meta strong { color: var(--ink); font-weight: 500; }
 
   main {
     flex: 1;
-    display: grid;
-    grid-template-columns: 360px 1fr;
+    display: flex;
+    flex-direction: column;
     min-height: 0;
   }
 
-  .sidebar {
-    padding: 32px 30px;
-    border-right: 1px solid var(--rule);
-    overflow-y: auto;
+  .site-footer {
+    display: grid;
+    grid-template-columns: minmax(300px, 1fr) minmax(0, 1.55fr);
+    border-top: 1px solid var(--rule);
     background: var(--paper);
+    flex-shrink: 0;
   }
 
-  .sidebar-section + .sidebar-section {
-    margin-top: 24px;
-    padding-top: 24px;
-    border-top: 1px solid var(--rule);
+  .footer-intro {
+    padding: 28px 32px;
+    border-right: 1px solid var(--rule);
+  }
+
+  .footer-index {
+    padding: 28px 32px 24px;
+    min-width: 0;
+    overflow: hidden;
   }
 
   .section-label {
@@ -129,16 +124,17 @@
     padding: 0;
     font-size: 11px;
     font-weight: 400;
+    letter-spacing: 0.08em;
   }
 
   .intro {
     font-family: 'Instrument Serif', serif;
-    font-size: 36px;
+    font-size: 32px;
     font-weight: 400;
-    line-height: 1.1;
+    line-height: 1.12;
     letter-spacing: -0.01em;
     color: var(--ink);
-    margin-bottom: 20px;
+    margin-bottom: 16px;
   }
 
   .intro em {
@@ -156,56 +152,59 @@
     letter-spacing: 0;
   }
 
-  .body-copy + .body-copy { margin-top: 12px; }
-
-  .hint {
-    margin-top: 18px;
-    padding: 14px 16px;
-    background: var(--butter);
-    border-radius: 2px;
-    font-family: 'Inter', sans-serif;
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--ink);
-    line-height: 1.5;
+  .sign-carousel {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    padding-bottom: 6px;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: var(--rule) transparent;
   }
 
-  .sign-list { list-style: none; }
-
-  .sign-list li {
-    padding: 12px 0 12px 14px;
-    margin-bottom: 2px;
-    background: transparent;
-    border-left: 2px solid transparent;
-    cursor: pointer;
-    transition: all 0.18s ease;
-    display: grid;
-    grid-template-columns: 44px 1fr;
-    gap: 14px;
-    align-items: center;
+  .sign-carousel::-webkit-scrollbar {
+    height: 6px;
   }
 
-  .sign-list li:hover {
-    border-left-color: var(--ink);
+  .sign-carousel::-webkit-scrollbar-thumb {
+    background: var(--rule);
+    border-radius: 3px;
+  }
+
+  .sign-card {
+    flex: 0 0 168px;
+    padding: 18px 14px 16px;
+    border: 1px solid var(--rule);
+    border-radius: 8px;
     background: var(--paper-soft);
+    cursor: pointer;
+    transition: border-color 0.18s ease, background 0.18s ease, box-shadow 0.18s ease;
+    text-align: center;
   }
 
-  .sign-list li.active {
-    border-left-color: var(--ink);
+  .sign-card:hover {
+    border-color: var(--ink);
+    box-shadow: 0 2px 8px rgba(26, 14, 8, 0.06);
+  }
+
+  .sign-card.active {
+    border-color: var(--ink);
     background: var(--butter);
+    box-shadow: 0 2px 10px rgba(26, 14, 8, 0.08);
   }
 
-  .sign-list li.active .sign-num { color: var(--ink); font-weight: 600; }
-  .sign-list li.active .sign-dates { color: var(--ink-soft); }
+  .sign-card.active .sign-num { color: var(--ink); font-weight: 600; }
+  .sign-card.active .sign-dates { color: var(--ink-soft); }
 
   .sign-thumb {
-    width: 44px;
-    height: 44px;
+    width: 52px;
+    height: 52px;
     border-radius: 50%;
     background: var(--paper-deep);
     border: 2px solid var(--ink);
     overflow: hidden;
-    flex-shrink: 0;
+    margin: 0 auto 12px;
   }
 
   .sign-thumb img {
@@ -214,8 +213,6 @@
     object-fit: cover;
     display: block;
   }
-
-  .sign-text { min-width: 0; }
 
   .sign-num {
     font-family: 'Inter', sans-serif;
@@ -228,14 +225,14 @@
 
   .sign-name {
     font-family: 'Instrument Serif', serif;
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 400;
     color: var(--ink);
-    margin-top: 2px;
+    margin-top: 6px;
     line-height: 1.2;
     letter-spacing: -0.005em;
     display: -webkit-box;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -245,46 +242,35 @@
     font-family: 'Inter', sans-serif;
     font-size: 11px;
     color: var(--ink-faded);
-    margin-top: 3px;
+    margin-top: 6px;
     letter-spacing: 0;
   }
 
-  /* See more button */
-  .see-more {
-    display: block;
+  .map-wrap {
+    flex: 1;
     width: 100%;
-    margin-top: 18px;
-    padding: 14px 16px;
-    background: var(--ink);
-    border: none;
-    color: var(--paper);
-    font-family: 'Inter', sans-serif;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: background 0.2s ease;
-    text-align: center;
-    border-radius: 2px;
+    min-height: 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
   }
 
-  .see-more:hover {
-    background: var(--dirt);
+  .map-stage {
+    flex: 1;
+    width: 100%;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
   }
-
-  .sign-list li.hidden-extra { display: none; }
-  .sign-list.expanded li.hidden-extra { display: grid; }
 
   #map {
-    height: 100%;
+    flex: 1;
     width: 100%;
-    min-height: 400px;
+    height: 100%;
+    min-height: 0;
     background: var(--paper-deep);
     position: relative;
   }
-
-  main > #map { height: 100%; }
 
   /* Photo thumbnail markers */
   .clearview-marker {
@@ -325,6 +311,10 @@
     opacity: 1 !important;
     -webkit-mask-image: none !important;
     mask-image: none !important;
+  }
+
+  .leaflet-popup-pane {
+    z-index: 700;
   }
 
   .leaflet-popup-content-wrapper {
@@ -505,81 +495,189 @@
     font-family: 'JetBrains Mono', monospace !important;
   }
 
-  /* Mobile: map at top, scrollable content below */
+  /* Mobile: map fills viewport; footer fixed at bottom like desktop */
   @media (max-width: 820px) {
-    html, body { overflow: auto; height: auto; }
-    body { display: block; }
-
-    header {
-      padding: 10px 16px;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 4px;
+    html, body {
+      height: auto;
+      min-height: 100%;
+      overflow-x: hidden;
+      overflow-y: auto;
     }
 
-    .masthead { font-size: 18px; white-space: normal; }
-    .meta { text-align: left; font-size: 9px; }
-
-    main {
+    body {
       display: flex;
       flex-direction: column;
-      height: auto;
+      min-height: 100%;
     }
 
-    #map {
-      height: 55vh;
-      min-height: 380px;
-      order: 1;
+    header {
+      padding: 12px 20px;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 6px;
       flex-shrink: 0;
     }
 
-    .sidebar {
-      order: 2;
-      border-right: none;
-      overflow-y: auto;         /* Allow scroll if list is long */
-      max-height: none;
-      padding: 24px 20px;
+    .masthead { font-size: 22px; white-space: normal; }
+    .meta { text-align: left; font-size: 9px; white-space: normal; }
+
+    main {
+      flex: 0 0 auto;
+      display: flex;
+      flex-direction: column;
+      overflow: visible;
     }
 
-    .sign-item {
-      padding: 10px 12px;
+    .map-wrap {
+      flex: 0 0 auto;
+      width: 100%;
+      padding: 6px 2px;
+      overflow: visible;
+      display: block;
+      position: relative;
+      z-index: 5;
     }
 
-    .sign-num { font-size: 9px; }
-    .sign-name { font-size: 16px; }
-    .sign-dates { font-size: 11px; }
+    .map-stage {
+      width: 100%;
+      display: block;
+      overflow: visible;
+    }
 
-    /* Popup narrower on small screens */
+    #map,
+    #map.leaflet-container {
+      width: 100%;
+      overflow: visible;
+    }
+
+    .leaflet-overlay-pane svg path {
+      shape-rendering: geometricPrecision;
+    }
+
+    .leaflet-popup-pane {
+      z-index: 1000;
+    }
+
     .leaflet-popup-content {
-      width: 240px !important;
+      width: min(190px, calc(100vw - 28px)) !important;
     }
 
-    .popup-name { font-size: 18px; }
+    .popup-image { height: 68px; }
+    .popup-name { font-size: 14px; margin: 2px 0 4px; }
+    .popup-body { padding: 8px 10px 10px; }
+    .popup-num { font-size: 9px; }
+    .popup-meta { font-size: 10px; margin-bottom: 8px; line-height: 1.4; }
+    .popup-link { font-size: 9px; padding: 7px 10px; letter-spacing: 0.12em; }
+    .leaflet-popup-content-wrapper { border-radius: 3px; }
+
+    .site-footer {
+      flex: 0 0 auto;
+      grid-template-columns: minmax(128px, 0.95fr) minmax(0, 1.45fr);
+    }
+
+    .footer-intro {
+      border-right: 1px solid var(--rule);
+      border-bottom: none;
+      padding: 9px 16px;
+      overflow-y: visible;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .footer-index {
+      padding: 9px 16px 7px;
+      min-width: 0;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .footer-index .section-label {
+      flex-shrink: 0;
+      margin-bottom: 8px;
+    }
+
+    .footer-intro .section-label {
+      margin-bottom: 8px;
+    }
+
+    .intro {
+      font-size: 18px;
+      line-height: 1.15;
+      margin-bottom: 10px;
+    }
+
+    .body-copy {
+      font-size: 11px;
+      line-height: 1.55;
+    }
+
+    .section-label {
+      font-size: 10px;
+      margin-bottom: 12px;
+    }
+
+    .sign-carousel {
+      flex: none;
+      align-items: flex-start;
+    }
+
+    .sign-card {
+      flex: 0 0 168px;
+      width: 168px;
+      height: 168px;
+      padding: 14px 12px 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .sign-thumb {
+      width: 52px;
+      height: 52px;
+      margin-bottom: 8px;
+      flex-shrink: 0;
+    }
+
+    .sign-name {
+      flex: 1;
+      font-size: 15px;
+      line-height: 1.15;
+      -webkit-line-clamp: 3;
+    }
+
+    .sign-dates {
+      flex-shrink: 0;
+      margin-top: 4px;
+    }
+
     .popup-meta { font-size: 11px; }
   }
 
   @media (max-width: 480px) {
-    header { padding: 8px 12px; }
-    .masthead { font-size: 15px; }
+    header { padding: 10px 16px; }
+    .masthead { font-size: 18px; }
 
-    .sidebar { padding: 16px; }
-
-    .sign-thumb {
-      width: 36px;
-      height: 36px;
+    .site-footer {
+      grid-template-columns: minmax(112px, 0.9fr) minmax(0, 1.5fr);
     }
 
-    .see-more {
-      font-size: 11px;
-      padding: 10px 16px;
+    .footer-intro,
+    .footer-index { padding: 7px 12px; }
+
+    .intro { font-size: 16px; }
+
+    .sign-card {
+      flex: 0 0 168px;
+      width: 168px;
+      height: 168px;
     }
 
     .leaflet-popup-content {
-      width: 200px !important;
+      width: min(180px, calc(100vw - 24px)) !important;
     }
 
-    .popup-name { font-size: 16px; }
-    .open-btn { font-size: 10px; padding: 10px 14px; }
+    .popup-image { height: 60px; }
+    .popup-name { font-size: 13px; }
   }
 </style>
 </head>
@@ -590,35 +688,32 @@
     clearview <em>historical</em> mapping project
   </div>
   <div class="meta">
-    <span><strong>Est. 1903</strong> · Okfuskee County, OK</span>
+    <span>Est. 1903 · Okfuskee County, OK</span>
   </div>
 </header>
 
 <main>
-  <aside class="sidebar">
-    <div class="sidebar-section">
+  <div class="map-wrap" id="mapWrap">
+    <div class="map-stage" id="mapStage">
+      <div id="map"></div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-intro">
       <div class="section-label">Introduction</div>
       <p class="intro">A record of the businesses and storefronts of one of Oklahoma's <em>All-Black towns</em>.</p>
       <p class="body-copy">Founded in 1903, Clearview was among more than fifty All-Black towns established in Indian and Oklahoma Territory. This project catalogs its main street establishments — the merchants, churches, schools, and halls that made the town.</p>
-      <div class="hint">↓ Click a pin on the map, or pick a business from the index below.</div>
     </div>
 
-    <div class="sidebar-section">
+    <div class="footer-index">
       <div class="section-label">
         Index of Businesses
         <span class="count" id="signCount">0</span>
       </div>
-      <ul class="sign-list" id="signList"></ul>
-      <button class="see-more" id="seeMoreBtn">Show all businesses</button>
+      <div class="sign-carousel" id="signList"></div>
     </div>
-
-    <div class="sidebar-section">
-      <div class="section-label">About the Survey</div>
-      <p class="body-copy">Compiled from oral histories, county records, the Oklahoma Historical Society, and on-the-ground photography. Contributions welcome.</p>
-    </div>
-  </aside>
-
-  <div id="map"></div>
+  </footer>
 </main>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
@@ -689,8 +784,8 @@
   const map = L.map('map', {
     attributionControl: false,
     center: center,
-    zoom: 16.2,
-    minZoom: 15.5,
+    zoom: 16.4,
+    minZoom: 14,
     maxZoom: 17.5,
     maxBounds: bounds,
     maxBoundsViscosity: 1.0,
@@ -736,10 +831,110 @@
   const colBounds = [W, ...NS, E]; // 11 values → 10 columns
   const HLat = 0.00018, HLng = 0.00018;
 
-  // Streets: full edge-to-edge
-  const ROAD = { color: 'rgba(255, 250, 235, 0.90)', lineJoin: 'round', lineCap: 'round', interactive: false };
-  EW.forEach(lat => L.polyline([[lat, W], [lat, E]], { ...ROAD, weight: 13 }).addTo(map));
-  NS.forEach(lng => L.polyline([[EW[0], lng], [EW[4], lng]], { ...ROAD, weight: 10 }).addTo(map));
+  const MAP_PAD = 48;
+  const MAP_PAD_X = Math.round(MAP_PAD * 0.5);
+  const MAP_BG_BOOST = 1.25;
+  const MOBILE_BREAK = 820;
+  const MOBILE_SIDE_PAD = 2;
+  const MOBILE_MAP_PAD_X = 3;
+  const MOBILE_MAP_PAD_Y = 3;
+
+  function isMobileView() {
+    return window.innerWidth <= MOBILE_BREAK;
+  }
+
+  function getViewBounds() {
+    const viewBounds = L.latLngBounds([EW[4], W], [EW[0], E]);
+    signs.forEach(sign => viewBounds.extend([sign.lat, sign.lng]));
+    return viewBounds;
+  }
+
+  function fitMapView() {
+    const viewBounds = getViewBounds();
+    const mapEl = document.getElementById('map');
+    const wrapEl = document.getElementById('mapWrap');
+    const stageEl = document.getElementById('mapStage');
+    const isMobile = window.innerWidth <= MOBILE_BREAK;
+
+    if (isMobile) {
+      mapEl.style.width = '';
+      mapEl.style.height = '';
+      stageEl.style.width = '';
+      stageEl.style.height = '';
+      stageEl.style.zoom = '';
+      wrapEl.style.height = '';
+
+      const padX = MOBILE_MAP_PAD_X;
+      const padY = MOBILE_MAP_PAD_Y;
+
+      // Tall provisional height so fitBounds is width-limited (wide grid).
+      mapEl.style.height = '2000px';
+      stageEl.style.height = '2000px';
+      map.invalidateSize();
+
+      map.fitBounds(viewBounds, {
+        paddingTopLeft: [padY, padX],
+        paddingBottomRight: [padY, padX],
+        animate: false,
+        maxZoom: 16.5
+      });
+
+      const sw = map.latLngToContainerPoint(viewBounds.getSouthWest());
+      const ne = map.latLngToContainerPoint(viewBounds.getNorthEast());
+      const targetH = Math.ceil(Math.abs(sw.y - ne.y) + padY * 2);
+
+      mapEl.style.height = targetH + 'px';
+      stageEl.style.height = targetH + 'px';
+      map.invalidateSize();
+
+      map.fitBounds(viewBounds, {
+        paddingTopLeft: [padY, padX],
+        paddingBottomRight: [padY, padX],
+        animate: false,
+        maxZoom: 16.5
+      });
+      updateRoadStyles();
+    } else {
+      mapEl.style.width = '';
+      mapEl.style.height = '';
+      stageEl.style.width = '';
+      stageEl.style.height = '';
+      stageEl.style.zoom = '';
+      wrapEl.style.height = '';
+
+      map.invalidateSize();
+      const padY = Math.round(MAP_PAD * MAP_BG_BOOST);
+      map.fitBounds(viewBounds, {
+        paddingTopLeft: [padY, MAP_PAD_X],
+        paddingBottomRight: [padY, MAP_PAD_X],
+        animate: false,
+        maxZoom: 16.5
+      });
+      updateRoadStyles();
+    }
+  }
+
+  function getRoadStyle(isEW) {
+    const mobile = isMobileView();
+    return {
+      color: 'rgba(255, 250, 235, 0.90)',
+      weight: mobile ? (isEW ? 8 : 6) : (isEW ? 13 : 10),
+      lineJoin: mobile ? 'miter' : 'round',
+      lineCap: mobile ? 'butt' : 'round',
+      interactive: false
+    };
+  }
+
+  const ewRoads = [];
+  const nsRoads = [];
+
+  function updateRoadStyles() {
+    ewRoads.forEach(layer => layer.setStyle(getRoadStyle(true)));
+    nsRoads.forEach(layer => layer.setStyle(getRoadStyle(false)));
+  }
+
+  EW.forEach(lat => ewRoads.push(L.polyline([[lat, W], [lat, E]], getRoadStyle(true)).addTo(map)));
+  NS.forEach(lng => nsRoads.push(L.polyline([[EW[0], lng], [EW[4], lng]], getRoadStyle(false)).addTo(map)));
 
   // ── Block numbers + block fills + railroad label (all in Leaflet SVG) ──
   // latLngToLayerPoint = same coord space the SVG uses → perfect placement
@@ -749,13 +944,24 @@
     [32, 31, 30, 29, 28, 27, 26, 25, 29, 30],
     [41, 42, 43, 44, 45, 46, 47, 48, 32, 31],
   ];
-  setTimeout(() => {
+
+  const railPts = [
+    [35.4010, -96.1868],
+    [35.3990, -96.1858],
+    [35.3969, -96.1829],
+    [35.3955, -96.1821],
+  ];
+
+  function redrawGridOverlay() {
     const svg = map.getPane('overlayPane').querySelector('svg');
     if (!svg) return;
     const ns = 'http://www.w3.org/2000/svg';
+    const existing = svg.querySelector('#cv-grid-overlay');
+    if (existing) existing.remove();
 
-    // 1. Block fills — exact background color so no visible "box", but rx/ry rounds
-    //    the corners where streets meet. Drawn AFTER roads → clips road at corners.
+    const overlay = document.createElementNS(ns, 'g');
+    overlay.setAttribute('id', 'cv-grid-overlay');
+
     const fills = document.createElementNS(ns, 'g');
     for (let r = 0; r < 4; r++) {
       for (let c = 0; c < 10; c++) {
@@ -768,27 +974,27 @@
         rect.setAttribute('height', Math.max(1, se.y - nw.y));
         rect.setAttribute('rx', '9');
         rect.setAttribute('ry', '9');
-        rect.setAttribute('fill',   '#f0e8cf'); // exact page background — invisible as a box
+        rect.setAttribute('fill',   '#f0e8cf');
         rect.setAttribute('stroke', 'none');
         fills.appendChild(rect);
       }
     }
-    svg.appendChild(fills); // AFTER roads → covers road lines inside blocks
+    overlay.appendChild(fills);
 
-    // 3. Railroad line — drawn AFTER fills so block fills don't cover it
+    const mobile = isMobileView();
+    const railDrawPts = mobile ? [railPts[0], railPts[railPts.length - 1]] : railPts;
     const railLine = document.createElementNS(ns, 'polyline');
-    railLine.setAttribute('points', railPts.map(([lat, lng]) => {
+    railLine.setAttribute('points', railDrawPts.map(([lat, lng]) => {
       const p = map.latLngToLayerPoint([lat, lng]);
       return `${p.x},${p.y}`;
     }).join(' '));
     railLine.setAttribute('stroke', 'rgba(255, 250, 235, 0.90)');
-    railLine.setAttribute('stroke-width', '10');
-    railLine.setAttribute('stroke-linecap', 'round');
-    railLine.setAttribute('stroke-linejoin', 'round');
+    railLine.setAttribute('stroke-width', mobile ? '6' : '10');
+    railLine.setAttribute('stroke-linecap', mobile ? 'butt' : 'round');
+    railLine.setAttribute('stroke-linejoin', mobile ? 'miter' : 'round');
     railLine.setAttribute('fill', 'none');
-    svg.appendChild(railLine);
+    overlay.appendChild(railLine);
 
-    // 2. Block numbers — black text on top of roads
     for (let r = 0; r < 4; r++) {
       for (let c = 0; c < 10; c++) {
         const num = BLOCK_NUMS[r][c];
@@ -807,12 +1013,10 @@
         t.setAttribute('font-size', '12');
         t.setAttribute('font-weight', '500');
         t.textContent = num;
-        svg.appendChild(t);
+        overlay.appendChild(t);
       }
     }
 
-    // 3. Railroad label — SVG text sitting exactly ON the railroad line midpoint
-    // Use the middle waypoint of the polyline as the visual center
     const railMid = map.latLngToLayerPoint([35.3980, -96.1843]);
     const rrLabel = document.createElementNS(ns, 'text');
     rrLabel.setAttribute('x', railMid.x);
@@ -825,11 +1029,12 @@
     rrLabel.setAttribute('font-style', 'italic');
     rrLabel.setAttribute('font-weight', '400');
     rrLabel.setAttribute('letter-spacing', '0.04em');
-    // rotate around the text's own center point
     rrLabel.setAttribute('transform', `rotate(50, ${railMid.x}, ${railMid.y})`);
     rrLabel.textContent = 'Ft. Smith & Western Railroad';
-    svg.appendChild(rrLabel);
-  }, 50);
+    overlay.appendChild(rrLabel);
+
+    svg.appendChild(overlay);
+  }
 
   // ── Street labels — one per street, centered ──────────────────────────
   const lngMid = (W + E) / 2;
@@ -849,19 +1054,20 @@
     });
 
   // ── Ft. Smith & Western Railroad — same visual weight as streets ──────
-  const railPts = [
-    [35.4010, -96.1868],  // upper-right corner of block 4 (Banneka × right edge col 4)
-    [35.3990, -96.1858],  // exactly halfway through block 22 (row 1 mid-height, col 5 center)
-    [35.3969, -96.1829],  // top-right corner of block 47 → tiny triangle at Cuney
-    [35.3955, -96.1821],  // near bottom of block 48, grazing block 32
-  ];
-  // Same weight and color as E-W avenues
-  // Railroad drawn as SVG inside setTimeout (after block fills) so it isn't covered
+  // Railroad drawn in redrawGridOverlay() so it stays aligned after resize
 
   // ── Business markers ─────────────────────────────────────────────────
 
   const signList = document.getElementById('signList');
-  const VISIBLE_COUNT = 8;
+
+  function setActiveCard(signId) {
+    document.querySelectorAll('.sign-card').forEach(card => card.classList.remove('active'));
+    const activeCard = document.querySelector(`[data-sign="${signId}"]`);
+    if (activeCard) {
+      activeCard.classList.add('active');
+      activeCard.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    }
+  }
 
   const PIN_LABELS = {
       '001': "Zenia Talton\u2019s Caf\u00e9 \u00b7 Lot 34",
@@ -923,7 +1129,7 @@
       '027': 'right',
     };
 
-  signs.forEach((sign, idx) => {
+  signs.forEach((sign) => {
     const customIcon = L.divIcon({
       className: 'clearview-marker-wrap',
       html: `<div class="clearview-marker"><img src="${sign.image}" alt="" loading="lazy" /></div>`,
@@ -957,15 +1163,34 @@
     // Default offset [0,0] → tip at pt.y-22, popup top at pt.y-22-POPUP_H
 
     function popupOffset(latlng) {
+      const isMobile = window.innerWidth <= MOBILE_BREAK;
       const pt      = map.latLngToContainerPoint(latlng);
       const size    = map.getSize();
-      const POPUP_H = 330;
-      const POPUP_W = 290;
-      const MARGIN  = 12;
-      const PIN_R   = 21;    // visual radius of the circular pin
-      const PA_Y    = -22;   // popupAnchor y (tip is this far above pin center)
+      const POPUP_H = isMobile ? 185 : 330;
+      const POPUP_W = isMobile ? Math.min(190, size.x - 28) : 290;
+      const MARGIN  = isMobile ? 8 : 12;
+      const PIN_R   = 21;
+      const PA_Y    = -22;
 
-      // With offset.y = 0: popup top = pt.y + PA_Y - POPUP_H
+      if (isMobile) {
+        const useRight = pt.x < size.x / 2;
+        const xDir = useRight ? 1 : -1;
+        let x = xDir * (PIN_R + POPUP_W / 2 + 4);
+        let y = -PA_Y + POPUP_H / 2;
+
+        const popupLeft = pt.x + x - POPUP_W / 2;
+        const popupRight = popupLeft + POPUP_W;
+        if (popupRight > size.x - MARGIN) x -= popupRight - (size.x - MARGIN);
+        if (popupLeft < MARGIN) x += MARGIN - popupLeft;
+
+        const popupTop = pt.y + PA_Y + y - POPUP_H;
+        const popupBottom = popupTop + POPUP_H;
+        if (popupTop < MARGIN) y += MARGIN - popupTop;
+        if (popupBottom > size.y - MARGIN) y -= popupBottom - (size.y - MARGIN);
+
+        return L.point(Math.round(x), Math.round(y));
+      }
+
       const defaultPopupTop = pt.y + PA_Y - POPUP_H;
 
       if (defaultPopupTop < MARGIN) {
@@ -998,31 +1223,38 @@
 
     marker.bindPopup(popupHtml, {
       offset: popupOffset([sign.lat, sign.lng]),
-      autoPan: false
+      autoPan: false,
+      autoPanPadding: [12, 12]
     });
 
     let _savedCenter = null;
     let _savedZoom = null;
     marker.on('click', () => {
-      // Recompute offset fresh each click (handles pan/zoom changes)
+      setActiveCard(sign.id);
+      const isMobileClick = window.innerWidth <= MOBILE_BREAK;
       const fresh = popupOffset([sign.lat, sign.lng]);
       marker.getPopup().options.offset = fresh;
-      // Save BEFORE autoPan moves the map
-      _savedCenter = map.getCenter();
-      _savedZoom = map.getZoom();
+      marker.getPopup().options.autoPan = isMobileClick;
+      if (!isMobileClick) {
+        _savedCenter = map.getCenter();
+        _savedZoom = map.getZoom();
+      }
 
       // After popup opens, toggle tip visibility based on direction
       setTimeout(() => {
-        const pt   = map.latLngToContainerPoint([sign.lat, sign.lng]);
-        const size = map.getSize();
-        const POPUP_H = 330;
-        const PIN_R   = 21;
-        const MARGIN  = 16;
-        const openedBeside = (pt.y - PIN_R - POPUP_H) < MARGIN;
+        const isMobilePopup = window.innerWidth <= MOBILE_BREAK;
         const popupEl = marker.getPopup()._container;
         if (popupEl) {
           const tip = popupEl.querySelector('.leaflet-popup-tip-container');
-          if (tip) tip.style.display = openedBeside ? 'none' : '';
+          if (tip) tip.style.display = isMobilePopup ? 'none' : '';
+          if (!isMobilePopup) {
+            const pt   = map.latLngToContainerPoint([sign.lat, sign.lng]);
+            const POPUP_H = 330;
+            const PIN_R   = 21;
+            const MARGIN  = 16;
+            const openedBeside = (pt.y - PIN_R - POPUP_H) < MARGIN;
+            if (tip) tip.style.display = openedBeside ? 'none' : '';
+          }
         }
       }, 10);
     });
@@ -1036,57 +1268,45 @@
       }
     });
 
-    marker.on('click', () => {
-      document.querySelectorAll('.sign-list li').forEach(li => li.classList.remove('active'));
-      const activeLi = document.querySelector(`[data-sign="${sign.id}"]`);
-      if (activeLi) activeLi.classList.add('active');
-    });
-
-    const li = document.createElement('li');
-    li.dataset.sign = sign.id;
-    if (idx >= VISIBLE_COUNT) li.classList.add('hidden-extra');
-    li.innerHTML = `
+    const card = document.createElement('div');
+    card.className = 'sign-card';
+    card.dataset.sign = sign.id;
+    card.innerHTML = `
       <div class="sign-thumb"><img src="${sign.image}" alt="" loading="lazy" /></div>
-      <div class="sign-text">
-        <div class="sign-num">№ ${sign.id}</div>
-        <div class="sign-name">${sign.name}</div>
-        <div class="sign-dates">${sign.dates}</div>
-      </div>
+      <div class="sign-num">№ ${sign.id}</div>
+      <div class="sign-name">${sign.name}</div>
+      <div class="sign-dates">${sign.dates}</div>
     `;
-    li.addEventListener('click', () => {
-      document.querySelectorAll('.sign-list li').forEach(el => el.classList.remove('active'));
-      li.classList.add('active');
+    card.addEventListener('click', () => {
+      setActiveCard(sign.id);
       marker.openPopup();
-
-      if (window.innerWidth <= 820) {
-        document.getElementById('map').scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
     });
-    signList.appendChild(li);
+    signList.appendChild(card);
   });
 
   document.getElementById('signCount').textContent = signs.length;
 
-  // See more / see less toggle
-  const seeMoreBtn = document.getElementById('seeMoreBtn');
-  const hiddenCount = signs.length - VISIBLE_COUNT;
-  if (hiddenCount > 0) {
-    seeMoreBtn.textContent = `Show all ${signs.length} businesses (+${hiddenCount})`;
-    seeMoreBtn.addEventListener('click', () => {
-      const expanded = signList.classList.toggle('expanded');
-      seeMoreBtn.textContent = expanded
-        ? 'Show fewer'
-        : `Show all ${signs.length} businesses (+${hiddenCount})`;
-    });
-  } else {
-    seeMoreBtn.style.display = 'none';
-  }
-
   // Force Leaflet to recalculate map size after the DOM has fully painted.
   // Fixes the common "blank gray box" issue inside flex/grid containers.
-  setTimeout(() => map.invalidateSize(), 0);
-  window.addEventListener('load', () => map.invalidateSize());
-  window.addEventListener('resize', () => map.invalidateSize());
+  let layoutTimer;
+  let layoutBusy = false;
+  function refreshMapLayout() {
+    clearTimeout(layoutTimer);
+    layoutTimer = setTimeout(() => {
+      if (layoutBusy) return;
+      layoutBusy = true;
+      fitMapView();
+      redrawGridOverlay();
+      layoutBusy = false;
+    }, 50);
+  }
+  setTimeout(refreshMapLayout, 0);
+  window.addEventListener('load', refreshMapLayout);
+  window.addEventListener('resize', refreshMapLayout);
+  window.addEventListener('orientationchange', () => setTimeout(refreshMapLayout, 150));
+  if (window.ResizeObserver) {
+    new ResizeObserver(refreshMapLayout).observe(document.getElementById('mapWrap'));
+  }
 
   }); // end whenLeafletReady
 </script>
