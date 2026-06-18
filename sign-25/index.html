@@ -52,7 +52,7 @@
   .gallery-row{display:flex;gap:8px;overflow-x:scroll;overflow-y:hidden;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scroll-behavior:smooth;padding-bottom:4px;cursor:grab;scrollbar-width:none;-ms-overflow-style:none;}
   .gallery-row::-webkit-scrollbar{display:none;}
   .gallery-row:active{cursor:grabbing;}
-  .gallery-item{flex:0 0 auto;height:360px;min-width:260px;max-width:540px;overflow:hidden;border-radius:4px;cursor:pointer;scroll-snap-align:start;transition:transform .25s,box-shadow .25s;background:var(--paper-soft);}
+  .gallery-item{flex:0 0 auto;height:432px;min-width:260px;max-width:540px;overflow:hidden;border-radius:4px;cursor:pointer;scroll-snap-align:start;transition:transform .25s,box-shadow .25s;background:var(--paper-soft);}
   .gallery-item:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(10,10,10,.18);}
   .gallery-item img{height:100%;width:100%;object-fit:cover;object-position:center center;display:block;filter:sepia(.3) contrast(1.04) brightness(.96);transition:transform .4s;pointer-events:none;}
   .gallery-item:hover img{transform:scale(1.04);}
@@ -95,7 +95,7 @@
     .hero{padding:32px 24px 24px;}
     .topbar{padding:12px 24px;}
     .business-name{font-size:26px;}
-    .gallery-item{height:260px;}
+    .gallery-item{height:312px;}
     .gallery-arrow{width:36px;height:36px;font-size:18px;}
     .biz-divider{padding-left:24px;padding-right:24px;}
   }
@@ -110,7 +110,7 @@
     .business-name{font-size:22px;}
     .biz-record{grid-template-columns:1fr 1fr;}
     .biz-record-item{border-right:none;border-bottom:1px solid var(--rule);}
-    .gallery-item{height:220px;}
+    .gallery-item{height:264px;}
     .gallery-hint{font-size:10px;}
     .catalog{padding:20px 16px;}
     .catalog-value{font-size:17px;}
@@ -118,6 +118,13 @@
     .prose{font-size:14px;}
     .prose .lead{font-size:22px;}
     .prose .lead::first-letter{font-size:54px;padding:6px 10px 0 0;}
+  }
+
+  .gallery-arrow:disabled,
+  .gallery-arrow[disabled] {
+    opacity: 0.2;
+    cursor: default;
+    pointer-events: none;
   }
 </style>
 </head>
@@ -255,7 +262,6 @@
         </div></div>
         <button class="gallery-arrow gallery-arrow-right" aria-label="Scroll right">›</button>
       </div>
-      <div class="gallery-hint">Click photos to enlarge · Use arrows or drag to browse</div>
     </div>
     <div class="sources-inline">
       <section class="sub-section sources-constrained">
@@ -300,7 +306,6 @@
         </div></div>
         <button class="gallery-arrow gallery-arrow-right" aria-label="Scroll right">›</button>
       </div>
-      <div class="gallery-hint">Click photos to enlarge · Use arrows or drag to browse</div>
     </div>
     <div class="sources-inline">
       <section class="sub-section sources-constrained">
@@ -349,7 +354,6 @@
         </div></div>
         <button class="gallery-arrow gallery-arrow-right" aria-label="Scroll right">›</button>
       </div>
-      <div class="gallery-hint">Click photos to enlarge · Use arrows or drag to browse</div>
     </div>
     <div class="sources-inline">
       <section class="sub-section sources-constrained">
@@ -400,7 +404,6 @@
         </div></div>
         <button class="gallery-arrow gallery-arrow-right" aria-label="Scroll right">›</button>
       </div>
-      <div class="gallery-hint">Click photos to enlarge · Use arrows or drag to browse</div>
     </div>
     <div class="sources-inline">
       <section class="sub-section sources-constrained">
@@ -473,7 +476,6 @@
         </div></div>
         <button class="gallery-arrow gallery-arrow-right" aria-label="Scroll right">›</button>
       </div>
-      <div class="gallery-hint">Click photos to enlarge · Use arrows or drag to browse</div>
     </div>
     <div class="sources-inline">
       <section class="sub-section sources-constrained">
@@ -520,7 +522,6 @@
         </div></div>
         <button class="gallery-arrow gallery-arrow-right" aria-label="Scroll right">›</button>
       </div>
-      <div class="gallery-hint">Click photos to enlarge · Use arrows or drag to browse</div>
     </div>
     <div class="sources-inline">
       <section class="sub-section sources-constrained">
@@ -560,7 +561,6 @@
         </div></div>
         <button class="gallery-arrow gallery-arrow-right" aria-label="Scroll right">›</button>
       </div>
-      <div class="gallery-hint">Click photos to enlarge · Use arrows or drag to browse</div>
     </div>
     <div class="sources-inline">
       <section class="sub-section sources-constrained">
@@ -621,7 +621,6 @@
         </div></div>
         <button class="gallery-arrow gallery-arrow-right" aria-label="Scroll right">›</button>
       </div>
-      <div class="gallery-hint">Click photos to enlarge · Use arrows or drag to browse</div>
     </div>
     <div class="sources-inline">
       <section class="sub-section sources-constrained">
@@ -661,7 +660,6 @@
         </div></div>
         <button class="gallery-arrow gallery-arrow-right" aria-label="Scroll right">›</button>
       </div>
-      <div class="gallery-hint">Click photos to enlarge · Use arrows or drag to browse</div>
     </div>
     <div class="sources-inline">
       <section class="sub-section sources-constrained">
@@ -698,7 +696,6 @@
         </div></div>
         <button class="gallery-arrow gallery-arrow-right" aria-label="Scroll right">›</button>
       </div>
-      <div class="gallery-hint">Click photos to enlarge · Use arrows or drag to browse</div>
     </div>
     <div class="sources-inline page-end">
       <section class="sub-section sources-constrained">

@@ -499,7 +499,7 @@
   @media (max-width: 820px) {
     html, body {
       height: auto;
-      min-height: 100%;
+      min-height: 0;
       overflow-x: hidden;
       overflow-y: auto;
     }
@@ -507,7 +507,7 @@
     body {
       display: flex;
       flex-direction: column;
-      min-height: 100%;
+      min-height: 0;
     }
 
     header {
@@ -528,41 +528,37 @@
       overflow: visible;
     }
 
-    /* Map: 5px padding each side, background 3x taller, map centered in it */
+    /* Map: scrolls horizontally at natural size — never squishes to fit screen */
     .map-wrap {
       flex: 0 0 auto;
       width: 100%;
-      padding: 0 5px;
-      overflow: visible;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      padding: 10px 0 0;
+      overflow-x: auto;
+      overflow-y: visible;
+      -webkit-overflow-scrolling: touch;
+      display: block;
       position: relative;
       z-index: 5;
       box-sizing: border-box;
+      background: var(--paper-deep);
     }
 
     .map-stage {
-      width: 100%;
       display: block;
       overflow: visible;
+      /* min-width set by JS to natural map width */
     }
 
     #map,
     #map.leaflet-container {
-      width: 100%;
       overflow: visible;
+      background: var(--paper-deep);
+      /* width/height set by JS */
     }
 
-    /* Stretch the map background area to 3x map height, map stays centered */
+    /* Background fills the full scrollable map area */
     .map-wrap::before {
-      content: '';
-      display: block;
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      bottom: 0;
-      background: var(--paper-deep);
-      z-index: -1;
+      content: none;
     }
 
     .leaflet-overlay-pane svg path {
@@ -609,14 +605,14 @@
     }
 
     .intro {
-      font-size: 18px;
+      font-size: 20px;
       line-height: 1.15;
       margin-bottom: 10px;
       max-width: 100%;
     }
 
     .body-copy {
-      font-size: 13px;
+      font-size: 15px;
       line-height: 1.55;
       max-width: 100%;
     }
@@ -650,7 +646,7 @@
 
     .sign-name {
       flex: 1;
-      font-size: 15px;
+      font-size: 16px;
       line-height: 1.15;
       -webkit-line-clamp: 3;
     }
@@ -668,9 +664,9 @@
     .footer-intro,
     .footer-index { padding: 10px 12px; }
 
-    .intro { font-size: 16px; }
+    .intro { font-size: 18px; }
 
-    .body-copy { font-size: 12px; }
+    .body-copy { font-size: 14px; }
 
     .sign-card {
       flex: 0 0 168px;
@@ -835,8 +831,8 @@
   const MAP_BG_BOOST = 1.25;
   const MOBILE_BREAK = 820;
   const MOBILE_SIDE_PAD = 2;
-  const MOBILE_MAP_PAD_X = 3;
-  const MOBILE_MAP_PAD_Y = 3;
+  const MOBILE_MAP_PAD_X = 0;
+  const MOBILE_MAP_PAD_Y = 0;
 
   function isMobileView() {
     return window.innerWidth <= MOBILE_BREAK;
@@ -863,38 +859,40 @@
       stageEl.style.zoom = '';
       wrapEl.style.height = '';
 
-      const padX = MOBILE_MAP_PAD_X;
-      const padY = MOBILE_MAP_PAD_Y;
+      // Render the grid at its natural aspect ratio — wide grid on a narrow screen
+      // should scroll horizontally, not squish. Use screen width * ~2.2 as natural
+      // width (the grid is ~3.2x wider than tall, but we want a comfortable scroll).
+      const screenW = window.innerWidth;
+      const naturalW = Math.round(screenW * 2.2);
 
-      // Tall provisional height so fitBounds is width-limited (wide grid).
+      mapEl.style.width = naturalW + 'px';
       mapEl.style.height = '2000px';
+      stageEl.style.width = naturalW + 'px';
       stageEl.style.height = '2000px';
       map.invalidateSize();
 
       map.fitBounds(viewBounds, {
-        paddingTopLeft: [padY, padX],
-        paddingBottomRight: [padY, padX],
+        paddingTopLeft: [5, 5],
+        paddingBottomRight: [5, 5],
         animate: false,
         maxZoom: 16.5
       });
 
       const sw = map.latLngToContainerPoint(viewBounds.getSouthWest());
       const ne = map.latLngToContainerPoint(viewBounds.getNorthEast());
-      const mapH = Math.ceil(Math.abs(sw.y - ne.y) + padY * 2);
-      // Map itself is natural height; wrap is 3x to give breathing room
-      const wrapH = mapH * 3;
+      const mapH = Math.ceil(Math.abs(sw.y - ne.y) + 10);
+      // Wrap height = map height + top padding (10px) + small bottom gap (16px)
+      const wrapH = mapH + 26;
 
       mapEl.style.height = mapH + 'px';
       stageEl.style.height = mapH + 'px';
       wrapEl.style.height = wrapH + 'px';
-      wrapEl.style.display = 'flex';
-      wrapEl.style.alignItems = 'center';
-      wrapEl.style.justifyContent = 'center';
+      stageEl.style.width = naturalW + 'px';
       map.invalidateSize();
 
       map.fitBounds(viewBounds, {
-        paddingTopLeft: [padY, padX],
-        paddingBottomRight: [padY, padX],
+        paddingTopLeft: [5, 5],
+        paddingBottomRight: [5, 5],
         animate: false,
         maxZoom: 16.5
       });
