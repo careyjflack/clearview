@@ -381,6 +381,7 @@
     border: none;
     box-shadow: 0 2px 6px rgba(45, 24, 16, 0.08);
   }
+  .leaflet-popup-tip-container { display: none; }
 
   .popup-num {
     font-family: 'Inter', sans-serif;
@@ -416,7 +417,7 @@
     font-size: 11px;
     letter-spacing: 0.16em;
     text-transform: uppercase;
-    color: var(--paper);
+    color: #ffffff;
     background: var(--ink);
     text-decoration: none;
     padding: 10px 16px;
@@ -427,7 +428,7 @@
   }
 
   .popup-link:hover {
-    background: var(--dirt);
+    background: var(--ink);
   }
 
   /* ── Street labels ───────────────────────────── */
@@ -746,7 +747,7 @@
     { id: "001", name: "Zenia Talton's Café", business: "Café & Restaurant", lot: "Lot 34", dates: "Dates unknown", lat: 35.3990, lng: -96.1917, slug: "sign-001-zenia-taltons-cafe", image: "sources/patriarch.png" },
     { id: "002", name: "L.M. Atkins Hotel / Charlotte Jackson Home", business: "Hotel & residence", lot: "Lot 45", dates: "c. 1911 – 1914", lat: 35.3992, lng: -96.1873, slug: "sign-002-atkins-hotel", image: "sources/bd_sign02_okemah-1.png" },
     { id: "003", name: "Miniature Golf Course & Tent Revival Site", business: "Recreation & assembly", lot: "Lot 53a", dates: "1931 – ", lat: 35.399, lng: -96.186, slug: "sign-003-miniature-golf", image: "sources/new_003_langston_bush_portrait.png" },
-    { id: "004", name: "High Pocket Wilson's", business: "School Supplies & Confectionary", lot: "Lot 38", dates: "Dates unknown", lat: 35.399, lng: -96.1897, slug: "sign-004-high-pocket-wilson", image: "" },
+    { id: "004", name: "High Pocket Wilson's", business: "School Supplies & Confectionary", lot: "Lot 38", dates: "Dates unknown", lat: 35.3993, lng: -96.1903, slug: "sign-004-high-pocket-wilson", image: "sources/The_Patriarch_1912_06_06_4.jpg" },
     { id: "005", name: "Jeff Horn Dry Goods · Earl French Pool Hall", business: "Dry goods & pool hall", lot: "Lot 41", dates: "Dates unknown", lat: 35.399, lng: -96.1897, slug: "sign-005-horn-french", image: "sources/sign05_jeff_horn_pin.jpg" },
     { id: "006", name: "Colored Methodist Episcopal Church", business: "Church (third location)", lot: "Lot 75", dates: "Dates unknown", lat: 35.3976, lng: -96.1917, slug: "sign-006-cme-church", image: "sources/clearview_009.jpg" },
     { id: "007", name: "Dessie Forshee's Barber Shop", business: "Barbershop", lot: "Lot 68", dates: "1952 – ", lat: 35.3976, lng: -96.1956, slug: "sign-007-dessie-forshee", image: "sources/new_007_clearview_school_buses.png" },
@@ -755,10 +756,10 @@
     { id: "010", name: "Clearview Public School District I-37", business: "Public school", lot: "Block 9", dates: "1900s – 1969", lat: 35.4001, lng: -96.1899, slug: "sign-010-clearview-school", image: "sources/sign10_high_school.jpg" },
     { id: "011", name: "Ed Castlow's Tavern", business: "Tavern", lot: "Lot 12", dates: "c. 1936 – 1957", lat: 35.4001, lng: -96.1873, slug: "sign-011-ed-castlows-tavern", image: "sources/Okemah_News_Leader_1951_07_31_1-1.png" },
     { id: "012", name: "Ft. Smith & Western Section Foreman's Shop", business: "Railroad maintenance shop", lot: "Lot 15", dates: "1903 – 1939", lat: 35.3999, lng: -96.1873, slug: "sign-012-section-foreman-shop", image: "sources/sign12_walker_1921_pin.jpg" },
-    { id: "013", name: "J.C. Cossey", business: "Justice of the Peace", lot: "Lot 78", dates: "1910s – 1920s", lat: 35.3976, lng: -96.1897, slug: "sign-013-jc-cossey", image: "sources/The_Patriarch_1912_06_06_4.jpg" },
+    { id: "013", name: "J.C. Cossey", business: "Justice of the Peace", lot: "Lot 78", dates: "1910s – 1920s", lat: 35.3976, lng: -96.1891, slug: "sign-013-jc-cossey", image: "sources/The_Patriarch_1912_06_06_4.jpg" },
     { id: "014", name: "Hicks Shoe Shop / Hattie Holmes Rooming House", business: "Shoe shop & rooming house", lot: "Lot 79", dates: "c. 1910s", lat: 35.3976, lng: -96.1897, slug: "sign-014-hicks-holmes", image: "sources/sign14_hattie_holmes.jpg" },
-    { id: "015", name: "Clearview Movie Theater", business: "Movie theater", lot: "Lot 98", dates: "c. 1930", lat: 35.3976, lng: -96.1839, slug: "sign-015-clearview-theater", image: "" },
-    { id: "016", name: "\u201cDiddy\u201d Oliver Grocery Store", business: "Grocery", lot: "Lot 99", dates: "1910s – 1920s", lat: 35.3981, lng: -96.1833, slug: "sign-016-diddy-oliver", image: "sources/The_Patriarch_1911_08_17_3.jpg" },
+    { id: "015", name: "Clearview Movie Theater", business: "Movie theater", lot: "Lot 98", dates: "c. 1930", lat: 35.3976, lng: -96.1824, slug: "sign-015-clearview-theater", image: "sources/new_015_bd_1930_06_12.jpg" },
+    { id: "016", name: "\u201cDiddy\u201d Oliver Grocery Store", business: "Grocery", lot: "Lot 99", dates: "1910s – 1920s", lat: 35.3976, lng: -96.1826, slug: "sign-016-diddy-oliver", image: "sources/The_Patriarch_1911_08_17_3.jpg" },
     { id: "017", name: "First Baptist Church", business: "Church", lot: "Lot 100", dates: "Dates unknown", lat: 35.3978, lng: -96.1833, slug: "sign-017-first-baptist", image: "sources/new_017_baptism_clearview_lake.png" },
     { id: "018", name: "M.J. Blanks Dry Goods & Notions", business: "Dry goods", lot: "Lot 97", dates: "c. 1910s", lat: 35.3976, lng: -96.1839, slug: "sign-018-mj-blanks", image: "sources/The_Patriarch_1914_05_30_6.jpg" },
     { id: "019", name: "Church of the Living God · Blacksmith Shop · L.V. Swain Garage · Alford Funeral Home · A.L. Gammil Grocery · Church of Christ", business: "6 businesses · church · garage · grocery · funeral home", lot: "Lots 46 – 49", dates: "1910s – 1950s", lat: 35.3988, lng: -96.1873, slug: "sign-019-lots-46-49", image: "sources/new_019_church_of_living_god.png" },
@@ -1155,9 +1156,9 @@
       ${sign.image ? `<div class="popup-image"><img src="${sign.image}" alt="${sign.name}" /></div>` : ''}
       <div class="popup-body">
         <div class="popup-num">№ ${sign.id} · ${sign.lot}</div>
-        <div class="popup-name">${sign.name}</div>
+        <div class="popup-name" style="${sign.id === '025' ? 'font-size:15px;' : sign.id === '022' ? 'font-size:18px;' : ''}">${sign.name}</div>
         <div class="popup-meta">${sign.business} · ${sign.dates}</div>
-        <a class="popup-link" href="sign-${String(parseInt(sign.id, 10)).padStart(2, '0')}/">Open the record →</a>
+        <a class="popup-link" href="sign-${String(parseInt(sign.id, 10)).padStart(2, '0')}/">Open Record →</a>
       </div>
     `;
     const tooltipLabel = PIN_LABELS[sign.id] || sign.name; // kept for potential future use
@@ -1177,9 +1178,10 @@
       const isMobile = window.innerWidth <= MOBILE_BREAK;
       const pt      = map.latLngToContainerPoint(latlng);
       const size    = map.getSize();
-      const POPUP_H = isMobile ? 185 : 330;
+      const POPUP_H = isMobile ? 185 : 380;
       const POPUP_W = isMobile ? Math.min(190, size.x - 28) : 290;
       const MARGIN  = isMobile ? 8 : 12;
+      const TOP_MARGIN = isMobile ? 8 : 24;
       const PIN_R   = 21;
       const PA_Y    = -22;
 
@@ -1202,34 +1204,43 @@
         return L.point(Math.round(x), Math.round(y));
       }
 
-      const defaultPopupTop = pt.y + PA_Y - POPUP_H;
+      const popupTopIfAbove    = pt.y + PA_Y - POPUP_H;  // top edge when popup is above pin
+      const popupBottomIfAbove  = pt.y + PA_Y;             // bottom edge when popup is above pin
 
-      if (defaultPopupTop < MARGIN) {
-        // Too close to top — open beside the pin instead.
-        // Prefer right; use left only if no room on right.
-        const useRight = (pt.x + PIN_R + POPUP_W + MARGIN) <= size.x
-                      || (pt.x - PIN_R - POPUP_W - MARGIN) < 0;
-        const xDir = useRight ? 1 : -1;
+      const tooHigh  = popupTopIfAbove    < TOP_MARGIN;
+      const tooLow   = popupBottomIfAbove > size.y - MARGIN;
 
-        // x: center popup horizontally beside the pin
-        // popup center-x = pt.x + 0 (PA_X=0) + offset.x = pt.x + xDir*(PIN_R + POPUP_W/2 + 4)
+      if (tooHigh || tooLow) {
+        // Open beside the pin — prefer right, fall back to left
+        const roomRight = (pt.x + PIN_R + POPUP_W + MARGIN) <= size.x;
+        const xDir = roomRight ? 1 : -1;
         const x = xDir * (PIN_R + POPUP_W / 2 + 4);
 
-        // y: center popup vertically on pin
-        // popup center-y = tip_y - POPUP_H/2 = (pt.y + PA_Y + offset.y) - POPUP_H/2
-        // we want popup center-y = pt.y
-        // → offset.y = pt.y - pt.y - PA_Y + POPUP_H/2 = -PA_Y + POPUP_H/2 = 22 + 165 = 187
-        const y = -PA_Y + POPUP_H / 2;
+        // Center popup vertically on the pin, then clamp so it stays in frame
+        let y = -PA_Y + POPUP_H / 2;
+        const sideTop    = pt.y + PA_Y + y - POPUP_H;
+        const sideBottom = pt.y + PA_Y + y;
+        if (sideTop < MARGIN)             y += MARGIN - sideTop;
+        if (sideBottom > size.y - MARGIN) y -= sideBottom - (size.y - MARGIN);
 
         return L.point(Math.round(x), Math.round(y));
       }
 
-      // Default: above the pin, with horizontal nudge to stay in viewport
+      // Default: above the pin — nudge horizontally to stay in viewport
       let x = 0;
       if      (pt.x < POPUP_W / 2 + MARGIN) x =  (POPUP_W / 2 - pt.x + MARGIN);
       else if (pt.x > size.x - POPUP_W / 2 - MARGIN) x = -(pt.x - size.x + POPUP_W / 2 + MARGIN);
 
-      return L.point(Math.round(x), 0);
+      // Push popup down so its bottom sits closer to the footer margin (not floating high)
+      let y = 0;
+      const aboveBottom = pt.y + PA_Y; // bottom edge of popup when above pin (offset=0)
+      const targetBottom = size.y - MARGIN; // desired bottom edge
+      // Also clamp top — don't let popup bleed into header
+      const aboveTop = pt.y + PA_Y - POPUP_H;
+      if (aboveTop < TOP_MARGIN) y += TOP_MARGIN - aboveTop;
+      else if (aboveBottom < targetBottom) y = Math.min(targetBottom - aboveBottom + 73, POPUP_H - MARGIN);
+
+      return L.point(Math.round(x), Math.round(y));
     }
 
     marker.bindPopup(popupHtml, {
