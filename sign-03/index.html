@@ -732,6 +732,9 @@
     cursor: default;
     pointer-events: none;
   }
+  .play-badge{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:52px;height:52px;border-radius:50%;background:rgba(0,0,0,.55);color:#fff;display:flex;align-items:center;justify-content:center;font-size:20px;padding-left:4px;pointer-events:none;}
+  .gallery-item.video-item{position:relative;}
+  .gallery-item.video-item:hover .play-badge{background:rgba(0,0,0,.7);}
 </style>
 </head>
 <body>
@@ -804,6 +807,10 @@
           <button class="gallery-arrow gallery-arrow-left" aria-label="Scroll left">‹</button>
           <div class="gallery-clip">
             <div class="gallery-row">
+          <div class="gallery-item archival video-item" data-youtube="3vru0kDf8nU" data-title="The Miniature Golf Course" data-date="2003" data-source="James P. Owens · 2003 documentary · OSU Library" data-caption="James P. Owens on the Miniature Golf Course, from a 2003 documentary commemorating the centennial of Clearview's founding.">
+            <img src="https://img.youtube.com/vi/3vru0kDf8nU/hqdefault.jpg" alt="James P. Owens on the Miniature Golf Course" loading="lazy">
+            <div class="play-badge" aria-hidden="true">▶</div>
+          </div>
           <div class="gallery-item archival" data-src="../sources/sign03_rendition.svg" data-title="Artist's rendition — Smartonian Golf Club &amp; Tent Revival Site, c. 1931" data-date="c. 1931" data-source="Artist's rendition · created 2026" data-caption="A bird's-eye rendition of the Smartonian Golf Club and Tent Revival Site as it may have appeared c. 1931, based on period photographs of similar courses and the property description. Railroad tracks of the Ft. Smith &amp; Western divide the lot: tent revival grounds at upper left, winding miniature golf fairways at right. Operated by Nannie Talton and W.L. Bush.">
             <img src="../sources/sign03_rendition.svg" alt="Artist's rendition of the Smartonian Golf Club, Clearview, c. 1931" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'">
           </div>
@@ -832,7 +839,7 @@
   <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous photo">‹</button>
   <div class="lightbox-img-wrap">
     <img id="lightboxImg" src="" alt="">
-  </div>
+  <iframe id="lightboxVideo" style="display:none;width:100%;max-width:900px;aspect-ratio:16/9;height:auto;border:0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
   <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next photo">›</button>
   <div class="lightbox-caption">
     <div class="lightbox-date" id="lightboxDate"></div>
@@ -887,6 +894,7 @@
   // === Lightbox with captions ===
   const lb = document.getElementById('lightbox');
   const lbImg = document.getElementById('lightboxImg');
+  const lbVideo = document.getElementById('lightboxVideo');
   const lbDate = document.getElementById('lightboxDate');
   const lbTitle = document.getElementById('lightboxTitle');
   const lbDesc = document.getElementById('lightboxDescription');
@@ -902,7 +910,13 @@
     if (idx < 0 || idx >= allItems.length) return;
     currentIdx = idx;
     const item = allItems[idx];
-    lbImg.src = item.dataset.src;
+    if (item.dataset.youtube) {
+      lbImg.style.display = 'none'; lbImg.src = '';
+      lbVideo.style.display = ''; lbVideo.src = 'https://www.youtube.com/embed/' + item.dataset.youtube + '?autoplay=1&rel=0';
+    } else {
+      lbVideo.style.display = 'none'; lbVideo.src = '';
+      lbImg.style.display = ''; lbImg.src = item.dataset.src;
+    }
     lbDate.textContent = item.dataset.date || '';
     lbTitle.textContent = item.dataset.title || '';
     // Allow basic HTML in description (for italicized newspaper names)
@@ -925,6 +939,7 @@
   function closeLb() {
     lb.classList.remove('open');
     document.body.style.overflow = '';
+    lbVideo.src = '';
   }
 
   document.getElementById('lightboxClose').addEventListener('click', closeLb);
