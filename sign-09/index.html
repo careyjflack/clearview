@@ -732,6 +732,9 @@
     cursor: default;
     pointer-events: none;
   }
+  .play-badge{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:52px;height:52px;border-radius:50%;background:rgba(0,0,0,.55);color:#fff;display:flex;align-items:center;justify-content:center;font-size:20px;padding-left:4px;pointer-events:none;}
+  .gallery-item.video-item{position:relative;}
+  .gallery-item.video-item:hover .play-badge{background:rgba(0,0,0,.7);}
 </style>
 </head>
 <body>
@@ -793,6 +796,26 @@
           <button class="gallery-arrow gallery-arrow-left" aria-label="Scroll left">‹</button>
           <div class="gallery-clip">
             <div class="gallery-row">
+          <div class="gallery-item archival video-item" data-youtube="dRc4P-ZFKuY" data-title="Ada Davis' Restaurant" data-date="Mar. 23, 2026" data-source="Interview by Patrick Daglaris · Clearview Civil Rights Trail Grant · OSU Library" data-caption="Elvis Patton &amp; Speedy Anderson on Ada Davis' Restaurant.">
+            <img src="https://img.youtube.com/vi/dRc4P-ZFKuY/hqdefault.jpg" alt="Elvis Patton and Speedy Anderson on Ada Davis' Restaurant" loading="lazy">
+            <div class="play-badge" aria-hidden="true">▶</div>
+          </div>
+          <div class="gallery-item archival video-item" data-youtube="oc9_QUpY8Bw" data-title="Ada Davis Garment Factory, Confectionaries, &amp; Monroe Morris" data-date="2003" data-source="Herbert Johnson · 2003 documentary · OSU Library" data-caption="Herbert Johnson on the Ada Davis Garment Factory, Confectionaries, &amp; Monroe Morris, from a 2003 documentary commemorating the centennial of Clearview's founding.">
+            <img src="https://img.youtube.com/vi/oc9_QUpY8Bw/hqdefault.jpg" alt="Herbert Johnson on the Ada Davis Garment Factory" loading="lazy">
+            <div class="play-badge" aria-hidden="true">▶</div>
+          </div>
+          <div class="gallery-item archival video-item" data-youtube="pt-YY75Kmc4" data-title="Ada Davis' Roominghouse" data-date="Feb. 13, 2026" data-source="Interview by Patrick Daglaris · Clearview Civil Rights Trail Grant · OSU Library" data-caption="Joe Golden on Ada Davis' Roominghouse.">
+            <img src="https://img.youtube.com/vi/pt-YY75Kmc4/hqdefault.jpg" alt="Joe Golden on Ada Davis' Roominghouse" loading="lazy">
+            <div class="play-badge" aria-hidden="true">▶</div>
+          </div>
+          <div class="gallery-item archival video-item" data-youtube="hHUKo_A5y24" data-title="Ada Davis' Garment Factory" data-date="ca. 2010s" data-source="Interview by Terry French · family history recording · OSU Library" data-caption="Marguerite 'Mack' French on Ada Davis' Garment Factory.">
+            <img src="https://img.youtube.com/vi/hHUKo_A5y24/hqdefault.jpg" alt="Marguerite Mack French on Ada Davis' Garment Factory" loading="lazy">
+            <div class="play-badge" aria-hidden="true">▶</div>
+          </div>
+          <div class="gallery-item archival video-item" data-youtube="pNvmeETBjaM" data-title="Ada Davis, Garment Factory" data-date="Nov. 19, 2021" data-source="Interview by Marilyn Jackson · Clearview Mayor · OSU Library" data-caption="Otis Davis on his mother, Ada Davis, Garment Factory.">
+            <img src="https://img.youtube.com/vi/pNvmeETBjaM/hqdefault.jpg" alt="Otis Davis on his mother Ada Davis Garment Factory" loading="lazy">
+            <div class="play-badge" aria-hidden="true">▶</div>
+          </div>
           <div class="gallery-item archival" data-src="../sources/sign09_sewing_1935.jpg" data-title="&quot;142 at Sewing Work&quot; — Sunday Times-Democrat" data-date="December 1, 1935" data-source="Sunday Times-Democrat · project archive" data-caption="&quot;142 at Sewing Work. Okemah, Nov. 20. (Specials) — There are 142 women employed in WPA sewing rooms in the county, it was announced today. Supervisors are Okemah, Mrs. C. C. Henry; Weleetka, Mrs. Berneice Parshall; Castle, Maude Scrudder; Clearview, Ada Davis; Paden, Ella Drury, and Boley, Octave Gair.&quot;">
             <img src="../sources/sign09_sewing_1935.jpg" alt="&quot;142 at Sewing Work&quot; — Sunday Times-Democrat" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
           </div>
@@ -822,7 +845,7 @@
   <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous photo">‹</button>
   <div class="lightbox-img-wrap">
     <img id="lightboxImg" src="" alt="">
-  </div>
+  <iframe id="lightboxVideo" style="display:none;width:100%;max-width:900px;aspect-ratio:16/9;height:auto;border:0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
   <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next photo">›</button>
   <div class="lightbox-caption">
     <div class="lightbox-date" id="lightboxDate"></div>
@@ -877,6 +900,7 @@
   // === Lightbox with captions ===
   const lb = document.getElementById('lightbox');
   const lbImg = document.getElementById('lightboxImg');
+  const lbVideo = document.getElementById('lightboxVideo');
   const lbDate = document.getElementById('lightboxDate');
   const lbTitle = document.getElementById('lightboxTitle');
   const lbDesc = document.getElementById('lightboxDescription');
@@ -892,7 +916,13 @@
     if (idx < 0 || idx >= allItems.length) return;
     currentIdx = idx;
     const item = allItems[idx];
-    lbImg.src = item.dataset.src;
+    if (item.dataset.youtube) {
+      lbImg.style.display = 'none'; lbImg.src = '';
+      lbVideo.style.display = ''; lbVideo.src = 'https://www.youtube.com/embed/' + item.dataset.youtube + '?autoplay=1&rel=0';
+    } else {
+      lbVideo.style.display = 'none'; lbVideo.src = '';
+      lbImg.style.display = ''; lbImg.src = item.dataset.src;
+    }
     lbDate.textContent = item.dataset.date || '';
     lbTitle.textContent = item.dataset.title || '';
     // Allow basic HTML in description (for italicized newspaper names)
@@ -915,6 +945,7 @@
   function closeLb() {
     lb.classList.remove('open');
     document.body.style.overflow = '';
+    lbVideo.src = '';
   }
 
   document.getElementById('lightboxClose').addEventListener('click', closeLb);

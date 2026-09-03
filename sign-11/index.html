@@ -732,6 +732,9 @@
     cursor: default;
     pointer-events: none;
   }
+  .play-badge{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:52px;height:52px;border-radius:50%;background:rgba(0,0,0,.55);color:#fff;display:flex;align-items:center;justify-content:center;font-size:20px;padding-left:4px;pointer-events:none;}
+  .gallery-item.video-item{position:relative;}
+  .gallery-item.video-item:hover .play-badge{background:rgba(0,0,0,.7);}
 </style>
 </head>
 <body>
@@ -793,6 +796,14 @@
           <button class="gallery-arrow gallery-arrow-left" aria-label="Scroll left">‹</button>
           <div class="gallery-clip">
             <div class="gallery-row">
+          <div class="gallery-item archival video-item" data-youtube="T_YSD519IkY" data-title="Ed Castlow's Tavern" data-date="Feb. 5, 2026" data-source="Interview by Patrick Daglaris · Clearview Civil Rights Trail Grant · OSU Library" data-caption="Clifford, Leon, and Otis Normore on Ed Castlow's Tavern.">
+            <img src="https://img.youtube.com/vi/T_YSD519IkY/hqdefault.jpg" alt="Clifford, Leon, and Otis Normore on Ed Castlow's Tavern" loading="lazy">
+            <div class="play-badge" aria-hidden="true">▶</div>
+          </div>
+          <div class="gallery-item archival video-item" data-youtube="lUzt1lhQWwU" data-title="Ed Castlow's Tavern" data-date="Feb. 13, 2026" data-source="Interview by Patrick Daglaris · Clearview Civil Rights Trail Grant · OSU Library" data-caption="Joe Golden on Ed Castlow's Tavern.">
+            <img src="https://img.youtube.com/vi/lUzt1lhQWwU/hqdefault.jpg" alt="Joe Golden on Ed Castlow's Tavern" loading="lazy">
+            <div class="play-badge" aria-hidden="true">▶</div>
+          </div>
           <div class="gallery-item archival" data-src="../sources/Okemah_News_Leader_1951_07_31_1-1.png" data-title="Okemah News Leader, July 31, 1951" data-date="July 31, 1951" data-source="Okemah News Leader · project archive" data-caption="Clipping from the <em>Okemah News Leader</em> referencing Ed Castlow's Tavern.">
             <img src="../sources/Okemah_News_Leader_1951_07_31_1-1.png" alt="Okemah News Leader, July 31, 1951" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
           </div>
@@ -825,7 +836,7 @@
   <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous photo">‹</button>
   <div class="lightbox-img-wrap">
     <img id="lightboxImg" src="" alt="">
-  </div>
+  <iframe id="lightboxVideo" style="display:none;width:100%;max-width:900px;aspect-ratio:16/9;height:auto;border:0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
   <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next photo">›</button>
   <div class="lightbox-caption">
     <div class="lightbox-date" id="lightboxDate"></div>
@@ -880,6 +891,7 @@
   // === Lightbox with captions ===
   const lb = document.getElementById('lightbox');
   const lbImg = document.getElementById('lightboxImg');
+  const lbVideo = document.getElementById('lightboxVideo');
   const lbDate = document.getElementById('lightboxDate');
   const lbTitle = document.getElementById('lightboxTitle');
   const lbDesc = document.getElementById('lightboxDescription');
@@ -895,7 +907,13 @@
     if (idx < 0 || idx >= allItems.length) return;
     currentIdx = idx;
     const item = allItems[idx];
-    lbImg.src = item.dataset.src;
+    if (item.dataset.youtube) {
+      lbImg.style.display = 'none'; lbImg.src = '';
+      lbVideo.style.display = ''; lbVideo.src = 'https://www.youtube.com/embed/' + item.dataset.youtube + '?autoplay=1&rel=0';
+    } else {
+      lbVideo.style.display = 'none'; lbVideo.src = '';
+      lbImg.style.display = ''; lbImg.src = item.dataset.src;
+    }
     lbDate.textContent = item.dataset.date || '';
     lbTitle.textContent = item.dataset.title || '';
     // Allow basic HTML in description (for italicized newspaper names)
@@ -918,6 +936,7 @@
   function closeLb() {
     lb.classList.remove('open');
     document.body.style.overflow = '';
+    lbVideo.src = '';
   }
 
   document.getElementById('lightboxClose').addEventListener('click', closeLb);

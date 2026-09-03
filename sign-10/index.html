@@ -744,6 +744,9 @@
     cursor: default;
     pointer-events: none;
   }
+  .play-badge{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:52px;height:52px;border-radius:50%;background:rgba(0,0,0,.55);color:#fff;display:flex;align-items:center;justify-content:center;font-size:20px;padding-left:4px;pointer-events:none;}
+  .gallery-item.video-item{position:relative;}
+  .gallery-item.video-item:hover .play-badge{background:rgba(0,0,0,.7);}
 </style>
 </head>
 <body>
@@ -812,6 +815,26 @@
           <button class="gallery-arrow gallery-arrow-left" aria-label="Scroll left">‹</button>
           <div class="gallery-clip">
             <div class="gallery-row">
+          <div class="gallery-item archival video-item" data-youtube="O56MVxy5fBs" data-title="Clearview Public School (clip 1/2)" data-date="Feb. 13, 2026" data-source="Interview by Patrick Daglaris · Clearview Civil Rights Trail Grant · OSU Library" data-caption="Adell Thomesene Withers Cudjoe on Clearview Public School (clip 1 of 2).">
+            <img src="https://img.youtube.com/vi/O56MVxy5fBs/hqdefault.jpg" alt="Adell Thomesene Withers Cudjoe on Clearview Public School clip 1" loading="lazy">
+            <div class="play-badge" aria-hidden="true">▶</div>
+          </div>
+          <div class="gallery-item archival video-item" data-youtube="TdMBqOcixf0" data-title="Clearview Public School (clip 2/2)" data-date="Feb. 13, 2026" data-source="Interview by Patrick Daglaris · Clearview Civil Rights Trail Grant · OSU Library" data-caption="Adell Thomesene Withers Cudjoe on Clearview Public School (clip 2 of 2).">
+            <img src="https://img.youtube.com/vi/TdMBqOcixf0/hqdefault.jpg" alt="Adell Thomesene Withers Cudjoe on Clearview Public School clip 2" loading="lazy">
+            <div class="play-badge" aria-hidden="true">▶</div>
+          </div>
+          <div class="gallery-item archival video-item" data-youtube="gqDMroI7GSQ" data-title="Clearview Public School" data-date="ca. 1960s" data-source="Living Legends Library of Oklahoma Christian College · Oklahoma Historical Society" data-caption="J. C. Bush on Clearview Public School.">
+            <img src="https://img.youtube.com/vi/gqDMroI7GSQ/hqdefault.jpg" alt="J. C. Bush on Clearview Public School" loading="lazy">
+            <div class="play-badge" aria-hidden="true">▶</div>
+          </div>
+          <div class="gallery-item archival video-item" data-youtube="04mNEcugDDU" data-title="Clearview Public School" data-date="Feb. 13, 2026" data-source="Interview by Patrick Daglaris · Clearview Civil Rights Trail Grant · OSU Library" data-caption="Joe Golden on Clearview Public School.">
+            <img src="https://img.youtube.com/vi/04mNEcugDDU/hqdefault.jpg" alt="Joe Golden on Clearview Public School" loading="lazy">
+            <div class="play-badge" aria-hidden="true">▶</div>
+          </div>
+          <div class="gallery-item archival video-item" data-youtube="18PSyy_mULA" data-title="Clearview Public School" data-date="ca. 2010s" data-source="Interview by Terry French · family history recording · OSU Library" data-caption="Marguerite 'Mack' French on Clearview Public School.">
+            <img src="https://img.youtube.com/vi/18PSyy_mULA/hqdefault.jpg" alt="Marguerite Mack French on Clearview Public School" loading="lazy">
+            <div class="play-badge" aria-hidden="true">▶</div>
+          </div>
           <div class="gallery-item archival" data-src="../sources/sign10_girls_school.jpg" data-title="Girls playing at Clearview School grounds" data-date="Undated" data-source="Collection of Shirley Nero and Tom Lucas" data-caption="Two photographs showing girls on the Clearview school grounds — a basketball game (top) and girls standing near the school fence (bottom). The school buildings are visible in the background.">
             <img src="../sources/sign10_girls_school.jpg" alt="Girls playing at Clearview School grounds" loading="lazy" onerror="this.closest(\'.gallery-item\').style.display=\'none\'">
           </div>
@@ -946,7 +969,7 @@
   <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous photo">‹</button>
   <div class="lightbox-img-wrap">
     <img id="lightboxImg" src="" alt="">
-  </div>
+  <iframe id="lightboxVideo" style="display:none;width:100%;max-width:900px;aspect-ratio:16/9;height:auto;border:0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
   <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next photo">›</button>
   <div class="lightbox-caption">
     <div class="lightbox-date" id="lightboxDate"></div>
@@ -1059,6 +1082,7 @@
   // === Lightbox with captions ===
   const lb = document.getElementById('lightbox');
   const lbImg = document.getElementById('lightboxImg');
+  const lbVideo = document.getElementById('lightboxVideo');
   const lbDate = document.getElementById('lightboxDate');
   const lbTitle = document.getElementById('lightboxTitle');
   const lbDesc = document.getElementById('lightboxDescription');
@@ -1074,7 +1098,13 @@
     if (idx < 0 || idx >= allItems.length) return;
     currentIdx = idx;
     const item = allItems[idx];
-    lbImg.src = item.dataset.src;
+    if (item.dataset.youtube) {
+      lbImg.style.display = 'none'; lbImg.src = '';
+      lbVideo.style.display = ''; lbVideo.src = 'https://www.youtube.com/embed/' + item.dataset.youtube + '?autoplay=1&rel=0';
+    } else {
+      lbVideo.style.display = 'none'; lbVideo.src = '';
+      lbImg.style.display = ''; lbImg.src = item.dataset.src;
+    }
     lbDate.textContent = item.dataset.date || '';
     lbTitle.textContent = item.dataset.title || '';
     // Allow basic HTML in description (for italicized newspaper names)
@@ -1097,6 +1127,7 @@
   function closeLb() {
     lb.classList.remove('open');
     document.body.style.overflow = '';
+    lbVideo.src = '';
   }
 
   document.getElementById('lightboxClose').addEventListener('click', closeLb);
