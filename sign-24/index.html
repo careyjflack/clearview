@@ -126,6 +126,9 @@
     cursor: default;
     pointer-events: none;
   }
+  .play-badge{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:52px;height:52px;border-radius:50%;background:rgba(0,0,0,.55);color:#fff;display:flex;align-items:center;justify-content:center;font-size:20px;padding-left:4px;pointer-events:none;}
+  .gallery-item.video-item{position:relative;}
+  .gallery-item.video-item:hover .play-badge{background:rgba(0,0,0,.7);}
 </style>
 </head>
 <body>
@@ -162,6 +165,7 @@
       <div class="gallery-wrap">
         <button class="gallery-arrow gallery-arrow-left" aria-label="Scroll left">‹</button>
         <div class="gallery-clip"><div class="gallery-row">
+          <div class="gallery-item archival video-item" data-youtube="TNJ-ex0z91Q" data-title="The Tyree Chapel African Methodist Episcopal Church" data-date="Feb. 13, 2026" data-source="Interview by Patrick Daglaris · Clearview Civil Rights Trail Grant · OSU Library" data-caption="Adell Thomesene Withers Cudjoe on the Tyree Chapel African Methodist Episcopal Church."><img src="https://img.youtube.com/vi/TNJ-ex0z91Q/hqdefault.jpg" alt="Adell Thomesene Withers Cudjoe on the Tyree Chapel AME Church" loading="lazy"><div class="play-badge" aria-hidden="true">▶</div></div>
           <div class="gallery-item archival" data-src="../sources/new3_024_Tyree_AME.jpg" data-title="Tyree Chapel AME" data-date="Undated" data-source="Family & community archive" data-caption="Tyree Chapel AME."><img src="../sources/new3_024_Tyree_AME.jpg" alt="Tyree Chapel AME" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'"></div>
           <div class="gallery-item archival" data-src="../sources/new3_024_tyree_chapel.jpg" data-title="Tyree Chapel AME, Clearview" data-date="Undated" data-source="Family & community archive" data-caption="Tyree Chapel AME, Clearview."><img src="../sources/new3_024_tyree_chapel.jpg" alt="Tyree Chapel AME, Clearview" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'"></div>
           <div class="gallery-item archival" data-src="../sources/new3_024_1985_rodeo_program_004_cropped_01.jpg" data-title="Clearview Rodeo program, 1985 — Tyree Chapel AME" data-date="1985" data-source="Family & community archive" data-caption="Clearview Rodeo program, 1985 — Tyree Chapel AME."><img src="../sources/new3_024_1985_rodeo_program_004_cropped_01.jpg" alt="Clearview Rodeo program, 1985 — Tyree Chapel AME" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'"></div>
@@ -249,7 +253,7 @@
 <div class="lightbox" id="lightbox">
   <button class="lightbox-close" id="lightboxClose">✕</button>
   <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous photo">‹</button>
-  <div class="lightbox-img-wrap"><img id="lightboxImg" src="" alt=""></div>
+  <div class="lightbox-img-wrap"><img id="lightboxImg" src="" alt=""><iframe id="lightboxVideo" style="display:none;width:100%;max-width:900px;aspect-ratio:16/9;height:auto;border:0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
   <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next photo">›</button>
   <div class="lightbox-caption">
     <div class="lightbox-date" id="lightboxDate"></div>
@@ -273,11 +277,11 @@
     row.addEventListener('mousemove',e=>{if(!isDown)return;const dx=e.pageX-startX;if(Math.abs(dx)>4)dragged=true;row.scrollLeft=startScroll-dx;});
     row.querySelectorAll('.gallery-item').forEach(it=>{it.addEventListener('click',e=>{if(dragged){e.stopPropagation();e.preventDefault();dragged=false;}},true);});
   });
-  const lb=document.getElementById('lightbox');const lbImg=document.getElementById('lightboxImg');const lbDate=document.getElementById('lightboxDate');const lbTitle=document.getElementById('lightboxTitle');const lbDesc=document.getElementById('lightboxDescription');const lbSource=document.getElementById('lightboxSource');const lbPrev=document.getElementById('lightboxPrev');const lbNext=document.getElementById('lightboxNext');
+  const lb=document.getElementById('lightbox');const lbImg=document.getElementById('lightboxImg');const lbVideo=document.getElementById('lightboxVideo');const lbDate=document.getElementById('lightboxDate');const lbTitle=document.getElementById('lightboxTitle');const lbDesc=document.getElementById('lightboxDescription');const lbSource=document.getElementById('lightboxSource');const lbPrev=document.getElementById('lightboxPrev');const lbNext=document.getElementById('lightboxNext');
   const allItems=Array.from(document.querySelectorAll('.gallery-item'));let currentIdx=0;
-  function openAt(idx){if(idx<0||idx>=allItems.length)return;currentIdx=idx;const item=allItems[idx];lbImg.src=item.dataset.src;lbDate.textContent=item.dataset.date||'';lbTitle.textContent=item.dataset.title||'';lbDesc.innerHTML=item.dataset.caption||'';lbSource.textContent=item.dataset.source||'';lbDate.style.display=item.dataset.date?'':'none';lbTitle.style.display=item.dataset.title?'':'none';lbDesc.style.display=item.dataset.caption?'':'none';lbSource.style.display=item.dataset.source?'':'none';lb.classList.add('open');document.body.style.overflow='hidden';lbPrev.style.display=idx===0?'none':'';lbNext.style.display=idx===allItems.length-1?'none':'';}
+  function openAt(idx){if(idx<0||idx>=allItems.length)return;currentIdx=idx;const item=allItems[idx];if(item.dataset.youtube){lbImg.style.display='none';lbImg.src='';lbVideo.style.display='';lbVideo.src='https://www.youtube.com/embed/'+item.dataset.youtube+'?autoplay=1&rel=0';}else{lbVideo.style.display='none';lbVideo.src='';lbImg.style.display='';lbImg.src=item.dataset.src;}lbDate.textContent=item.dataset.date||'';lbTitle.textContent=item.dataset.title||'';lbDesc.innerHTML=item.dataset.caption||'';lbSource.textContent=item.dataset.source||'';lbDate.style.display=item.dataset.date?'':'none';lbTitle.style.display=item.dataset.title?'':'none';lbDesc.style.display=item.dataset.caption?'':'none';lbSource.style.display=item.dataset.source?'':'none';lb.classList.add('open');document.body.style.overflow='hidden';lbPrev.style.display=idx===0?'none':'';lbNext.style.display=idx===allItems.length-1?'none':'';}
   allItems.forEach((item,i)=>{item.addEventListener('click',()=>openAt(i));});
-  function closeLb(){lb.classList.remove('open');document.body.style.overflow='';}
+  function closeLb(){lb.classList.remove('open');document.body.style.overflow='';lbVideo.src='';}
   document.getElementById('lightboxClose').addEventListener('click',closeLb);
   lbPrev.addEventListener('click',()=>openAt(currentIdx-1));lbNext.addEventListener('click',()=>openAt(currentIdx+1));
   lb.addEventListener('click',e=>{if(e.target===lb||e.target===lbImg.parentElement)closeLb();});
