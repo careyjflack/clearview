@@ -1067,6 +1067,27 @@
       it.addEventListener('click', e => { if (dragged) { e.stopPropagation(); e.preventDefault(); dragged = false; } }, true);
     });
 
+    // Touch tap detection (mobile) — iOS Safari can eat a tap on the first
+    // scroll-snap item as part of its own snap-settling behavior, so we
+    // detect a clean tap ourselves and fire the click programmatically.
+    row.querySelectorAll('.gallery-item').forEach(it => {
+      let touchStartX = 0, touchStartY = 0, touchMoved = false;
+      it.addEventListener('touchstart', e => {
+        const t = e.changedTouches[0];
+        touchStartX = t.pageX; touchStartY = t.pageY; touchMoved = false;
+      }, { passive: true });
+      it.addEventListener('touchmove', e => {
+        const t = e.changedTouches[0];
+        if (Math.abs(t.pageX - touchStartX) > 8 || Math.abs(t.pageY - touchStartY) > 8) touchMoved = true;
+      }, { passive: true });
+      it.addEventListener('touchend', e => {
+        if (!touchMoved) {
+          e.preventDefault();
+          it.click();
+        }
+      });
+    });
+
     // Arrow disabled state — update on scroll and init
     function updateArrows() {
       const atStart = row.scrollLeft <= 2;
